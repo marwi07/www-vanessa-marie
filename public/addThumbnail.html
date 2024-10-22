@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponat hinzufügen</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+ <!-- Account Icon  --> 
+ <div class="top-right"> 
+    <div class="hoverEffectUser pointer" onclick="window.location.href='Login.html'"></div>
+   
+</div>
+
+ <!-- Pfeil zurück  --> 
+ <div class="top-left"> 
+    <img onclick="window.location.href='index.html'" class="pointer" src="Bilder/Pfeil.png" alt="Zurück" />
+</div>
+
+
+
+<!-- Upload box -->
+<h3>Erstelle dein Portfolio</h3>
+
+<h4>Titelbild</h4>
+
+<div class="upload-box" onclick="document.getElementById('file-input').click();">
+    <div class="top-text"> Füge deinem Portfolio ein Titelbild hinzu.</div>
+    <div class="center-content"> +</div>
+    <img id="preview" class="preview-image" alt="Image Preview">
+
+    <div class="button-group_pfeile">
+        <img onclick="window.location.href='Startseite.html'" class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" />
+        <img onclick="window.location.href='addAboutYou.html'" class="pfeil-right" src="Bilder/pfeilR.png" alt="Zurück" />
+    </div>
+
+    <button class="button-save">Speichern</button>
+</div>
+
+<!-- Hidden file input -->
+<input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
+
+
+
+<footer>
+    <ul class="nav-linksFooter">
+         <h5>More On This Site</h5>
+         <li><a href="ueberuns.html">Über uns</a></li>
+         <li><a href="kontakt.html">Kontakt</a></li>
+         <li><a href="impressum.html">Impressum</a></li>
+         <li><a href="datenschutz.html">Datenschutz</a></li>
+         <li><a href="dokumentation.html">Dokumentation</a></li>
+         <li><a href="kollophon.html">Kollophon</a></li>
+    </ul>
+</footer>
+    
+    </body>
+</html>

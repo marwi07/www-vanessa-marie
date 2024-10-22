@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponat hinzufügen</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Landing Page Pic  --> 
+    <div class="container_LandingPage">
+        <img src="Bilder/LandingPagePic.jpg" alt="LandingPagePic" style="width:100%;">
+        
+    <!-- Menü  --> 
+        <div class="top-left"> 
+            <ul class="nav-links">
+                <li><a href="Portfolio.html">Mein Portfolio</a></li>
+                <li><a href="addThumbnail.html">Portfolio bearbeiten</a></li>
+              
+            </ul>
+        </div>
+
+    <!-- Überschrift  --> 
+        <div class="centered"> 
+            <h1>Dein Portfolio</h1>
+        </div>
+    
+   <!-- Account Icon  --> 
+        <div class="top-right"> 
+            <div class="hoverEffectUser pointer" onclick="window.location.href='Login.html'"></div>
+            <h6>Login</h6>
+        </div>
+    
+  
+        <!-- Filter  --> 
+        <div id="myBtnContainer">
+            <button class="btn Filter active" onclick="filterSelection('all')"> Alles</button>
+            <button class="btn Filter" onclick="filterSelection('3D-Animation')"> 3D-Animation</button>
+            <button class="btn Filter" onclick="filterSelection('Motion Graphics')"> Motion Graphics</button>
+            <button class="btn Filter" onclick="filterSelection('Softwareentwicklung')"> Softwareentwicklung</button>
+            <button class="btn Filter" onclick="filterSelection('2D-Art')"> 2D-Art</button>
+            <button class="btn Filter" onclick="filterSelection('Animation')"> Animation</button>
+          </div>
+
+          
+    </div>
+    <!-- Account Icon 
+    <div class="container Test">
+        <div class="filterDiv cars">BMW</div>
+        <div class="filterDiv colors fruits">Orange</div>
+        <div class="filterDiv cars">Volvo</div>
+        <div class="filterDiv colors">Red</div>
+        <div class="filterDiv cars">Ford</div>
+        <div class="filterDiv colors">Blue</div>
+        <div class="filterDiv animals">Cat</div>
+        <div class="filterDiv animals">Dog</div>
+        <div class="filterDiv fruits">Melon</div>
+        <div class="filterDiv fruits animals">Kiwi</div>
+        <div class="filterDiv fruits">Banana</div>
+        <div class="filterDiv fruits">Lemon</div>
+        <div class="filterDiv animals">Cow</div>
+      </div>
+     --> 
+
+<!-- Portfolio linksbündig  --> 
+    <div class="Portfolio">
+        <div class="text-section">
+
+            <h5>_____________________________Username</h5>
+
+            <h2>Meine Überschrift</h2>
+
+            <p>Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.</p>
+            
+            <button class="btn readmore" onclick="window.location.href='Portfolio.html'">Read More -></button>
+        </div>
+
+        <div class="image-section">
+            <img src="Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
+        </div>
+    </div>
+
+
+<!-- Portfolio rechtsbündig  --> 
+    <div class="Portfolio">
+        <div class="image-section">
+            <img onclick="window.location.href='Portfolio.html'" src="Bilder/LandingPagePic.jpg" alt="zum Portfolio" />
+        </div>
+        <div class="text-section">
+            
+            <h5>_____________________________Username</h5>
+
+            <h2>Meine Überschrift</h2>
+
+            <p>Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.</p>
+            
+            <button class="btn readmore" onclick="window.location.href='Portfolio.html'">Read More -></button>
+        </div>
+
+       
+    </div>
+
+    
+<!-- Portfolio linksbündig  --> 
+    <div class="Portfolio">
+        <div class="text-section">
+            
+            <h5>_____________________________Username</h5>
+
+            <h2>Meine Überschrift</h2>
+
+            <p>Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.</p>
+            
+            <button class="btn readmore" onclick="window.location.href='Portfolio.html'">Read More -></button>
+        </div>
+
+        <div class="image-section">
+            <img onclick="window.location.href='Portfolio.html'" src="Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
+
+            
+        </div>
+    </div>
+
+    <button onclick="window.location.href='PortfolioErstellen.html'" class="button button5 pointer PlusButton"> + </button>
+
+
+<!-- Footer --> 
+
+    <footer>
+    <ul class="nav-linksFooter">
+         <h5>More On This Site</h5>
+         <li><a href="ueberuns.html">Über uns</a></li>
+         <li><a href="kontakt.html">Kontakt</a></li>
+         <li><a href="impressum.html">Impressum</a></li>
+         <li><a href="datenschutz.html">Datenschutz</a></li>
+         <li><a href="dokumentation.html">Dokumentation</a></li>
+         <li><a href="kollophon.html">Kollophon</a></li> 
+        </ul>
+    </footer>
+
+</body>
+</html>

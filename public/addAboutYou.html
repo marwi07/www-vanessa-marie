@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponat hinzufügen</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+ <!-- Account Icon  --> 
+ <div class="top-right"> 
+    <div class="hoverEffectUser pointer" onclick="window.location.href='Login.html'"></div>
+   
+</div>
+
+ <!-- Pfeil zurück  --> 
+ <div class="top-left_pfeilback"> 
+    <img onclick="window.location.href='index.html'" class="pointer" src="Bilder/Pfeil.png" alt="Zurück" />
+</div>
+
+
+
+<!-- Upload box -->
+<h3>Erstelle dein Portfolio</h3>
+
+
+<h4>About You</h4>
+
+<div class="upload-aboutYou" onclick="showTextarea()">
+
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+    <div class="center-content"> +</div>
+
+    <div id="message-container"> </div>
+
+    <form id="aboutYouForm" action="/login" method="POST">
+        <textarea id="aboutYouTextarea" name="About You" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: none;"></textarea>
+    </form>
+
+    <div class="button-group_pfeile">
+        <img onclick="window.location.href='addThumbnail.html'" class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" />
+        <img onclick="window.location.href='addSkills.html'" class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter" />
+    </div>
+
+    <button class="button-save">Speichern</button>
+</div>
+
+<!-- Funktion zum Ausblenden des Textes und der Schrift-->
+<script >
+function showTextarea() {
+    // Hide the plus and the top-text
+    document.querySelector('.top-text').style.display = 'none';
+    document.querySelector('.center-content').style.display = 'none';
+
+    // Show the textarea
+    document.getElementById('aboutYouTextarea').style.display = 'block';
+    
+    // Focus the textarea for immediate input
+    document.getElementById('aboutYouTextarea').focus();
+}
+</script>
+
+
+
+<footer>
+    <ul class="nav-linksFooter">
+         <h5>More On This Site</h5>
+         <li><a href="ueberuns.html">Über uns</a></li>
+         <li><a href="kontakt.html">Kontakt</a></li>
+         <li><a href="impressum.html">Impressum</a></li>
+         <li><a href="datenschutz.html">Datenschutz</a></li>
+         <li><a href="dokumentation.html">Dokumentation</a></li>
+         <li><a href="kollophon.html">Kollophon</a></li>
+    </ul>
+</footer>
+    
+    </body>
+</html>

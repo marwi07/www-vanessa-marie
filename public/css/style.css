@@ -1,0 +1,821 @@
+
+/* Body */
+
+body {
+    background-color: #183446;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+.p{
+  background-color: #183446;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 20px;
+}
+
+/* _______________________________________________________________*/
+
+
+/* Menü */
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; 
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-links li {
+    margin: 0; 
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; 
+    padding: 15px 20px; 
+    background-color: #183446; 
+    border-radius: 8px; 
+    white-space: nowrap; 
+    display: inline-block; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Footer */
+
+.nav-linksFooter {
+  list-style-type: none;
+  width: 100%;
+  color: white;
+  text-align: left;
+  padding-top: 800px;
+}
+
+.nav-linksFooter a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; 
+    padding: 10px;
+}
+
+
+/* _______________________________________________________________*/
+
+
+/* Überschriften*/
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 160px;
+}
+
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 60px;
+}
+
+h3{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 60px;
+  margin-top: 110px;
+  margin-left: 100px;
+}
+
+h4{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+h5{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #EAD2AC;
+    font-size: 20px;
+    margin:auto;
+}
+
+h6{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 15px;
+    margin: auto;
+}
+
+
+/* _______________________________________________________________*/
+
+
+/* Container für landing Page Bild und Text */
+.container_LandingPage {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 40px;
+}
+
+/* Bottom left text */
+.bottom-right {
+  position: absolute;
+  bottom: 180px;
+  right: 700px;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 35px;
+    left: 16px;
+  }
+
+  .top-left_pfeilback {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+  }
+
+  /* Top right text */
+.top-right {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+  }
+
+  /* _______________________________________________________________*/
+
+
+
+  /* Hover Effects */
+
+  .hoverEffectUser {
+    width: 100px;
+    height: 100px;
+    background-image: url('Bilder/Icon-User.png'); 
+    background-size: cover; 
+    transition: background-image 0.3s ease; 
+    }
+
+  .hoverEffectUser:hover{
+    background-image: url('Bilder/Icon_Hover_Login.png');
+     }
+
+  .pointer {cursor: pointer;}
+
+  .nav-links a:hover {
+    background-color: #1d5a72; 
+}
+
+.PlusButton:hover {
+    background-color: #E6B89C;
+}
+
+   /* _______________________________________________________________*/
+
+
+
+ /* Container für landing page Portfolios */
+
+ .Portfolio {
+    display: flex; 
+    align-items: flex-start; 
+    max-width: 1920px; 
+    margin: auto; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin-top: 80px;
+}
+
+.text-section {
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.image-section {
+    flex: 0 0 800px; 
+    margin-right: 100px;
+}
+
+.image-section img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+
+/* _______________________________________________________________*/
+
+
+/* Buttons*/
+
+.btn.readmore {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: none;
+    color: #EAD2AC;
+    background-color: inherit;
+    padding: 10px 0px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .btn.readmore:hover {color:#E6B89C;}
+
+
+  /* Button Plus Portfolio*/
+  .button {
+    background-color: #EAD2AC;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin-left:2050px;
+   
+  }
+
+  .button5 {border-radius: 50%;}
+
+
+  /* _______________________________________________________________*/
+  
+
+  /* Filter Kram - Landing Page */
+
+  .container.Test {
+    overflow: hidden;
+  }
+  
+  .filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+
+  .btn.Filter {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #1d5a72; 
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  
+  .btn.Filter:hover {
+    background-color:#234963;
+    color: #ffffff;
+  }
+  
+  
+  .btn.Filter.active {
+    background-color: #497ca7;
+    color: white;
+  }
+
+ /* _______________________________________________________________*/
+
+
+/* Login */
+  
+.body_GridLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  width: 100%;
+  flex: 1;
+  
+}
+
+.container_Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f435a; 
+  padding: 40px; 
+  border-radius: 10px; 
+  max-width: 400px; 
+  width: 100%; 
+  
+}
+
+.container_Login h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Formular Styling */
+.container_Login form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+.container_Login form input {
+  margin-bottom: 10px;
+  font-size: 12pt;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15pt;
+}
+
+ /* Button Login/Register */
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Buttons nebeneinander platzieren */
+  width: 100%;
+}
+
+.button-group_login {
+  width: 48%; /* Gleiche Breite für beide Buttons */
+  padding: 12px;
+  font-size: 15pt;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #183446; 
+  color: white;
+}
+
+.button-group_login:hover {
+  background-color:  #26506b; 
+}
+
+
+/* _______________________________________________________________*/
+
+
+ /* Container für Portfolio Detail Seite */
+
+ .PortfolioDetailSite {
+  display: flex; 
+  align-items: flex-start; 
+  max-width: 100%; 
+  margin: auto; 
+  border-radius: 8px; 
+  padding: 100px; 
+  margin-top: 50px;
+}
+
+.PortfolioDetailSite__text-section {
+  flex: 1; 
+  text-align: center;
+}
+
+.PortfolioDetailSite__image-section {
+  flex: 0 0 1400px; 
+  margin-right: center;
+
+}
+
+.PortfolioDetailSite__image-section img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+}
+
+
+/* Skills Box */
+.container_skills {
+  display: flex;
+  justify-content: center;
+  background-color:#9CAFB7; 
+  padding: 40px; 
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%; 
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.skills {
+  list-style-type: none;
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills li {
+  width: calc(25% - 20px); /* Nimmt 25% der Breite, minus den Abstand */
+  text-align: center; 
+  padding: 10px;
+  border-radius: 5px; 
+  color: white; 
+}
+
+
+
+/* Kontaktdaten Box */
+.skills-and-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin:auto;
+  max-width: 1920px;
+  padding: 40px; 
+  gap: 80px;
+}
+
+
+.container_contact {
+  display: flex;
+  justify-content: center;
+  background-color: #9CAFB7; 
+  padding: 40px; 
+  border-radius: 10px; 
+  max-width:800px; 
+  width: 100%; 
+  box-sizing: border-box;
+  flex: 1;
+  
+}
+
+.contact {
+
+  list-style-type: none;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  display: block; 
+}
+
+.contact dl {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 0;
+  
+}
+
+.contact dt {
+  flex: 1; 
+  text-align: left;
+  color: white;
+  margin-right: 10px;
+}
+
+
+.contact dd {
+  flex: 1; 
+  text-align: right;
+  color: white;
+  margin: 0;
+  background-color: #183446;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+
+
+.skills_heading, .contact_heading {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.skills_heading_h3, .contact_heading_h3 {
+  text-align: center; 
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Bildergalerie "Your Work"*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+/* Tags */
+
+.tag-container {
+ 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-bottom: 50px;
+  
+}
+
+.tag {
+  background-color:#EAD2AC;
+  color: white; 
+  padding: 10px 10px; 
+  border-radius: 20px; 
+  font-size: 20px; 
+  margin: 5px;
+}
+
+/* Bearbeiten/Löschen Buttons*/
+
+.button-group_portfolio {
+  display: flex;
+  justify-content: space-between; 
+  width: 50%;
+  margin: auto;
+  margin-top: 240px;
+  gap:20px;
+}
+
+.button-group_portfolio_button {
+  width: 48%;
+  padding: 12px;
+  font-size: 15pt;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  
+}
+
+.button-group_portfolio_button:hover {
+  background-color:  #346e92; 
+}
+/* _______________________________________________________________*/
+
+/* Upload image */
+.upload-box {
+  width: 1800px;
+  height: 700px;
+  background-color: #EAD2AC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hides the actual file input */
+input[type="file"] {
+  display: none;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+}
+
+.top-text {
+  position: absolute; 
+  top: 80px; 
+  left: 50%;
+  transform: translateX(-50%); /* Horizontale Zentrierung des Texts */
+  font-size: 30px;
+  color: white;
+  opacity: 70%;
+  text-align: center;
+}
+
+.center-content {
+  font-size: 100px;
+  color: white;
+  border-radius: 48%;
+  padding: 20px;
+  
+}
+
+/* Upload About You */
+.upload-aboutYou {
+  width: 1800px;
+  height: 700px;
+  background-color: #9CAFB7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Textarea Styling */
+#aboutYouTextarea {
+  width: 1500px;
+  height: 480px;
+  padding: 20px;
+  font-size: 12pt;
+  border-radius: 10px;
+  border: 2px solid #c4c4c4;
+  resize: none;
+  background-color: #9CAFB7;
+  color: white;
+  outline: none;
+}
+
+
+/* Upload Kontaktinfo */
+.body_GridContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.container_contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9CAFB7; 
+  padding: 40px; 
+  border-radius: 50px; 
+  max-width: 1800px; 
+  height:700px;
+  width: 100%; 
+  position: relative;
+  font-size: 25px;
+}
+
+/* Formular Styling */
+.container_contact form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+.container_contact form input {
+  margin-bottom: 10px;
+  font-size: 15pt;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+
+/* Pfeile Styling */
+.button-group_pfeile {
+  position: absolute;
+  top: 20px; 
+  width: 100%;
+}
+
+.pfeil-left {
+  position: absolute;
+  top: 0;
+  left: 20px; 
+  width: 60px; 
+  cursor: pointer;
+}
+
+.pfeil-right {
+  position: absolute;
+  top: 0;
+  right: 20px; 
+  width: 60px; 
+  cursor: pointer;
+}
+
+.button-save {
+  position: absolute;
+  bottom: 20px;
+  padding:10px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-save:hover {
+  background-color:  #26506b; 
+  cursor: pointer;
+}
+
+/* Upload Your Work */
+.body_GridyourWork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.container_yourWork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9CAFB7; 
+  padding: 40px; 
+  border-radius: 50px; 
+  max-width: 1800px; 
+  height:700px;
+  width: 100%; 
+  position: relative;
+  font-size: 25px;
+}
+
+/* Formular Styling */
+.container_yourWork  form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  margin: auto;
+ 
+}
+
+.container_yourWork  form input {
+  margin-bottom: 10px;
+  font-size: 15pt;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #c4c4c4;
+  
+}
+
+#YourWorkTextarea {
+  width: 1760px;
+  height: 300px;
+  padding: 20px;
+  font-size: 12pt;
+  border-radius: 10px;
+  border: 2px solid #c4c4c4;
+  resize: none;
+  background-color: white;
+  color: black;
+  outline: none;
+}
+
+#YourWorkTextarea:focus {
+  border-color: #2b2b2c;
+  outline: none; 
+}
+
+
+/* Media Queries */
+
+/* Optional: Für größere Bildschirme zentrieren */
+@media (min-width: 768px) {
+  .container_Login {
+      max-width: 500px; 
+  }
+}
