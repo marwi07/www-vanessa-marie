@@ -12,15 +12,15 @@
 <body>
 
 
- <!-- Account Icon  --> 
- <div class="top-right"> 
-    <div class="hoverEffectUser pointer" onclick="window.location.href='Login.html'"></div>
-   
+  <!-- Account Icon  --> 
+  <div class="top-right"> 
+    <a href="Login.html"><img src="Bilder/Icon-User.png" /></a>
+    
 </div>
 
  <!-- Pfeil zurück  --> 
  <div class="top-left"> 
-    <img onclick="window.location.href='index.html'" class="pointer" src="Bilder/Pfeil.png" alt="Zurück" />
+    <a href='index.html' class="pointer" > <img src="Bilder/Pfeil.png" alt="Zurück"/></a>
 </div>
 
 
@@ -36,15 +36,14 @@
     <img id="preview" class="preview-image" alt="Image Preview">
 
     <div class="button-group_pfeile">
-        <img onclick="window.location.href='Startseite.html'" class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" />
-        <img onclick="window.location.href='addAboutYou.html'" class="pfeil-right" src="Bilder/pfeilR.png" alt="Zurück" />
+       <a  href="index.html"> <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" /></a>
+       <a  href="addAboutYou.html"> <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter" /></a>
     </div>
 
     <button class="button-save">Speichern</button>
 </div>
 
-<!-- Hidden file input -->
-<input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
+
 
 
 
