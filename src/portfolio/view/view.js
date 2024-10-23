@@ -7,6 +7,10 @@ export const index = async (ctx) => {
   return ctx;
 };
 
+export const error404 = async (ctx) => {
+  /**TODO */
+};
+
 export const renderForm = async (ctx /*formData, formErrors*/) => {
   let html = ` <div
       class="upload-box"

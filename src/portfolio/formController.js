@@ -16,7 +16,10 @@ export const add = async (ctx) => {
       name: tempStorage.get("name"),
     };
 
-    /** for each image save in databank */
+    /** for each image save in databank
+     * step als cookie speichern
+     * in view auslesen und beim nächsten step weitermachen
+     */
   }
 };
 
