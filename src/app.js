@@ -16,11 +16,13 @@ export const handleRequest = async (request) => {
     nunjucks
   );
 
+  console.log(ctx.url.pathname);
+
   if (ctx.url.pathname === "/") {
     ctx = await portfolio.index(ctx);
   }
 
-  if (ctx.url.pathname === "/PortfolioErstellen.html") {
+  if (ctx.url.pathname === "/test.html") {
     ctx = await portfolio.renderForm(ctx);
   }
 

@@ -4,12 +4,12 @@ export const add = async (ctx) => {
   const formData = await ctx.request.formData();
   const step = ctx.url.searchParams.get("step");
 
-  for (const [key, value] of formData1.entries()) {
+  for (const [key, value] of formData.entries()) {
     tempStorage.append(key, value);
   }
 
   if (step === "one") {
-    /*redirect to next step*/
+    console.log(tempStorage);
   }
   if (step === "final") {
     const dataText = {

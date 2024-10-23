@@ -1,63 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exponat hinzufügen</title>
     <link href="css/style.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
-
-
-  <!-- Account Icon  --> 
-  <div class="top-right"> 
-    <a href="Login.html"><img src="Bilder/Icon-User.png" /></a>
-    
-</div>
-
- <!-- Pfeil zurück  --> 
- <div class="top-left"> 
-    <a href='index.html' class="pointer" > <img src="Bilder/Pfeil.png" alt="Zurück"/></a>
-</div>
-
-
-
-<!-- Upload box -->
-<h3>Erstelle dein Portfolio</h3>
-
-<h4>Titelbild</h4>
-
-<div class="upload-box" onclick="document.getElementById('file-input').click();">
-    <div class="top-text"> Füge deinem Portfolio ein Titelbild hinzu.</div>
-    <div class="center-content"> +</div>
-    <img id="preview" class="preview-image" alt="Image Preview">
-
-    <div class="button-group_pfeile">
-       <a  href="index.html"> <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" /></a>
-       <a  href="addAboutYou.html"> <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter" /></a>
+  <body>
+    <!-- Account Icon  -->
+    <div class="top-right">
+      <a href="Login.html"><img src="Bilder/Icon-User.png" /></a>
     </div>
 
-    <button class="button-save">Speichern</button>
-</div>
+    <!-- Pfeil zurück  -->
+    <div class="top-left">
+      <a href="index.html" class="pointer">
+        <img src="Bilder/Pfeil.png" alt="Zurück"
+      /></a>
+    </div>
 
+    <!-- Upload box -->
+    <h3>Erstelle dein Portfolio</h3>
 
+    <h4>Titelbild</h4>
 
+    {{ form | safe}}
+    <!-- <div
+      class="upload-box"
+      onclick="document.getElementById('file-input').click();"
+    >
+      <div class="top-text">Füge deinem Portfolio ein Titelbild hinzu.</div>
+      <div class="center-content"></div>
+      <img id="preview" class="preview-image" alt="Image Preview" />
 
+      <div class="button-group_pfeile">
+        <a href="index.html">
+          <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
+        /></a>
+        <a href="addAboutYou.html">
+          <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
+        /></a>
+      </div>
 
-<footer>
-    <ul class="nav-linksFooter">
-         <h5>More On This Site</h5>
-         <li><a href="ueberuns.html">Über uns</a></li>
-         <li><a href="kontakt.html">Kontakt</a></li>
-         <li><a href="impressum.html">Impressum</a></li>
-         <li><a href="datenschutz.html">Datenschutz</a></li>
-         <li><a href="dokumentation.html">Dokumentation</a></li>
-         <li><a href="kollophon.html">Kollophon</a></li>
-    </ul>
-</footer>
-    
-    </body>
+      <button class="button-save">Speichern</button>
+    </div> -->
+
+    <footer>
+      <ul class="nav-linksFooter">
+        <h5>More On This Site</h5>
+        <li><a href="ueberuns.html">Über uns</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="dokumentation.html">Dokumentation</a></li>
+        <li><a href="kollophon.html">Kollophon</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>
