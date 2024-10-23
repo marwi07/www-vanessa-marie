@@ -11,27 +11,7 @@ export const error404 = async (ctx) => {
   /**TODO */
 };
 
-export const renderForm = async (ctx /*formData, formErrors*/) => {
-  let html = ` <div
-      class="upload-box"
-      onclick="document.getElementById('file-input').click();"
-    >
-      <div class="top-text">Füge deinem Portfolio ein Titelbild hinzu.</div>
-      <div class="center-content"></div>
-      <img id="preview" class="preview-image" alt="Image Preview" />
-
-      <div class="button-group_pfeile">
-        <a href="index.html">
-          <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
-        /></a>
-        <a href="addAboutYou.html">
-          <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
-        /></a>
-      </div>
-
-      <button class="button-save">Speichern</button>
-    </div>`;
-
+export const renderForm = async (ctx) => {
   let step = ` <form action="/add?step=one"
   method="post"
   accept-charset="utf-8"
