@@ -121,6 +121,19 @@ h6{
     position: relative;
     text-align: center;
     color: white;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container_LandingPage-img {
+  max-width: 100%;
+  width: 1900px;
+  height: 600px;
+  
 }
 
 /* Centered text */
@@ -175,7 +188,7 @@ h6{
     display: inline-block; 
     width: 100px;
     height: 100px;
-    background-image: url('public/Bilder/Icon-User.png'); 
+    background-image: url('public/Bilder/Icon-user.png');
     background-size: cover; 
     transition: background-image 0.3s ease; 
     
@@ -203,7 +216,8 @@ h6{
  .Portfolio {
     display: flex; 
     align-items: flex-start; 
-    max-width: 1920px; 
+    max-width: 100%; 
+    max-height:100%;
     margin: auto; 
     border-radius: 8px; 
     padding: 20px; 
@@ -222,7 +236,7 @@ h6{
 
 .image-section img {
     max-width: 100%; 
-    height: auto; 
+    height: 100%; 
     border-radius: 8px; 
 }
 
@@ -418,8 +432,7 @@ h6{
 }
 
 .PortfolioDetailSite__image-section img {
-  max-width: 100%; 
-  height: auto; 
+  max-width: 100%;  
   border-radius: 8px; 
 }
 
@@ -824,11 +837,149 @@ input[type="file"] {
 }
 
 
-/* Media Queries */
-
-/* Optional: Für größere Bildschirme zentrieren */
-@media (min-width: 768px) {
-  .container_Login {
-      max-width: 500px; 
+/* Smartphones (portrait and landscape) */
+@media (max-width: 767px) {
+  h1 {
+      font-size: 36px; /* Adjust heading size */
   }
+
+  h2 {
+      font-size: 28px; /* Adjust heading size */
+  }
+
+  .container_Login {
+      padding: 20px; /* Adjust padding */
+      width: 90%; /* Full width */
+  }
+
+  .btn {
+      font-size: 16px; /* Button font size */
+  }
+
+  .nav-links {
+      flex-direction: column; /* Stack menu items vertically */
+      align-items: center; /* Center align */
+  }
+
+  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
+      flex-direction: column; /* Stack sections */
+      align-items: center; /* Center align */
+      margin-top: 10px;
+      padding: 5px;
+  }
+
+  .image-section{
+    flex: auto;
+  }
+
+  .top-right a img{
+    width: 50%;
+    height: 50%;
+  }
+
+  .container_LandingPage-img {
+    max-width: 100%;
+    width: 1000px;
+    height: 300px;
+    
+  }
+  
+
+  /* Adjust the image size */
+  .container_LandingPage-img {
+      width: 100%; /* Full width on small screens */
+  }
+
+  /* Other specific adjustments as needed */
 }
+
+/* Tablets (landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+      font-size: 48px; /* Adjust heading size */
+  }
+
+  h2 {
+      font-size: 36px; /* Adjust heading size */
+  }
+
+  .container_Login {
+      padding: 30px; /* Adjust padding */
+      width: 80%; /* 80% width */
+  }
+
+  .btn {
+      font-size: 18px; /* Button font size */
+  }
+
+  .nav-links {
+      gap: 15px; /* Adjust spacing */
+  }
+
+  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
+      flex-direction: column; /* Stack sections */
+      align-items: center; /* Center align */
+      margin-top: 0px;
+      padding: 0px;
+  }
+
+  /* Other specific adjustments as needed */
+}
+
+/* Laptops and small desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  h1 {
+      font-size: 72px; /* Adjust heading size */
+  }
+
+  h2 {
+      font-size: 48px; /* Adjust heading size */
+  }
+
+  .container_Login {
+      padding: 40px; /* Adjust padding */
+      width: 70%; /* 70% width */
+  }
+
+  .btn {
+      font-size: 20px; /* Button font size */
+  }
+
+  .nav-links {
+      gap: 20px; /* Adjust spacing */
+  }
+
+  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
+      flex-direction: row; /* Align items side by side */
+      justify-content: space-between; /* Space between */
+  }
+
+  /* Other specific adjustments as needed */
+}
+
+/* Desktops */
+@media (min-width: 1441px) {
+  h1 {
+      font-size: 100px; /* Adjust heading size */
+  }
+
+  h2 {
+      font-size: 60px; /* Adjust heading size */
+  }
+
+  .container_Login {
+      padding: 50px; /* Adjust padding */
+      width: 50%; /* 50% width */
+  }
+
+  .btn {
+      font-size: 22px; /* Button font size */
+  }
+
+  .nav-links {
+      gap: 30px; /* Adjust spacing */
+  }
+
+  /* Other specific adjustments as needed */
+}
+
