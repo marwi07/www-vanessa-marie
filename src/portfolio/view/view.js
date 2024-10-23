@@ -32,7 +32,7 @@ export const renderForm = async (ctx /*formData, formErrors*/) => {
       <button class="button-save">Speichern</button>
     </div>`;
 
-  let htmlTest = ` <form action="/add?step=one"
+  let step = ` <form action="/add?step=one"
   method="post"
   accept-charset="utf-8"
   enctype="multipart/form-data" >
@@ -46,23 +46,33 @@ export const renderForm = async (ctx /*formData, formErrors*/) => {
   <button type="submit" class="button-save">Speichern</button> </div>
   </form>`;
 
+  const cookie = await ctx.cookies.getCookie(ctx);
+  const currentFormStep = cookie["currentFormStep"];
+
+  if (currentFormStep == "one") {
+    step = ` <div
+      class="upload-box"
+      onclick="document.getElementById('file-input').click();"
+    >
+      <div class="top-text">Füge deinem Portfolio ein Titelbild hinzu.</div>
+      <div class="center-content"></div>
+      <img id="preview" class="preview-image" alt="Image Preview" />
+
+      <div class="button-group_pfeile">
+        <a href="index.html">
+          <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
+        /></a>
+        <a href="addAboutYou.html">
+          <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
+        /></a>
+      </div>
+
+      <button class="button-save">Speichern</button>
+    </div>`;
+  }
+
   ctx.response.body = await ctx.nunjucks.render("test.html", {
-    form: htmlTest,
-  });
-  ctx.response.headers.set("content-type", "text/html");
-  ctx.response.status = 200;
-  return ctx;
-};
-
-export const renderFormSteps = async (ctx /*formData, formErrors*/) => {
-  let html = `<form action="/add?step=two" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  <button type="submit">Next</button> </form>`;
-
-  ctx.response.body = await ctx.nunjucks.render("index.html", {
-    title: "Test",
-    form: html,
+    form: step,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
