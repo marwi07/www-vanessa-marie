@@ -18,6 +18,7 @@ export const handleRequest = async (request) => {
     cookies
   );
 
+  //Router funktion erstellen, auslagern
   if (ctx.url.pathname === "/") {
     ctx = await portfolio.index(ctx);
   }
@@ -29,6 +30,7 @@ export const handleRequest = async (request) => {
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
     ctx = await portfolioForm.add(ctx);
   }
+  //Router funktion erstellen, auslagern
 
   if (!ctx.response.status) {
     ctx = await serveStaticFile(ctx);
