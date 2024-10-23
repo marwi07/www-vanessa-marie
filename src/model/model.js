@@ -29,3 +29,8 @@ export const addUser = async (data, formData) => {
     $passwort: formData.passwort,
   });
 };
+
+/** db.queryEntries()
+ * services Ordner mit DB importieren
+ * folien persistenz
+ */

@@ -4,6 +4,7 @@ import { serveStaticFile } from "./middleware/staticFiles.js";
 import { createContext } from "./framework/context.js";
 import { DB } from "https://deno.land/x/sqlite@v3.9.0/mod.ts";
 import nunjucks from "https://deno.land/x/nunjucks@3.2.3/mod.js";
+import * as cookies from "https://deno.land/std@0.224.0/http/mod.ts";
 
 const db = new DB("./data/portfolio.sqlite");
 
@@ -13,14 +14,17 @@ export const handleRequest = async (request) => {
   let ctx = await createContext(
     request,
     { db, staticBase: "public" },
-    nunjucks
+    nunjucks,
+    cookies
   );
+
+  console.log(ctx.url.pathname);
 
   if (ctx.url.pathname === "/") {
     ctx = await portfolio.index(ctx);
   }
 
-  if (ctx.url.pathname === "/PortfolioErstellen.html") {
+  if (ctx.url.pathname === "/test.html") {
     ctx = await portfolio.renderForm(ctx);
   }
 
@@ -32,6 +36,7 @@ export const handleRequest = async (request) => {
   if (!ctx.response.status) {
     ctx = await serveStaticFile(ctx);
   }
+
   // 404
   if (!ctx.response.status) {
     //ctx = await portfolio.error404(ctx);
