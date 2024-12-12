@@ -11,16 +11,17 @@
 
 <body>
     
-   <!-- Account Icon  --> 
-   <div class="top-right"> 
-    <a href="Login.html"><img src="Bilder/Icon-User.png" /></a>
-    
-</div>
+    <div class="top-right"> 
+        <a href="login"><img src="Bilder/Icon-User.png" /></a>
+        
+      </div>
+      
+      <div class="top-left"> 
+        <a href='/' class="pointer"> 
+          <img src="Bilder/Pfeil.png" alt="Zurück"/>
+        </a>
+      </div>
 
- <!-- Pfeil zurück  --> 
- <div class="top-left"> 
-    <a href='index.html' class="pointer" > <img src="Bilder/Pfeil.png" alt="Zurück"/></a>
-</div>
 
 
 
@@ -28,23 +29,22 @@
 <h3>Erstelle dein Portfolio</h3>
 
 
-<h4>Skills</h4>
+<h4>About You</h4>
 
 <div class="upload-aboutYou" onclick="showTextarea()">
 
-    <div class="top-text"> Füge deinem Portfolio eine Liste deiner Skills hinzu.</div>
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
     <div class="center-content"> +</div>
 
     <div id="message-container"> </div>
 
     <form id="aboutYouForm" action="/login" method="POST">
-
-        <textarea id="aboutYouTextarea" name="About You" placeholder="Füge deinem Portfolio eine Liste deiner Skills hinzu." style="display: none;"></textarea>
+        <textarea id="aboutYouTextarea" name="About You" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: none;"></textarea>
     </form>
 
     <div class="button-group_pfeile">
-        <a  href="addAboutYou.html"> <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" /></a>
-        <a  href="addContact.html"> <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter" /></a>
+        <a  href="addThumbnail.html"> <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück" /></a>
+        <a  href="addSkills.html"> <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter" /></a>
     </div>
 
     <button class="button-save">Speichern</button>
@@ -70,14 +70,14 @@ function showTextarea() {
 <footer>
     <ul class="nav-linksFooter">
          <h5>More On This Site</h5>
-         <li><a href="ueberuns.html">Über uns</a></li>
-         <li><a href="kontakt.html">Kontakt</a></li>
-         <li><a href="impressum.html">Impressum</a></li>
-         <li><a href="datenschutz.html">Datenschutz</a></li>
-         <li><a href="dokumentation.html">Dokumentation</a></li>
-         <li><a href="kollophon.html">Kollophon</a></li>
-    </ul>
-</footer>
+         <li><a href="ueber-uns">Über uns</a></li>
+         <li><a href="kontakt">Kontakt</a></li>
+         <li><a href="impressum">Impressum</a></li>
+         <li><a href="datenschutz">Datenschutz</a></li>
+         <li><a href="dokumentation">Dokumentation</a></li>
+         <li><a href="kollophon">Kollophon</a></li> 
+        </ul>
+    </footer>
     
     </body>
 </html>
