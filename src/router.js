@@ -1,49 +1,52 @@
-import * as portfolio from "./portfolio/formController.js";
-import * as portfolioForm from "./portfolio/formController.js";
-
+import * as portfolio from "./controller/formController.js";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as contact from "./controller/contactController.js";
+import * as about from "./controller/aboutController.js";
+import * as datenschutz from "./controller/datenschutzController.js";
+import * as dokumentation from "./controller/dokumentationConreoller.js";
+import * as impressum from "./controller/impressumController.js";
+import * as kollophon from "./controller/kollophenController.js";
 
 export const routes = async (ctx) => {
-  if (ctx.url.pathname === "/") {
-    ctx = await index.index(ctx);
+  if (ctx.url.pathname === "/" || ctx.url.pathname === "") {
+    ctx = await index.renderIndex(ctx);
   }
 
   if (ctx.url.pathname === "/login") {
-    ctx = await login.login(ctx);
+    ctx = await login.renderLogin(ctx);
   }
 
   if (ctx.url.pathname === "/register") {
-    ctx = await portfolio.index(ctx);
+    ctx = await register.renderRegister(ctx);
   }
 
   if (ctx.url.pathname === "/kollophon") {
-    ctx = await portfolio.index(ctx);
+    ctx = await kollophon.renderKollophon(ctx);
   }
 
   if (ctx.url.pathname === "/dokumentation") {
-    ctx = await portfolio.index(ctx);
+    ctx = await dokumentation.renderDokumentation(ctx);
   }
 
   if (ctx.url.pathname === "/datenschutz") {
-    ctx = await portfolio.index(ctx);
+    ctx = await datenschutz.renderDatenschutz(ctx);
   }
 
   if (ctx.url.pathname === "/impressum") {
-    ctx = await portfolio.index(ctx);
+    ctx = await impressum.renderImpressum(ctx);
   }
 
   if (ctx.url.pathname === "/kontakt") {
-    ctx = await contact.contact(ctx);
+    ctx = await contact.renderContact(ctx);
   }
 
   if (ctx.url.pathname === "/ueber-uns") {
-    ctx = await portfolio.index(ctx);
+    ctx = await about.renderAbout(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio") {
-    ctx = await portfolio.index(ctx);
+    ctx = await portfolio.renderForm(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/erstellen") {
