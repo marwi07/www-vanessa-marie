@@ -1,4 +1,4 @@
-export const createContext = async (request, options, nunjucks, cookies) => {
+export const createContext = (request, options, nunjucks, cookies) => {
   return {
     request,
     url: new URL(request.url),
