@@ -50,7 +50,7 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/portfolio/erstellen") {
-    ctx = await portfolio.index(ctx);
+    ctx = await portfolio.renderForm(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/bearbeiten") {
@@ -70,6 +70,6 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
-    ctx = await portfolioForm.add(ctx);
+    ctx = await portfolio.add(ctx);
   }
 };

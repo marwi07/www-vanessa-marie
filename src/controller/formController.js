@@ -42,7 +42,7 @@ export const renderForm = async (ctx) => {
     </div>`;
   }
 
-  ctx.response.body = await ctx.nunjucks.render("test.html", {
+  ctx.response.body = await ctx.nunjucks.render("PortfolioErstellen.html", {
     form: step,
   });
   ctx.response.headers.set("content-type", "text/html");
@@ -64,7 +64,7 @@ export const add = async (ctx) => {
     //console.log(tempStorage);
     ctx = await ctx.cookies.setFormStepCookie(ctx, step);
     ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/test.html");
+    ctx.response.headers.set("Location", "/PortfolioErstellen.html");
     ctx.response.body = null;
     return ctx;
   }
