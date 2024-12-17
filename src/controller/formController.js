@@ -112,6 +112,15 @@ export const add = async (ctx) => {
     //get User from cookies
     //validate formdata
     //save with User in Databank
+  }
+  if (step === "three") {
+    const dataImage = {
+      title: tempStorage.get("title"),
+      about: tempStorage.get("about"),
+    };
+    //get User from cookies
+    //validate formdata
+    //save with User in Databank
   } else {
     ctx = ctx.cookies.setFormStepCookie(ctx, step);
     console.log(ctx);
