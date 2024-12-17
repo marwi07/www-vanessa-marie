@@ -16,34 +16,66 @@ body {
   font-size: 20px;
 }
 
+.p_herotext{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 30px;
+  padding: 0;
+  margin: 0; 
+}
+
 /* _______________________________________________________________*/
 
 
 /* Menü */
 
 .nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute; 
-    display: flex; 
-    gap: 20px; 
+  background-color:#234963;
+  list-style-type: none; 
+  margin: 0;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0; 
+  left:0;
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between;
+  z-index: 1000; 
+  align-items: center;
 }
 
 .nav-links li {
-    margin: 0; 
+    margin: 0 20px; 
+    
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 20px; 
-    padding: 15px 20px; 
-    background-color: #183446; 
+    padding: 10px 10px; 
     border-radius: 8px; 
     white-space: nowrap; 
     display: inline-block; 
     transition: background-color 0.3s ease; 
+}
+
+.account-icon a {
+  display:flex;
+  align-items: center; 
+}
+
+/* Größe des Account-Icons */
+.icon-image {
+  width: 40px; 
+  height: 40px; 
+  object-fit: contain; /* Größe proportional halten */
+}
+
+.nav-items{
+  display:flex;
+  margin-right:50px;
+  gap:20px;
 }
 
 /* Footer */
@@ -72,7 +104,6 @@ body {
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
-    font-size: 160px;
 }
 
 h2 {
@@ -113,26 +144,34 @@ h6{
 }
 
 
+ .error_font{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  color: rgb(255, 255, 255); 
+  font-size: 30px;
+}
+
+
 /* _______________________________________________________________*/
 
 
 /* Container für landing Page Bild und Text */
 .container_LandingPage {
-    position: relative;
-    text-align: center;
-    color: white;
-    align-items: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+  position: relative;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width:auto;
+  background-color: #1e3f55;
 }
 
 .container_LandingPage-img {
   max-width: 100%;
-  width: 1900px;
-  height: 600px;
+  min-width: 1900px;
+  height: 1000px;
   
 }
 
@@ -142,6 +181,31 @@ h6{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* left text heading */
+.left-heading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 180px;
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+  align-items: flex-start;
+  width: 80%; 
+  padding: 20px;
+}
+
+.left-heading h1{
+  font-size: 180px;
+  margin: 0;
+}
+
+.bottom-center {
+  position: absolute;
+  bottom: 8px;
+  
 }
 
 /* Bottom left text */
@@ -174,8 +238,8 @@ h6{
   /* Top right text */
 .top-right {
     position: absolute;
-    top: 35px;
-    right: 40px;
+    top: 50%;
+    right: 60px;
   }
 
   /* _______________________________________________________________*/
@@ -220,18 +284,49 @@ h6{
     max-height:100%;
     margin: auto; 
     border-radius: 8px; 
-    padding: 20px; 
-    margin-top: 80px;
+    padding: 15px; 
+    margin-top: 20px;
 }
 
 .text-section {
     flex: 1; 
-    margin-right: 20px; 
+    margin-left:80px;
+    margin-top: 25px;
+}
+
+.text-section a{
+  flex: 1; 
+  margin-top: auto;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.text-section .titel {
+  flex: 1; 
+  margin-top: 15px;
+  margin-right: 5px;
+  margin-bottom: auto; 
+}
+
+.text-section .username {
+  flex: 1; 
+  margin-top: 30px;
+  margin-right: 5px;
+  margin-bottom: auto; 
+  font-weight: bold;
+  color:bisque;
+}
+
+.text-section .beschreibung {
+  flex: 1; 
+  margin-top: 5px;
+  margin-right: 5px; 
 }
 
 .image-section {
     flex: 0 0 800px; 
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 .image-section img {
@@ -282,9 +377,10 @@ h6{
 
   /* Filter Kram - Landing Page */
 
-  .container.Test {
-    overflow: hidden;
-  }
+  #myBtnContainer {
+    text-align: center; /* Zentriert die Buttons horizontal */
+    margin-top: 20px; /* Abstand nach oben */
+}
   
   .filterDiv {
     float: left;
@@ -304,12 +400,15 @@ h6{
   
 
   .btn.Filter {
+    display: inline-block;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     color: #ffffff;
     border: none;
     outline: none;
-    padding: 12px 16px;
+    margin:auto;
+    margin-top: 10px;
+    padding: 12px 20px;
     background-color: #1d5a72; 
     cursor: pointer;
     border-radius: 8px;
@@ -374,6 +473,7 @@ h6{
   border-radius: 4px;
   font-size: 15pt;
 }
+/* _______________________________________________________________*/
 
  /* Button Login/Register */
 .button-group {
@@ -436,7 +536,7 @@ h6{
   border-radius: 8px; 
 }
 
-
+/* _______________________________________________________________*/
 /* Skills Box */
 .container_skills {
   display: flex;
@@ -469,7 +569,7 @@ h6{
   color: white; 
 }
 
-
+/* _______________________________________________________________*/
 
 /* Kontaktdaten Box */
 .skills-and-contact {
@@ -546,6 +646,8 @@ h6{
   margin-bottom: 20px;
 }
 
+/* _______________________________________________________________*/
+
 /* Bildergalerie "Your Work"*/
 
 .row {
@@ -566,6 +668,7 @@ h6{
   width: 100%;
 }
 
+/* _______________________________________________________________*/
 
 /* Tags */
 
@@ -586,6 +689,9 @@ h6{
   font-size: 20px; 
   margin: 5px;
 }
+
+/* _______________________________________________________________*/
+
 
 /* Bearbeiten/Löschen Buttons*/
 
@@ -662,6 +768,9 @@ input[type="file"] {
   padding: 20px;
   
 }
+
+/* _______________________________________________________________*/
+
 
 /* Upload About You */
 .upload-aboutYou {
@@ -837,61 +946,144 @@ input[type="file"] {
 }
 
 
+
+
 /* Smartphones (portrait and landscape) */
 @media (max-width: 767px) {
   h1 {
-      font-size: 36px; /* Adjust heading size */
+      font-size: 36px; 
   }
 
   h2 {
-      font-size: 28px; /* Adjust heading size */
+      font-size: 28px;
   }
 
-  .container_Login {
-      padding: 20px; /* Adjust padding */
-      width: 90%; /* Full width */
+  h5 {
+    font-size: 14px;
+}
+
+  .left-heading{
+    font-size: 36px;
   }
 
-  .btn {
-      font-size: 16px; /* Button font size */
+  .p_herotext{
+    font-size: 11px;
   }
 
+  /* Navigation */
   .nav-links {
-      flex-direction: column; /* Stack menu items vertically */
-      align-items: center; /* Center align */
+    flex-direction: column;
+    align-items: center; 
+    padding: 10px 0;
+    height: auto; 
+}
+
+.nav-links li {
+    margin: 10px 0; 
+}
+
+.nav-links a {
+    padding: 10px 20px; 
+    font-size: 16px; 
+}
+
+.account-icon {
+    margin-bottom: 10px; 
+}
+
+/* Startseite text-section */
+.text-section {
+  flex: auto; 
+  margin:auto;
+  font-size: 16px;
+}
+
+.text-section a {
+ flex: auto;
+ font-size: 13px;
+}
+
+.nav-linksFooter {
+  list-style-type: none;
+  width: 100%;
+  color: white;
+  text-align: left;
+  margin: auto;
+ 
+}
+
+.nav-linksFooter a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px; 
+  padding: 5px;
+}
+
+/* Filter Startseite */
+#myBtnContainer {
+  text-align: center;
+  margin-top: 10px; 
+}
+
+.btn.Filter {
+  display: inline-block;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 12px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  margin:auto;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #1d5a72; 
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Bilder Startseite */
+  .image-section{
+    flex: auto;
+    margin: auto;
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
+  .container_LandingPage-img {
+    width: 300px;
+    height: 300px;
+    
+  }
+  
+  .container_LandingPage-img {
+      width: 100%; 
+     
+  }
+
+
+  /* ________________ */
+
+  /* Portfolio Site */
+    .Portfolio, .PortfolioDetailSite, .skills-and-contact {
       flex-direction: column; /* Stack sections */
       align-items: center; /* Center align */
       margin-top: 10px;
       padding: 5px;
   }
 
-  .image-section{
-    flex: auto;
-  }
 
-  .top-right a img{
-    width: 50%;
-    height: 50%;
-  }
-
-  .container_LandingPage-img {
-    max-width: 100%;
-    width: 1000px;
-    height: 300px;
-    
-  }
-  
-
-  /* Adjust the image size */
-  .container_LandingPage-img {
-      width: 100%; /* Full width on small screens */
-  }
-
-  /* Other specific adjustments as needed */
+  /* Login */
+  .container_Login {
+    padding: 20px; 
+    width: 90%; 
 }
+
+.btn {
+    font-size: 16px; 
+}
+
+}
+
+
+
+
 
 /* Tablets (landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
