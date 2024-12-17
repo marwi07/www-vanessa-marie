@@ -1,47 +1,89 @@
-export const error404 = async (ctx) => {
-  /**TODO */
+export const error404 = (ctx) => {
+  ctx.response.body = "<h1>404 - Page Not Found</h1>";
+  ctx.response.status = 404;
 };
 
 export const renderForm = async (ctx) => {
-  let step = ` <form action="/add?step=one"
-  method="post"
-  accept-charset="utf-8"
-  enctype="multipart/form-data" >
-  <fieldset>
-  <legend>Persönliche Daten</legend>
-  <label for="name">Vorname</label>
-  <input id="name" name="vorname" type="text" value="<VORGABE>">
-  <label for="surname">Name</label>
-  <input id="surname" name="name" type="text" value="<VORGABE>">
-  </fieldset>
-  <button type="submit" class="button-save">Speichern</button> </div>
-  </form>`;
+  //step 1 - Titel ?
+  let step = `<h4>Kontaktdaten</h4>
+  <div class="body_GridContact">
+    <div class="container_contact">
 
-  const cookie = await ctx.cookies.getCookie(ctx);
+      <div id="message-container"></div> 
+
+      <form id="titelForm" action="/add?step=one" method="post">
+      <fieldset>
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title">
+        </fieldset>
+        <button type="submit" class="button-save">Speichern</button>
+        </form>
+  
+    </div>`;
+
+  console.log(tempStorage);
+
+  const cookie = ctx.cookies.getCookie(ctx);
   const currentFormStep = cookie["currentFormStep"];
 
+  //steps html
   if (currentFormStep == "one") {
-    step = ` <div
-      class="upload-box"
-      onclick="document.getElementById('file-input').click();"
-    >
-      <div class="top-text">Füge deinem Portfolio ein Titelbild hinzu.</div>
-      <div class="center-content"></div>
-      <img id="preview" class="preview-image" alt="Image Preview" />
+    //About
+    step = `<h4>About you</h4>
 
-      <div class="button-group_pfeile">
-        <a href="index.html">
-          <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
-        /></a>
-        <a href="addAboutYou.html">
-          <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
-        /></a>
-      </div>
+    <div class="upload-aboutYou">
 
-      <button class="button-save">Speichern</button>
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+
+    <form id="aboutYouForm" action="/add?step=two" method="POST">
+    <fieldset>
+        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        <button type="submit" class="button-save">Speichern</button>
+        </fieldset>
+    </form>
+
+    
+    </div>`;
+  }
+  if (currentFormStep == "two") {
+    //skills
+    step = `<h4>About you</h4>
+
+    <div class="upload-aboutYou">
+
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+
+    <form id="aboutYouForm" action="/add?step=two" method="POST">
+    <fieldset>
+        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        <button type="submit" class="button-save">Speichern</button>
+        </fieldset>
+    </form>
+
+    
     </div>`;
   }
 
+  if (currentFormStep == "three") {
+    //thumbnail
+    step = `<h4>About you</h4>
+
+    <div class="upload-aboutYou">
+
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+
+    <form id="aboutYouForm" action="/add?step=two" method="POST">
+    <fieldset>
+        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        </fieldset>
+        <button type="submit" class="button-save">Speichern</button>
+    </form>
+
+    
+    </div>`;
+  }
+
+  //render page with html of step
   ctx.response.body = await ctx.nunjucks.render("PortfolioErstellen.html", {
     form: step,
   });
@@ -56,29 +98,29 @@ export const add = async (ctx) => {
   const formData = await ctx.request.formData();
   const step = ctx.url.searchParams.get("step");
 
+  //adding new formdata on top of temp Object
   for (const [key, value] of formData.entries()) {
     tempStorage.append(key, value);
   }
 
-  if (step === "one") {
-    //console.log(tempStorage);
-    ctx = await ctx.cookies.setFormStepCookie(ctx, step);
-    ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/PortfolioErstellen.html");
-    ctx.response.body = null;
-    return ctx;
-  }
-
-  if (step === "final") {
+  //if is final step save data in databank
+  if (step === "two") {
     const dataText = {
-      name: tempStorage.get("name"),
+      title: tempStorage.get("title"),
+      about: tempStorage.get("about"),
     };
+    //get User from cookies
+    //validate formdata
+    //save with User in Databank
+  } else {
+    ctx = ctx.cookies.setFormStepCookie(ctx, step);
+    console.log(ctx);
 
-    /** for each image save in databank
-     * step als cookie speichern
-     * in view auslesen und beim nächsten step weitermachen
-     */
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/portfolio/erstellen");
+    ctx.response.body = "";
   }
+  return ctx;
 };
 
 /**export const create = async (ctx) => {
