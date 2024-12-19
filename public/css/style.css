@@ -1,49 +1,47 @@
-
 /* Body */
 
 body {
-    background-color: #183446;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 18px;
-    overflow-x: hidden;
+  background-color: #183446;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 18px;
+  overflow-x: hidden;
 }
 
-.p{
+.p {
   background-color: #183446;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: white;
   font-size: 20px;
 }
 
 /* _______________________________________________________________*/
 
-
 /* Menü */
 
 .nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute; 
-    display: flex; 
-    gap: 20px; 
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links li {
-    margin: 0; 
+  margin: 0;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px; 
-    padding: 15px 20px; 
-    background-color: #183446; 
-    border-radius: 8px; 
-    white-space: nowrap; 
-    display: inline-block; 
-    transition: background-color 0.3s ease; 
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px 20px;
+  background-color: #183446;
+  border-radius: 8px;
+  white-space: nowrap;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
 /* Footer */
@@ -53,44 +51,41 @@ body {
   width: 100%;
   color: white;
   text-align: left;
- 
 }
 
 .nav-linksFooter a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px; 
-    padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
 }
 
-
 /* _______________________________________________________________*/
-
 
 /* Überschriften*/
 
 h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 160px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 160px;
 }
 
 h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 60px;
 }
 
-h3{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h3 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: white;
   font-size: 60px;
   margin-top: 110px;
   margin-left: 100px;
 }
 
-h4{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h4 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: white;
   font-size: 60px;
   text-align: center;
@@ -98,57 +93,54 @@ h4{
   margin-top: 0px;
 }
 
-h5{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #EAD2AC;
-    font-size: 20px;
-    margin:auto;
+h5 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ead2ac;
+  font-size: 20px;
+  margin: auto;
 }
 
-h6{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 15px;
-    margin: auto;
+h6 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 15px;
+  margin: auto;
 }
-
 
 /* _______________________________________________________________*/
 
-
 /* Container für landing Page Bild und Text */
 .container_LandingPage {
-    position: relative;
-    text-align: center;
-    color: white;
-    align-items: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+  position: relative;
+  text-align: center;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .container_LandingPage-img {
   max-width: 100%;
   width: 1900px;
   height: 600px;
-  
 }
 
 /* Centered text */
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Bottom left text */
 .bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 40px;
+  position: absolute;
+  bottom: 8px;
+  left: 40px;
 }
 
 /* Bottom left text */
@@ -160,178 +152,170 @@ h6{
 
 /* Top left text */
 .top-left {
-    position: absolute;
-    top: 35px;
-    left: 16px;
-  }
+  position: absolute;
+  top: 35px;
+  left: 16px;
+}
 
-  .top-left_pfeilback {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-  }
+.top-left_pfeilback {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+}
 
-  /* Top right text */
+/* Top right text */
 .top-right {
-    position: absolute;
-    top: 35px;
-    right: 40px;
-  }
-
-  /* _______________________________________________________________*/
-
-
-
-  /* Hover Effects */
-
-  .hoverEffectUser {
-    display: inline-block; 
-    width: 100px;
-    height: 100px;
-    background-image: url('public/Bilder/Icon-user.png');
-    background-size: cover; 
-    transition: background-image 0.3s ease; 
-    
-}
-
-.hoverEffectUser:hover {
-    background-image: url('public/Bilder/Icon_Hover_Login.png');
-}
-  .pointer {cursor: pointer;}
-
-  .nav-links a:hover {
-    background-color: #1d5a72; 
-}
-
-.PlusButton:hover {
-    background-color: #E6B89C;
-}
-
-   /* _______________________________________________________________*/
-
-
-
- /* Container für landing page Portfolios */
-
- .Portfolio {
-    display: flex; 
-    align-items: flex-start; 
-    max-width: 100%; 
-    max-height:100%;
-    margin: auto; 
-    border-radius: 8px; 
-    padding: 20px; 
-    margin-top: 80px;
-}
-
-.text-section {
-    flex: 1; 
-    margin-right: 20px; 
-}
-
-.image-section {
-    flex: 0 0 800px; 
-    margin-right: 100px;
-}
-
-.image-section img {
-    max-width: 100%; 
-    height: 100%; 
-    border-radius: 8px; 
+  position: absolute;
+  top: 35px;
+  right: 40px;
 }
 
 /* _______________________________________________________________*/
 
+/* Hover Effects */
+
+.hoverEffectUser {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url("public/Bilder/Icon-user.png");
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+
+.hoverEffectUser:hover {
+  background-image: url("public/Bilder/Icon_Hover_Login.png");
+}
+.pointer {
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  background-color: #1d5a72;
+}
+
+.PlusButton:hover {
+  background-color: #e6b89c;
+}
+
+/* _______________________________________________________________*/
+
+/* Container für landing page Portfolios */
+
+.Portfolio {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.text-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image-section {
+  flex: 0 0 800px;
+  margin-right: 100px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* _______________________________________________________________*/
 
 /* Buttons*/
 
 .btn.readmore {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: none;
-    color: #EAD2AC;
-    background-color: inherit;
-    padding: 10px 0px;
-    font-size: 20px;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-  }
-  
-  .btn.readmore:hover {color:#E6B89C;}
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border: none;
+  color: #ead2ac;
+  background-color: inherit;
+  padding: 10px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
 
+.btn.readmore:hover {
+  color: #e6b89c;
+}
 
-  /* Button Plus Portfolio*/
-  .button {
-    background-color: #EAD2AC;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    margin-left:2050px;
-   
-  }
+/* Button Plus Portfolio*/
+.button {
+  background-color: #ead2ac;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin-left: 2050px;
+}
 
-  .button5 {border-radius: 50%;}
+.button5 {
+  border-radius: 50%;
+}
 
+/* _______________________________________________________________*/
 
-  /* _______________________________________________________________*/
-  
+/* Filter Kram - Landing Page */
 
-  /* Filter Kram - Landing Page */
+.container.Test {
+  overflow: hidden;
+}
 
-  .container.Test {
-    overflow: hidden;
-  }
-  
-  .filterDiv {
-    float: left;
-    background-color: #2196F3;
-    color: #ffffff;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-  }
-  
-  /* The "show" class is added to the filtered elements */
-  .show {
-    display: block;
-  }
-  
+.filterDiv {
+  float: left;
+  background-color: #2196f3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
 
-  .btn.Filter {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #1d5a72; 
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  
-  
-  .btn.Filter:hover {
-    background-color:#234963;
-    color: #ffffff;
-  }
-  
-  
-  .btn.Filter.active {
-    background-color: #497ca7;
-    color: white;
-  }
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
 
- /* _______________________________________________________________*/
+.btn.Filter {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #1d5a72;
+  cursor: pointer;
+  border-radius: 8px;
+}
 
+.btn.Filter:hover {
+  background-color: #234963;
+  color: #ffffff;
+}
+
+.btn.Filter.active {
+  background-color: #497ca7;
+  color: white;
+}
+
+/* _______________________________________________________________*/
 
 /* Login */
-  
+
 .body_GridLogin {
   display: flex;
   justify-content: center;
@@ -339,19 +323,17 @@ h6{
   margin-top: 150px;
   width: 100%;
   flex: 1;
-  
 }
 
 .container_Login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1f435a; 
-  padding: 40px; 
-  border-radius: 10px; 
-  max-width: 400px; 
-  width: 100%; 
-  
+  background-color: #1f435a;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .container_Login h2 {
@@ -363,7 +345,7 @@ h6{
 .container_Login form {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 .container_Login form input {
@@ -375,9 +357,8 @@ h6{
   font-size: 15pt;
 }
 
- /* Button Login/Register */
+/* Button Login/Register */
 .button-group {
-  
   display: flex;
   justify-content: space-between; /* Buttons nebeneinander platzieren */
   width: 100%;
@@ -385,67 +366,62 @@ h6{
 }
 
 .button-group_login {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   width: 48%; /* Gleiche Breite für beide Buttons */
   padding: 12px;
   font-size: 15pt;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #183446; 
+  background-color: #183446;
   color: white;
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  
 }
 
 .button-group_login:hover {
-  background-color:  #26506b; 
+  background-color: #26506b;
 }
-
 
 /* _______________________________________________________________*/
 
+/* Container für Portfolio Detail Seite */
 
- /* Container für Portfolio Detail Seite */
-
- .PortfolioDetailSite {
-  display: flex; 
-  align-items: flex-start; 
-  max-width: 100%; 
-  margin: auto; 
-  border-radius: 8px; 
-  padding: 100px; 
+.PortfolioDetailSite {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 8px;
+  padding: 100px;
   margin-top: 50px;
 }
 
 .PortfolioDetailSite__text-section {
-  flex: 1; 
+  flex: 1;
   text-align: center;
 }
 
 .PortfolioDetailSite__image-section {
-  flex: 0 0 1400px; 
+  flex: 0 0 1400px;
   margin-right: center;
-
 }
 
 .PortfolioDetailSite__image-section img {
-  max-width: 100%;  
-  border-radius: 8px; 
+  max-width: 100%;
+  border-radius: 8px;
 }
-
 
 /* Skills Box */
 .container_skills {
   display: flex;
   justify-content: center;
-  background-color:#9CAFB7; 
-  padding: 40px; 
+  background-color: #9cafb7;
+  padding: 40px;
   border-radius: 10px;
   max-width: 800px;
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box;
   flex: 1;
 }
@@ -455,74 +431,67 @@ h6{
   font-size: 25px;
   padding: 0;
   margin: 0;
-  display: flex; 
-  gap: 20px; 
+  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .skills li {
   width: calc(25% - 20px); /* Nimmt 25% der Breite, minus den Abstand */
-  text-align: center; 
+  text-align: center;
   padding: 10px;
-  border-radius: 5px; 
-  color: white; 
+  border-radius: 5px;
+  color: white;
 }
-
-
 
 /* Kontaktdaten Box */
 .skills-and-contact {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin:auto;
+  margin: auto;
   max-width: 1920px;
-  padding: 40px; 
+  padding: 40px;
   gap: 80px;
 }
-
 
 .container_contact {
   display: flex;
   justify-content: center;
-  background-color: #9CAFB7; 
-  padding: 40px; 
-  border-radius: 10px; 
-  max-width:800px; 
-  width: 100%; 
+  background-color: #9cafb7;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
   box-sizing: border-box;
   flex: 1;
-  
 }
 
 .contact {
-
   list-style-type: none;
   font-size: 20px;
   padding: 0;
   margin: 0;
-  display: block; 
+  display: block;
 }
 
 .contact dl {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
-  
 }
 
 .contact dt {
-  flex: 1; 
+  flex: 1;
   text-align: left;
   color: white;
   margin-right: 10px;
 }
 
-
 .contact dd {
-  flex: 1; 
+  flex: 1;
   text-align: right;
   color: white;
   margin: 0;
@@ -531,17 +500,17 @@ h6{
   padding: 10px;
 }
 
-
-
-.skills_heading, .contact_heading {
-  flex: 1; 
+.skills_heading,
+.contact_heading {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
-.skills_heading_h3, .contact_heading_h3 {
-  text-align: center; 
+.skills_heading_h3,
+.contact_heading_h3 {
+  text-align: center;
   margin-top: 0px;
   margin-bottom: 20px;
 }
@@ -566,24 +535,21 @@ h6{
   width: 100%;
 }
 
-
 /* Tags */
 
 .tag-container {
- 
-  display: flex; 
-  flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 50px;
-  
 }
 
 .tag {
-  background-color:#EAD2AC;
-  color: white; 
-  padding: 10px 10px; 
-  border-radius: 20px; 
-  font-size: 20px; 
+  background-color: #ead2ac;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 20px;
+  font-size: 20px;
   margin: 5px;
 }
 
@@ -591,16 +557,15 @@ h6{
 
 .button-group_portfolio {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 50%;
   margin: auto;
   margin-top: 240px;
-  gap:20px;
-  
+  gap: 20px;
 }
 
 .button-group_portfolio_button {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   width: 48%;
   padding: 12px;
   font-size: 18pt;
@@ -608,14 +573,13 @@ h6{
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color:#9CAFB7;  
+  background-color: #9cafb7;
   color: white;
   text-decoration: none;
-  
 }
 
 .button-group_portfolio_button:hover {
-  background-color:  #346e92; 
+  background-color: #346e92;
 }
 /* _______________________________________________________________*/
 
@@ -623,7 +587,7 @@ h6{
 .upload-box {
   width: 1800px;
   height: 700px;
-  background-color: #EAD2AC;
+  background-color: #ead2ac;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -635,7 +599,7 @@ h6{
 
 /* Hides the actual file input */
 input[type="file"] {
-  display: none;
+  /*display: none;*/
 }
 
 .preview-image {
@@ -645,8 +609,8 @@ input[type="file"] {
 }
 
 .top-text {
-  position: absolute; 
-  top: 80px; 
+  position: absolute;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%); /* Horizontale Zentrierung des Texts */
   font-size: 30px;
@@ -660,14 +624,13 @@ input[type="file"] {
   color: white;
   border-radius: 48%;
   padding: 20px;
-  
 }
 
 /* Upload About You */
 .upload-aboutYou {
   width: 1800px;
   height: 700px;
-  background-color: #9CAFB7;
+  background-color: #9cafb7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -686,11 +649,10 @@ input[type="file"] {
   border-radius: 10px;
   border: 2px solid #c4c4c4;
   resize: none;
-  background-color: #9CAFB7;
+  background-color: #9cafb7;
   color: white;
   outline: none;
 }
-
 
 /* Upload Kontaktinfo */
 .body_GridContact {
@@ -707,12 +669,12 @@ input[type="file"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #9CAFB7; 
-  padding: 40px; 
-  border-radius: 50px; 
-  max-width: 1800px; 
-  height:700px;
-  width: 100%; 
+  background-color: #9cafb7;
+  padding: 40px;
+  border-radius: 50px;
+  max-width: 1800px;
+  height: 700px;
+  width: 100%;
   position: relative;
   font-size: 25px;
 }
@@ -721,7 +683,7 @@ input[type="file"] {
 .container_contact form {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 .container_contact form input {
@@ -730,48 +692,46 @@ input[type="file"] {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  
 }
-
 
 /* Pfeile Styling */
 .button-group_pfeile {
   position: absolute;
-  top: 20px; 
+  top: 20px;
   width: 100%;
 }
 
 .pfeil-left {
   position: absolute;
   top: 0;
-  left: 20px; 
-  width: 60px; 
+  left: 20px;
+  width: 60px;
   cursor: pointer;
 }
 
 .pfeil-right {
   position: absolute;
   top: 0;
-  right: 20px; 
-  width: 60px; 
+  right: 20px;
+  width: 60px;
   cursor: pointer;
 }
 
 .button-save {
   position: absolute;
   bottom: 20px;
-  padding:10px;
+  padding: 10px;
   max-width: 300px;
   width: 100%;
   background-color: #183446;
-  color:white;
+  color: white;
   font-size: 25px;
   border-radius: 10px;
   border: none;
 }
 
 .button-save:hover {
-  background-color:  #26506b; 
+  background-color: #26506b;
   cursor: pointer;
 }
 
@@ -790,32 +750,30 @@ input[type="file"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #9CAFB7; 
-  padding: 40px; 
-  border-radius: 50px; 
-  max-width: 1800px; 
-  height:700px;
-  width: 100%; 
+  background-color: #9cafb7;
+  padding: 40px;
+  border-radius: 50px;
+  max-width: 1800px;
+  height: 700px;
+  width: 100%;
   position: relative;
   font-size: 25px;
 }
 
 /* Formular Styling */
-.container_yourWork  form {
+.container_yourWork form {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
   margin: auto;
- 
 }
 
-.container_yourWork  form input {
+.container_yourWork form input {
   margin-bottom: 10px;
   font-size: 15pt;
   padding: 15px;
   border-radius: 10px;
   border: 2px solid #c4c4c4;
-  
 }
 
 #YourWorkTextarea {
@@ -833,46 +791,47 @@ input[type="file"] {
 
 #YourWorkTextarea:focus {
   border-color: #2b2b2c;
-  outline: none; 
+  outline: none;
 }
-
 
 /* Smartphones (portrait and landscape) */
 @media (max-width: 767px) {
   h1 {
-      font-size: 36px; /* Adjust heading size */
+    font-size: 36px; /* Adjust heading size */
   }
 
   h2 {
-      font-size: 28px; /* Adjust heading size */
+    font-size: 28px; /* Adjust heading size */
   }
 
   .container_Login {
-      padding: 20px; /* Adjust padding */
-      width: 90%; /* Full width */
+    padding: 20px; /* Adjust padding */
+    width: 90%; /* Full width */
   }
 
   .btn {
-      font-size: 16px; /* Button font size */
+    font-size: 16px; /* Button font size */
   }
 
   .nav-links {
-      flex-direction: column; /* Stack menu items vertically */
-      align-items: center; /* Center align */
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center align */
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
-      flex-direction: column; /* Stack sections */
-      align-items: center; /* Center align */
-      margin-top: 10px;
-      padding: 5px;
+  .Portfolio,
+  .PortfolioDetailSite,
+  .skills-and-contact {
+    flex-direction: column; /* Stack sections */
+    align-items: center; /* Center align */
+    margin-top: 10px;
+    padding: 5px;
   }
 
-  .image-section{
+  .image-section {
     flex: auto;
   }
 
-  .top-right a img{
+  .top-right a img {
     width: 50%;
     height: 50%;
   }
@@ -881,13 +840,11 @@ input[type="file"] {
     max-width: 100%;
     width: 1000px;
     height: 300px;
-    
   }
-  
 
   /* Adjust the image size */
   .container_LandingPage-img {
-      width: 100%; /* Full width on small screens */
+    width: 100%; /* Full width on small screens */
   }
 
   /* Other specific adjustments as needed */
@@ -896,31 +853,33 @@ input[type="file"] {
 /* Tablets (landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
   h1 {
-      font-size: 48px; /* Adjust heading size */
+    font-size: 48px; /* Adjust heading size */
   }
 
   h2 {
-      font-size: 36px; /* Adjust heading size */
+    font-size: 36px; /* Adjust heading size */
   }
 
   .container_Login {
-      padding: 30px; /* Adjust padding */
-      width: 80%; /* 80% width */
+    padding: 30px; /* Adjust padding */
+    width: 80%; /* 80% width */
   }
 
   .btn {
-      font-size: 18px; /* Button font size */
+    font-size: 18px; /* Button font size */
   }
 
   .nav-links {
-      gap: 15px; /* Adjust spacing */
+    gap: 15px; /* Adjust spacing */
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
-      flex-direction: column; /* Stack sections */
-      align-items: center; /* Center align */
-      margin-top: 0px;
-      padding: 0px;
+  .Portfolio,
+  .PortfolioDetailSite,
+  .skills-and-contact {
+    flex-direction: column; /* Stack sections */
+    align-items: center; /* Center align */
+    margin-top: 0px;
+    padding: 0px;
   }
 
   /* Other specific adjustments as needed */
@@ -929,29 +888,31 @@ input[type="file"] {
 /* Laptops and small desktops */
 @media (min-width: 1025px) and (max-width: 1440px) {
   h1 {
-      font-size: 72px; /* Adjust heading size */
+    font-size: 72px; /* Adjust heading size */
   }
 
   h2 {
-      font-size: 48px; /* Adjust heading size */
+    font-size: 48px; /* Adjust heading size */
   }
 
   .container_Login {
-      padding: 40px; /* Adjust padding */
-      width: 70%; /* 70% width */
+    padding: 40px; /* Adjust padding */
+    width: 70%; /* 70% width */
   }
 
   .btn {
-      font-size: 20px; /* Button font size */
+    font-size: 20px; /* Button font size */
   }
 
   .nav-links {
-      gap: 20px; /* Adjust spacing */
+    gap: 20px; /* Adjust spacing */
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
-      flex-direction: row; /* Align items side by side */
-      justify-content: space-between; /* Space between */
+  .Portfolio,
+  .PortfolioDetailSite,
+  .skills-and-contact {
+    flex-direction: row; /* Align items side by side */
+    justify-content: space-between; /* Space between */
   }
 
   /* Other specific adjustments as needed */
@@ -960,26 +921,25 @@ input[type="file"] {
 /* Desktops */
 @media (min-width: 1441px) {
   h1 {
-      font-size: 100px; /* Adjust heading size */
+    font-size: 100px; /* Adjust heading size */
   }
 
   h2 {
-      font-size: 60px; /* Adjust heading size */
+    font-size: 60px; /* Adjust heading size */
   }
 
   .container_Login {
-      padding: 50px; /* Adjust padding */
-      width: 50%; /* 50% width */
+    padding: 50px; /* Adjust padding */
+    width: 50%; /* 50% width */
   }
 
   .btn {
-      font-size: 22px; /* Button font size */
+    font-size: 22px; /* Button font size */
   }
 
   .nav-links {
-      gap: 30px; /* Adjust spacing */
+    gap: 30px; /* Adjust spacing */
   }
 
   /* Other specific adjustments as needed */
 }
-

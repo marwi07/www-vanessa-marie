@@ -1,11 +1,16 @@
+import * as validateImage from "../utility/validateImageUpload.js";
+import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
+
 export const error404 = (ctx) => {
   ctx.response.body = "<h1>404 - Page Not Found</h1>";
   ctx.response.status = 404;
 };
 
+let step = "";
+
 export const renderForm = async (ctx) => {
-  //step 1 - Titel ?
-  let step = `<h4>Kontaktdaten</h4>
+  //step 1 - Titel
+  step = `<h4>Kontaktdaten</h4>
   <div class="body_GridContact">
     <div class="container_contact">
 
@@ -20,8 +25,6 @@ export const renderForm = async (ctx) => {
         </form>
   
     </div>`;
-
-  console.log(tempStorage);
 
   const cookie = ctx.cookies.getCookie(ctx);
   const currentFormStep = cookie["currentFormStep"];
@@ -47,15 +50,15 @@ export const renderForm = async (ctx) => {
   }
   if (currentFormStep == "two") {
     //skills
-    step = `<h4>About you</h4>
+    step = `<h4>Skills</h4>
 
     <div class="upload-aboutYou">
 
-    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+    <div class="top-text"> Füge deinem Portfolio Skills hinzu.</div>
 
-    <form id="aboutYouForm" action="/add?step=three" method="POST">
+          <form id="skillsForm" action="/add?step=three" method="POST">
     <fieldset>
-        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        <textarea id="skills" name="skills" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
         <button type="submit" class="button-save">Speichern</button>
         </fieldset>
     </form>
@@ -68,19 +71,17 @@ export const renderForm = async (ctx) => {
     //thumbnail
     step = `<h4>About you</h4>
 
-    <div class="upload-aboutYou">
+<div class="upload-aboutYou">
+    <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
 
-    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
-
-    <form id="aboutYouForm" action="/add?step=two" method="POST">
-    <fieldset>
-        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
-        </fieldset>
+    <form action="/add?step=four" method="POST" enctype="multipart/form-data">
+    
+        <label for="thumbnail">Thumbnail</label>
+        <input type="file" id="thumbnail" name="thumbnail">
+        
         <button type="submit" class="button-save">Speichern</button>
     </form>
-
-    
-    </div>`;
+</div>`;
   }
 
   //render page with html of step
@@ -92,47 +93,63 @@ export const renderForm = async (ctx) => {
   return ctx;
 };
 
-const tempStorage = new FormData();
+let tempStorage = new FormData();
 
 export const add = async (ctx) => {
-  const formData = await ctx.request.formData();
   const step = ctx.url.searchParams.get("step");
 
-  //adding new formdata on top of temp Object
-  for (const [key, value] of formData.entries()) {
-    tempStorage.append(key, value);
-  }
+  if (step === "four") {
+    const formData = await ctx.request.formData();
+    console.log(formData);
+    const file = formData.get("thumbnail");
+    const error = validateImage.validateImage(file);
+    console.log(error);
 
-  //if is final step save data in databank
-  /*if (step === "two") {
-    const _dataText = {
-      title: tempStorage.get("title"),
-      about: tempStorage.get("about"),
-    };
-    //get User from cookies
-    //validate formdata
-    //save with User in Databank
-  } else {/** */
-  ctx = ctx.cookies.setFormStepCookie(ctx, step);
+    if (!error) {
+      console.log("error");
+      ctx.response.body = "<h1>error with image</h1>";
+      ctx.response.status = 404;
+      return ctx;
+    } else {
+      const filename = validateImage.generateFilename(file);
+      const destFile = await Deno.open(
+        path.join(Deno.cwd(), "public", filename),
+        {
+          create: true,
+          write: true,
+          truncate: true,
+        }
+      );
+      await file.stream().pipeTo(destFile.writable);
 
-  ctx.response.status = 302;
-  ctx.response.headers.set("Location", "/portfolio/erstellen");
-  ctx.response.body = "";
-  //}
-  return ctx;
-};
+      ctx = ctx.cookies.setFormStepCookie(ctx, step);
 
-/**export const create = async (ctx) => {
-  const formData = await extractFormData(ctx.request);
-  const formError = validate(formData);
-  if (hasAnyKey(formError)) {
-    ctx.response.body = await view.renderForm(formData, formError);
-    ctx.response.headers.set("content-type", "text/html");
-    ctx.response.status = 200;
+      ctx.response.status = 302;
+      ctx.response.headers.set("Location", "/");
+      ctx.response.body = "";
+      return ctx;
+    }
   } else {
-    model.add(ctx.db, formData);
-    ctx.response.headers.set("location", "/");
-    ctx.response.status = 303;
+    const formData = await ctx.request.formData();
+
+    for (const [key, value] of formData.entries()) {
+      tempStorage.append(key, value);
+    }
+
+    if (step === "three") {
+      const _dataText = {
+        title: tempStorage.get("title"),
+        about: tempStorage.get("aboutYouTextarea"),
+        skills: tempStorage.get("skills"),
+      };
+      //get user from cookie
+      //add to databank
+    }
+    ctx = ctx.cookies.setFormStepCookie(ctx, step);
+
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/portfolio/erstellen");
+    ctx.response.body = "";
+    return ctx;
   }
-  return ctx;
-}; */
+};
