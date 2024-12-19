@@ -599,7 +599,7 @@ h6 {
 
 /* Hides the actual file input */
 input[type="file"] {
-  /*display: none;*/
+  display: none;
 }
 
 .preview-image {
