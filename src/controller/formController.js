@@ -53,7 +53,7 @@ export const renderForm = async (ctx) => {
 
     <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
 
-    <form id="aboutYouForm" action="/add?step=two" method="POST">
+    <form id="aboutYouForm" action="/add?step=three" method="POST">
     <fieldset>
         <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
         <button type="submit" class="button-save">Speichern</button>
@@ -92,7 +92,7 @@ export const renderForm = async (ctx) => {
   return ctx;
 };
 
-let tempStorage = new FormData();
+const tempStorage = new FormData();
 
 export const add = async (ctx) => {
   const formData = await ctx.request.formData();
@@ -104,22 +104,21 @@ export const add = async (ctx) => {
   }
 
   //if is final step save data in databank
-  if (step === "two") {
-    const dataText = {
+  /*if (step === "two") {
+    const _dataText = {
       title: tempStorage.get("title"),
       about: tempStorage.get("about"),
     };
     //get User from cookies
     //validate formdata
     //save with User in Databank
-  } else {
-    ctx = ctx.cookies.setFormStepCookie(ctx, step);
-    console.log(ctx);
+  } else {/** */
+  ctx = ctx.cookies.setFormStepCookie(ctx, step);
 
-    ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/portfolio/erstellen");
-    ctx.response.body = "";
-  }
+  ctx.response.status = 302;
+  ctx.response.headers.set("Location", "/portfolio/erstellen");
+  ctx.response.body = "";
+  //}
   return ctx;
 };
 
