@@ -1,28 +1,32 @@
-import * as path from "https://deno.land/std@0.152.0/path/posix.ts";
-import * as mediaTypes from "https://deno.land/std@0.151.0/media_types/mod.ts";
+import * as path from "https://deno.land/std@0.185.0/path/posix.ts";
+import { contentType } from "https://deno.land/std@0.185.0/media_types/mod.ts";
 
 export const serveStaticFile = async (ctx) => {
   const base = ctx.staticBase;
   let file;
-  // https://nodejs.org/en/knowledge/file-system/security/introduction/#preventing-directory-traversal
+
   const fullPath = path.join(base, ctx.url.pathname);
-  if (fullPath.indexOf(base) !== 0 || fullPath.indexOf("\0") !== -1) {
+  if (!fullPath.startsWith(base) || fullPath.includes("\0")) {
     ctx.response.status = 403;
     return ctx;
   }
+
   try {
     file = await Deno.open(fullPath, { read: true });
   } catch (_error) {
+    ctx.response.status = 404;
     return ctx;
   }
+
   const { ext } = path.parse(ctx.url.pathname);
-  const contentType = mediaTypes.contentType(ext);
-  if (contentType) {
+  const mimeType = contentType(ext);
+
+  if (mimeType) {
     ctx.response.body = file.readable;
-    ctx.response.headers.set("Content-type", contentType);
+    ctx.response.headers.set("Content-Type", mimeType);
     ctx.response.status = 200;
   } else {
-    Deno.close(file.rid);
+    file.close();
   }
   return ctx;
 };

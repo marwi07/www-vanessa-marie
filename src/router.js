@@ -1,6 +1,7 @@
 import * as portfolio from "./controller/formController.js";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
+import * as register from "./controller/registerController.js";
 import * as contact from "./controller/contactController.js";
 import * as about from "./controller/aboutController.js";
 import * as datenschutz from "./controller/datenschutzController.js";
@@ -9,14 +10,15 @@ import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
 
 export const routes = async (ctx) => {
-  if (ctx.url.pathname === "/" || ctx.url.pathname === "") {
+  if (ctx.url.pathname === "/") {
     ctx = await index.renderIndex(ctx);
   }
 
-  if (ctx.url.pathname === "/login") {
-    ctx = await login.renderLogin(ctx);
+  if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
+    await login.renderLogin(ctx);
+  } else if (ctx.url.pathname === "/login" && ctx.request.method === "POST") {
+    await login.loginAttempt(ctx);
   }
-
   if (ctx.url.pathname === "/register") {
     ctx = await register.renderRegister(ctx);
   }
@@ -69,7 +71,13 @@ export const routes = async (ctx) => {
     ctx = await portfolio.renderForm(ctx);
   }
 
+  if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
+    ctx = await register.registerAttempt(ctx);
+  }
+
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
     ctx = await portfolio.add(ctx);
   }
+
+  return ctx;
 };

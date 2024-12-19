@@ -16,3 +16,24 @@ export function setFormStepCookie(ctx, step) {
   });
   return ctx;
 }
+
+export function setUserCookie(ctx, username, role) {
+  setCookie(ctx.response.headers, {
+    name: "username",
+    value: username,
+    httpOnly: true,
+    secure: true,
+    sameSite: "Lax",
+    maxAge: 60 * 60 * 24,
+  });
+
+  setCookie(ctx.response.headers, {
+    name: "role",
+    value: role,
+    httpOnly: true,
+    secure: true,
+    sameSite: "Lax",
+    maxAge: 60 * 60 * 24,
+  });
+  return ctx;
+}
