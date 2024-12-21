@@ -29,3 +29,20 @@ export const getRoleByUser = async (db, name) => {
   const query = await db.query(sql, { $name: name });
   return query;
 };
+
+export const addUserInfo = async (db, formData, username) => {
+  const data = {
+    email: formData.get("email"),
+    telefon: formData.get("telefon"),
+    address: formData.get("address"),
+    extra: formData.get("extra"),
+  };
+  const sql = `INSERT INTO userInfo (email, telephone, text, user, address) VALUES ($email, $telephone, $text, $user, $address)`;
+  return await db.query(sql, {
+    $email: data.email,
+    $telephone: data.telefon,
+    $text: data.extra,
+    $user: username,
+    $address: data.address,
+  });
+};

@@ -8,8 +8,6 @@ export const validateImage = (file) => {
 
   if (file.size == 0) return false;
 
-  console.log(file.name, file.size);
-
   if (file.size > POST_FILE_LIMIT) {
     return `Datei ${path.parse(file.name).base} ist zu groß.`;
   }

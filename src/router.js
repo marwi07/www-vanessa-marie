@@ -1,4 +1,4 @@
-import * as portfolio from "./controller/formController.js";
+import * as portfolio from "./controller/portfolioFormController.js";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as register from "./controller/registerController.js";

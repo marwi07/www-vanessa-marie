@@ -1,5 +1,6 @@
 import * as validateImage from "../utility/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
+import * as model from "../model/portfolioModel.js";
 
 export const error404 = (ctx) => {
   ctx.response.body = "<h1>404 - Page Not Found</h1>";
@@ -93,24 +94,23 @@ export const renderForm = async (ctx) => {
   return ctx;
 };
 
-let tempStorage = new FormData();
+const tempStorage = new FormData();
 
 export const add = async (ctx) => {
-  const step = ctx.url.searchParams.get("step");
+  let step = ctx.url.searchParams.get("step");
 
+  //Image upload
   if (step === "four") {
     const formData = await ctx.request.formData();
-    console.log(formData);
     const file = formData.get("thumbnail");
     const error = validateImage.validateImage(file);
-    console.log(error);
 
     if (!error) {
-      console.log("error");
       ctx.response.body = "<h1>error with image</h1>";
       ctx.response.status = 404;
       return ctx;
     } else {
+      //saving file
       const filename = validateImage.generateFilename(file);
       const destFile = await Deno.open(
         path.join(Deno.cwd(), "public", filename),
@@ -120,15 +120,29 @@ export const add = async (ctx) => {
           truncate: true,
         }
       );
+
       await file.stream().pipeTo(destFile.writable);
+      const cookie = ctx.cookies.getCookie(ctx);
+      const username = cookie["username"];
+      if (username) {
+        model.addPortfolioUser(ctx.db, username);
 
-      ctx = ctx.cookies.setFormStepCookie(ctx, step);
+        model.addPortfolioThumbnail(ctx.db, filename, file);
 
-      ctx.response.status = 302;
-      ctx.response.headers.set("Location", "/");
-      ctx.response.body = "";
+        ctx = ctx.cookies.setFormStepCookie(ctx, step);
+
+        ctx.response.status = 302;
+        ctx.response.headers.set("Location", "/");
+        ctx.response.body = "";
+      } else {
+        ctx.response.body = "<h1>no user found logged in</h1>";
+        ctx.response.status = 404;
+      }
+      step = "";
       return ctx;
     }
+
+    //Text Upload
   } else {
     const formData = await ctx.request.formData();
 
@@ -137,13 +151,14 @@ export const add = async (ctx) => {
     }
 
     if (step === "three") {
-      const _dataText = {
-        title: tempStorage.get("title"),
-        about: tempStorage.get("aboutYouTextarea"),
-        skills: tempStorage.get("skills"),
-      };
-      //get user from cookie
-      //add to databank
+      const cookie = ctx.cookies.getCookie(ctx);
+      const username = cookie["username"];
+      if (username) {
+        model.addPortfolioInfo(ctx.db, formData, username);
+      } else {
+        ctx.response.body = "<h1>no user found logged in</h1>";
+        ctx.response.status = 404;
+      }
     }
     ctx = ctx.cookies.setFormStepCookie(ctx, step);
 

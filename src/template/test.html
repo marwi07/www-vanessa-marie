@@ -14,22 +14,52 @@
     </div>
 
     <div class="top-left">
-      <a href="" class="pointer">
-        <img src="Bilder/Pfeil.png" alt="Zurück"
-      /></a>
+      <a href="/" class="pointer">
+        <img src="Bilder/Pfeil.png" alt="Zurück" />
+      </a>
     </div>
 
-    {{ form | safe}}
+    <h3>Füge deine Kontaktdaten hinzu</h3>
+
+    <h4>Kontaktdaten</h4>
+
+    <div class="body_GridContact">
+      <div class="container_contact">
+        <div id="message-container"></div>
+
+        <form id="contactForm" action="/login" method="POST">
+          <label for="email">E-Mail:</label>
+          <input type="text" id="email" name="email" />
+          <label for="telefon">Telefon:</label>
+          <input type="number" id="telefon" name="telefon" />
+          <label for="address">Addresse:</label>
+          <input type="text" id="address" name="address" />
+          <label for="extra">Sonstiges:</label>
+          <input type="text" id="extra" name="extra" />
+        </form>
+
+        <div class="button-group_pfeile">
+          <a href="addSkills.html">
+            <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
+          /></a>
+          <a href="addYourWork.html">
+            <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
+          /></a>
+        </div>
+
+        <button class="button-save">Speichern</button>
+      </div>
+    </div>
 
     <footer>
       <ul class="nav-linksFooter">
         <h5>More On This Site</h5>
-        <li><a href="/ueber-uns">Über uns</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutz</a></li>
-        <li><a href="/dokumentation">Dokumentation</a></li>
-        <li><a href="/kollophon">Kollophon</a></li>
+        <li><a href="ueber-uns">Über uns</a></li>
+        <li><a href="kontakt">Kontakt</a></li>
+        <li><a href="impressum">Impressum</a></li>
+        <li><a href="datenschutz">Datenschutz</a></li>
+        <li><a href="dokumentation">Dokumentation</a></li>
+        <li><a href="kollophon">Kollophon</a></li>
       </ul>
     </footer>
   </body>
