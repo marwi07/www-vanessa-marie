@@ -16,7 +16,7 @@ export const addContactData = async (ctx) => {
   model.addUserInfo(ctx.db, formData, username);
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", "/portfolio/erstellen");
+  ctx.response.headers.set("Location", "/");
   ctx.response.body = "";
   return ctx;
 };

@@ -27,7 +27,7 @@
       <div class="container_contact">
         <div id="message-container"></div>
 
-        <form id="contactForm" action="/login" method="POST">
+        <form id="contactForm" action="/addContact" method="POST">
           <label for="email">E-Mail:</label>
           <input type="text" id="email" name="email" />
           <label for="telefon">Telefon:</label>
@@ -36,6 +36,7 @@
           <input type="text" id="address" name="address" />
           <label for="extra">Sonstiges:</label>
           <input type="text" id="extra" name="extra" />
+          <button type="submit" class="button-group_login">Speichern</button>
         </form>
 
         <div class="button-group_pfeile">
@@ -46,8 +47,6 @@
             <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
           /></a>
         </div>
-
-        <button class="button-save">Speichern</button>
       </div>
     </div>
 

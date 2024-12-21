@@ -1,4 +1,5 @@
 import * as portfolio from "./controller/portfolioFormController.js";
+import * as userContact from "./controller/contactFormController.js";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as register from "./controller/registerController.js";
@@ -10,6 +11,10 @@ import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
 
 export const routes = async (ctx) => {
+  if (ctx.url.pathname === "/test") {
+    ctx = await userContact.renderContactForm(ctx);
+  }
+
   if (ctx.url.pathname === "/") {
     ctx = await index.renderIndex(ctx);
   }
@@ -56,19 +61,23 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/portfolio/bearbeiten") {
+    //TODO
     ctx = await portfolio.index(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/loeschen") {
+    //TODO
     ctx = await portfolio.index(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/user") {
+    //TODO
     ctx = await portfolio.index(ctx);
   }
 
-  if (ctx.url.pathname === "/test.html") {
-    ctx = await portfolio.renderForm(ctx);
+  if (ctx.url.pathname === "/user") {
+    //TODO
+    ctx = await portfolio.index(ctx);
   }
 
   if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
@@ -77,6 +86,10 @@ export const routes = async (ctx) => {
 
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
     ctx = await portfolio.add(ctx);
+  }
+
+  if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
+    ctx = await userContact.addContactData(ctx);
   }
 
   return ctx;
