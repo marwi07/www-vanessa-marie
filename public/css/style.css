@@ -33,7 +33,7 @@ body {
   background-color:#234963;
   list-style-type: none; 
   margin: 0;
-  padding: 5px 20px;
+  padding: 10px 20px;
   position: fixed;
   top: 0; 
   left:0;
@@ -52,12 +52,20 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 20px; 
-    padding: 10px 10px; 
+    font-size: 25px; 
+    padding: 15px 25px; 
     border-radius: 8px; 
     white-space: nowrap; 
     display: inline-block; 
     transition: background-color 0.3s ease; 
+}
+
+.nav-links a.active{
+  background-color: #1d5a72; 
+}
+
+.nav-links .icon {
+  display: none;
 }
 
 .account-icon a {
@@ -67,13 +75,14 @@ body {
 
 /* Größe des Account-Icons */
 .icon-image {
-  width: 40px; 
-  height: 40px; 
+  width: 60px; 
+  height: 60px; 
   object-fit: contain; /* Größe proportional halten */
 }
 
 .nav-items{
   display:flex;
+  padding: 10px 10px;
   margin-right:50px;
   gap:20px;
 }
@@ -165,13 +174,14 @@ h6{
   flex-direction: column;
   overflow: hidden;
   width:auto;
+  height: auto;
   background-color: #1e3f55;
 }
 
 .container_LandingPage-img {
-  max-width: 100%;
-  min-width: 1900px;
-  height: 1000px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   
 }
 
@@ -191,8 +201,10 @@ h6{
   position: absolute;
   display: flex;
   flex-direction: column; 
-  gap: 5px; 
   align-items: flex-start;
+  text-align: center;
+  max-width: 100%;
+  gap: 5px; 
   width: 80%; 
   padding: 20px;
 }
@@ -274,6 +286,19 @@ h6{
    /* _______________________________________________________________*/
 
 
+   /* Google Font Icons */
+
+.pfeil{
+  font-size: 21px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.pfeil:hover{
+  color:#E6B89C;
+}
+
+  /* _______________________________________________________________*/
 
  /* Container für landing page Portfolios */
 
@@ -301,6 +326,7 @@ h6{
   color: white;
   text-decoration: none;
 }
+
 
 .text-section .titel {
   flex: 1; 
@@ -348,7 +374,7 @@ h6{
     padding: 10px 0px;
     font-size: 20px;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     text-decoration: none;
   }
   
@@ -948,8 +974,58 @@ input[type="file"] {
 
 
 
-/* Smartphones (portrait and landscape) */
-@media (max-width: 767px) {
+ /* ___________________________________________ */
+
+
+/* Mediaqueries */
+
+
+@media screen and (max-width: 600px) {
+
+  /* Startseite */
+
+  /* Navigation */
+  .nav-links a:not(:first-child) {display: none;}
+  .nav-links a.icon {
+    float: right;
+    display: block;
+    padding: 0px 0px;
+  }
+    .nav-links.responsive {position: relative;}
+    .nav-links.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav-links.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+  .nav-links {
+    flex-direction:row;
+    align-items: center; 
+    padding: 0px 0px;
+    height: auto; 
+  }
+
+  .nav-items{
+    margin-right: 1%;
+  }
+
+  .nav-links li {
+      margin: 5px 0; 
+      padding: 0px 0px;
+  }
+
+  .nav-links a {
+      padding: 0px 0px; 
+      font-size: 16px; 
+  }
+
+/* Überschriften */
+
   h1 {
       font-size: 36px; 
   }
@@ -963,35 +1039,23 @@ input[type="file"] {
 }
 
   .left-heading{
-    font-size: 36px;
+    font-size: 48px;
   }
 
   .p_herotext{
-    font-size: 11px;
+    font-size: 16px;
   }
 
-  /* Navigation */
-  .nav-links {
-    flex-direction: column;
-    align-items: center; 
-    padding: 10px 0;
-    height: auto; 
+/* Übersicht Portfolios */
+.pfeil{
+  font-size: 14px;
 }
 
-.nav-links li {
-    margin: 10px 0; 
+.btn.readmore{
+  font-size:16px;
 }
 
-.nav-links a {
-    padding: 10px 20px; 
-    font-size: 16px; 
-}
-
-.account-icon {
-    margin-bottom: 10px; 
-}
-
-/* Startseite text-section */
+  /* Übersicht Portfolios text-section */
 .text-section {
   flex: auto; 
   margin:auto;
@@ -1000,47 +1064,64 @@ input[type="file"] {
 
 .text-section a {
  flex: auto;
- font-size: 13px;
-}
-
-.nav-linksFooter {
-  list-style-type: none;
-  width: 100%;
-  color: white;
-  text-align: left;
-  margin: auto;
+ font-size: 14px;
  
+  }
 }
 
-.nav-linksFooter a {
-  color: white;
-  text-decoration: none;
-  font-size: 13px; 
-  padding: 5px;
+ /* ___________________________________________ */
+
+/* Smartphones (portrait and landscape) */
+@media (max-width: 767px) {
+
+  /* Überschriften */
+  h1 {
+      font-size: 36px; 
+  }
+
+  h2 {
+      font-size: 28px;
+  }
+
+  h5 {
+    font-size: 14px;
 }
 
-/* Filter Startseite */
-#myBtnContainer {
-  text-align: center;
-  margin-top: 10px; 
-}
 
-.btn.Filter {
-  display: inline-block;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 12px;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  margin:auto;
-  margin-top: 5px;
-  padding: 5px 10px;
-  background-color: #1d5a72; 
-  cursor: pointer;
-  border-radius: 8px;
-}
+/* Startseite Heading */
+  .left-heading{
+    font-size: 48px;
+  }
 
-/* Bilder Startseite */
+  .p_herotext{
+    font-size: 16px;
+  }
+
+  /* Navigation */
+  .nav-links {
+    flex-direction:row;
+    align-items: center; 
+    padding: 2px 0;
+    height: auto; 
+  }
+
+  .nav-links li {
+      margin: 5px 0; 
+  }
+
+  .nav-links a {
+      padding: 10px 20px; 
+      font-size: 18px; 
+  }
+
+  .nav-linksFooter a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; 
+    padding: 5px;
+  }
+
+  /* Bilder Startseite */
   .image-section{
     flex: auto;
     margin: auto;
@@ -1057,8 +1138,60 @@ input[type="file"] {
      
   }
 
+/* Portfolio Übersicht text-section */
+.text-section {
+  flex: auto; 
+  margin:auto;
+  font-size: 16px;
+}
 
-  /* ________________ */
+.text-section a {
+ flex: auto;
+ font-size: 14px;
+ 
+}
+
+/* Übersicht Portfolios */
+.pfeil{
+  font-size: 14px;
+}
+
+.btn.readmore{
+  font-size:16px;
+}
+
+/* Filter Startseite */
+#myBtnContainer {
+  text-align: center;
+  margin-top: 8px; 
+}
+
+.btn.Filter {
+  display: inline-block;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  margin:auto;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #1d5a72; 
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+/* Footer */
+.nav-linksFooter {
+  list-style-type: none;
+  width: 100%;
+  color: white;
+  text-align: left;
+  margin-bottom: 10%;
+  margin-top: auto;
+ 
+}
 
   /* Portfolio Site */
     .Portfolio, .PortfolioDetailSite, .skills-and-contact {
@@ -1068,7 +1201,7 @@ input[type="file"] {
       padding: 5px;
   }
 
-
+   
   /* Login */
   .container_Login {
     padding: 20px; 
@@ -1114,6 +1247,15 @@ input[type="file"] {
       margin-top: 0px;
       padding: 0px;
   }
+
+  
+  /* Größe des Account-Icons */
+  .icon-image {
+    width: 10px; 
+    height: 10px; 
+    object-fit: contain; /* Größe proportional halten */
+  }
+
 
   /* Other specific adjustments as needed */
 }
