@@ -36,13 +36,21 @@ export const addUserInfo = async (db, formData, username) => {
     telefon: formData.get("telefon"),
     address: formData.get("address"),
     extra: formData.get("extra"),
+    name: formData.get("name"),
   };
-  const sql = `INSERT INTO userInfo (email, telephone, text, user, address) VALUES ($email, $telephone, $text, $user, $address)`;
+  const sql = `INSERT INTO userInfo (email, telephone, text, name, user, address) VALUES ($email, $telephone, $text, $name, $user, $address)`;
   return await db.query(sql, {
     $email: data.email,
     $telephone: data.telefon,
     $text: data.extra,
+    $name: data.name,
     $user: username,
     $address: data.address,
   });
+};
+
+export const getInfoByUser = async (db, name) => {
+  const sql = `SELECT * FROM userInfo WHERE user = $name`;
+  const query = await db.query(sql, { $name: name });
+  return query;
 };

@@ -1,53 +1,77 @@
 export const indexText = async (db) => {
   const sql = `SELECT * FROM portfolioText`;
-  return (query = await db.queryEntries(sql));
+  const query = await db.query(sql);
+  return query;
 };
 
 export const indexImage = async (db) => {
   const sql = `SELECT * FROM portfolioImages`;
-  return (query = await db.queryEntries(sql));
+  const query = await db.query(sql);
+  return query;
 };
 
-export const getPortfolioById = async (db, id) => {
-  const sql = `SELECT * FROM portfolioText WHERE id == $id`;
-  return (query = await db.queryEntries(sql, {
-    $id: id,
-  }));
-};
-
-export const addPortfolioInfo = async (db, formData) => {
+export const addPortfolioInfo = async (db, formData, username) => {
   const data = {
     title: formData.get("title"),
     about: formData.get("about"),
     skills: formData.get("skills"),
   };
-  const sql = `INSERT INTO portfolioText (title, text, skills) VALUES ($title, $about, $skills)`;
-  return await db.query(sql, {
+  const sql = `INSERT INTO portfolioText (username, title, text, skills) VALUES ($username, $title, $about, $skills)`;
+  const query = await db.query(sql, {
+    $username: username,
     $title: data.title,
     $about: data.about,
     $skills: data.skills,
   });
+  return query;
 };
 
 export const addPortfolioUser = async (db, username) => {
   const sql = `INSERT INTO portfolio (username) VALUES ($username)`;
-  return await db.query(sql, {
+  const query = await db.query(sql, {
     $username: username,
   });
+  return query;
 };
 
-export const addPortfolioThumbnail = async (db, path, file) => {
+export const addPortfolioThumbnail = async (db, path, file, username) => {
   const data = {
     size: file.size,
     type: file.type,
     name: file.name,
   };
-  const sql = `INSERT INTO portfolioThumbnail (path, size, type, name) VALUES ($path, $size, $type, $name)`;
+  const sql = `INSERT INTO portfolioThumbnail (username, path, size, type, name) VALUES ($username,$path, $size, $type, $name)`;
 
-  return await db.query(sql, {
+  const query = await db.query(sql, {
+    $username: username,
     $size: data.size,
     $type: data.type,
     $name: data.name,
     $path: path,
   });
+  return query;
+};
+
+export const getIdByName = async (db, username) => {
+  const sql = `SELECT id FROM portfolio WHERE username == $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
+};
+
+export const getThumbnailByName = async (db, username) => {
+  const sql = `SELECT * FROM portfolioThumbnail WHERE username == $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
+};
+
+export const getPortfolioByName = async (db, username) => {
+  const sql = `SELECT * FROM portfolioText WHERE username == $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
 };

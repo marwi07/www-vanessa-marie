@@ -95,6 +95,7 @@ export const renderForm = async (ctx) => {
 };
 
 const tempStorage = new FormData();
+let formData;
 
 export const add = async (ctx) => {
   let step = ctx.url.searchParams.get("step");
@@ -127,7 +128,7 @@ export const add = async (ctx) => {
       if (username) {
         model.addPortfolioUser(ctx.db, username);
 
-        model.addPortfolioThumbnail(ctx.db, filename, file);
+        model.addPortfolioThumbnail(ctx.db, filename, file, username);
 
         ctx = ctx.cookies.setFormStepCookie(ctx, step);
 
@@ -144,7 +145,7 @@ export const add = async (ctx) => {
 
     //Text Upload
   } else {
-    const formData = await ctx.request.formData();
+    formData = await ctx.request.formData();
 
     for (const [key, value] of formData.entries()) {
       tempStorage.append(key, value);
@@ -154,7 +155,7 @@ export const add = async (ctx) => {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
       if (username) {
-        model.addPortfolioInfo(ctx.db, formData, username);
+        model.addPortfolioInfo(ctx.db, tempStorage, username);
       } else {
         ctx.response.body = "<h1>no user found logged in</h1>";
         ctx.response.status = 404;
