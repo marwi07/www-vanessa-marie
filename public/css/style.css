@@ -53,7 +53,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 25px; 
-    padding: 15px 25px; 
+    padding: 10px 20px; 
     border-radius: 8px; 
     white-space: nowrap; 
     display: inline-block; 
@@ -125,8 +125,12 @@ h3{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
   font-size: 60px;
-  margin-top: 110px;
-  margin-left: 100px;
+ 
+}
+.h3_erstellePortfolio{
+  text-align: left;
+  margin-top: 6%;
+  margin-left:50px;
 }
 
 h4{
@@ -298,6 +302,19 @@ h6{
   color:#E6B89C;
 }
 
+.material-icons.profil-icon {
+  font-size: 70px;
+}
+
+.material-icons.pfeil-left-right {
+  color: #EAD2AC;
+  font-size: 100px;
+}
+
+.material-icons.pfeil-left-right:hover {
+ color: #E6B89C;
+}
+
   /* _______________________________________________________________*/
 
  /* Container für landing page Portfolios */
@@ -379,6 +396,8 @@ h6{
   }
   
   .btn.readmore:hover {color:#E6B89C;}
+  
+ 
 
 
   /* Button Plus Portfolio*/
@@ -396,6 +415,24 @@ h6{
   }
 
   .button5 {border-radius: 50%;}
+
+  .button-portfolioerstellen{
+    position:relative;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: #EAD2AC;
+    font-size: 30px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .button-portfolioerstellen:hover{
+    border-color:#E6B89C;
+  }
 
 
   /* _______________________________________________________________*/
@@ -458,10 +495,10 @@ h6{
 /* Login */
   
 .body_GridLogin {
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 10%;
   width: 100%;
   flex: 1;
   
@@ -472,16 +509,16 @@ h6{
   flex-direction: column;
   align-items: center;
   background-color: #1f435a; 
-  padding: 40px; 
-  border-radius: 10px; 
-  max-width: 400px; 
+  padding: 20px 40px; 
+  border-radius: 8px; 
+  max-width: auto; 
   width: 100%; 
   
 }
 
 .container_Login h2 {
   color: white;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Formular Styling */
@@ -492,12 +529,11 @@ h6{
 }
 
 .container_Login form input {
-  margin-bottom: 10px;
-  font-size: 12pt;
+  margin-bottom: 20px;
+  font-size: 14pt;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 15pt;
 }
 /* _______________________________________________________________*/
 
@@ -812,6 +848,22 @@ input[type="file"] {
   position: relative;
 }
 
+.header-container {
+  position: relative; /* Ermöglicht absolute Positionierung */
+  display: flex; /* Flexbox aktivieren */
+  justify-content: space-between; /* Platz zwischen den Elementen */
+  align-items: center; /* Vertikale Zentrierung */
+  top: 5px; /* Abstand vom oberen Rand */
+  width: 100%; /* Container-Breite */
+}
+
+.header-container h4 {
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0; /* Entfernt zusätzlichen Außenabstand */
+  text-align: center; /* Falls nötig für andere Layouts */
+}
+
 /* Textarea Styling */
 #aboutYouTextarea {
   width: 1500px;
@@ -845,8 +897,7 @@ input[type="file"] {
   background-color: #9CAFB7; 
   padding: 40px; 
   border-radius: 50px; 
-  max-width: 1800px; 
-  height:700px;
+  height:100%;
   width: 100%; 
   position: relative;
   font-size: 25px;
@@ -869,26 +920,9 @@ input[type="file"] {
 }
 
 
-/* Pfeile Styling */
-.button-group_pfeile {
-  position: absolute;
-  top: 20px; 
-  width: 100%;
-}
-
-.pfeil-left {
-  position: absolute;
-  top: 0;
-  left: 20px; 
-  width: 60px; 
-  cursor: pointer;
-}
-
-.pfeil-right {
-  position: absolute;
-  top: 0;
-  right: 20px; 
-  width: 60px; 
+/* Pfeile */
+.pfeil-left, .pfeil-right {
+  font-size: 50px;
   cursor: pointer;
 }
 
@@ -1024,6 +1058,10 @@ input[type="file"] {
       font-size: 16px; 
   }
 
+  .material-icons.profil-icon {
+    font-size: 40px;
+  }
+
 /* Überschriften */
 
   h1 {
@@ -1044,6 +1082,13 @@ input[type="file"] {
 
   .p_herotext{
     font-size: 16px;
+  }
+
+  .button-portfolioerstellen{
+    font-size: 14px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
   }
 
 /* Übersicht Portfolios */
@@ -1136,6 +1181,13 @@ input[type="file"] {
   .container_LandingPage-img {
       width: 100%; 
      
+  }
+
+  .button-portfolioerstellen{
+    font-size: 16px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
   }
 
 /* Portfolio Übersicht text-section */
@@ -1256,6 +1308,12 @@ input[type="file"] {
     object-fit: contain; /* Größe proportional halten */
   }
 
+  .button-portfolioerstellen{
+    font-size: 20px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
+  }
 
   /* Other specific adjustments as needed */
 }

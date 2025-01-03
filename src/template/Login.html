@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exponat hinzufügen</title>
+    <title>Login</title>
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body>
-    <div class="top-right">
-      <a href="login"><img src="Bilder/Icon-User.png" /></a>
-    </div>
 
-    <div class="top-left">
-      <a href="/" class="pointer">
-        <img src="Bilder/Pfeil.png" alt="Zurück" />
+    <!-- Menü/Nav  --> 
+    <ul class="nav-links" id="responsive">
+      <a href="/login" class="active">
+          <i class="material-icons profil-icon">account_circle</i>
       </a>
-    </div>
 
+      <div class="nav-items">
+          <a href="/index" >Home</a>
+         <a href="/portfolio">Mein Portfolio</a>
+          <a href="portfolio/erstellen">Portfolio erstellen</a>
+           <a href="javascript:void(0);" class="icon" id="burgermenutest">
+              <i class="material-icons" style="font-size:40px">reorder</i>
+          </a>
+      </div>   
+</ul>
+
+<!-- Login Container  --> 
     <div class="body_GridLogin">
       <section class="container_Login">
         <h2>Login</h2>
