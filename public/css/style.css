@@ -840,7 +840,8 @@ input[type="file"] {
   height: 700px;
   background-color: #9CAFB7;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   margin: 30px auto;
   border-radius: 50px;
@@ -848,20 +849,23 @@ input[type="file"] {
   position: relative;
 }
 
+.upload-aboutYou h4{
+  font-size: 70px;
+  font-weight: bold;
+}
+
 .header-container {
   position: relative; /* Ermöglicht absolute Positionierung */
   display: flex; /* Flexbox aktivieren */
   justify-content: space-between; /* Platz zwischen den Elementen */
-  align-items: center; /* Vertikale Zentrierung */
   top: 5px; /* Abstand vom oberen Rand */
   width: 100%; /* Container-Breite */
+  margin-top: 0px;
 }
 
 .header-container h4 {
   font-size: 70px;
   font-weight: bold;
-  margin: 0; /* Entfernt zusätzlichen Außenabstand */
-  text-align: center; /* Falls nötig für andere Layouts */
 }
 
 /* Textarea Styling */
@@ -885,7 +889,8 @@ input[type="file"] {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  width: 100%;
+  width: auto;
+  height: auto;
   flex: 1;
   position: relative;
 }
@@ -926,16 +931,37 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.button-save {
+.button-save-aboutyou {
+  display:flex;
+  flex-direction: column;
   position: absolute;
   bottom: 20px;
-  padding:10px;
+  padding:10px 10px;
   max-width: 300px;
   width: 100%;
   background-color: #183446;
   color:white;
+  margin-top: 30px;
+  align-items: center;
   font-size: 25px;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.button-save-contact {
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 20px;
+  padding:10px 10px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+  margin-top: 30px;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 8px;
   border: none;
 }
 
