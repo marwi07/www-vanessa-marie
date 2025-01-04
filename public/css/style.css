@@ -16,18 +16,96 @@ body {
   font-size: 20px;
 }
 
-.p_herotext{
+/* _______________________________________________________________*/
+
+/* Überschriften*/
+
+h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
-  font-size: 30px;
-  padding: 0;
-  margin: 0; 
 }
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 60px;
+}
+
+h3{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+font-size: 60px;
+
+}
+.h3_erstellePortfolio{
+text-align: left;
+margin-top: 6%;
+margin-left:50px;
+}
+
+h4{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+font-size: 60px;
+text-align: center;
+margin-bottom: 5px;
+margin-top: 0px;
+}
+
+h5{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #EAD2AC;
+  font-size: 20px;
+  margin:auto;
+}
+
+h6{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 15px;
+  margin: auto;
+}
+
 
 /* _______________________________________________________________*/
 
+ /* Hover Effects */
 
-/* Menü */
+ .pointer {cursor: pointer;}
+
+
+ /* _______________________________________________________________*/
+
+
+ /* Google Font Icons */
+
+.pfeil{
+font-size: 21px;
+text-align: center;
+margin-left: 5px;
+}
+
+.pfeil:hover{
+color:#E6B89C;
+}
+
+.material-icons.profil-icon {
+font-size: 70px;
+}
+
+.material-icons.pfeil-left-right {
+color: #EAD2AC;
+font-size: 100px;
+}
+
+.material-icons.pfeil-left-right:hover {
+color: #E6B89C;
+}
+
+
+ /* _______________________________________________________________*/
+
+/* Nav-Menü */
 
 .nav-links {
   background-color:#234963;
@@ -60,6 +138,10 @@ body {
     transition: background-color 0.3s ease; 
 }
 
+.nav-links a:hover {
+  background-color: #1d5a72; 
+}
+
 .nav-links a.active{
   background-color: #1d5a72; 
 }
@@ -87,6 +169,8 @@ body {
   gap:20px;
 }
 
+/* _______________________________________________________________*/
+
 /* Footer */
 
 .nav-linksFooter {
@@ -107,56 +191,7 @@ body {
 
 /* _______________________________________________________________*/
 
-
-/* Überschriften*/
-
-h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-}
-
-h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 60px;
-}
-
-h3{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-  font-size: 60px;
- 
-}
-.h3_erstellePortfolio{
-  text-align: left;
-  margin-top: 6%;
-  margin-left:50px;
-}
-
-h4{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 5px;
-  margin-top: 0px;
-}
-
-h5{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #EAD2AC;
-    font-size: 20px;
-    margin:auto;
-}
-
-h6{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 15px;
-    margin: auto;
-}
-
-
+/* Error Seiten */
  .error_font{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
   color: rgb(255, 255, 255); 
@@ -166,6 +201,7 @@ h6{
 
 /* _______________________________________________________________*/
 
+/* Startseite */
 
 /* Container für landing Page Bild und Text */
 .container_LandingPage {
@@ -218,6 +254,32 @@ h6{
   margin: 0;
 }
 
+.p_herotext{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 30px;
+  padding: 0;
+  margin: 0; 
+}
+
+.button-portfolioerstellen{
+  position:relative;
+  display: inline-block;
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: #EAD2AC;
+  font-size: 30px;
+  color:white;
+  padding:10px 20px;
+  margin-top: 15px;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.button-portfolioerstellen:hover{
+  border-color:#E6B89C;
+}
+
 .bottom-center {
   position: absolute;
   bottom: 8px;
@@ -245,12 +307,6 @@ h6{
     left: 16px;
   }
 
-  .top-left_pfeilback {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-  }
-
   /* Top right text */
 .top-right {
     position: absolute;
@@ -258,191 +314,89 @@ h6{
     right: 60px;
   }
 
-  /* _______________________________________________________________*/
 
-
-
-  /* Hover Effects */
-
-  .hoverEffectUser {
-    display: inline-block; 
-    width: 100px;
-    height: 100px;
-    background-image: url('public/Bilder/Icon-user.png');
-    background-size: cover; 
-    transition: background-image 0.3s ease; 
-    
-}
-
-.hoverEffectUser:hover {
-    background-image: url('public/Bilder/Icon_Hover_Login.png');
-}
-  .pointer {cursor: pointer;}
-
-  .nav-links a:hover {
-    background-color: #1d5a72; 
-}
-
-.PlusButton:hover {
-    background-color: #E6B89C;
-}
-
-   /* _______________________________________________________________*/
-
-
-   /* Google Font Icons */
-
-.pfeil{
-  font-size: 21px;
-  text-align: center;
-  margin-left: 5px;
-}
-
-.pfeil:hover{
-  color:#E6B89C;
-}
-
-.material-icons.profil-icon {
-  font-size: 70px;
-}
-
-.material-icons.pfeil-left-right {
-  color: #EAD2AC;
-  font-size: 100px;
-}
-
-.material-icons.pfeil-left-right:hover {
- color: #E6B89C;
-}
-
-  /* _______________________________________________________________*/
-
- /* Container für landing page Portfolios */
+  /* Container für landing page Portfolios Übersicht */
 
  .Portfolio {
-    display: flex; 
-    align-items: flex-start; 
-    max-width: 100%; 
-    max-height:100%;
-    margin: auto; 
-    border-radius: 8px; 
-    padding: 15px; 
-    margin-top: 20px;
+  display: flex; 
+  align-items: flex-start; 
+  max-width: 100%; 
+  max-height:100%;
+  margin: auto; 
+  border-radius: 8px; 
+  padding: 15px; 
+  margin-top: 20px;
 }
 
 .text-section {
-    flex: 1; 
-    margin-left:80px;
-    margin-top: 25px;
+  flex: 1; 
+  margin-left:80px;
+  margin-top: 25px;
 }
 
 .text-section a{
-  flex: 1; 
-  margin-top: auto;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
+flex: 1; 
+margin-top: auto;
+font-size: 18px;
+color: white;
+text-decoration: none;
 }
 
 
 .text-section .titel {
-  flex: 1; 
-  margin-top: 15px;
-  margin-right: 5px;
-  margin-bottom: auto; 
+flex: 1; 
+margin-top: 15px;
+margin-right: 5px;
+margin-bottom: auto; 
 }
 
 .text-section .username {
-  flex: 1; 
-  margin-top: 30px;
-  margin-right: 5px;
-  margin-bottom: auto; 
-  font-weight: bold;
-  color:bisque;
+flex: 1; 
+margin-top: 30px;
+margin-right: 5px;
+margin-bottom: auto; 
+font-weight: bold;
+color:bisque;
 }
 
 .text-section .beschreibung {
-  flex: 1; 
-  margin-top: 5px;
-  margin-right: 5px; 
+flex: 1; 
+margin-top: 5px;
+margin-right: 5px; 
 }
 
 .image-section {
-    flex: 0 0 800px; 
-    margin-right: 80px;
+  flex: 0 0 800px; 
+  margin-right: 80px;
 }
 
 .image-section img {
-    max-width: 100%; 
-    height: 100%; 
-    border-radius: 8px; 
+  max-width: 100%; 
+  height: 100%; 
+  border-radius: 8px; 
 }
 
-/* _______________________________________________________________*/
-
-
-/* Buttons*/
-
 .btn.readmore {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: none;
-    color: #EAD2AC;
-    background-color: inherit;
-    padding: 10px 0px;
-    font-size: 20px;
-    cursor: pointer;
-    display: inline-flex;
-    text-decoration: none;
-  }
-  
-  .btn.readmore:hover {color:#E6B89C;}
-  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+  color: #EAD2AC;
+  background-color: inherit;
+  padding: 10px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.btn.readmore:hover {color:#E6B89C;}
+
  
-
-
-  /* Button Plus Portfolio*/
-  .button {
-    background-color: #EAD2AC;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    margin-left:2050px;
-   
-  }
-
-  .button5 {border-radius: 50%;}
-
-  .button-portfolioerstellen{
-    position:relative;
-    display: inline-block;
-    border: 2px solid;
-    border-radius: 8px;
-    border-color: #EAD2AC;
-    font-size: 30px;
-    color:white;
-    padding:10px 20px;
-    margin-top: 15px;
-    background-color: transparent;
-    text-decoration: none;
-  }
-
-  .button-portfolioerstellen:hover{
-    border-color:#E6B89C;
-  }
-
-
-  /* _______________________________________________________________*/
   
-
-  /* Filter Kram - Landing Page */
+  /* Filter - Startseite */
 
   #myBtnContainer {
-    text-align: center; /* Zentriert die Buttons horizontal */
-    margin-top: 20px; /* Abstand nach oben */
+    text-align: center; 
+    margin-top: 20px; 
 }
   
   .filterDiv {
@@ -453,10 +407,9 @@ h6{
     line-height: 100px;
     text-align: center;
     margin: 2px;
-    display: none; /* Hidden by default */
+    display: none;
   }
   
-  /* The "show" class is added to the filtered elements */
   .show {
     display: block;
   }
@@ -489,10 +442,11 @@ h6{
     color: white;
   }
 
- /* _______________________________________________________________*/
+
+  /* _______________________________________________________________*/
 
 
-/* Login */
+/* Login/Register */
   
 .body_GridLogin {
   display:flex;
@@ -521,7 +475,7 @@ h6{
   text-align: center;
 }
 
-/* Formular Styling */
+/* Form Styling */
 .container_Login form {
   display: flex;
   flex-direction: column;
@@ -535,10 +489,10 @@ h6{
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-/* _______________________________________________________________*/
+
 
  /* Button Login/Register */
-.button-group {
+.button-group-login-register {
   
   display: flex;
   justify-content: space-between; /* Buttons nebeneinander platzieren */
@@ -569,52 +523,142 @@ h6{
 
 /* _______________________________________________________________*/
 
+ /* Portfolio Detail Seite */
+
 
  /* Container für Portfolio Detail Seite */
-
  .PortfolioDetailSite {
+  background-color: #1e3f55;
   display: flex; 
-  align-items: flex-start; 
-  max-width: 100%; 
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 70%; 
+  height: auto;
   margin: auto; 
   border-radius: 8px; 
-  padding: 100px; 
-  margin-top: 50px;
+  padding: 120px 20px; 
 }
 
-.PortfolioDetailSite__text-section {
-  flex: 1; 
-  text-align: center;
+.PortfolioDetailSite h2{
+  font-size:90px;
+  position:absolute;
+  padding: 10px 20px;
+  margin-top:20px;
+  margin-left: 20px;;
 }
 
-.PortfolioDetailSite__image-section {
-  flex: 0 0 1400px; 
-  margin-right: center;
+.PortfolioDetailSite h3{
+  font-size:70px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.PortfolioDetailSite p{
+  display: flex;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 2px;
+  padding: 0;
+  font-size: 21px;
+}
+
+.PortfolioDetailSite_text-section {
+  position:relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+ 
 
 }
 
-.PortfolioDetailSite__image-section img {
+.PortfolioDetailSite_image-section {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+
+}
+
+.PortfolioDetailSite_image-section img {
   max-width: 100%;  
   border-radius: 8px; 
 }
 
+/* Tags */
+
+.tag-container {
+  display: flex; 
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  background-color:#EAD2AC;
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 20px; 
+  font-size: 28px; 
+  margin: 5px;
+}
+
+/* Bearbeiten/Löschen Buttons*/
+
+.button-group_portfolio {
+  display: flex;
+  justify-content: space-between; 
+  width: 50%;
+  margin: auto;
+  margin-top: 240px;
+  gap:20px;
+  
+}
+
+.button-group_portfolio_button {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 48%;
+  padding: 12px;
+  font-size: 18pt;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  text-decoration: none;
+  
+}
+
+.button-group_portfolio_button:hover {
+  background-color:  #346e92; 
+}
+
 /* _______________________________________________________________*/
+
+/* Skills auf Detail Site  */
+
 /* Skills Box */
 .container_skills {
   display: flex;
   justify-content: center;
   background-color:#9CAFB7; 
   padding: 40px; 
-  border-radius: 10px;
-  max-width: 800px;
-  width: 100%; 
+  border-radius: 8px;
+  width: 100%;
   box-sizing: border-box;
   flex: 1;
 }
 
 .skills {
   list-style-type: none;
-  font-size: 25px;
+  font-size: 21px;
   padding: 0;
   margin: 0;
   display: flex; 
@@ -633,15 +677,19 @@ h6{
 
 /* _______________________________________________________________*/
 
+
+/*Kontaktdaten auf Detail Site */
+
 /* Kontaktdaten Box */
 .skills-and-contact {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: flex-start;
   margin:auto;
-  max-width: 1920px;
-  padding: 40px; 
-  gap: 80px;
+  max-width: 100%;
+  width: 100%;
+  gap: 40px;
+  margin-bottom: 30px;
 }
 
 
@@ -650,8 +698,7 @@ h6{
   justify-content: center;
   background-color: #9CAFB7; 
   padding: 40px; 
-  border-radius: 10px; 
-  max-width:800px; 
+  border-radius: 8px; 
   width: 100%; 
   box-sizing: border-box;
   flex: 1;
@@ -659,11 +706,10 @@ h6{
 }
 
 .contact {
-
   list-style-type: none;
   font-size: 20px;
-  padding: 0;
-  margin: 0;
+  padding: 10px 10px;
+  margin: auto;
   display: block; 
 }
 
@@ -693,9 +739,7 @@ h6{
   padding: 10px;
 }
 
-
-
-.skills_heading, .contact_heading {
+.skills_heading, .contact_heading{
   flex: 1; 
   display: flex;
   flex-direction: column;
@@ -732,60 +776,6 @@ h6{
 
 /* _______________________________________________________________*/
 
-/* Tags */
-
-.tag-container {
- 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center;
-  margin-bottom: 50px;
-  
-}
-
-.tag {
-  background-color:#EAD2AC;
-  color: white; 
-  padding: 10px 10px; 
-  border-radius: 20px; 
-  font-size: 20px; 
-  margin: 5px;
-}
-
-/* _______________________________________________________________*/
-
-
-/* Bearbeiten/Löschen Buttons*/
-
-.button-group_portfolio {
-  display: flex;
-  justify-content: space-between; 
-  width: 50%;
-  margin: auto;
-  margin-top: 240px;
-  gap:20px;
-  
-}
-
-.button-group_portfolio_button {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 48%;
-  padding: 12px;
-  font-size: 18pt;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color:#9CAFB7;  
-  color: white;
-  text-decoration: none;
-  
-}
-
-.button-group_portfolio_button:hover {
-  background-color:  #346e92; 
-}
-/* _______________________________________________________________*/
 
 /* Upload image */
 .upload-box {
@@ -799,11 +789,6 @@ h6{
   border-radius: 50px;
   cursor: pointer;
   position: relative;
-}
-
-/* Hides the actual file input */
-input[type="file"] {
-  display: none;
 }
 
 .preview-image {
@@ -844,22 +829,22 @@ input[type="file"] {
   justify-content: flex-start;
   align-items: center;
   margin: 30px auto;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
   position: relative;
 }
 
 .upload-aboutYou h4{
   font-size: 70px;
-  font-weight: bold;
+  margin-top: 20px;
 }
 
 .header-container {
-  position: relative; /* Ermöglicht absolute Positionierung */
-  display: flex; /* Flexbox aktivieren */
-  justify-content: space-between; /* Platz zwischen den Elementen */
-  top: 5px; /* Abstand vom oberen Rand */
-  width: 100%; /* Container-Breite */
+  position: relative; 
+  display: flex; 
+  justify-content: space-between; 
+  top: 5px; 
+  width: 100%; 
   margin-top: 0px;
 }
 
@@ -868,20 +853,55 @@ input[type="file"] {
   font-weight: bold;
 }
 
-/* Textarea Styling */
-#aboutYouTextarea {
-  width: 1500px;
-  height: 480px;
-  padding: 20px;
-  font-size: 12pt;
-  border-radius: 10px;
-  border: 2px solid #c4c4c4;
-  resize: none;
-  background-color: #9CAFB7;
-  color: white;
-  outline: none;
+form .upload-aboutYouform{
+  width: 1800px;
+  height: 700px;
 }
 
+/* Form Styling */
+.upload-aboutYouform {
+  width: 90%;  
+  height: calc(100% - 150px); 
+  margin-top: 20px; 
+  border-radius: 10px; 
+  padding: 20px; 
+  display: flex;
+  border:none;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+/* Textarea Styling */
+.upload-aboutYouform textarea {
+  width: 100%;
+  max-width: 1580px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  resize: none; 
+  background-color: #f9f9f9;
+}
+
+.button-save-aboutyou {
+  padding:10px 20px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+ margin-top: 20px;
+ margin-bottom: 20px;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 8px;
+  border: none;
+}
+
+.button-save-aboutyou:hover{
+  background-color: #1d5a72;
+}
+
+/* _______________________________________________________________*/
 
 /* Upload Kontaktinfo */
 .body_GridContact {
@@ -931,22 +951,7 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.button-save-aboutyou {
-  display:flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 20px;
-  padding:10px 10px;
-  max-width: 300px;
-  width: 100%;
-  background-color: #183446;
-  color:white;
-  margin-top: 30px;
-  align-items: center;
-  font-size: 25px;
-  border-radius: 8px;
-  border: none;
-}
+
 
 .button-save-contact {
   display:flex;
@@ -965,10 +970,16 @@ input[type="file"] {
   border: none;
 }
 
+.button-save-contact:hover{
+  background-color: #1d5a72;
+}
+
 .button-save:hover {
   background-color:  #26506b; 
   cursor: pointer;
 }
+
+/* _______________________________________________________________*/
 
 /* Upload Your Work */
 .body_GridyourWork {
@@ -1034,7 +1045,7 @@ input[type="file"] {
 
 
 
- /* ___________________________________________ */
+ /* ______________________________________________________________________ */
 
 
 /* Mediaqueries */

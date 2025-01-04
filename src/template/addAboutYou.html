@@ -31,23 +31,26 @@
 
 
 <!-- Upload box -->
-<h3 class="h3_erstellePortfolio">Erstelle dein Portfolio</h3>
+<h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
 
 <div class="upload-aboutYou" >
 
     <div class="header-container">
+
         <a class="pfeil-left" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >arrow_back</i></a>
+
         <h4>About You</h4>
+        
         <a class="pfeil-right" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >	arrow_forward</i></a>
     </div>
 
+    <div id="message-container"> </div>
 
-    <div id="message-container"> 
-    <form id="aboutYouForm" action="/login" method="POST">
-        <textarea id="aboutYouTextarea" name="About You" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: none;"></textarea>
+    <form class="upload-aboutYouform" id="aboutYouForm" action="/login" method="POST">
+        <textarea maxlength="1000" id="aboutYouTextarea" name="About You" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu."></textarea>
+
     </form> 
 
-</div>
     <button class="button-save-aboutyou">Speichern</button>
 </div>
 
