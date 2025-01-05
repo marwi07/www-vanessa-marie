@@ -12,6 +12,9 @@
 
 <body>
    
+  <div class="wrapper">
+    <main>
+
     <!-- Menü/Nav  --> 
     <ul class="nav-links" id="responsive">
       <a href="/login" >
@@ -29,32 +32,39 @@
 </ul>
 
 <!-- Upload box -->
-<h3 class="h3_erstellePortfolio">Füge deinem Portfolio deine Kontaktdaten hinzu</h3>
+<h3 class="h3_erstellePortfolio">Füge deinem Portfolio deine Kontaktdaten hinzu!</h3>
 
 
 <div class="body_GridContact">
     <div class="container_contact">
         
+        <div class="header-container">
+
+        <a class="pfeil-left" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >arrow_back</i></a>
+
         <h4>Kontaktdaten</h4>
+        
+        <a class="pfeil-right" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >	arrow_forward</i></a>
+    </div>
   
       <div id="message-container"></div> 
 
       <form id="contactForm" action="/login" method="POST">
         <label for="email">E-Mail:</label>
-        <input maxlength="2" type="text" id="email" name="email">
+        <input maxlength="30" type="text" id="email" name="email">
         <label for="telefon">Telefon:</label>
-        <input type="number" id="telefon" name="telefon">
+        <input  type="number" id="telefon" name="telefon" min="1" max="20">
         <label for="email">Addresse:</label>
-        <input type="text" id="email" name="email">
+        <input maxlength="100" type="text" id="email" name="email">
         <label for="telefon">Sonstiges:</label>
-        <input type="text" id="telefon" name="telefon">
+        <input maxlength="50" type="text" id="telefon" name="telefon">
       </form>
 
     <button class="button-save-contact">Speichern</button>
     </div>
   </div>
 
-
+</main>
 
   <footer>
     <ul class="nav-linksFooter">
@@ -67,6 +77,8 @@
          <li><a href="kollophon">Kollophon</a></li> 
         </ul>
     </footer>
-    
+
+
+      </div>
     </body>
 </html>

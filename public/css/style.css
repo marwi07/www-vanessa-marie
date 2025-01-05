@@ -173,21 +173,50 @@ color: #E6B89C;
 
 /* Footer */
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Die Seite nimmt mindestens die gesamte Bildschirmhöhe ein */
+}
+
+main {
+  flex: 1; 
+  padding: 10px;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
 .nav-linksFooter {
   list-style-type: none;
-  width: 100%;
-  color: white;
-  text-align: left;
- 
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.nav-linksFooter li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .nav-linksFooter a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px; 
-    padding: 10px;
+  color: white;
+  text-decoration: none;
 }
 
+.nav-linksFooter h5 {
+  color:#EAD2AC;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.nav-linksFooter a:hover {
+  text-decoration: underline;
+}
 
 /* _______________________________________________________________*/
 
@@ -314,9 +343,9 @@ color: #E6B89C;
     right: 60px;
   }
 
+  /* _______________*/
 
   /* Container für landing page Portfolios Übersicht */
-
  .Portfolio {
   display: flex; 
   align-items: flex-start; 
@@ -390,10 +419,9 @@ margin-right: 5px;
 
 .btn.readmore:hover {color:#E6B89C;}
 
- 
+ /* _______________*/
   
   /* Filter - Startseite */
-
   #myBtnContainer {
     text-align: center; 
     margin-top: 20px; 
@@ -475,6 +503,8 @@ margin-right: 5px;
   text-align: center;
 }
 
+/* _______________*/
+
 /* Form Styling */
 .container_Login form {
   display: flex;
@@ -490,6 +520,7 @@ margin-right: 5px;
   border-radius: 4px;
 }
 
+/* _______________*/
 
  /* Button Login/Register */
 .button-group-login-register {
@@ -543,8 +574,8 @@ margin-right: 5px;
   font-size:90px;
   position:absolute;
   padding: 10px 20px;
-  margin-top:20px;
-  margin-left: 20px;;
+  margin-top:80px;
+  margin-left: 15px;;
 }
 
 .PortfolioDetailSite h3{
@@ -565,13 +596,11 @@ margin-right: 5px;
   font-size: 21px;
 }
 
-.PortfolioDetailSite_text-section {
-  position:relative;
+.YourWork-text-section {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
- 
-
+  top: 60px;
+  align-items: center;
 }
 
 .PortfolioDetailSite_image-section {
@@ -587,8 +616,38 @@ margin-right: 5px;
   border-radius: 8px; 
 }
 
-/* Tags */
+/* _______________*/
 
+/* Your Work Upload Box/Bilder */
+.upload-box-YourWork {
+  position:relative;
+  width: 100%;
+  height: 800px;
+  background-color: #EAD2AC;
+  display: flex;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  margin: 0;
+}
+
+.upload-box-YourWork a {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.upload-box-YourWork i {
+  font-size: 120px;
+  text-align: center;
+}
+
+/* _______________*/
+
+/* Tags */
 .tag-container {
   display: flex; 
   position: relative;
@@ -609,150 +668,187 @@ margin-right: 5px;
   margin: 5px;
 }
 
-/* Bearbeiten/Löschen Buttons*/
+/* _______________*/
 
+/* Bearbeiten/Löschen Buttons Allgemein*/
 .button-group_portfolio {
   display: flex;
-  justify-content: space-between; 
-  width: 50%;
-  margin: auto;
-  margin-top: 240px;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
   gap:20px;
-  
 }
 
 .button-group_portfolio_button {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 48%;
-  padding: 12px;
-  font-size: 18pt;
   font-weight: bold;
+  width: 8%;
+  padding: 10px 0px;
+  font-size: 14pt;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   background-color:#9CAFB7;  
   color: white;
   text-decoration: none;
-  
+  text-align: center;
 }
 
 .button-group_portfolio_button:hover {
   background-color:  #346e92; 
 }
 
-/* _______________________________________________________________*/
+/* _______________*/
 
-/* Skills auf Detail Site  */
+/* Buttons Your Work */
+.button-group-yourWork {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  left: 10px;
+  gap:20px;
+}
 
-/* Skills Box */
+.button-yourWork {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  width: 8%;
+  padding: 10px 0px;
+  font-size: 14pt;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button-yourWork:hover {
+  background-color:  #346e92; 
+}
+
+/* _______________*/
+
+/* Skills Box Detail Site*/
 .container_skills {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   justify-content: center;
-  background-color:#9CAFB7; 
-  padding: 40px; 
-  border-radius: 8px;
+  margin: auto;
   width: 100%;
-  box-sizing: border-box;
-  flex: 1;
+  height:auto;
+  background-color:#9CAFB7;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .skills {
   list-style-type: none;
-  font-size: 21px;
-  padding: 0;
-  margin: 0;
+  font-size: 26px;
   display: flex; 
-  gap: 20px; 
+  gap: 10px; 
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+  margin: 20px 0; 
 }
 
 .skills li {
   width: calc(25% - 20px); /* Nimmt 25% der Breite, minus den Abstand */
   text-align: center; 
   padding: 10px;
-  border-radius: 5px; 
   color: white; 
+  
 }
 
-/* _______________________________________________________________*/
-
-
-/*Kontaktdaten auf Detail Site */
+/* _______________*/
 
 /* Kontaktdaten Box */
 .skills-and-contact {
-  display: flex;
-  justify-content: stretch;
-  align-items: flex-start;
-  margin:auto;
-  max-width: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items:flex-start;
   width: 100%;
-  gap: 40px;
   margin-bottom: 30px;
+  margin-top: 20px;
+  gap:50px;
+  flex-wrap: wrap;
 }
 
 
 .container_contact {
   display: flex;
   justify-content: center;
-  background-color: #9CAFB7; 
+  align-items: center;
+  text-align: center;
   padding: 40px; 
-  border-radius: 8px; 
   width: 100%; 
+  height:auto;
   box-sizing: border-box;
   flex: 1;
-  
 }
 
 .contact {
+  border-radius: 8px;
   list-style-type: none;
-  font-size: 20px;
-  padding: 10px 10px;
-  margin: auto;
-  display: block; 
+  font-size: 24px;
+  padding: 20px 30px;
+  margin-top: 0px;
+  display: table-column; 
 }
 
 .contact dl {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 0;
-  
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contact dt {
-  flex: 1; 
   text-align: left;
   color: white;
-  margin-right: 10px;
+  margin: 0;
+  font-weight: bold;
 }
-
 
 .contact dd {
-  flex: 1; 
-  text-align: right;
+  text-align: left;
   color: white;
   margin: 0;
-  background-color: #183446;
+  background-color:#9CAFB7;
+  border-radius: 20px;
   border-radius: 8px;
   padding: 10px;
+  margin: 0;
 }
 
-.skills_heading, .contact_heading{
+/* _______________*/
+
+/* Überschriften für Skills und Kontaktdaten */
+.skills_heading h3, .contact_heading h3 {
+  flex: none; 
+  font-size: 60px;
+  margin-bottom: 0px; 
+  margin-top: 20px;
+}
+
+/* Container für die Inhalte */
+.contact_heading, .skills_heading {
   flex: 1; 
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-
-.skills_heading_h3, .contact_heading_h3 {
+  max-width: 500px; 
   text-align: center; 
-  margin-top: 0px;
-  margin-bottom: 20px;
 }
 
-/* _______________________________________________________________*/
+/* _______________*/
 
 /* Bildergalerie "Your Work"*/
 
@@ -763,19 +859,36 @@ margin-right: 5px;
 }
 
 .column {
-  flex: 25%;
-  max-width: 25%;
+  flex:35%;
+  max-width: 35%;
   padding: 0 4px;
 }
 
 .column img {
-  margin-top: 8px;
-  vertical-align: middle;
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 /* _______________________________________________________________*/
 
+/* Your Work Save Button */
+.button-save-YourWork {
+  padding:10px 20px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* _______________________________________________________________*/
 
 /* Upload image */
 .upload-box {
@@ -829,7 +942,7 @@ margin-right: 5px;
   justify-content: flex-start;
   align-items: center;
   margin: 30px auto;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   position: relative;
 }
@@ -906,11 +1019,12 @@ form .upload-aboutYouform{
 /* Upload Kontaktinfo */
 .body_GridContact {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 40px;
-  width: auto;
-  height: auto;
+  margin:auto;
+  width: 1800px;
+  height: 700px;
   flex: 1;
   position: relative;
 }
@@ -928,30 +1042,102 @@ form .upload-aboutYouform{
   font-size: 25px;
 }
 
-/* Formular Styling */
+/* Formular Styling Kontaktinfo*/
 .container_contact form {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 1000px; 
 }
 
 .container_contact form input {
-  margin-bottom: 10px;
-  font-size: 15pt;
+  margin-bottom: 20px;
+  font-size: 18pt;
   padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  
+  border-radius: 8px;
 }
 
+.container_contact form label {
+  margin-bottom: 5px;
+  font-size: 18pt;
+  padding: 0px;
+  text-align: left;
+}
+
+/* Upload Skills */
+.body_GridSkills {
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  width:100%;
+  height: auto;
+  flex: 1;
+}
+
+.container_skills {
+  display: flex;
+  flex-direction: column;
+  background-color: #9CAFB7; 
+  padding: 40px; 
+  border-radius: 50px; 
+  width: 100%; 
+  max-width: 1800px;
+  position: relative;
+  font-size: 25px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+  grid-gap: 20px; 
+  width: 100%; 
+  max-width: 1800px; 
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.skill-item input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Formular Styling Skills*/
+.container_skills form {
+  display: flex;
+  flex-direction: column;
+  width: 1000px; 
+}
+
+.container_skills form input {
+  margin-bottom: 20px;
+  font-size: 18pt;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.container_skills form label {
+  margin-bottom: 5px;
+  font-size: 18pt;
+  padding: 0px;
+  text-align: left;
+}
 
 /* Pfeile */
 .pfeil-left, .pfeil-right {
   font-size: 50px;
   cursor: pointer;
 }
-
-
 
 .button-save-contact {
   display:flex;
@@ -1006,7 +1192,7 @@ form .upload-aboutYouform{
   font-size: 25px;
 }
 
-/* Formular Styling */
+/* Formular Styling Your Work */
 .container_yourWork  form {
   display: flex;
   flex-direction: column;
@@ -1042,7 +1228,44 @@ form .upload-aboutYouform{
   outline: none; 
 }
 
+/* _______________________________________________________________*/
 
+/* add Thumbnail */
+.upload-Gridthumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.upload-thumbnail {
+  display: flex;
+  position: relative;
+  width: 100%; 
+  max-width: 1800px; 
+  height: 700px; 
+  justify-content: center;
+  align-items: center;
+  background-color: #EAD2AC;
+  border-radius: 50px;
+  cursor: pointer;
+  flex-direction: column;
+  margin: auto; 
+}
+
+
+.upload-thumbnail a {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.upload-thumbnail i {
+  font-size: 120px;
+  text-align: center;
+}
 
 
  /* ______________________________________________________________________ */
@@ -1054,25 +1277,6 @@ form .upload-aboutYouform{
 @media screen and (max-width: 600px) {
 
   /* Startseite */
-
-  /* Navigation */
-  .nav-links a:not(:first-child) {display: none;}
-  .nav-links a.icon {
-    float: right;
-    display: block;
-    padding: 0px 0px;
-  }
-    .nav-links.responsive {position: relative;}
-    .nav-links.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .nav-links.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
 
   .nav-links {
     flex-direction:row;
@@ -1092,7 +1296,7 @@ form .upload-aboutYouform{
 
   .nav-links a {
       padding: 0px 0px; 
-      font-size: 16px; 
+      font-size: 12px; 
   }
 
   .material-icons.profil-icon {

@@ -11,6 +11,9 @@
 
   <body>
 
+    <div class="wrapper">
+      <main>
+
     <!-- Menü/Nav  --> 
     <ul class="nav-links" id="responsive">
       <a href="/login" >
@@ -29,32 +32,74 @@
 
 
     <!-- Upload box -->
-    <h3 class="h3_erstellePortfolio">Füge deinem Portfolio deine Skills hinzu</h3>
+    <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
 
+    <div class="body_GridSkills">
+      <div class="container_skills">
+          
+          <div class="header-container">
+  
+          <a class="pfeil-left" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >arrow_back</i></a>
+  
+          <h4>Skills</h4>
+          
+          <a class="pfeil-right" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >	arrow_forward</i></a>
+      </div>
+  
+       <!-- Skills Form -->
+        <form id="skillsForm" action="/login" method="POST">
+          <div class="skills-grid"> 
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill1:</label>
+            <input maxlength="30" type="text" id="email" name="skill1">
+          </div>
+
+           
+          </div>
+        </form>
     
-
-    <div class="upload-aboutYou">
       
-      <div class="header-container">
-        <a class="pfeil-left" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >arrow_back</i></a>
-        <h4>Skills</h4>
-        <a class="pfeil-right" href="Portfolio.html" ><i class="material-icons pfeil-left-right" >	arrow_forward</i></a>
+      <button class="button-save-contact">Speichern</button>
+      </div>
     </div>
 
-      <div id="message-container"></div>
-
-      <form id="aboutYouForm" method="POST">
-        <textarea
-          id="aboutYouTextarea"
-          name="About You"
-          placeholder="Füge deinem Portfolio eine Liste deiner Skills hinzu."
-          style="display: none"
-        ></textarea>
-      </form>
-
-      <button class="button-save-aboutyou">Speichern</button>
-    </div> 
-  </div>
+</main>
 
     <footer>
       <ul class="nav-linksFooter">
@@ -67,5 +112,7 @@
         <li><a href="/kollophon">Kollophon</a></li>
       </ul>
     </footer>
+
+  </div>
   </body>
 </html>
