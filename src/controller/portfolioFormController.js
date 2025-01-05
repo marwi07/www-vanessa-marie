@@ -32,14 +32,33 @@ export const renderForm = async (ctx) => {
 
   //steps html
   if (currentFormStep == "one") {
+    //BEschreibung
+    step = `<h4>Beschreibung</h4>
+
+    <div class="upload-aboutYou">
+
+    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung hinzu.</div>
+
+    <form id="descriptionForm" action="/add?step=two" method="POST">
+    <fieldset>
+        <textarea id="aboutYouTextarea" name="description" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        <button type="submit" class="button-save">Speichern</button>
+        </fieldset>
+    </form>
+
+    
+    </div>`;
+  }
+
+  if (currentFormStep == "two") {
     //About
-    step = `<h4>About you</h4>
+    step = `<h4>About me</h4>
 
     <div class="upload-aboutYou">
 
     <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
 
-    <form id="aboutYouForm" action="/add?step=two" method="POST">
+    <form id="aboutYouForm" action="/add?step=three" method="POST">
     <fieldset>
         <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
         <button type="submit" class="button-save">Speichern</button>
@@ -49,17 +68,18 @@ export const renderForm = async (ctx) => {
     
     </div>`;
   }
-  if (currentFormStep == "two") {
-    //skills
-    step = `<h4>Skills</h4>
+
+  if (currentFormStep == "three") {
+    //Tags
+    step = `<h4>Tags</h4>
 
     <div class="upload-aboutYou">
 
-    <div class="top-text"> Füge deinem Portfolio Skills hinzu.</div>
+    <div class="top-text"> Füge deinem Portfolio Tags hinzu.</div>
 
-          <form id="skillsForm" action="/add?step=three" method="POST">
+          <form id="skillsForm" action="/add?step=four" method="POST">
     <fieldset>
-        <textarea id="skills" name="skills" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+        <textarea id="skills" name="skills" placeholder="Füge deinem Portfolio Tags hinzu." style="display: block;"></textarea>
         <button type="submit" class="button-save">Speichern</button>
         </fieldset>
     </form>
@@ -68,14 +88,14 @@ export const renderForm = async (ctx) => {
     </div>`;
   }
 
-  if (currentFormStep == "three") {
+  if (currentFormStep == "four") {
     //thumbnail
     step = `<h4>About you</h4>
 
 <div class="upload-aboutYou">
     <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
 
-    <form action="/add?step=four" method="POST" enctype="multipart/form-data">
+    <form action="/add?step=five" method="POST" enctype="multipart/form-data">
     
         <label for="thumbnail">Thumbnail</label>
         <input type="file" id="thumbnail" name="thumbnail">
@@ -101,7 +121,7 @@ export const add = async (ctx) => {
   let step = ctx.url.searchParams.get("step");
 
   //Image upload
-  if (step === "four") {
+  if (step === "five") {
     const formData = await ctx.request.formData();
     const file = formData.get("thumbnail");
     const error = validateImage.validateImage(file);
