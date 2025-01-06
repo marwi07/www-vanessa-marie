@@ -18,121 +18,240 @@ body {
 
 /* _______________________________________________________________*/
 
+/* Überschriften*/
 
-/* Menü */
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+}
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 60px;
+}
+
+h3{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+font-size: 60px;
+
+}
+.h3_erstellePortfolio{
+text-align: left;
+margin-top: 6%;
+margin-left:50px;
+}
+
+h4{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+font-size: 60px;
+text-align: center;
+margin-bottom: 5px;
+margin-top: 0px;
+}
+
+h5{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #EAD2AC;
+  font-size: 20px;
+  margin:auto;
+}
+
+h6{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 15px;
+  margin: auto;
+}
+
+
+/* _______________________________________________________________*/
+
+ /* Hover Effects */
+
+ .pointer {cursor: pointer;}
+
+
+ /* _______________________________________________________________*/
+
+
+ /* Google Font Icons */
+
+.pfeil{
+font-size: 21px;
+text-align: center;
+margin-left: 5px;
+}
+
+.pfeil:hover{
+color:#E6B89C;
+}
+
+.material-icons.profil-icon {
+font-size: 70px;
+}
+
+.material-icons.pfeil-left-right {
+color: #EAD2AC;
+font-size: 100px;
+}
+
+.material-icons.pfeil-left-right:hover {
+color: #E6B89C;
+}
+
+
+ /* _______________________________________________________________*/
+
+/* Nav-Menü */
 
 .nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute; 
-    display: flex; 
-    gap: 20px; 
+  background-color:#234963;
+  list-style-type: none; 
+  margin: 0;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0; 
+  left:0;
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between;
+  z-index: 1000; 
+  align-items: center;
 }
 
 .nav-links li {
-    margin: 0; 
+    margin: 0 20px; 
+    
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 20px; 
-    padding: 15px 20px; 
-    background-color: #183446; 
+    font-size: 25px; 
+    padding: 10px 20px; 
     border-radius: 8px; 
     white-space: nowrap; 
     display: inline-block; 
     transition: background-color 0.3s ease; 
 }
 
+.nav-links a:hover {
+  background-color: #1d5a72; 
+}
+
+.nav-links a.active{
+  background-color: #1d5a72; 
+}
+
+.nav-links .icon {
+  display: none;
+}
+
+.account-icon a {
+  display:flex;
+  align-items: center; 
+}
+
+/* Größe des Account-Icons */
+.icon-image {
+  width: 60px; 
+  height: 60px; 
+  object-fit: contain; /* Größe proportional halten */
+}
+
+.nav-items{
+  display:flex;
+  padding: 10px 10px;
+  margin-right:50px;
+  gap:20px;
+}
+
+/* _______________________________________________________________*/
+
 /* Footer */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Die Seite nimmt mindestens die gesamte Bildschirmhöhe ein */
+}
+
+main {
+  flex: 1; 
+  padding: 10px;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  
+}
 
 .nav-linksFooter {
   list-style-type: none;
-  width: 100%;
-  color: white;
-  text-align: left;
- 
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.nav-linksFooter li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .nav-linksFooter a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px; 
-    padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-linksFooter h5 {
+  color:#EAD2AC;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.nav-linksFooter a:hover {
+  text-decoration: underline;
+}
+
+/* _______________________________________________________________*/
+
+/* Error Seiten */
+ .error_font{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  color: rgb(255, 255, 255); 
+  font-size: 30px;
 }
 
 
 /* _______________________________________________________________*/
 
-
-/* Überschriften*/
-
-h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 160px;
-}
-
-h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 60px;
-}
-
-h3{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-  font-size: 60px;
-  margin-top: 110px;
-  margin-left: 100px;
-}
-
-h4{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 5px;
-  margin-top: 0px;
-}
-
-h5{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #EAD2AC;
-    font-size: 20px;
-    margin:auto;
-}
-
-h6{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 15px;
-    margin: auto;
-}
-
-
-/* _______________________________________________________________*/
-
+/* Startseite */
 
 /* Container für landing Page Bild und Text */
 .container_LandingPage {
-    position: relative;
-    text-align: center;
-    color: white;
-    align-items: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+  position: relative;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width:auto;
+  height: auto;
+  background-color: #1e3f55;
 }
 
 .container_LandingPage-img {
-  max-width: 100%;
-  width: 1900px;
-  height: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   
 }
 
@@ -142,6 +261,59 @@ h6{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* left text heading */
+.left-heading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 180px;
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  text-align: center;
+  max-width: 100%;
+  gap: 5px; 
+  width: 80%; 
+  padding: 20px;
+}
+
+.left-heading h1{
+  font-size: 180px;
+  margin: 0;
+}
+
+.p_herotext{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 30px;
+  padding: 0;
+  margin: 0; 
+}
+
+.button-portfolioerstellen{
+  position:relative;
+  display: inline-block;
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: #EAD2AC;
+  font-size: 30px;
+  color:white;
+  padding:10px 20px;
+  margin-top: 15px;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.button-portfolioerstellen:hover{
+  border-color:#E6B89C;
+}
+
+.bottom-center {
+  position: absolute;
+  bottom: 8px;
+  
 }
 
 /* Bottom left text */
@@ -165,126 +337,96 @@ h6{
     left: 16px;
   }
 
-  .top-left_pfeilback {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-  }
-
   /* Top right text */
 .top-right {
     position: absolute;
-    top: 35px;
-    right: 40px;
+    top: 50%;
+    right: 60px;
   }
 
-  /* _______________________________________________________________*/
+  /* _______________*/
 
-
-
-  /* Hover Effects */
-
-  .hoverEffectUser {
-    display: inline-block; 
-    width: 100px;
-    height: 100px;
-    background-image: url('public/Bilder/Icon-user.png');
-    background-size: cover; 
-    transition: background-image 0.3s ease; 
-    
-}
-
-.hoverEffectUser:hover {
-    background-image: url('public/Bilder/Icon_Hover_Login.png');
-}
-  .pointer {cursor: pointer;}
-
-  .nav-links a:hover {
-    background-color: #1d5a72; 
-}
-
-.PlusButton:hover {
-    background-color: #E6B89C;
-}
-
-   /* _______________________________________________________________*/
-
-
-
- /* Container für landing page Portfolios */
-
+  /* Container für landing page Portfolios Übersicht */
  .Portfolio {
-    display: flex; 
-    align-items: flex-start; 
-    max-width: 100%; 
-    max-height:100%;
-    margin: auto; 
-    border-radius: 8px; 
-    padding: 20px; 
-    margin-top: 80px;
+  display: flex; 
+  align-items: flex-start; 
+  max-width: 100%; 
+  max-height:100%;
+  margin: auto; 
+  border-radius: 8px; 
+  padding: 15px; 
+  margin-top: 20px;
 }
 
 .text-section {
-    flex: 1; 
-    margin-right: 20px; 
+  flex: 1; 
+  margin-left:80px;
+  margin-top: 25px;
+}
+
+.text-section a{
+flex: 1; 
+margin-top: auto;
+font-size: 18px;
+color: white;
+text-decoration: none;
+}
+
+
+.text-section .titel {
+flex: 1; 
+margin-top: 15px;
+margin-right: 5px;
+margin-bottom: auto; 
+}
+
+.text-section .username {
+flex: 1; 
+margin-top: 30px;
+margin-right: 5px;
+margin-bottom: auto; 
+font-weight: bold;
+color:bisque;
+}
+
+.text-section .beschreibung {
+flex: 1; 
+margin-top: 5px;
+margin-right: 5px; 
 }
 
 .image-section {
-    flex: 0 0 800px; 
-    margin-right: 100px;
+  flex: 0 0 800px; 
+  margin-right: 80px;
 }
 
 .image-section img {
-    max-width: 100%; 
-    height: 100%; 
-    border-radius: 8px; 
+  max-width: 100%; 
+  height: 100%; 
+  border-radius: 8px; 
 }
 
-/* _______________________________________________________________*/
-
-
-/* Buttons*/
-
 .btn.readmore {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: none;
-    color: #EAD2AC;
-    background-color: inherit;
-    padding: 10px 0px;
-    font-size: 20px;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-  }
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+  color: #EAD2AC;
+  background-color: inherit;
+  padding: 10px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.btn.readmore:hover {color:#E6B89C;}
+
+ /* _______________*/
   
-  .btn.readmore:hover {color:#E6B89C;}
-
-
-  /* Button Plus Portfolio*/
-  .button {
-    background-color: #EAD2AC;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    margin-left:2050px;
-   
-  }
-
-  .button5 {border-radius: 50%;}
-
-
-  /* _______________________________________________________________*/
-  
-
-  /* Filter Kram - Landing Page */
-
-  .container.Test {
-    overflow: hidden;
-  }
+  /* Filter - Startseite */
+  #myBtnContainer {
+    text-align: center; 
+    margin-top: 20px; 
+}
   
   .filterDiv {
     float: left;
@@ -294,22 +436,24 @@ h6{
     line-height: 100px;
     text-align: center;
     margin: 2px;
-    display: none; /* Hidden by default */
+    display: none;
   }
   
-  /* The "show" class is added to the filtered elements */
   .show {
     display: block;
   }
   
 
   .btn.Filter {
+    display: inline-block;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     color: #ffffff;
     border: none;
     outline: none;
-    padding: 12px 16px;
+    margin:auto;
+    margin-top: 10px;
+    padding: 12px 20px;
     background-color: #1d5a72; 
     cursor: pointer;
     border-radius: 8px;
@@ -327,56 +471,108 @@ h6{
     color: white;
   }
 
- /* _______________________________________________________________*/
+
+  /* _______________________________________________________________*/
 
 
-/* Login */
+/* Login/Register */
   
 .body_GridLogin {
   display: flex;
-  justify-content: center;
+  background-color: #1e3f55;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 150px;
-  width: 100%;
+  margin:auto;
+  width: 50%;
+  height: auto;
   flex: 1;
-  
+  margin-top: 10%;
+  position: relative;
+  border-radius: 8px;
 }
 
-.container_Login {
+.container_login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1f435a; 
-  padding: 40px; 
-  border-radius: 10px; 
-  max-width: 400px; 
+  padding: 20px 0px; 
+  height:auto;
   width: 100%; 
+  position: relative;
+  font-size: 25px;
   
 }
 
-.container_Login h2 {
+.body_GridLogin h2 {
   color: white;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 60px;
 }
 
-/* Formular Styling */
-.container_Login form {
+.body_GridLogin h3{
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* _______________*/
+
+/* Form Styling */
+.container_login form {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 80%; 
 }
 
-.container_Login form input {
-  margin-bottom: 10px;
-  font-size: 12pt;
-  padding: 10px;
+.container_login form input {
+  margin-bottom: 20px;
+  font-size: 14pt;
+  padding: 10px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 15pt;
 }
 
+/* Fehlermeldung Login/register */
+
+.container-false-login {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#ffb36c;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  height: 150px;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 21px;
+  margin-bottom: 40px;
+}
+
+.close-button {
+  background-color: #1e3f55;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.close-button:hover {
+  background-color: #133040;
+}
+
+/* _______________*/
+
  /* Button Login/Register */
-.button-group {
+.button-group-login-register {
   
   display: flex;
   justify-content: space-between; /* Buttons nebeneinander platzieren */
@@ -407,144 +603,301 @@ h6{
 
 /* _______________________________________________________________*/
 
+ /* Portfolio Detail Seite */
+
 
  /* Container für Portfolio Detail Seite */
-
  .PortfolioDetailSite {
+  background-color: #1e3f55;
   display: flex; 
-  align-items: flex-start; 
-  max-width: 100%; 
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 70%; 
+  height: auto;
   margin: auto; 
   border-radius: 8px; 
-  padding: 100px; 
-  margin-top: 50px;
+  padding: 120px 20px; 
 }
 
-.PortfolioDetailSite__text-section {
-  flex: 1; 
-  text-align: center;
+.PortfolioDetailSite h2{
+  font-size:90px;
+  position:absolute;
+  padding: 10px 20px;
+  margin-top:80px;
+  margin-left: 15px;;
 }
 
-.PortfolioDetailSite__image-section {
-  flex: 0 0 1400px; 
-  margin-right: center;
+.PortfolioDetailSite h3{
+  font-size:70px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.PortfolioDetailSite p{
+  display: flex;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 2px;
+  padding: 0;
+  font-size: 21px;
+}
+
+.YourWork-text-section {
+  display: flex;
+  flex-direction: row;
+  top: 60px;
+  align-items: center;
+}
+
+.PortfolioDetailSite_image-section {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
 
 }
 
-.PortfolioDetailSite__image-section img {
+.PortfolioDetailSite_image-section img {
   max-width: 100%;  
   border-radius: 8px; 
 }
 
+/* _______________*/
 
-/* Skills Box */
+/* Your Work Upload Box/Bilder */
+.upload-box-YourWork {
+  position:relative;
+  width: 100%;
+  height: 800px;
+  background-color: #EAD2AC;
+  display: flex;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  margin: 0;
+}
+
+.upload-box-YourWork a {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.upload-box-YourWork i {
+  font-size: 120px;
+  text-align: center;
+}
+
+/* _______________*/
+
+/* Tags */
+.tag-container {
+  display: flex; 
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  background-color:#EAD2AC;
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 20px; 
+  font-size: 28px; 
+  margin: 5px;
+}
+
+/* _______________*/
+
+/* Bearbeiten/Löschen Buttons Allgemein*/
+.button-group_portfolio {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  gap:20px;
+}
+
+.button-group_portfolio_button {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  width: 8%;
+  padding: 10px 0px;
+  font-size: 14pt;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button-group_portfolio_button:hover {
+  background-color:  #346e92; 
+}
+
+/* _______________*/
+
+/* Buttons Your Work */
+.button-group-yourWork {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  left: 10px;
+  gap:20px;
+}
+
+.button-yourWork {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  width: 8%;
+  padding: 10px 0px;
+  font-size: 14pt;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button-yourWork:hover {
+  background-color:  #346e92; 
+}
+
+/* _______________*/
+
+/* Skills Box Detail Site*/
 .container_skills {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   justify-content: center;
-  background-color:#9CAFB7; 
-  padding: 40px; 
-  border-radius: 10px;
-  max-width: 800px;
-  width: 100%; 
-  box-sizing: border-box;
-  flex: 1;
+  margin: auto;
+  width: 100%;
+  height:auto;
+  background-color:#9CAFB7;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .skills {
   list-style-type: none;
-  font-size: 25px;
-  padding: 0;
-  margin: 0;
+  font-size: 26px;
   display: flex; 
-  gap: 20px; 
+  gap: 10px; 
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+  margin: 20px 0; 
 }
 
 .skills li {
   width: calc(25% - 20px); /* Nimmt 25% der Breite, minus den Abstand */
   text-align: center; 
   padding: 10px;
-  border-radius: 5px; 
   color: white; 
+  
 }
 
-
+/* _______________*/
 
 /* Kontaktdaten Box */
 .skills-and-contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin:auto;
-  max-width: 1920px;
-  padding: 40px; 
-  gap: 80px;
+  display: flex; 
+  justify-content: center;
+  align-items:flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  gap:50px;
+  flex-wrap: wrap;
 }
 
 
 .container_contact {
   display: flex;
   justify-content: center;
-  background-color: #9CAFB7; 
+  align-items: center;
+  text-align: center;
   padding: 40px; 
-  border-radius: 10px; 
-  max-width:800px; 
   width: 100%; 
+  height:auto;
   box-sizing: border-box;
   flex: 1;
-  
 }
 
 .contact {
-
+  border-radius: 8px;
   list-style-type: none;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-  display: block; 
+  font-size: 24px;
+  padding: 20px 30px;
+  margin-top: 0px;
+  display: table-column; 
 }
 
 .contact dl {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 0;
-  
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contact dt {
-  flex: 1; 
   text-align: left;
   color: white;
-  margin-right: 10px;
+  margin: 0;
+  font-weight: bold;
 }
-
 
 .contact dd {
-  flex: 1; 
-  text-align: right;
+  text-align: left;
   color: white;
   margin: 0;
-  background-color: #183446;
+  background-color:#9CAFB7;
+  border-radius: 20px;
   border-radius: 8px;
   padding: 10px;
+  margin: 0;
 }
 
+/* _______________*/
 
+/* Überschriften für Skills und Kontaktdaten */
+.skills_heading h3, .contact_heading h3 {
+  flex: none; 
+  font-size: 60px;
+  margin-bottom: 0px; 
+  margin-top: 20px;
+}
 
-.skills_heading, .contact_heading {
+/* Container für die Inhalte */
+.contact_heading, .skills_heading {
   flex: 1; 
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  max-width: 500px; 
+  text-align: center; 
 }
 
-.skills_heading_h3, .contact_heading_h3 {
-  text-align: center; 
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
+/* _______________*/
 
 /* Bildergalerie "Your Work"*/
 
@@ -555,68 +908,35 @@ h6{
 }
 
 .column {
-  flex: 25%;
-  max-width: 25%;
+  flex:35%;
+  max-width: 35%;
   padding: 0 4px;
 }
 
 .column img {
-  margin-top: 8px;
-  vertical-align: middle;
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
+/* _______________________________________________________________*/
 
-/* Tags */
-
-.tag-container {
- 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center;
-  margin-bottom: 50px;
-  
-}
-
-.tag {
-  background-color:#EAD2AC;
-  color: white; 
-  padding: 10px 10px; 
-  border-radius: 20px; 
-  font-size: 20px; 
-  margin: 5px;
-}
-
-/* Bearbeiten/Löschen Buttons*/
-
-.button-group_portfolio {
-  display: flex;
-  justify-content: space-between; 
-  width: 50%;
-  margin: auto;
-  margin-top: 240px;
-  gap:20px;
-  
-}
-
-.button-group_portfolio_button {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 48%;
-  padding: 12px;
-  font-size: 18pt;
-  font-weight: bold;
+/* Your Work Save Button */
+.button-save-YourWork {
+  padding:10px 20px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 8px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color:#9CAFB7;  
-  color: white;
-  text-decoration: none;
-  
 }
 
-.button-group_portfolio_button:hover {
-  background-color:  #346e92; 
-}
 /* _______________________________________________________________*/
 
 /* Upload image */
@@ -631,11 +951,6 @@ h6{
   border-radius: 50px;
   cursor: pointer;
   position: relative;
-}
-
-/* Hides the actual file input */
-input[type="file"] {
-  display: none;
 }
 
 .preview-image {
@@ -663,13 +978,17 @@ input[type="file"] {
   
 }
 
+/* _______________________________________________________________*/
+
+
 /* Upload About You */
 .upload-aboutYou {
   width: 1800px;
   height: 700px;
   background-color: #9CAFB7;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   margin: 30px auto;
   border-radius: 50px;
@@ -677,103 +996,298 @@ input[type="file"] {
   position: relative;
 }
 
-/* Textarea Styling */
-#aboutYouTextarea {
-  width: 1500px;
-  height: 480px;
-  padding: 20px;
-  font-size: 12pt;
-  border-radius: 10px;
-  border: 2px solid #c4c4c4;
-  resize: none;
-  background-color: #9CAFB7;
-  color: white;
-  outline: none;
+.upload-aboutYou h4{
+  font-size: 70px;
+  margin-top: 20px;
 }
+
+.header-container {
+  position: relative; 
+  display: flex; 
+  justify-content: space-between; 
+  top: 5px; 
+  width: 100%; 
+  margin-top: 0px;
+}
+
+.header-container h4 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+form .upload-aboutYouform{
+  width: 1800px;
+  height: 700px;
+}
+
+/* Form Styling */
+.upload-aboutYouform {
+  width: 90%;  
+  height: calc(100% - 150px); 
+  margin-top: 20px; 
+  border-radius: 10px; 
+  padding: 20px; 
+  display: flex;
+  border:none;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+/* Textarea Styling */
+.upload-aboutYouform textarea {
+  width: 100%;
+  max-width: 1580px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  resize: none; 
+  background-color: #f9f9f9;
+}
+
+.button-save-aboutyou {
+  padding:10px 20px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #183446;
+  color:white;
+ margin-top: 20px;
+ margin-bottom: 20px;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 8px;
+  border: none;
+}
+
+.button-save-aboutyou:hover{
+  background-color: #1d5a72;
+}
+
+/* _______________________________________________________________*/
+
+/* Profil Bearbeiten Seite*/
+
+/* Profilbild bearbeiten */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Rundes Profilbild */
+.profile-image-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  background-color:#EAD2AC;
+}
+
+.profile-image-container label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-text {
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Unsichtbarer Datei-Input */
+#profileImage {
+  display: none;
+}
+
+
 
 
 /* Upload Kontaktinfo */
 .body_GridContact {
   display: flex;
-  justify-content: center;
+  background-color: #1e3f55;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 40px;
-  width: 100%;
+  margin:auto;
+  width: 70%;
+  height: auto;
   flex: 1;
   position: relative;
+}
+
+.body_GridContact h3{
+  text-align: center;
+  margin-top: 120px;
 }
 
 .container_contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #9CAFB7; 
-  padding: 40px; 
+  padding: 0px; 
   border-radius: 50px; 
-  max-width: 1800px; 
-  height:700px;
+  height:auto;
   width: 100%; 
   position: relative;
   font-size: 25px;
 }
 
-/* Formular Styling */
-.container_contact form {
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
-}
-
-.container_contact form input {
-  margin-bottom: 10px;
-  font-size: 15pt;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  
-}
-
-
-/* Pfeile Styling */
-.button-group_pfeile {
-  position: absolute;
-  top: 20px; 
+.container_contact h4{
+  display: block;
+  font-size: 40px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
-.pfeil-left {
-  position: absolute;
-  top: 0;
-  left: 20px; 
-  width: 60px; 
+/* Formular Styling Kontaktinfo*/
+.container_contact form {
+  display: flex;
+  flex-direction: column;
+  width: 1000px; 
+  margin-bottom: 20px;
+}
+
+.container_contact form input {
+  margin-bottom: 20px;
+  font-size: 18pt;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.container_contact form label {
+  margin-bottom: 5px;
+  font-size: 18pt;
+  padding: 0px;
+  text-align: left;
+}
+
+/* _______________________________________________________________*/
+
+/* Upload Skills */
+.body_GridSkills {
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  width:100%;
+  height: auto;
+  flex: 1;
+}
+
+.container_skills {
+  display: flex;
+  flex-direction: column;
+  background-color: #9CAFB7; 
+  padding: 40px; 
+  border-radius: 50px; 
+  width: 100%; 
+  max-width: 1800px;
+  position: relative;
+  font-size: 25px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+  grid-gap: 20px; 
+  width: 100%; 
+  max-width: 1800px; 
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.skill-item input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Formular Styling Skills*/
+.container_skills form {
+  display: flex;
+  flex-direction: column;
+  width: 1000px; 
+}
+
+.container_skills form input {
+  margin-bottom: 20px;
+  font-size: 18pt;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.container_skills form label {
+  margin-bottom: 5px;
+  font-size: 18pt;
+  padding: 0px;
+  text-align: left;
+}
+
+/* Pfeile */
+.pfeil-left, .pfeil-right {
+  font-size: 50px;
   cursor: pointer;
 }
 
-.pfeil-right {
-  position: absolute;
-  top: 0;
-  right: 20px; 
-  width: 60px; 
-  cursor: pointer;
-}
-
-.button-save {
-  position: absolute;
+.button-save-contact {
+  display:flex;
+  flex-direction: column;
+  position: relative;
   bottom: 20px;
-  padding:10px;
+  padding:10px 10px;
   max-width: 300px;
   width: 100%;
   background-color: #183446;
   color:white;
+  margin-top: 30px;
+  align-items: center;
   font-size: 25px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
+}
+
+.button-save-contact:hover{
+  background-color: #1d5a72;
 }
 
 .button-save:hover {
   background-color:  #26506b; 
   cursor: pointer;
 }
+
+/* _______________________________________________________________*/
 
 /* Upload Your Work */
 .body_GridyourWork {
@@ -800,7 +1314,7 @@ input[type="file"] {
   font-size: 25px;
 }
 
-/* Formular Styling */
+/* Formular Styling Your Work */
 .container_yourWork  form {
   display: flex;
   flex-direction: column;
@@ -836,62 +1350,345 @@ input[type="file"] {
   outline: none; 
 }
 
+/* _______________________________________________________________*/
 
-/* Smartphones (portrait and landscape) */
-@media (max-width: 767px) {
+/* add Thumbnail */
+.upload-Gridthumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.upload-thumbnail {
+  display: flex;
+  position: relative;
+  width: 100%; 
+  max-width: 70%; 
+  height: 700px; 
+  justify-content: center;
+  align-items: center;
+  background-color: #EAD2AC;
+  border-radius: 50px;
+  flex-direction: column;
+  margin: auto; 
+}
+
+.upload-thumbnail a {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.upload-thumbnail i {
+  font-size: 120px;
+  text-align: center;
+}
+
+.button-save-image {
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  padding:20px 0px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  background-color: #183446;
+  color:white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+}
+
+.button-save-image:hover{
+  background-color: #1d5a72;
+}
+
+
+/* add Thumbnail Form Styling */
+.upload-thumbnail form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; 
+  max-width: auto; 
+  height: 700px; 
+  background-color:#E6B89C;
+  border: 2px solid #ffd9ad;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-thumbnail form label{
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+}
+
+.upload-thumbnail form input[type="file"] {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #5b90b1;
+  width: 80%; 
+  max-width: 1800px; 
+  height: 400px; 
+  opacity: 0;
+  cursor: pointer;
+ 
+}
+
+ /* ______________________________________________________________________ */
+
+
+/* Mediaqueries */
+
+
+@media screen and (max-width: 600px) {
+
+  /* Startseite */
+
+  .nav-links {
+    flex-direction:row;
+    align-items: center; 
+    padding: 0px 0px;
+    height: auto; 
+  }
+
+  .nav-items{
+    margin-right: 1%;
+  }
+
+  .nav-links li {
+      margin: 5px 0; 
+      padding: 0px 0px;
+  }
+
+  .nav-links a {
+      padding: 0px 0px; 
+      font-size: 12px; 
+  }
+
+  .material-icons.profil-icon {
+    font-size: 40px;
+  }
+
+/* Überschriften */
+
   h1 {
-      font-size: 36px; /* Adjust heading size */
+      font-size: 36px; 
   }
 
   h2 {
-      font-size: 28px; /* Adjust heading size */
+      font-size: 28px;
   }
 
-  .container_Login {
-      padding: 20px; /* Adjust padding */
-      width: 90%; /* Full width */
+  h5 {
+    font-size: 14px;
+}
+
+  .left-heading{
+    font-size: 48px;
   }
 
-  .btn {
-      font-size: 16px; /* Button font size */
+  .p_herotext{
+    font-size: 16px;
   }
 
+  .button-portfolioerstellen{
+    font-size: 14px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
+  }
+
+/* Übersicht Portfolios */
+.pfeil{
+  font-size: 14px;
+}
+
+.btn.readmore{
+  font-size:16px;
+}
+
+  /* Übersicht Portfolios text-section */
+.text-section {
+  flex: auto; 
+  margin:auto;
+  font-size: 16px;
+}
+
+.text-section a {
+ flex: auto;
+ font-size: 14px;
+ 
+  }
+}
+
+ /* ___________________________________________ */
+
+/* Smartphones (portrait and landscape) */
+@media (max-width: 767px) {
+
+  /* Überschriften */
+  h1 {
+      font-size: 36px; 
+  }
+
+  h2 {
+      font-size: 28px;
+  }
+
+  h5 {
+    font-size: 14px;
+}
+
+
+/* Startseite Heading */
+  .left-heading{
+    font-size: 48px;
+  }
+
+  .p_herotext{
+    font-size: 16px;
+  }
+
+  /* Navigation */
   .nav-links {
-      flex-direction: column; /* Stack menu items vertically */
-      align-items: center; /* Center align */
+    flex-direction:row;
+    align-items: center; 
+    padding: 2px 0;
+    height: auto; 
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
+  .nav-links li {
+      margin: 5px 0; 
+  }
+
+  .nav-links a {
+      padding: 10px 20px; 
+      font-size: 18px; 
+  }
+
+  .nav-linksFooter a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; 
+    padding: 5px;
+  }
+
+  /* Bilder Startseite */
+  .image-section{
+    flex: auto;
+    margin: auto;
+  }
+
+  .container_LandingPage-img {
+    width: 300px;
+    height: 300px;
+    
+  }
+  
+  .container_LandingPage-img {
+      width: 100%; 
+     
+  }
+
+  .button-portfolioerstellen{
+    font-size: 16px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
+  }
+
+/* Portfolio Übersicht text-section */
+.text-section {
+  flex: auto; 
+  margin:auto;
+  font-size: 16px;
+}
+
+.text-section a {
+ flex: auto;
+ font-size: 14px;
+ 
+}
+
+/* Übersicht Portfolios */
+.pfeil{
+  font-size: 14px;
+}
+
+.btn.readmore{
+  font-size:16px;
+}
+
+/* Filter Startseite */
+#myBtnContainer {
+  text-align: center;
+  margin-top: 8px; 
+}
+
+.btn.Filter {
+  display: inline-block;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  margin:auto;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #1d5a72; 
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+/* Footer */
+.nav-linksFooter {
+  list-style-type: none;
+  width: 100%;
+  color: white;
+  text-align: left;
+  margin-bottom: 10%;
+  margin-top: auto;
+ 
+}
+
+  /* Portfolio Site */
+    .Portfolio, .PortfolioDetailSite, .skills-and-contact {
       flex-direction: column; /* Stack sections */
       align-items: center; /* Center align */
       margin-top: 10px;
       padding: 5px;
   }
 
-  .image-section{
-    flex: auto;
-  }
-
-  .top-right a img{
-    width: 50%;
-    height: 50%;
-  }
-
-  .container_LandingPage-img {
-    max-width: 100%;
-    width: 1000px;
-    height: 300px;
-    
-  }
-  
-
-  /* Adjust the image size */
-  .container_LandingPage-img {
-      width: 100%; /* Full width on small screens */
-  }
-
-  /* Other specific adjustments as needed */
+   
+  /* Login */
+  .container_Login {
+    padding: 20px; 
+    width: 90%; 
 }
+
+.btn {
+    font-size: 16px; 
+}
+
+}
+
+
+
+
 
 /* Tablets (landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -921,6 +1718,21 @@ input[type="file"] {
       align-items: center; /* Center align */
       margin-top: 0px;
       padding: 0px;
+  }
+
+  
+  /* Größe des Account-Icons */
+  .icon-image {
+    width: 10px; 
+    height: 10px; 
+    object-fit: contain; /* Größe proportional halten */
+  }
+
+  .button-portfolioerstellen{
+    font-size: 20px;
+    color:white;
+    padding:10px 20px;
+    margin-top: 15px;
   }
 
   /* Other specific adjustments as needed */

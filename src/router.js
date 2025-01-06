@@ -47,7 +47,7 @@ export const routes = async (ctx) => {
     ctx = await about.renderAbout(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio") {
+  if (ctx.url.pathname === "/Portfolio") {
     ctx = await portfolio.renderForm(ctx);
   }
 
