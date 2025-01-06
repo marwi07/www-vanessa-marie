@@ -10,10 +10,15 @@ import * as datenschutz from "./controller/datenschutzController.js";
 import * as dokumentation from "./controller/dokumentationConreoller.js";
 import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
+import * as workForm from "./controller/workFormController.js";
 
 export const routes = async (ctx) => {
   if (ctx.url.pathname === "/test") {
     ctx = await userContact.renderContactForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/arbeiten/erstellen") {
+    ctx = await workForm.renderWorkForm(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio") {
@@ -87,6 +92,10 @@ export const routes = async (ctx) => {
 
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
     ctx = await portfolioForm.add(ctx);
+  }
+
+  if (ctx.url.pathname === "/addWork" && ctx.request.method === "POST") {
+    ctx = await workForm.add(ctx);
   }
 
   if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
