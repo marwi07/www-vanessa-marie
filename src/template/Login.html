@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/public/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body>
+
+    <div class="wrapper">
+      <main>
 
     <!-- Menü/Nav  --> 
     <ul class="nav-links" id="responsive">
@@ -28,27 +31,44 @@
 </ul>
 
 <!-- Login Container  --> 
+
     <div class="body_GridLogin">
-      <section class="container_Login">
+
+      <div class="container_login">
+       
         <h2>Login</h2>
-
+    
+       
         <div id="message-container"></div>
-
+     
         <form id="loginForm" action="/login" method="POST">
+
+          <div class="container-false-login" id="errorPopup">
+         
+            <p class="error-message">Fehler: Benutzername existiert bereits!</p>
+            <button class="close-button">Schließen</button>
+          </div>
+
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" />
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" />
-
+       
           <div class="button-group-login-register">
             <button type="submit" class="button-group_login">Login</button>
             <a href="register.html" type="button" class="button-group_login"
               >Registrieren</a
             >
+          
           </div>
+      
         </form>
-      </section>
+     
+      
     </div>
+  </div>
+
+  </main>
 
     <footer>
       <ul class="nav-linksFooter">
@@ -61,5 +81,7 @@
         <li><a href="/kollophon">Kollophon</a></li>
       </ul>
     </footer>
+
+  </div>
   </body>
 </html>
