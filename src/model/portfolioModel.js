@@ -10,20 +10,28 @@ export const indexImage = async (db) => {
   return query;
 };
 
-export const addPortfolioInfo = async (db, formData, username) => {
+export const addPortfolioInfo = async (
+  db,
+  formData,
+  skills,
+  tags,
+  username
+) => {
   const data = {
     title: formData.get("title"),
     about: formData.get("about"),
-    skills: formData.get("skills"),
+    skills: skills,
+    tags: tags,
     description: formData.get("description"),
   };
-  const sql = `INSERT INTO portfolioText (username, title, text, skills, description) VALUES ($username, $title, $about, $skills, $description)`;
+  const sql = `INSERT INTO portfolioText (username, title, text, skills, description, tags) VALUES ($username, $title, $about, $skills, $description, $tags)`;
   const query = await db.query(sql, {
     $username: username,
     $title: data.title,
     $about: data.about,
     $skills: data.skills,
     $description: data.description,
+    $tags: data.tags,
   });
   return query;
 };

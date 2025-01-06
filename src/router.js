@@ -1,6 +1,7 @@
 import * as portfolioForm from "./controller/portfolioFormController.js";
 import * as portfolio from "./controller/portfolioController.js";
 import * as userContact from "./controller/contactFormController.js";
+import * as profil from "./controller/profileController.js ";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as register from "./controller/registerController.js";
@@ -13,8 +14,12 @@ import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
 
 export const routes = async (ctx) => {
-  if (ctx.url.pathname === "/test") {
-    ctx = await userContact.renderContactForm(ctx);
+  if (ctx.url.pathname === "/profil") {
+    ctx = await profil.renderProfile(ctx);
+  }
+
+  if (ctx.url.pathname === "/profil/erstellen") {
+    ctx = await userContact.addContactData(ctx);
   }
 
   if (ctx.url.pathname === "/arbeiten/erstellen") {
@@ -27,6 +32,14 @@ export const routes = async (ctx) => {
 
   if (ctx.url.pathname === "/") {
     ctx = await index.renderIndex(ctx);
+  }
+
+  if (ctx.url.pathname === "/index") {
+    ctx = await index.renderIndex(ctx);
+  }
+
+  if (ctx.url.pathname === "/test") {
+    ctx = await portfolio.renderPortfolio(ctx);
   }
 
   if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
@@ -61,7 +74,7 @@ export const routes = async (ctx) => {
   if (ctx.url.pathname === "/ueber-uns") {
     ctx = await about.renderAbout(ctx);
   }
-  
+
   if (ctx.url.pathname === "/portfolio/erstellen") {
     ctx = await portfolioForm.renderForm(ctx);
   }

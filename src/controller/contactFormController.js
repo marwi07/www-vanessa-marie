@@ -1,7 +1,7 @@
 import * as model from "../model/userModel.js";
 
 export const renderContactForm = async (ctx) => {
-  ctx.response.body = await ctx.nunjucks.render("test.html");
+  ctx.response.body = await ctx.nunjucks.render("addContact.html");
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
   return ctx;

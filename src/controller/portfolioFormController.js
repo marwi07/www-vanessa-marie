@@ -11,20 +11,20 @@ let step = "";
 
 export const renderForm = async (ctx) => {
   //step 1 - Titel
-  step = `<h4>Kontaktdaten</h4>
-  <div class="body_GridContact">
-    <div class="container_contact">
+  step = `
+    <div class="upload-aboutYou" >
 
-      <div id="message-container"></div> 
+    <div class="header-container">
+
+        <h4>Titel</h4>
+    </div>
+
+    <div id="Beschreibung Portfolio"> </div>
 
       <form id="titelForm" action="/add?step=one" method="post">
-      <fieldset>
-        <label for="title">Titel:</label>
-        <input type="text" id="title" name="title">
-        </fieldset>
-        <button type="submit" class="button-save">Speichern</button>
+        <textarea maxlength="1000" id="title" name="title" placeholder="Füge deinem Portfolio einen Titel hinzu."></textarea>
+        <button type="submit" class="button-save-aboutyou">Speichern</button>
         </form>
-  
     </div>`;
 
   const cookie = ctx.cookies.getCookie(ctx);
@@ -33,76 +33,150 @@ export const renderForm = async (ctx) => {
   //steps html
   if (currentFormStep == "one") {
     //BEschreibung
-    step = `<h4>Beschreibung</h4>
+    step = `<div class="upload-aboutYou" >
 
-    <div class="upload-aboutYou">
+    <div class="header-container">
 
-    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung hinzu.</div>
+        <h4>Beschreibung</h4>
+    </div>
 
-    <form id="descriptionForm" action="/add?step=two" method="POST">
-    <fieldset>
-        <textarea id="aboutYouTextarea" name="description" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
-        <button type="submit" class="button-save">Speichern</button>
-        </fieldset>
-    </form>
+    <div id="Beschreibung Portfolio"> </div>
 
-    
+      <form id="descriptionForm" action="/add?step=two" method="POST">
+        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deinem Portfolio einen Titel hinzu."></textarea>
+        <button type="submit" class="button-save-aboutyou">Speichern</button>
+        </form>
     </div>`;
   }
 
   if (currentFormStep == "two") {
     //About
-    step = `<h4>About me</h4>
+    step = `<div class="upload-aboutYou" >
 
-    <div class="upload-aboutYou">
+    <div class="header-container"> 
+        <h4>About You</h4>
+    </div>
 
-    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung über dich hinzu.</div>
+    <div id="message-container"> </div>
 
     <form id="aboutYouForm" action="/add?step=three" method="POST">
-    <fieldset>
-        <textarea id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
-        <button type="submit" class="button-save">Speichern</button>
-        </fieldset>
+        <textarea maxlength="1000" id="aboutYouTextarea" name="about" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
+       <button type="submit" class="button-save-aboutyou">Speichern</button>
     </form>
 
-    
-    </div>`;
+</div>`;
   }
 
   if (currentFormStep == "three") {
     //Tags
-    step = `<h4>Tags</h4>
+    step = `<div class="body_GridSkills">
+      <div class="container_skills">
+          <div class="header-container">
+          <h4>Skills</h4>
+      </div>
 
-    <div class="upload-aboutYou">
+       <!-- Skills Form -->
+        <form id="skillsForm" action="/add?step=four" method="POST">
+          <div class="skills-grid"> 
 
-    <div class="top-text"> Füge deinem Portfolio Tags hinzu.</div>
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill1" name="skill1">
+          </div>
 
-          <form id="skillsForm" action="/add?step=four" method="POST">
-    <fieldset>
-        <textarea id="skills" name="skills" placeholder="Füge deinem Portfolio Tags hinzu." style="display: block;"></textarea>
-        <button type="submit" class="button-save">Speichern</button>
-        </fieldset>
-    </form>
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill2" name="skill2">
+          </div>
 
-    
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill3" name="skill3">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill4" name="skill4">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill5" name="skill5">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill6" name="skill6">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill7" name="skill7">
+          </div>
+
+          <div class="skills-item">
+            <label for="skill1">Skill:</label>
+            <input maxlength="30" type="text" id="skill8" name="skill8">
+          </div>
+          </div>
+          <button type="submit" class="button-save-aboutyou">Speichern</button>
+        </form>
+      </div>
     </div>`;
   }
 
   if (currentFormStep == "four") {
+    //tags
+    step = `
+  <div class="upload-aboutYou" >
+
+    <div class="header-container">
+
+        <h4>Tags</h4>
+    </div>
+
+    <div id="Beschreibung Portfolio"> </div>
+
+       <form action="/add?step=five" method="POST" enctype="multipart/form-data">
+        <div>
+        <label>
+          <input type="checkbox" name="tags" value="3D-Animation"> 3D-Animation
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="Motion Graphics"> Motion Graphics
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="Softwareentwicklung"> Softwareentwicklung
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="2D-Art"> 2D-Art
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="Animation"> Animation
+        </label>
+      </div>
+          <button type="submit" class="button-save-aboutyou">Speichern</button>
+      </form>
+
+   </div>
+   </div>`;
+  }
+
+  if (currentFormStep == "five") {
     //thumbnail
     step = `<h4>About you</h4>
 
-<div class="upload-aboutYou">
+    <div class="upload-aboutYou">
     <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
 
-    <form action="/add?step=five" method="POST" enctype="multipart/form-data">
+    <form action="/add?step=six" method="POST" enctype="multipart/form-data">
     
         <label for="thumbnail">Thumbnail</label>
         <input type="file" id="thumbnail" name="thumbnail">
         
         <button type="submit" class="button-save">Speichern</button>
     </form>
-</div>`;
+    </div>`;
   }
 
   //render page with html of step
@@ -114,14 +188,14 @@ export const renderForm = async (ctx) => {
   return ctx;
 };
 
-const tempStorage = new FormData();
+let tempStorage = new FormData();
 let formData;
 
 export const add = async (ctx) => {
   let step = ctx.url.searchParams.get("step");
 
   //Image upload
-  if (step === "five") {
+  if (step === "six") {
     const formData = await ctx.request.formData();
     const file = formData.get("thumbnail");
     const error = validateImage.validateImage(file);
@@ -152,6 +226,8 @@ export const add = async (ctx) => {
 
         ctx = ctx.cookies.setFormStepCookie(ctx, step);
 
+        tempStorage = new FormData();
+
         ctx.response.status = 302;
         ctx.response.headers.set("Location", "/");
         ctx.response.body = "";
@@ -167,15 +243,39 @@ export const add = async (ctx) => {
   } else {
     formData = await ctx.request.formData();
 
-    for (const [key, value] of formData.entries()) {
-      tempStorage.append(key, value);
+    //Logik fur einfaches Speichern von Skills
+    if (step == "four") {
+      const skills = [];
+      for (let i = 1; i <= 8; i++) {
+        const skill = formData.get(`skill${i}`);
+        if (skill && skill.trim() !== "") {
+          skills.push(skill.trim());
+        }
+      }
+      const skillsString = skills.join(",");
+    }
+    //Logik fur Speichern von Tags
+    if (step == "five") {
+      const tags = formData.getAll("tags");
+      const tagsString = tags.join(",");
+    } else {
+      for (const [key, value] of formData.entries()) {
+        tempStorage.append(key, value);
+      }
     }
 
-    if (step === "three") {
+    if (step === "five") {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
+
       if (username) {
-        model.addPortfolioInfo(ctx.db, tempStorage, username);
+        model.addPortfolioInfo(
+          ctx.db,
+          tempStorage,
+          skillsString,
+          tagsString,
+          username
+        );
       } else {
         ctx.response.body = "<h1>no user found logged in</h1>";
         ctx.response.status = 404;
