@@ -4,49 +4,74 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exponat hinzufügen</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <title>addWorkBilder</title>
+    <link href="/public/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body>
-    <div class="top-right">
-      <a href="login"><img src="Bilder/Icon-User.png" /></a>
-    </div>
-
-    <div class="top-left">
-      <a href="/" class="pointer">
-        <img src="Bilder/Pfeil.png" alt="Zurück" />
-      </a>
-    </div>
+       <!-- Menü/Nav  --> 
+       <ul class="nav-links" id="responsive">
+        <a href="/login" >
+            <i class="material-icons profil-icon">account_circle</i>
+        </a>
+  
+        <div class="nav-items">
+            <a href="/index" >Home</a>
+           <a href="/portfolio">Mein Portfolio</a>
+            <a href="portfolio/erstellen" class="active">Portfolio erstellen</a>
+             <a href="javascript:void(0);" class="icon" id="burgermenutest">
+                <i class="material-icons" style="font-size:40px">reorder</i>
+            </a>
+        </div>   
+  </ul>
 
     <!-- Upload box -->
-    <h3>Erstelle dein Portfolio</h3>
+    <h3 class="h3_erstellePortfolio">Füge deinem Portfolio Bilder deiner Arbeit hinzu!</h3>
 
-    <h4>Your Work : Bilder</h4>
+    
 
-    <div
-      class="upload-box"
-      onclick="document.getElementById('file-input').click();"
-    >
-      <div class="top-text">
-        Füge deinem Portfolio Bild/er deiner Arbeit/en hinzu.
-      </div>
-      <div class="center-content">+</div>
+    <div class="upload-box"
+    >   
+      <h4>Titelbild</h4>
+      
       <img id="preview" class="preview-image" alt="Image Preview" />
 
-      <div class="button-group_pfeile">
-        <a href="addYourWork.html">
-          <img class="pfeil-left" src="Bilder/pfeilL.png" alt="Zurück"
-        /></a>
-        <a href="Portfolio.html">
-          <img class="pfeil-right" src="Bilder/pfeilR.png" alt="Weiter"
-        /></a>
-      </div>
-
-      <button class="button-save">Speichern</button>
+      <button class="button-save-aboutyou">Speichern</button>
     </div>
 
-    <footer>
+    
+<!-- Portfolio - Bildergalerie --> 
+
+<div class="PortfolioDetailSite">
+  <div class="row" id="gallery">
+    <!-- Bilder werden hier dynamisch hinzugefügt -->
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
+    </div>
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
+    </div>
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
+    </div>
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
+    </div>
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
+    </div>
+    <div class="column">
+      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
+    </div>
+  </div>
+  <div class="upload-container">
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <button id="uploadButtonGalerie">Bilder hochladen</button>
+  </div>
+</div>
+
+    <!--<footer>
       <ul class="nav-linksFooter">
         <h5>More On This Site</h5>
         <li><a href="/ueber-uns">Über uns</a></li>
@@ -56,6 +81,6 @@
         <li><a href="/dokumentation">Dokumentation</a></li>
         <li><a href="/kollophon">Kollophon</a></li>
       </ul>
-    </footer>
+    </footer>--> 
   </body>
 </html>

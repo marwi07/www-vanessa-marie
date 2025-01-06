@@ -1,149 +1,207 @@
 <!DOCTYPE html>
 <html lang="DE">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exponat hinzufügen</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
 
-  <body>
-    <!-- Landing Page Pic  -->
-    <div class="container_LandingPage">
-      <img
-        class="container_LandingPage-img"
-        src="Bilder/LandingPagePic.jpg"
-        alt="LandingPagePic"
-      />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
-      <!-- Menü  -->
-      <div class="top-left">
-        <ul class="nav-links">
-          <li><a href="/portfolio">Mein Portfolio</a></li>
-          <li><a href="/portfolio/erstellen">Portfolio erstellen</a></li>
+<body>
+
+    <div class="wrapper">
+        <main>
+
+         <!-- Menü/Nav  --> 
+         <ul class="nav-links" id="responsive">
+                <a href="/login">
+                    <i class="material-icons profil-icon">account_circle</i>
+                </a>
+
+                <div class="nav-items">
+                    <a href="/index" class="active">Home</a>
+                   <a href="/Portfolio">Mein Portfolio</a>
+                    <a href="portfolio/erstellen">Portfolio erstellen</a>
+                     <a href="javascript:void(0);" class="icon" id="burgermenutest">
+                        <i class="material-icons" style="font-size:40px">reorder</i>
+                    </a>
+                </div>   
         </ul>
+
+    <!-- Landing Page Pic  --> 
+    <div class="container_LandingPage">
+
+        <img class="container_LandingPage-img"src="/Bilder/LandingPagePic.jpg" alt="LandingPagePic">
+         
+
+    <!-- Überschrift  --> 
+        <div class="left-heading"> PortfolioCraft
+            <p class="p_herotext">Erstelle dir jetzt ganz einfach dein eigenes Portfolio.</p> 
+            <a href="portfolio/erstellen" class="button-portfolioerstellen"> Portfolio erstellen! </a>
+        </div>
+        
       </div>
+           
+        <!-- Filter  --> 
+        <div id="myBtnContainer">
+            <button class="btn Filter active"> Alles</button>
+            <button class="btn Filter"> 3D-Animation</button>
+            <button class="btn Filter" > Motion Graphics</button>
+            <button class="btn Filter" > Softwareentwicklung</button>
+            <button class="btn Filter" > 2D-Art</button>
+            <button class="btn Filter" > Animation</button>
+          </div>
 
-      <!-- Überschrift  -->
-      <div class="centered">
-        <h1>Dein Portfolio</h1>
-      </div>
 
-      <!-- Account Icon  -->
-      <div class="top-right">
-        <a href="login"><img src="Bilder/Icon-User.png" /></a>
-        <h6>Login</h6>
-      </div>
+<!-- Portfolio linksbündig  --> 
+<div class="Portfolio">
+    <div class="text-section">
+        
+        <p class="username">_____________________________Username</p>
 
-      <!-- Filter  -->
-      <div id="myBtnContainer">
-        <button class="btn Filter active">Alles</button>
-        <button class="btn Filter">3D-Animation</button>
-        <button class="btn Filter">Motion Graphics</button>
-        <button class="btn Filter">Softwareentwicklung</button>
-        <button class="btn Filter">2D-Art</button>
-        <button class="btn Filter">Animation</button>
-      </div>
-    </div>
+        <h2 class="titel">Meine Überschrift</h2>
 
-    <!-- 
-    <div class="container Test">
-        <div class="filterDiv cars">BMW</div>
-        <div class="filterDiv colors fruits">Orange</div>
-        <div class="filterDiv cars">Volvo</div>
-        <div class="filterDiv colors">Red</div>
-        <div class="filterDiv cars">Ford</div>
-        <div class="filterDiv colors">Blue</div>
-        <div class="filterDiv animals">Cat</div>
-        <div class="filterDiv animals">Dog</div>
-        <div class="filterDiv fruits">Melon</div>
-        <div class="filterDiv fruits animals">Kiwi</div>
-        <div class="filterDiv fruits">Banana</div>
-        <div class="filterDiv fruits">Lemon</div>
-        <div class="filterDiv animals">Cow</div>
-      </div>
-     -->
-
-    <!-- Portfolio linksbündig  -->
-    <div class="Portfolio">
-      <div class="text-section">
-        <h5>_____________________________Username</h5>
-
-        <h2>Meine Überschrift</h2>
-
-        <p>
-          Hier ist der Text, der unter der Überschrift steht. Sie können
-          beliebigen Text hier hinzufügen, um mehr Informationen
-          bereitzustellen.
+        <p class="beschreibung">Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.
+            1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
+1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
+1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
+1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
+1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
+1. User Authentication & Profiles
+User Registration & Login: Allow users to create accounts and log in to manage their portfolios.
+Password Encryption: Securely store user passwords using encryption techniques (e.g., bcrypt).
+User Profiles: Each user can have a profile page with basic info (name, bio, profile picture) and a link to their portfolio.
+2. Portfolio Management
+Add/Edit/Delete Projects:
+Users can create projects (portfolio items) with a title, description, images, videos, and other media.
+Provide an easy-to-use form for users to upload images or videos (with file size/type restrictions).
+Allow users to edit or delete their projects.
+Tagging & Categorization: Users can tag or categorize their projects (e.g., Web Development, Photography, Design).
+Project Display: Projects are displayed dynamically, including images, embedded videos, and text descriptions in a responsive gallery layout.
         </p>
-
-        <a href="Portfolio.html" class="btn readmore">Read More -></a>
-      </div>
-
-      <div class="image-section">
-        <img src="Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
-      </div>
+        
+        <a class="btn readmore" href="Portfolio.html" >Read more <i class="material-icons pfeil" >trending_flat</i></a>
     </div>
 
-    <!-- Portfolio linksbündig  -->
+    <div class="image-section">
+        <img src="/Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
+
+        
+    </div>
+</div>
+
+
+    
+<!-- Portfolio linksbündig  --> 
     <div class="Portfolio">
-      <div class="text-section">
-        <h5>_____________________________Username</h5>
+        <div class="text-section">
+            
+            <p class="username">_____________________________Username</p>
 
-        <h2>Meine Überschrift</h2>
+            <h2 class="titel">Meine Überschrift</h2>
 
-        <p>
-          Hier ist der Text, der unter der Überschrift steht. Sie können
-          beliebigen Text hier hinzufügen, um mehr Informationen
-          bereitzustellen.
-        </p>
+            <p class="beschreibung">Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.</p>
+            
+            <a class="btn readmore" href="Portfolio.html" >Read more <i class="material-icons pfeil" >trending_flat</i></a>
+        </div>
 
-        <a href="Portfolio.html" class="btn readmore">Read More -></a>
-      </div>
+        <div class="image-section">
+            <img src="/Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
 
-      <div class="image-section">
-        <img src="Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
-      </div>
+            
+        </div>
     </div>
 
-    <!-- Portfolio linksbündig  -->
+    <!-- Portfolio linksbündig  --> 
     <div class="Portfolio">
-      <div class="text-section">
-        <h5>_____________________________Username</h5>
+        <div class="text-section">
+            
+            <p class="username">_____________________________Username</p>
 
-        <h2>Meine Überschrift</h2>
+            <h2 class="titel">Meine Überschrift</h2>
 
-        <p>
-          Hier ist der Text, der unter der Überschrift steht. Sie können
-          beliebigen Text hier hinzufügen, um mehr Informationen
-          bereitzustellen.
-        </p>
+            <p class="beschreibung">Hier ist der Text, der unter der Überschrift steht. Sie können beliebigen Text hier hinzufügen, um mehr Informationen bereitzustellen.</p>
+            
+            <a class="btn readmore" href="Portfolio.html" >Read more <i class="material-icons pfeil" >trending_flat</i></a>
+        </div>
 
-        <a href="Portfolio.html" class="btn readmore">Read More -></a>
-      </div>
+        <div class="image-section">
+            <img src="/Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
 
-      <div class="image-section">
-        <img src="Bilder/LandingPagePic.jpg" alt="Bildbeschreibung" />
-      </div>
+            
+        </div>
     </div>
 
-    <a href="PortfolioErstellen.html" class="button button5 pointer PlusButton">
-      +
-    </a>
+    </main>
 
-    <!-- Footer -->
+
+<!-- Footer --> 
 
     <footer>
-      <ul class="nav-linksFooter">
-        <h5>More On This Site</h5>
-        <li><a href="ueber-uns">Über uns</a></li>
-        <li><a href="kontakt">Kontakt</a></li>
-        <li><a href="impressum">Impressum</a></li>
-        <li><a href="datenschutz">Datenschutz</a></li>
-        <li><a href="dokumentation">Dokumentation</a></li>
-        <li><a href="kollophon">Kollophon</a></li>
-      </ul>
+    <ul class="nav-linksFooter">
+         <h5>More On This Site</h5>
+         <li><a href="ueber-uns">Über uns</a></li>
+         <li><a href="kontakt">Kontakt</a></li>
+         <li><a href="impressum">Impressum</a></li>
+         <li><a href="datenschutz">Datenschutz</a></li>
+         <li><a href="dokumentation">Dokumentation</a></li>
+         <li><a href="kollophon">Kollophon</a></li> 
+        </ul>
     </footer>
-  </body>
+
+</div>
+</body>
 </html>
