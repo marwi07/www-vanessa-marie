@@ -60,25 +60,8 @@
             <div class="contact_heading">
               <h3>Kontaktdaten</h3>
 
-              <div id="Container Kontaktinfos" class="container_contact">
-                <dl id="Kontaktinfos" class="contact">
-                  <dt>Name:</dt>
-                  <dd>Max Mustermann</dd>
-                  <dt>Email:</dt>
-                  <dd>max@example.com</dd>
-                  <dt>Addresse:</dt>
-                  <dd>max@example.com</dd>
-                  <dt>Telefon:</dt>
-                  <dd>+49 123 4567890</dd>
-                </dl>
-              </div>
+              {{ contact | safe}}
             </div>
-            <a
-              href="/profil/hinzufügen"
-              type="button"
-              class="button-group_login"
-              >Kontaktdaten hinzufügen</a
-            >
           </div>
         </div>
       </main>

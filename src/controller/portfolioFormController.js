@@ -10,6 +10,15 @@ export const error404 = (ctx) => {
 let step = "";
 
 export const renderForm = async (ctx) => {
+  const cookieUser = ctx.cookies.getCookie(ctx);
+  const username = cookieUser["username"];
+
+  if (!username) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
+
   //step 1 - Titel
   step = `
     <div class="upload-aboutYou" >
@@ -190,6 +199,8 @@ export const renderForm = async (ctx) => {
 
 let tempStorage = new FormData();
 let formData;
+let skillsString = "";
+let tagsString = "";
 
 export const add = async (ctx) => {
   let step = ctx.url.searchParams.get("step");
@@ -252,12 +263,12 @@ export const add = async (ctx) => {
           skills.push(skill.trim());
         }
       }
-      const skillsString = skills.join(",");
+      skillsString = skills.join(",");
     }
     //Logik fur Speichern von Tags
     if (step == "five") {
       const tags = formData.getAll("tags");
-      const tagsString = tags.join(",");
+      tagsString = tags.join(",");
     } else {
       for (const [key, value] of formData.entries()) {
         tempStorage.append(key, value);
@@ -266,7 +277,9 @@ export const add = async (ctx) => {
 
     if (step === "five") {
       const cookie = ctx.cookies.getCookie(ctx);
-      const username = cookie["username"];
+      const username = await cookie["username"];
+
+      console.log(tempStorage, skillsString, tagsString, username);
 
       if (username) {
         model.addPortfolioInfo(

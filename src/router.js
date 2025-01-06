@@ -19,7 +19,7 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/profil/erstellen") {
-    ctx = await userContact.addContactData(ctx);
+    ctx = await userContact.renderContactForm(ctx);
   }
 
   if (ctx.url.pathname === "/arbeiten/erstellen") {

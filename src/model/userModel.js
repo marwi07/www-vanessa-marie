@@ -50,7 +50,7 @@ export const addUserInfo = async (db, formData, username) => {
 };
 
 export const getInfoByUser = async (db, name) => {
-  const sql = `SELECT * FROM userInfo WHERE user = $name`;
+  const sql = `SELECT * FROM userInfo WHERE user == $name`;
   const query = await db.query(sql, { $name: name });
   return query;
 };

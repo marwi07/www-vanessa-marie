@@ -25,7 +25,7 @@ export const handleRequest = async (request) => {
 
   if (!ctx.response.status) {
     ctx.response.status = 404;
-    ctx.response.body = "404 - Not Found";
+    ctx.response.body = await ctx.nunjucks.render("error404.html");
   }
 
   return new Response(ctx.response.body, {
