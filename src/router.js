@@ -27,15 +27,11 @@ export const routes = async (ctx) => {
     ctx = await profil.renderProfile(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio/work/erstellen") {
-    ctx = await profil.renderProfile(ctx);
-  }
-
   if (ctx.url.pathname === "/profil/erstellen") {
     ctx = await userContact.renderContactForm(ctx);
   }
 
-  if (ctx.url.pathname === "/arbeiten/erstellen") {
+  if (ctx.url.pathname === "/portfolio/arbeiten/erstellen") {
     ctx = await workForm.renderWorkForm(ctx);
   }
 
