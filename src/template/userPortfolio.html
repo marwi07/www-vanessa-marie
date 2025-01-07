@@ -33,17 +33,7 @@
 
         <!-- Portfolio -->
         <div class="PortfolioDetailSite">
-          <div class="button-group_portfolio">
-            <a
-              class="button-group_portfolio_button"
-              href="/portfolio/bearbeiten"
-              >Bearbeiten</a
-            >
-
-            <a class="button-group_portfolio_button" href="/portfolio/löschen"
-              >Löschen</a
-            >
-          </div>
+          <div class="button-group_portfolio">{{ editPortfolio | safe}}</div>
 
           <h2 id="PortfolioName">{{ title | safe}}</h2>
 
@@ -91,6 +81,12 @@
                 </ul>
               </div>
             </div>
+          </div>
+
+          <div class="button-group-yourWork">
+            <a class="button-yourWork" href="/portfolio/work/erstellen"
+              >Arbeiten hinzufügen</a
+            >
           </div>
 
           <!-- Your Work-->
