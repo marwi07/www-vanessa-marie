@@ -44,7 +44,7 @@ export const renderPortfolio = async (ctx, username) => {
   //seperate skills into individual strings
   const skillArray = portfolioInfo[0][3].split(",");
   let skills = "";
-  for (const element of tagArray) {
+  for (const element of skillArray) {
     skills += ` <li>${element}</li>`;
   }
 
