@@ -31,7 +31,7 @@ export const routes = async (ctx) => {
     ctx = await userContact.renderContactForm(ctx);
   }
 
-  if (ctx.url.pathname === "/arbeiten/erstellen") {
+  if (ctx.url.pathname === "/portfolio/arbeiten/erstellen") {
     ctx = await workForm.renderWorkForm(ctx);
   }
 
