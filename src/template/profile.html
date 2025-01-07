@@ -25,36 +25,42 @@
             <a href="/index">Home</a>
             <a href="/portfolio">Mein Portfolio</a>
             <a href="portfolio/erstellen" class="active">Portfolio erstellen</a>
-            <a href="javascript:void(0);" class="icon" id="burgermenutest">
-              <i class="material-icons" style="font-size: 40px">reorder</i>
-            </a>
           </div>
         </ul>
 
-        <div class="body_GridContact">
-          <h3>Profil</h3>
+
+        <h3 class="h3_erstellePortfolio">Profil</h3>
+
+          <!--Profil box -->
+        <div class="body_GridProfil">
+          <h3>Willkommen.</h3>
+
+          <div  class="button-logout"><i class="material-icons" style="font-size: 14px">input</i>Logout</div>
 
           <div class="profile-header">
             <div class="profile-image-container">
+
+             
               <label for="profileImage">
                 <img
                   src="/public/Bilder/LandingPagePic.jpg"
                   alt="Profilbild"
-                  class="profile-image"
-                />
+                  class="profile-image"/>
               </label>
               <input
                 type="file"
                 id="profileImage"
                 name="profileImage"
-                accept="image/*"
-              />
+                accept="image/*"/>
             </div>
+
             <span class="edit-text"
               ><i class="material-icons" style="font-size: 14px">edit</i>
               Profilbild ändern
             </span>
 
+            <h4 class="profil-h4" id="username-profil">Username</h4>
+            
             <!-- Upload box -->
 
             <div class="contact_heading">
@@ -66,6 +72,7 @@
         </div>
       </main>
 
+       <!-- Footer -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
@@ -77,6 +84,7 @@
           <li><a href="kollophon">Kollophon</a></li>
         </ul>
       </footer>
+
     </div>
   </body>
 </html>

@@ -148,22 +148,37 @@ export const renderForm = async (ctx) => {
 
        <form action="/add?step=five" method="POST" enctype="multipart/form-data">
         <div>
-        <label>
-          <input type="checkbox" name="tags" value="3D-Animation"> 3D-Animation
+        <label class="custom-checkbox">
+          <input type="checkbox" name="tags" value="3D-Animation"> 
+          <span class="checkmark"></span>3D-Animation
         </label>
-        <label>
-          <input type="checkbox" name="tags" value="Motion Graphics"> Motion Graphics
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="Softwareentwicklung"> Softwareentwicklung
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="2D-Art"> 2D-Art
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="Animation"> Animation
-        </label>
+
+        <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Motion Graphics
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Softwareentwicklung
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>2D-Art
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Animation
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Webdesign
+          </label>
       </div>
+      
           <button type="submit" class="button-save-aboutyou">Speichern</button>
       </form>
 
@@ -173,19 +188,28 @@ export const renderForm = async (ctx) => {
 
   if (currentFormStep == "five") {
     //thumbnail
-    step = `<h4>About you</h4>
+    step = `
+    <div class="upload-Gridthumbnail">
 
-    <div class="upload-aboutYou">
-    <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
+      <div class="header-container">
 
-    <form action="/add?step=six" method="POST" enctype="multipart/form-data">
-    
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail" name="thumbnail">
+        <h4>Titelbild</h4>
         
+      </div>
+
+      <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+
+          <label for="thumbnail" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          </label>
+          
+      
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+
         <button type="submit" class="button-save">Speichern</button>
-    </form>
-    </div>`;
+      </form>
+ 
+  </div>`;
   }
 
   //render page with html of step

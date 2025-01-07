@@ -24,9 +24,6 @@
         <a href="/index" >Home</a>
        <a href="/portfolio">Mein Portfolio</a>
         <a href="portfolio/erstellen" class="active">Portfolio erstellen</a>
-         <a href="javascript:void(0);" class="icon" id="burgermenutest">
-            <i class="material-icons" style="font-size:40px">reorder</i>
-        </a>
     </div>   
 </ul>
 
@@ -34,28 +31,24 @@
     <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
 
     <div class="upload-Gridthumbnail">
-    <div class="upload-thumbnail">
 
       <div class="header-container">
-  
-        <a class="pfeil-left" href="Portfolio.html" ><i class="material-icons" >arrow_back</i></a>
 
-        <h4>Thumbnail</h4>
+        <h4>Titelbild</h4>
         
-        <a class="pfeil-right" href="Portfolio.html" ><i class="material-icons" >	arrow_forward</i></a>
-    </div>
+      </div>
 
+      <form action="/add?step=six" method="POST" enctype="multipart/form-data">
 
-
-      <form>
-          <label for="thumbnail">Klicke hier um ein Bild hochzuladen.</label>
-          <i class="material-icons profil-icon">add_a_photo</i>
+          <label for="thumbnail" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+         
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+      </label>
       
-        <input type="file" id="thumnbail" name="thumbnail" accept="image/*">
+        <button type="submit" class="button-save">Speichern</button>
       </form>
-
-      <button class="button-save-image">Speichern</button>
-    </div> 
+ 
   </div>
 
   </main>

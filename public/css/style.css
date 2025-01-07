@@ -657,6 +657,8 @@ margin-right: 5px;
   height: 100%;
   width: 100%;
   align-items: center;
+  overflow: hidden;
+  object-fit: cover;
 
 }
 
@@ -845,6 +847,8 @@ margin-right: 5px;
   height:auto;
   box-sizing: border-box;
   flex: 1;
+  background-color:#9CAFB7;
+  border-radius: 20px;
 }
 
 .contact {
@@ -905,13 +909,19 @@ margin-right: 5px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  gap:15px;
+  justify-content: space-between;
 }
 
 .column {
-  flex:35%;
-  max-width: 35%;
-  padding: 0 4px;
+  flex: 1 1 calc(25% - 20px); 
+  max-width: calc(25% - 20px);
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .column img {
   width: 100%;
@@ -919,6 +929,49 @@ margin-right: 5px;
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* _______________________________________________________________*/
+
+/* Your Work Upload Bilder*/
+
+.upload-yourWorkimg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; 
+  max-width: 100%; 
+  margin: 0 auto;
+  padding: 10px; 
+  background-color:#EAD2AC; 
+  border-radius: 50px; 
+}
+
+
+.upload-label {
+  background-color: #E6B89C;
+  width: 400px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.upload-label i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.upload-label:hover {
+  background-color:#e7b769;
+}
+
 
 /* _______________________________________________________________*/
 
@@ -939,72 +992,40 @@ margin-right: 5px;
 
 /* _______________________________________________________________*/
 
-/* Upload image */
-.upload-box {
-  width: 1800px;
+/* Upload Box */
+.upload-box-blue{
+  width: 100%;
   height: 700px;
-  background-color: #EAD2AC;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px auto;
-  border-radius: 50px;
-  cursor: pointer;
-  position: relative;
-}
-
-.preview-image {
-  max-width: 100%;
-  max-height: 100%;
-  display: none;
-}
-
-.top-text {
-  position: absolute; 
-  top: 80px; 
-  left: 50%;
-  transform: translateX(-50%); /* Horizontale Zentrierung des Texts */
-  font-size: 30px;
-  color: white;
-  opacity: 70%;
-  text-align: center;
-}
-
-.center-content {
-  font-size: 100px;
-  color: white;
-  border-radius: 48%;
-  padding: 20px;
-  
-}
-
-/* _______________________________________________________________*/
-
-
-/* Upload About You */
-.upload-aboutYou {
-  width: 1800px;
-  height: 700px;
+  max-width: 60%;
   background-color: #9CAFB7;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 30px auto;
+  margin: 0px auto;
   border-radius: 50px;
-  cursor: pointer;
   position: relative;
 }
 
-.upload-aboutYou h4{
-  font-size: 70px;
-  margin-top: 20px;
+.upload-box-orange{
+  width: 100%;
+  height: 700px;
+  max-width: 60%;
+  background-color:#EAD2AC;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px auto;
+  border-radius: 50px;
+  position: relative;
 }
 
+/* Upload Box Header*/
 .header-container {
   position: relative; 
   display: flex; 
-  justify-content: space-between; 
+  justify-content: center;
   top: 5px; 
   width: 100%; 
   margin-top: 0px;
@@ -1013,15 +1034,30 @@ margin-right: 5px;
 .header-container h4 {
   font-size: 70px;
   font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-form .upload-aboutYouform{
-  width: 1800px;
+/* _______________________________________________________________*/
+
+
+/* Upload About You */
+.upload-aboutYou {
+  width: 100%;
   height: 700px;
+  max-width: 60%;
+  background-color: #9CAFB7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px auto;
+  border-radius: 50px;
+  position: relative;
 }
 
 /* Form Styling */
-.upload-aboutYouform {
+.upload-aboutYou form {
   width: 90%;  
   height: calc(100% - 150px); 
   margin-top: 20px; 
@@ -1030,11 +1066,12 @@ form .upload-aboutYouform{
   display: flex;
   border:none;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: center;
+  align-items: center;
 }
 
 /* Textarea Styling */
-.upload-aboutYouform textarea {
+.upload-aboutYou form textarea {
   width: 100%;
   max-width: 1580px;
   height: 100%;
@@ -1046,15 +1083,16 @@ form .upload-aboutYouform{
 }
 
 .button-save-aboutyou {
+  display: inline-block;
+  text-align: center;
   padding:10px 20px;
-  max-width: 300px;
   width: 100%;
+  max-width: 300px;
   background-color: #183446;
   color:white;
- margin-top: 20px;
- margin-bottom: 20px;
-  align-items: center;
-  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
   border-radius: 8px;
   border: none;
 }
@@ -1067,12 +1105,31 @@ form .upload-aboutYouform{
 
 /* Profil Bearbeiten Seite*/
 
+/* Profil Site*/
+.body_GridProfil {
+  position: relative;
+  display: flex;
+  background-color: #1e3f55;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin:auto;
+  width: 70%;
+  height: auto;
+  flex: 1;
+}
+
 /* Profilbild bearbeiten */
 .profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+}
+
+.profil-h4{
+  display: flex;
+  font-size: 40px;
 }
 
 /* Rundes Profilbild */
@@ -1118,129 +1175,172 @@ form .upload-aboutYouform{
   display: none;
 }
 
+/* Logout Button upload */
+.button-logout {
+  position: absolute;
+  display:flex;
+  top: 20px;
+  right:20px;
+  bottom: 20px;
+  padding:10px 20px;
+  max-width: 200px;
+  height: 40px;
+  background-color: #183446;
+  color:white;
+  margin-top: 0px;
+  align-items: center;
+  font-size: 21px;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.button-logout:hover {
+  background-color:  #26506b; 
+  cursor: pointer;
+}
 
 
+/* _______________________________________________________________*/
+
+/* Tags Upload */
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Beim Hover */
+.custom-checkbox .checkmark:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+/* Wenn das Checkbox-Input ausgewählt ist */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #0078d4;
+  border-color: #005a9e;
+}
+
+/* Optional: Checkmark-Symbol bei Auswahl */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top:10px;
+  left:15px;
+  transform: rotate(45deg);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  display: none;
+}
+/* _______________________________________________________________*/
 
 /* Upload Kontaktinfo */
 .body_GridContact {
-  display: flex;
-  background-color: #1e3f55;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin:auto;
-  width: 70%;
-  height: auto;
-  flex: 1;
-  position: relative;
-}
-
-.body_GridContact h3{
-  text-align: center;
-  margin-top: 120px;
-}
-
-.container_contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px; 
-  border-radius: 50px; 
-  height:auto;
-  width: 100%; 
-  position: relative;
-  font-size: 25px;
-}
-
-.container_contact h4{
-  display: block;
-  font-size: 40px;
-  text-align: left;
-  margin-top: 30px;
-  margin-bottom: 20px;
   width: 100%;
+  height: 100%;
+  max-width: 60%;
+  background-color: #9CAFB7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  border-radius: 50px;
+  position: relative;
 }
+
 
 /* Formular Styling Kontaktinfo*/
-.container_contact form {
+.body_GridContact form {
+  width: 90%;  
+  height: calc(100% - 150px); 
+  margin-top: 20px; 
+  border-radius: 10px; 
+  padding: 20px; 
   display: flex;
+  border:none;
   flex-direction: column;
-  width: 1000px; 
-  margin-bottom: 20px;
+  align-items: center;
+ 
 }
 
-.container_contact form input {
+.body_GridContact form input {
+  width: 100%;
+  max-width: 1000px;
   margin-bottom: 20px;
   font-size: 18pt;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  
 }
 
-.container_contact form label {
+.body_GridContact form label {
   margin-bottom: 5px;
   font-size: 18pt;
-  padding: 0px;
+  width: 100%;
   text-align: left;
+  margin-left: 330px;
 }
 
 /* _______________________________________________________________*/
 
 /* Upload Skills */
 .body_GridSkills {
+  width: 100%;
+  height: 100%;
+  max-width: 60%;
+  background-color: #9CAFB7;
   display: flex;
   flex-direction: column;
-  margin:auto;
-  width:100%;
-  height: auto;
-  flex: 1;
-}
-
-.container_skills {
-  display: flex;
-  flex-direction: column;
-  background-color: #9CAFB7; 
-  padding: 40px; 
-  border-radius: 50px; 
-  width: 100%; 
-  max-width: 1800px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  border-radius: 50px;
   position: relative;
-  font-size: 25px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
-  grid-gap: 20px; 
-  width: 100%; 
-  max-width: 1800px; 
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.skill-item label {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.skill-item input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 /* Formular Styling Skills*/
-.container_skills form {
+
+.body_GridSkills form {
+  width: 90%;  
+  height: calc(100% - 150px); 
+  margin-top: 20px; 
+  border-radius: 10px; 
+  padding: 20px; 
   display: flex;
+  border:none;
   flex-direction: column;
-  width: 1000px; 
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
 }
 
-.container_skills form input {
+.body_GridSkills form input {
   margin-bottom: 20px;
   font-size: 18pt;
   padding: 15px;
@@ -1248,23 +1348,24 @@ form .upload-aboutYouform{
   border-radius: 8px;
 }
 
-.container_skills form label {
+.body_GridSkills form label {
   margin-bottom: 5px;
   font-size: 18pt;
   padding: 0px;
   text-align: left;
 }
 
+
+/* _______________________________________________________________*/
 /* Pfeile */
 .pfeil-left, .pfeil-right {
   font-size: 50px;
   cursor: pointer;
 }
 
-.button-save-contact {
-  display:flex;
-  flex-direction: column;
-  position: relative;
+/* Save Button upload */
+.button-save {
+  display: inline-flex;
   bottom: 20px;
   padding:10px 10px;
   max-width: 300px;
@@ -1276,10 +1377,8 @@ form .upload-aboutYouform{
   font-size: 25px;
   border-radius: 8px;
   border: none;
-}
-
-.button-save-contact:hover{
-  background-color: #1d5a72;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-save:hover {
@@ -1354,99 +1453,79 @@ form .upload-aboutYouform{
 
 /* add Thumbnail */
 .upload-Gridthumbnail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: auto;
-}
-
-.upload-thumbnail {
+  height: 700px;
+  max-width: 60%;
+  background-color:#EAD2AC;
   display: flex;
-  position: relative;
-  width: 100%; 
-  max-width: 70%; 
-  height: 700px; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #EAD2AC;
+  margin: 0px auto;
   border-radius: 50px;
-  flex-direction: column;
-  margin: auto; 
+  position: relative;
 }
 
-.upload-thumbnail a {
-  font-size: 48px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-}
-
-.upload-thumbnail i {
+.upload-Gridthumbnail i {
   font-size: 120px;
   text-align: center;
 }
 
-.button-save-image {
-  display:flex;
-  flex-direction: column;
-  position: relative;
-  padding:20px 0px;
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  background-color: #183446;
-  color:white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  align-items: center;
-  font-size: 24px;
-  border-radius: 8px;
-  border: none;
-}
-
-.button-save-image:hover{
-  background-color: #1d5a72;
-}
-
 
 /* add Thumbnail Form Styling */
-.upload-thumbnail form{
+.upload-Gridthumbnail form{
+  width: 90%;  
+  height: calc(100% - 150px); 
+  margin-top: 0px; 
+  margin-bottom: 0px;
+  margin: 0;
+  border-radius: 10px; 
+  padding: 20px; 
   display: flex;
+  border:none;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 80%; 
-  max-width: auto; 
-  height: 700px; 
-  background-color:#E6B89C;
-  border: 2px solid #ffd9ad;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
+  align-items: center;
 }
 
-.upload-thumbnail form label{
+.upload-Gridthumbnail form label{
   margin-bottom: 10px;
   margin-top: 20px;
   text-align: center;
   font-size: 24px;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
-.upload-thumbnail form input[type="file"] {
-  position: absolute;
-  align-items: center;
+.upload-Gridthumbnail form input[type="file"] {
+  font-size: 16px;
+}
+
+.upload-Gridthumbnail form .upload-label {
+  display: flex;
+  flex-direction: column; 
   justify-content: center;
-  background-color: #5b90b1;
+  align-items: center;
   width: 80%; 
-  max-width: 1800px; 
-  height: 400px; 
-  opacity: 0;
+  max-width: 100%;
+  height: 700px;
+  background-color: #E6B89C;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
   cursor: pointer;
- 
+  transition: 0.3s ease-in-out;
 }
 
+/* Hover-Effekt für das Label */
+.upload-Gridthumbnail form .upload-label:hover {
+  background-color:#e7b769;
+}
+
+/* Icon innerhalb des Labels */
+.upload-Gridthumbnail form .upload-label .profil-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
  /* ______________________________________________________________________ */
 
 
