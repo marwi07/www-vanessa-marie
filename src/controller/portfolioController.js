@@ -3,6 +3,7 @@ import * as portfolioModel from "../model/portfolioModel.js";
 
 //TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
 export const renderPortfolio = async (ctx, username) => {
+  let variables = {};
   //const cookie = ctx.cookies.getCookie(ctx);
   //const username = cookie["username"];
 
@@ -18,25 +19,49 @@ export const renderPortfolio = async (ctx, username) => {
   //BREAKS HERE
   const userInfo = await userModel.getInfoByUser(ctx.db, username);
 
-  try {
-    const thumbnailPath = thumbnailInfo[0][1];
-    const thumbnail = `<img src="${thumbnailPath}" alt="zum Portfolio" />`;
+  //try {
+  const thumbnailPath = thumbnailInfo[0][1];
+  const thumbnail = `<img
+            id="Thumbnail"
+            class="PortfolioDetailSite_image-section"
+            src="${thumbnailPath}"
+            alt="ThumbnailPortfolio"
+          />`;
 
-    //PortfolioInfo
-    const portfolioInfo = await portfolioModel.getPortfolioByName(
-      ctx.db,
-      username
-    );
+  //PortfolioInfo
+  const portfolioInfo = await portfolioModel.getPortfolioByName(
+    ctx.db,
+    username
+  );
 
-    const variables = {
+  //seperate tags into individual strings
+  const tagArray = portfolioInfo[0][5].split(",");
+  let tags = "";
+  for (const element of tagArray) {
+    tags += `<span class="tag">${element}</span>`;
+  }
+
+  //seperate skills into individual strings
+  const skillArray = portfolioInfo[0][3].split(",");
+  let skills = "";
+  for (const element of tagArray) {
+    skills += ` <li>${element}</li>`;
+  }
+
+  if (!userInfo.length === 0) {
+    variables = {
       //title
       title: portfolioInfo[0][1],
       //Thumbnail
       thumbnail: thumbnail,
+      //description
+      description: portfolioInfo[0][4],
       //about
       about: portfolioInfo[0][2],
+      //tags
+      tags: tags,
       //skills
-      skills: portfolioInfo[0][3],
+      skills: skills,
       //Contact
       name: username,
       mail: userInfo[0][0],
@@ -45,16 +70,34 @@ export const renderPortfolio = async (ctx, username) => {
       extra: userInfo[0][2],
       //work
     };
-    ctx.response.body = await ctx.nunjucks.render(
-      "userPortfolio.html",
-      variables
-    );
-    ctx.response.headers.set("content-type", "text/html");
-    ctx.response.status = 200;
-    return ctx;
-  } catch {
+  } else {
+    variables = {
+      //title
+      title: portfolioInfo[0][1],
+      //Thumbnail
+      thumbnail: thumbnail,
+      //description
+      description: portfolioInfo[0][4],
+      //about
+      about: portfolioInfo[0][2],
+      //tags
+      tags: tags,
+      //skills
+      skills: skills,
+      //Contact
+      name: username,
+    };
+  }
+  ctx.response.body = await ctx.nunjucks.render(
+    "userPortfolio.html",
+    variables
+  );
+  ctx.response.headers.set("content-type", "text/html");
+  ctx.response.status = 200;
+  return ctx;
+  /*} catch {
     ctx.response.status = 400;
     ctx.response.body = "No USer";
     return ctx;
-  }
+  }*/
 };
