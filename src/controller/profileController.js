@@ -2,7 +2,7 @@ import * as model from "../model/userModel.js";
 
 export const renderProfile = async (ctx) => {
   let msg = `    <a
-              href="/profil/hinzufügen"
+              href="/profil/erstellen"
               type="button"
               class="button-group_login"
               >Kontaktdaten hinzufügen</a

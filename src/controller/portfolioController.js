@@ -48,6 +48,30 @@ export const renderPortfolio = async (ctx, username) => {
     skills += ` <li>${element}</li>`;
   }
 
+  //Work fill for each entry
+  const workData = await workModel.getWorkTextByName(ctx.db, username);
+  let workFull = ``;
+  for (const element of workData) {
+    workFull += ` <h3>${element[0]}</h3>
+  
+            <div class="YourWork-text-section">
+              <div class="row" id="gallery">`;
+
+    const workImages = await workModel.getImagesById(ctx.db, element[3]);
+
+    for (const image of workImages) {
+      workFull += ` <div class="column">
+                  <img src="${image[1]}" alt="Bild 1" />
+                </div>`;
+    }
+
+    workFull += ` </div>
+            </div>
+  
+            <p id="Beschreibung-YourWork">${element[1]}</p>
+          </div>`;
+  }
+
   if (!userInfo.length === 0) {
     variables = {
       //title
@@ -69,6 +93,7 @@ export const renderPortfolio = async (ctx, username) => {
       address: userInfo[0][4],
       extra: userInfo[0][2],
       //work
+      work: workFull,
     };
   } else {
     variables = {
@@ -86,6 +111,8 @@ export const renderPortfolio = async (ctx, username) => {
       skills: skills,
       //Contact
       name: username,
+      //work
+      work: workFull,
     };
   }
   ctx.response.body = await ctx.nunjucks.render(

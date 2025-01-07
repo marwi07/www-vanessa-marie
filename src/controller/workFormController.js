@@ -8,6 +8,7 @@ export const error404 = (ctx) => {
 };
 
 let step = "";
+let workTextId = 0;
 
 export const renderWorkForm = async (ctx) => {
   //step 1 - Titel
@@ -52,30 +53,74 @@ export const renderWorkForm = async (ctx) => {
     //Bilder
     step = `
     <div class="upload-yourWorkimg">
-      
+
       <h4>Bilder</h4>
  
-    <div class="row" id="gallery">
-      
-      <div class="column">
-        <form action="/addWork?step=three" method="POST" enctype="multipart/form-data">
+    <form action="/addWork?step=three" method="POST" enctype="multipart/form-data">
 
+      <div class="row" id="gallery">
+
+      <div class="column">
           <label for="image1" class="upload-label">Klicke hier um ein Bild hochzuladen.
             <i class="material-icons profil-icon">add_a_photo</i>
-
-            <input type="file" id="image1" name="image1" accept="image/*">
-
+            <input type="file" id="image1" name="image1" accept="image/">
             </label>
+          </div>
 
-             <label for="image2" class="upload-label">Klicke hier um ein Bild hochzuladen.
+                <div class="column">
+          <label for="image2" class="upload-label">Klicke hier um ein Bild hochzuladen.
             <i class="material-icons profil-icon">add_a_photo</i>
-            <input type="file" id="image2" name="image2" accept="image/*">
+            <input type="file" id="image2" name="image2" accept="image/">
             </label>
-            <button type="submit" class="button-save">Speichern</button>
-           
+          </div>
+
+                <div class="column">
+          <label for="image3" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image3" name="image3" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image4" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image4" name="image4" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image5" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image5" name="image5" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image6" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image6" name="image6" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image7" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image7" name="image7" accept="image/">
+            </label>
+          </div>
+
+      <div class="column">
+      <label for="image8" class="upload-label">Klicke hier um ein Bild hochzuladen.
+        <i class="material-icons profil-icon">add_a_photo</i>
+        <input type="file" id="image8" name="image8" accept="image/">
+        </label>
+         </div>
+          </div>
+            <div class="button-save-container">
+            <button type="submit" class="button-save-yourwork">Speichern</button>
+          </div>
           </form>
-    </div>
-  </div>`;
+        </div>`;
   }
 
   //render page with html of step
@@ -93,16 +138,15 @@ let formData;
 export const add = async (ctx) => {
   let step = ctx.url.searchParams.get("step");
 
-  console.log(step);
-
   //Image upload
   if (step === "three") {
     tempStorage = new FormData();
     //save each image,  as well as validate etc. with user Info
     const formData = await ctx.request.formData();
-
     for (const file of formData) {
-      console.log(file[1]);
+      if (!file[1] || file[1] === "") {
+        continue;
+      }
       const error = validateImage.validateImage(file[1]);
       if (!error) {
         ctx.response.body = "<h1>error with image</h1>";
@@ -123,18 +167,25 @@ export const add = async (ctx) => {
         const cookie = ctx.cookies.getCookie(ctx);
         const username = cookie["username"];
         if (username) {
-          model.addWorkImage(ctx.db, filename, file[1], username);
+          model.addWorkImage(
+            ctx.db,
+            filename,
+            file[1],
+            username,
+            workTextId[0][0]
+          );
         } else {
           ctx.response.body = "<h1>no user found logged in</h1>";
           ctx.response.status = 404;
         }
       }
     }
-    ctx = ctx.cookies.setFormStepCookie(ctx, step);
     step = "";
+    ctx = ctx.cookies.setWorkFormStepCookie(ctx, step);
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
     ctx.response.body = "";
+    return ctx;
 
     //Text Upload
   } else {
@@ -148,7 +199,12 @@ export const add = async (ctx) => {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
       if (username) {
-        model.addWorkInfo(ctx.db, tempStorage, username);
+        const _workInfo = await model.addWorkInfo(
+          ctx.db,
+          tempStorage,
+          username
+        );
+        workTextId = await model.getIdByName(ctx.db, username);
       } else {
         ctx.response.body = "<h1>no user found logged in</h1>";
         ctx.response.status = 404;
