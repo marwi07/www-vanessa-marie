@@ -1,13 +1,11 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
 
-//TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
-export const renderPortfolio = async (ctx, username) => {
+export const renderPortfolio = async (ctx) => {
   let variables = {};
-  //const cookie = ctx.cookies.getCookie(ctx);
-  //const username = cookie["username"];
 
-  //get User Info
+  const cookie = ctx.cookies.getCookie(ctx);
+  const username = cookie["username"];
 
   //TODO USER INFO EMPTY -> ADD USER INFO
 
@@ -41,6 +39,16 @@ export const renderPortfolio = async (ctx, username) => {
     tags += `<span class="tag">${element}</span>`;
   }
 
+  const editMsgPortfolio = `  <a
+              class="button-group_portfolio_button"
+              href="/portfolio/bearbeiten"
+              >Bearbeiten</a
+            >
+
+            <a class="button-group_portfolio_button" href="/portfolio/löschen"
+              >Löschen</a
+            >`;
+
   //seperate skills into individual strings
   const skillArray = portfolioInfo[0][3].split(",");
   let skills = "";
@@ -50,6 +58,8 @@ export const renderPortfolio = async (ctx, username) => {
 
   if (!userInfo.length === 0) {
     variables = {
+      //edit
+      editPortfolio: editMsgPortfolio,
       //title
       title: portfolioInfo[0][1],
       //Thumbnail
@@ -72,6 +82,8 @@ export const renderPortfolio = async (ctx, username) => {
     };
   } else {
     variables = {
+      //edit
+      editPortfolio: editMsgPortfolio,
       //title
       title: portfolioInfo[0][1],
       //Thumbnail

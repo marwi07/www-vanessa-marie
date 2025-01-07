@@ -36,7 +36,7 @@ export const portfolioDisplayCheck = async (ctx) => {
     if (portfolio.length == 0) {
       html = `   <a href="portfolio/erstellen">Portfolio erstellen</a>`;
     } else {
-      html = `  <a href="/Portfolio">Mein Portfolio</a>`;
+      html = `  <a href="/portfolio/user">Mein Portfolio</a>`;
     }
   } else {
     html = ``;

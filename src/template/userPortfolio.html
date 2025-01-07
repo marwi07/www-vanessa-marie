@@ -1,342 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exponat hinzufügen</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio+work</title>
     <link rel="stylesheet" href="/css/style.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
 
-<body>
+  <body>
+    <div class="wrapper">
+      <main>
+        <!-- Menü/Nav  -->
+        <ul class="nav-links" id="responsive">
+          <a href="/login">
+            <i class="material-icons profil-icon">account_circle</i>
+          </a>
 
-<h3>Dein Portfolio</h3>
-
-<h3>{{ title | safe}}</h3>
-
-<div class="top-right"> 
-    <a href="login"><img src="Bilder/Icon-User.png" /></a>
-    
-  </div>
-  
-  <div class="top-left"> 
-    <a href='/' class="pointer"> 
-      <img src="Bilder/Pfeil.png" alt="Zurück"/>
-    </a>
-  </div>
-
-
-<!-- Portfolio --> 
-<div class="PortfolioDetailSite">
-    <div class="PortfolioDetailSite__image-section">
-        {{ thumbnail | safe}}
-    </div>
-    <div class="PortfolioDetailSite__text-section">
-
-        <h2><i>About You</i></h2>
-
-        <p>{{ about | safe}}</p>
-        
-    </div>
-
-</div>
-
-
- <!-- Skills --> 
-
-
-
- <div class="skills-and-contact">
-
-<div class="skills_heading"> 
-    <h3 class="skills_heading_h3">Skills</h3>
-    <div class="container_skills">
-        <ul class="skills">
-            {{ skills | safe}}
+          <div class="nav-items">
+            <a href="/index">Home</a>
+            <a href="/portfolio" class="active">Mein Portfolio</a>
+            <a href="portfolio/erstellen">Portfolio erstellen</a>
+            <a href="javascript:void(0);" class="icon" id="burgermenutest">
+              <i class="material-icons" style="font-size: 40px">reorder</i>
+            </a>
+          </div>
         </ul>
-    </div>
-</div>
 
- <!-- Kontaktdaten --> 
-<div class="contact_heading">
-    <h3 class="contact_heading_h3">Kontaktdaten</h3>
+        <!-- Portfolio -->
+        <div class="PortfolioDetailSite">
+          <div class="button-group_portfolio">{{ editPortfolio | safe}}</div>
 
- <div class="container_contact">
-    <dl class="contact">
-      <dt>Name:</dt>
-      {{ name | safe}}
-      <dt>Email:</dt>
-      {{ mail | safe}}
-      <dt>Telefon:</dt>
-      {{ telephone | safe}}
-      <dt>Addresse:</dt>
-      {{ address | safe}}
-      <dt>Sonstiges:</dt>
-      {{ extra | safe}}
-    </dl>
-  </div>
-</div>
+          <h2 id="PortfolioName">{{ title | safe}}</h2>
 
-</div>
+          {{ thumbnail | safe}}
 
-<!-- Portfolio - Bildergalerie + Beschreibung + Tags--> 
+          <div id="tags-container" class="tag-container">{{ tags | safe}}</div>
 
-<div class="PortfolioDetailSite">
-   
-        <div class="row">
-            <div class="column">
-              {{ workImage | safe}}
-              <img src="Bilder/LandingPagePic.jpg">
-              <img src="Bilder/LandingPagePic.jpg"> 
+          <h3><i>Beschreibung</i></h3>
+
+          <p id="Portfolio-Beschreibung">{{ description | safe}}</p>
+
+          <h3><i>About You</i></h3>
+
+          <p id="AboutMeText">{{ about | safe}}</p>
+
+          <!-- Skills und Kontaktdaten -->
+          <div class="skills-and-contact">
+            <!-- Kontaktdaten -->
+            <div class="contact_heading">
+              <h3>Kontaktdaten</h3>
+
+              <div id="Container Kontaktinfos" class="container_contact">
+                <dl id="Kontaktinfos" class="contact">
+                  <dt>Name:</dt>
+                  {{ name | safe}}
+                  <dt>Email:</dt>
+                  {{ mail | safe}}
+                  <dt>Telefon:</dt>
+                  {{ telephone | safe}}
+                  <dt>Addresse:</dt>
+                  {{ address | safe}}
+                  <dt>Sonstiges:</dt>
+                  {{ extra | safe}}
+                </dl>
+              </div>
             </div>
-            <div class="column">
-                <img src="Bilder/LandingPagePic.jpg">
-                <img src="Bilder/LandingPagePic.jpg">
-                <img src="Bilder/LandingPagePic.jpg">
+
+            <!-- Skills -->
+            <div class="skills_heading">
+              <h3>Skills</h3>
+
+              <div id="Skills Container" class="container_skills">
+                <ul id="skills" class="skills">
+                  {{ skills | safe}}
+                </ul>
+              </div>
             </div>
-
-
-           
-   
-    <div class="PortfolioDetailSite__text-section">
-
-        <h2><i>Your Work</i></h2>
-
-        <div class="tag-container">
-          {{ workTags | safe}}
           </div>
 
-        {{ workText | safe}}
+          <div class="button-group-yourWork">
+            <a class="button-yourWork" href="/portfolio/work/erstellen"
+              >Arbeiten hinzufügen</a
+            >
+          </div>
 
-            <div class="button-group_portfolio">
-                <a  class="button-group_portfolio_button" href='addThumbnail.html'>Bearbeiten</a>
-                <button  class="button-group_portfolio_button" >Löschen</button>
+          <!-- Your Work-->
+          <h3><i>Your Work</i></h3>
+
+          <!-- Portfolio - Bildergalerie -->
+
+          <div class="button-group-yourWork">
+            <a class="button-yourWork" href="addThumbnail.html">Bearbeiten</a>
+
+            <button class="button-yourWork">Löschen</button>
+          </div>
+
+          <h3>Your Work Titel</h3>
+
+          <div class="YourWork-text-section">
+            <div class="row" id="gallery">
+              <!-- Bilder werden hier dynamisch hinzugefügt -->
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1" />
+              </div>
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2" />
+              </div>
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3" />
+              </div>
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1" />
+              </div>
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2" />
+              </div>
+              <div class="column">
+                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3" />
+              </div>
             </div>
-    </div>
+          </div>
 
-</div>
-
- <footer>
-      <ul class="nav-linksFooter">
-        <h5>More On This Site</h5>
-        <li><a href="/ueber-uns">Über uns</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutz</a></li>
-        <li><a href="/dokumentation">Dokumentation</a></li>
-        <li><a href="/kollophon">Kollophon</a></li>
-      </ul>
-    </footer>
-
-    </body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio+work</title>
-    <link href="/public/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
-
-<body>
-  <div class="wrapper">
-  <main>
-
-  <!-- Menü/Nav  --> 
-  <ul class="nav-links" id="responsive">
-    <a href="/login" >
-        <i class="material-icons profil-icon">account_circle</i>
-    </a>
-
-    <div class="nav-items">
-        <a href="/index" >Home</a>
-       <a href="/portfolio" class="active">Mein Portfolio</a>
-        <a href="portfolio/erstellen" >Portfolio erstellen</a>
-         <a href="javascript:void(0);" class="icon" id="burgermenutest">
-            <i class="material-icons" style="font-size:40px">reorder</i>
-        </a>
-    </div>   
-</ul>
-
-
-
-<!-- Portfolio --> 
-<div class="PortfolioDetailSite">
-
-  <div class="button-group_portfolio">
-
-    <a  class="button-group_portfolio_button" href='addThumbnail.html'>Bearbeiten</a>
-
-    <button  class="button-group_portfolio_button" >Löschen</button>
-  </div>
-
-
-  <h2 id="PortfolioName">{{ title | safe}}</h2>
-
-
-  <img id="Thumbnail" class="PortfolioDetailSite_image-section" src="/public/Bilder/LandingPagePic.jpg" alt="ThumbnailPortfolio"/>
-
-  <div id="tags-container" class="tag-container">
-    <span class="tag">3D-Animation</span>
-    <span class="tag">Softwareentwicklung</span>
-    <span class="tag">2D-Art</span>
-    <span class="tag">Animation</span>
-  </div>
-
-
-  <h3><i>Beschreibung</i></h3>
-
-  <p id="Portfolio-Beschreibung">
-    
-      Wir planen die Erstellung einer Portfolio-Website, die sich an Studenten richtet. Sie soll das Bewerben bei Unternehmen vereinfachen und gleichzeitig den Austausch mit anderen Nutzern ermöglichen. 
-
-      Die angemeldeten Nutzer haben die Möglichkeit, ein Portfolio zu erstellen. Dieses Portfolio folgt einer festen Struktur, die Text, Tags und Bilder umfasst. Sie haben ein Titelbild, eine Beschreibung,eine Liste mit den Fähigkeiten 
-      des Erstellers, Kontaktdaten und Beispiele der Arbeit, z.B. Bild oder Videodateien. Nutzer können ihre Portfolios sowie ihre Kontaktdaten selbst bearbeiten und aktualisieren und ihre Portfolios, sowie ihren Account löschen. 
-      Auf der Startseite können die Portfolios anderer Nutzer angesehen werden, unabhängig davon, ob man angemeldet ist oder nicht. Zusätzlich gibt es eine Filterfunktion, die es ermöglicht, die Portfolios nach verschiedenen Tags zu durchsuchen.
-  
-      Für nicht angemeldete Nutzer besteht die Möglichkeit, die öffentlichen Portfolios auf der Startseite einzusehen und diese nach Tags zu filtern. Ansonsten haben nur registrierte Nutzer Zugriff auf die Funktionen, 
-      um Portfolios zu erstellen und zu bearbeiten.
-
-      Jeder Nutzer verfügt über ein persönliches Profil, in dem die Kontaktdaten hinterlegt und bei Bedarf angepasst werden können. Es gibt drei Arten von Nutzern: angemeldete Nutzer, Admins und nicht angemeldete Nutzer. 
-      Angemeldete Nutzer haben die vollständige Kontrolle über ihr Portfolio und ihr Profil, während nicht angemeldete Nutzer nur die öffentlichen Portfolios einsehen können. 
-      Admins haben dazu die Möglichkeit, die Portfolios von Nutzern zu löschen, um das Bestehen von unangemessenen Inhalten auf der Website zu verhindern. 
-
-  </p>
-
-  <h3><i>About You</i></h3>
-
-        <p id="AboutMeText">
-          
-            Wir planen die Erstellung einer Portfolio-Website, die sich an Studenten richtet. Sie soll das Bewerben bei Unternehmen vereinfachen und gleichzeitig den Austausch mit anderen Nutzern ermöglichen. 
-
-            Die angemeldeten Nutzer haben die Möglichkeit, ein Portfolio zu erstellen. Dieses Portfolio folgt einer festen Struktur, die Text, Tags und Bilder umfasst. Sie haben ein Titelbild, eine Beschreibung,eine Liste mit den Fähigkeiten 
-            des Erstellers, Kontaktdaten und Beispiele der Arbeit, z.B. Bild oder Videodateien. Nutzer können ihre Portfolios sowie ihre Kontaktdaten selbst bearbeiten und aktualisieren und ihre Portfolios, sowie ihren Account löschen. 
-            Auf der Startseite können die Portfolios anderer Nutzer angesehen werden, unabhängig davon, ob man angemeldet ist oder nicht. Zusätzlich gibt es eine Filterfunktion, die es ermöglicht, die Portfolios nach verschiedenen Tags zu durchsuchen.
-        
-            Für nicht angemeldete Nutzer besteht die Möglichkeit, die öffentlichen Portfolios auf der Startseite einzusehen und diese nach Tags zu filtern. Ansonsten haben nur registrierte Nutzer Zugriff auf die Funktionen, 
-            um Portfolios zu erstellen und zu bearbeiten.
-
-            Jeder Nutzer verfügt über ein persönliches Profil, in dem die Kontaktdaten hinterlegt und bei Bedarf angepasst werden können. Es gibt drei Arten von Nutzern: angemeldete Nutzer, Admins und nicht angemeldete Nutzer. 
-            Angemeldete Nutzer haben die vollständige Kontrolle über ihr Portfolio und ihr Profil, während nicht angemeldete Nutzer nur die öffentlichen Portfolios einsehen können. 
-            Admins haben dazu die Möglichkeit, die Portfolios von Nutzern zu löschen, um das Bestehen von unangemessenen Inhalten auf der Website zu verhindern. 
-
-        </p>
-
-    
-        
-
-  <!-- Skills und Kontaktdaten --> 
-  <div class="skills-and-contact">
-
-    <!-- Kontaktdaten -->
-    <div class="contact_heading">
-
-      <h3>Kontaktdaten</h3>
-
-    <div id="Container Kontaktinfos" class="container_contact">
-      
-      <dl id="Kontaktinfos" class="contact">
-        <dt>Name:</dt>
-        <dd>Max Mustermann</dd>
-        <dt>Email:</dt>
-        <dd>max@example.com</dd>
-        <dt>Telefon:</dt>
-        <dd>+49 123 4567890</dd>
-      </dl>
-      </div>
-    </div>
-  
-    <!-- Skills -->
-    <div class="skills_heading"> 
-
-        <h3 >Skills</h3>
-
-        <div  id="Skills Container" class="container_skills">
-            <ul id="skills" class="skills">
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-            </ul>
+          <p id="Beschreibung-YourWork">
+            Die angemeldeten Nutzer haben die Möglichkeit, ein Portfolio zu
+            erstellen. Dieses Portfolio folgt einer festen Struktur, die Text,
+            Tags und Bilder umfasst. Sie haben ein Titelbild, eine
+            Beschreibung,eine Liste mit den Fähigkeiten des Erstellers,
+            Kontaktdaten und Beispiele der Arbeit, z.B. Bild oder Videodateien.
+            Nutzer können ihre Portfolios sowie ihre Kontaktdaten selbst
+            bearbeiten und aktualisieren und ihre Portfolios, sowie ihren
+            Account löschen. Auf der Startseite können die Portfolios anderer
+            Nutzer angesehen werden, unabhängig davon, ob man angemeldet ist
+            oder nicht. Zusätzlich gibt es eine Filterfunktion, die es
+            ermöglicht, die Portfolios nach verschiedenen Tags zu durchsuchen.
+          </p>
         </div>
-    </div>
-  </div>
+      </main>
 
-
-   <!-- Your Work--> 
-  <h3><i>Your Work</i></h3>
-
-     <!-- Portfolio - Bildergalerie --> 
-
-     <div class="button-group-yourWork">
-
-      <a  class="button-yourWork" href='addThumbnail.html'>Bearbeiten</a>
-  
-      <button  class="button-yourWork " >Löschen</button>
-    </div>
-
-    <h3>Your Work Titel</h3>
-
-    <div class="YourWork-text-section"> 
-
-  <div class="row" id="gallery">
-
-    <!-- Bilder werden hier dynamisch hinzugefügt -->
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
-    </div>
-  
-  </div>
-</div> 
-
-    <p id="Beschreibung-YourWork"> Die angemeldeten Nutzer haben die Möglichkeit, ein Portfolio zu erstellen. Dieses Portfolio folgt einer festen Struktur, die Text, Tags und Bilder umfasst. Sie haben ein Titelbild, eine Beschreibung,eine Liste mit den Fähigkeiten 
-      des Erstellers, Kontaktdaten und Beispiele der Arbeit, z.B. Bild oder Videodateien. Nutzer können ihre Portfolios sowie ihre Kontaktdaten selbst bearbeiten und aktualisieren und ihre Portfolios, sowie ihren Account löschen. 
-      Auf der Startseite können die Portfolios anderer Nutzer angesehen werden, unabhängig davon, ob man angemeldet ist oder nicht. Zusätzlich gibt es eine Filterfunktion, die es ermöglicht, die Portfolios nach verschiedenen Tags zu durchsuchen.
-    </p>
-
-
-
-</div>
-</main>
-
-
- <!-- Footer --> 
-<footer>
-  <ul class="nav-linksFooter">
-    <h5>More On This Site</h5>
-    <li><a href="/ueber-uns">Über uns</a></li>
-    <li><a href="/kontakt">Kontakt</a></li>
-    <li><a href="/impressum">Impressum</a></li>
-    <li><a href="/datenschutz">Datenschutz</a></li>
-    <li><a href="/dokumentation">Dokumentation</a></li>
-    <li><a href="/kollophon">Kollophon</a></li>
-  </ul>
-</footer>
-
+      <!-- Footer -->
+      <footer>
+        <ul class="nav-linksFooter">
+          <h5>More On This Site</h5>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+        </ul>
+      </footer>
     </div>
   </body>
 </html>
