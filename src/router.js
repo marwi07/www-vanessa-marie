@@ -1,5 +1,6 @@
 import * as portfolioForm from "./controller/portfolioFormController.js";
 import * as portfolio from "./controller/portfolioController.js";
+import * as userPortfolio from "./controller/userPortfolioController.js";
 import * as userContact from "./controller/contactFormController.js";
 import * as profil from "./controller/profileController.js ";
 import * as index from "./controller/indexController.js";
@@ -34,8 +35,8 @@ export const routes = async (ctx) => {
     ctx = await workForm.renderWorkForm(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio") {
-    ctx = await portfolio.renderPortfolio(ctx);
+  if (ctx.url.pathname === "/portfolio/user") {
+    ctx = await userPortfolio.renderPortfolio(ctx);
   }
 
   if (ctx.url.pathname === "/") {
@@ -93,11 +94,6 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/portfolio/loeschen") {
-    //TODO
-    ctx = await portfolioForm.index(ctx);
-  }
-
-  if (ctx.url.pathname === "/portfolio/") {
     //TODO
     ctx = await portfolioForm.index(ctx);
   }
