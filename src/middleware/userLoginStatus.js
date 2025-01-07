@@ -56,20 +56,20 @@ export const TextDisplayCheck = async (ctx) => {
               Erstelle dir jetzt ganz einfach dein eigenes Portfolio.
             </p>
             <a href="/portfolio/erstellen" class="button-portfolioerstellen">
-              Portfolio erstellen!`;
+              Portfolio erstellen! </a>`;
     } else {
       html = `       <p class="p_herotext">
               Hier gelangst du zu deinem Portfolio.
             </p>
             <a href="/portfolio" class="button-portfolioerstellen">
-              Dein Portfolio`;
+              Dein Portfolio </a>`;
     }
   } else {
     html = `         <p class="p_herotext">
               Logge dich ein um ganz einfach dein eigenes Portfolio zu erstellen.
             </p>
             <a href="/login" class="button-portfolioerstellen">
-              Portfolio erstellen!`;
+              Portfolio erstellen! </a>`;
   }
 
   return html;

@@ -12,8 +12,7 @@ export const renderProfile = async (ctx) => {
   const username = cookie["username"];
 
   const data = await model.getInfoByUser(ctx.db, username);
-  console.log(data);
-  if (data) {
+  if (!data.length === 0) {
     msg = ` <div id="Container Kontaktinfos" class="container_contact">
                 <dl id="Kontaktinfos" class="contact">
                   <dt>Name:</dt>
@@ -37,3 +36,6 @@ export const renderProfile = async (ctx) => {
   ctx.response.status = 200;
   return ctx;
 };
+
+//TODO Logout
+// ADD USERNAME

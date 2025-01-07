@@ -1,17 +1,21 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
 
-export const renderPortfolio = async (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+//TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
+export const renderPortfolio = async (ctx, username) => {
+  //const cookie = ctx.cookies.getCookie(ctx);
+  //const username = cookie["username"];
 
   //get User Info
-  const userInfo = await userModel.getInfoByUser(ctx.db, username);
+
+  //TODO USER INFO EMPTY -> ADD USER INFO
 
   const thumbnailInfo = await portfolioModel.getThumbnailByName(
     ctx.db,
     username
   );
+
+  const userInfo = await userModel.getInfoByUser(ctx.db, username);
 
   try {
     const thumbnailPath = thumbnailInfo[0][1];

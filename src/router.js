@@ -14,6 +14,14 @@ import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
 
 export const routes = async (ctx) => {
+  const portfolioUser = /^\/portfolio\/user\/([^\/]+)$/.exec(ctx.url.pathname);
+
+  if (portfolioUser) {
+    const username = portfolioUser[1];
+    ctx = await portfolio.renderPortfolio(ctx, username);
+    return ctx;
+  }
+
   if (ctx.url.pathname === "/profil") {
     ctx = await profil.renderProfile(ctx);
   }
@@ -89,7 +97,7 @@ export const routes = async (ctx) => {
     ctx = await portfolioForm.index(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio/user") {
+  if (ctx.url.pathname === "/portfolio/") {
     //TODO
     ctx = await portfolioForm.index(ctx);
   }
