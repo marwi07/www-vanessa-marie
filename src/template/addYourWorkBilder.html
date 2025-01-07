@@ -10,6 +10,10 @@
   </head>
 
   <body>
+
+    <div class="wrapper">
+      <main>
+
        <!-- Menü/Nav  --> 
        <ul class="nav-links" id="responsive">
         <a href="/login" >
@@ -29,58 +33,94 @@
     <!-- Upload box -->
     <h3 class="h3_erstellePortfolio">Füge deinem Portfolio Bilder deiner Arbeit hinzu!</h3>
 
-    
-
-    <div class="upload-box"
-    >   
-      <h4>Titelbild</h4>
+    <div class="upload-yourWorkimg">
       
-      <img id="preview" class="preview-image" alt="Image Preview" />
-
-      <button class="button-save-aboutyou">Speichern</button>
+      <h4>Bilder</h4>
+ 
+    <div class="row" id="gallery">
+      
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
+      <div class="column">
+        <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+          <label for="reference1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          <input type="file" id="reference1" name="reference1" accept="image/*">
+          </label>
+          </form>
+      </div>
     </div>
-
-    
-<!-- Portfolio - Bildergalerie --> 
-
-<div class="PortfolioDetailSite">
-  <div class="row" id="gallery">
-    <!-- Bilder werden hier dynamisch hinzugefügt -->
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2">
-    </div>
-    <div class="column">
-      <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3">
-    </div>
+    <button type="submit" class="button-save">Speichern</button>
   </div>
-  <div class="upload-container">
-    <input type="file" id="fileInput" accept="image/*" multiple>
-    <button id="uploadButtonGalerie">Bilder hochladen</button>
-  </div>
-</div>
+  </main>
 
-    <!--<footer>
-      <ul class="nav-linksFooter">
-        <h5>More On This Site</h5>
-        <li><a href="/ueber-uns">Über uns</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutz</a></li>
-        <li><a href="/dokumentation">Dokumentation</a></li>
-        <li><a href="/kollophon">Kollophon</a></li>
-      </ul>
-    </footer>--> 
+    <!--<footer>--> 
+      <footer>
+        <ul class="nav-linksFooter">
+          <h5>More On This Site</h5>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+        </ul>
+      </footer>
+
+    </div>
   </body>
 </html>
