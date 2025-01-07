@@ -1559,6 +1559,7 @@ input[type="checkbox"] {
 
   /* Startseite */
 
+   /* Navigation */
   .nav-links {
     flex-direction:row;
     align-items: center; 
@@ -1641,6 +1642,10 @@ input[type="checkbox"] {
 /* Smartphones (portrait and landscape) */
 @media (max-width: 767px) {
 
+  body {
+    font-size: 16px;
+  }
+
   /* Überschriften */
   h1 {
       font-size: 36px; 
@@ -1648,6 +1653,14 @@ input[type="checkbox"] {
 
   h2 {
       font-size: 28px;
+  }
+
+  h3 {
+    font-size: 28px;
+}
+
+  h4 {
+    font-size: 25px;
   }
 
   h5 {
@@ -1687,6 +1700,18 @@ input[type="checkbox"] {
     font-size: 14px; 
     padding: 5px;
   }
+
+  /* Footer */
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .nav-linksFooter {
+    text-align: center;
+    margin-top: 10px;
+  }
+
 
   /* Bilder Startseite */
   .image-section{
@@ -1786,114 +1811,942 @@ input[type="checkbox"] {
     font-size: 16px; 
 }
 
+  /* Form elements and buttons */
+  .button-save-yourwork2 {
+    max-width: 100%; 
+  }
+
+  .column {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .upload-label {
+    height: 150px;
+  }
+  
+  /* Error Seiten */
+  .error_font {
+    font-size: 24px;
+  }
+
+
+   /* __________________________ */
+
+   /* Portfolio Site */
+   .Portfolio {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  /* Text Section */
+  .text-section {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .text-section .titel {
+    margin-top: 10px;
+  }
+
+  .text-section .username {
+    margin-top: 10px;
+  }
+
+  .text-section .beschreibung {
+    margin-top: 5px;
+  }
+
+  /* Image Section */
+  .image-section {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Read More Button */
+  .btn.readmore {
+    font-size: 18px;
+    padding: 8px 0;
+  }
+
+  /* Filter Section */
+  #myBtnContainer {
+    margin-top: 10px;
+  }
+
+  .filterDiv {
+    width: 100%;
+    line-height: 40px;
+    font-size: 14px;
+  }
+
+  .btn.Filter {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  /* _______________________________________________________________*/
+  /* Error Site */
+  .error_font {
+    font-size: 18px;
+  }
+
+    /* _______________________________________________________________*/
+   /*Login/Register */
+   .body_GridLogin {
+    width: 90%; /* Breite für kleinere Bildschirme */
+    margin-top: 10%;
+  }
+
+  /* Container Login */
+  .container_login {
+    padding: 10px 0;
+  }
+
+  .body_GridLogin h2 {
+    font-size: 36px; /* Kleinere Schrift für h2 */
+  }
+
+  .body_GridLogin h3 {
+    margin-top: 40px; /* Weniger Abstand für h3 */
+    font-size: 24px;
+  }
+
+  /* Form Styling */
+  .container_login form input {
+    font-size: 12pt; /* Kleinere Schrift für Eingabefelder */
+    padding: 8px;
+  }
+
+  /* Fehlermeldung Login/register */
+  .container-false-login {
+    width: 90%; /* Breite für mobile Geräte */
+    max-width: 400px; /* Maximale Breite anpassen */
+    height: auto; /* Flexibel anpassen */
+    padding: 15px;
+    font-size: 18px; /* Kleinere Schrift für Fehlermeldungen */
+  }
+
+  .error-message {
+    font-size: 18px; /* Kleinere Schrift */
+    margin-bottom: 20px; /* Weniger Abstand */
+  }
+
+  .close-button {
+    font-size: 16px; /* Kleinere Schrift für den Schließen-Button */
+    padding: 8px 16px;
+  }
+
+    /* Button Gruppe Login/Register */
+    .button-group-login-register {
+      flex-direction: column; /* Buttons untereinander auf mobilen Geräten */
+      gap: 10px;
+    }
+  
+    .button-group_login {
+      width: 100%; /* Breite für die Buttons anpassen */
+      font-size: 14pt; /* Kleinere Schriftgröße für mobile Geräte */
+      padding: 10px; /* Weniger Padding für mobile Geräte */
+    }
+
+
+
+  /* _______________________________________________________________*/
+
+    /* Portfolio Detail Seite */
+    .PortfolioDetailSite {
+      max-width: 90%; /* Maximale Breite für kleine Bildschirme */
+      padding: 80px 15px; /* Weniger Padding für kleinere Bildschirme */
+    }
+  
+    .PortfolioDetailSite h2 {
+      font-size: 50px; /* Kleinere Schriftgröße für Titel */
+      margin-top: 40px;
+    }
+  
+    .PortfolioDetailSite h3 {
+      font-size: 45px; /* Kleinere Schriftgröße für Untertitel */
+      margin-top: 30px;
+    }
+  
+    .PortfolioDetailSite p {
+      font-size: 18px; /* Kleinere Schriftgröße für Beschreibung */
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  
+    .YourWork-text-section {
+      flex-direction: column; /* Die Textsektion untereinander anordnen */
+      align-items: center; 
+      top: 20px;
+    }
+  
+    .PortfolioDetailSite_image-section {
+      flex-direction: column;
+      height: auto; /* Flexibles Layout für das Bild */
+    }
+  
+    .PortfolioDetailSite_image-section img {
+      max-height: 60vh; /* Das Bild hat eine maximale Höhe auf mobilen Geräten */
+    }
+
+     /* Tags */
+  .tag-container {
+    flex-direction: column; /* Tags untereinander anordnen auf mobilen Geräten */
+    justify-content: flex-start;
+  }
+
+  .tag {
+    font-size: 18px; /* Kleinere Schriftgröße für Tags auf mobilen Geräten */
+    padding: 8px 15px;
+    margin: 5px 0;
+  }
+
+  /* Bearbeiten/Löschen Buttons */
+  .button-group_portfolio {
+    flex-direction: column; /* Buttons untereinander anordnen */
+    align-items: flex-start; /* Buttons an den Anfang ausrichten */
+    gap: 10px; /* Weniger Abstand zwischen den Buttons */
+  }
+
+  .button-group_portfolio_button {
+    width: 100%; /* Buttons auf volle Breite setzen */
+    font-size: 12pt; /* Kleinere Schriftgröße für mobile Geräte */
+    padding: 8px 0;
+  }
+
+  /* Buttons Your Work */
+  .button-group-yourWork {
+    flex-direction: column; /* Buttons untereinander anordnen */
+    align-items: flex-start;
+    left: 0;
+    gap: 10px;
+  }
+
+  .button-yourWork {
+    width: 100%; /* Buttons auf volle Breite setzen */
+    font-size: 12pt;
+    padding: 8px 0;
+  }
+
+  /* Skills Box Detail Site */
+  .container_skills {
+    width: 100%; /* Skills Box auf volle Breite setzen */
+    padding: 15px; /* Weniger Padding für mobile Geräte */
+  }
+
+  .skills li {
+    width: 100%; /* Liste von Skills auf volle Breite setzen */
+    text-align: left; /* Text linksbündig auf mobilen Geräten */
+  }
+
+   /* Kontaktdaten Box */
+   .skills-and-contact {
+    flex-direction: column; /* Kontaktdaten untereinander anordnen */
+    gap: 20px;
+  }
+
+  .container_contact {
+    padding: 20px;
+  }
+
+  .contact {
+    font-size: 18px; /* Kleinere Schriftgröße auf mobilen Geräten */
+    padding: 15px 20px;
+  }
+
+  .contact dl {
+    gap: 10px;
+  }
+
+  /* Überschriften für Skills und Kontaktdaten */
+  .skills_heading h3, .contact_heading h3 {
+    font-size: 30px; /* Kleinere Schriftgröße für Überschriften */
+    margin-top: 15px;
+  }
+
+  .contact_heading, .skills_heading {
+    max-width: 100%; /* Maximale Breite auf 100% setzen */
+  }
+
+  /* Bildergalerie "Your Work" */
+  .row {
+    flex-direction: column; /* Bilder in einer Spalte anordnen */
+    gap: 10px;
+  }
+
+  .column {
+    width: 100%; /* Jede Spalte auf 100% setzen */
+    max-width: 100%;
+  }
+
+  .upload-yourWorkimg {
+    width: 90%; /* Upload-Bereich etwas schmaler */
+    padding: 15px;
+  }
+
+  .upload-label {
+    width: 100%; /* Upload-Bereich auf 100% Breite setzen */
+    height: auto; /* Höhe automatisch anpassen */
+    padding: 20px 0;
+  }
+
+  .button-save-yourwork {
+    width: 100%; /* Speichern-Button auf 100% Breite setzen */
+    font-size: 18px; /* Kleinere Schriftgröße auf mobilen Geräten */
+  }
+
+  /* Your Work Save Button */
+  .button-save-YourWork {
+    padding: 8px 15px;
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  /* Upload Box */
+  .upload-box-blue, .upload-box-orange, .upload-aboutYou {
+    height: auto;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  /* Upload Box Header */
+  .header-container h4 {
+    font-size: 40px; /* Kleinere Schriftgröße */
+  }
+
+  /* Form Styling */
+  .upload-aboutYou form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Textarea Styling */
+  .upload-aboutYou form textarea {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .button-save-aboutyou {
+    padding: 8px 15px;
+    font-size: 20px;
+    max-width: 100%;
+  }
+
+  /* Profil Bearbeiten Seite */
+  .body_GridProfil {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  /* Profilbild bearbeiten */
+  .profile-image-container {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .profile-header .profil-h4 {
+    font-size: 24px; /* Kleinere Schriftgröße für Profilüberschrift */
+  }
+
+  .button-logout {
+    font-size: 16px;
+    max-width: 150px;
+    padding: 8px 15px;
+  }
+
+  /* Tags Upload */
+  .custom-checkbox .checkmark {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    width: 4px;
+    height: 8px;
+    top: 8px;
+    left: 12px;
+  }
+
+  /* Formular Styling Kontaktinfo */
+  .body_GridContact {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .body_GridContact form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .body_GridContact form input {
+    font-size: 16pt;
+    padding: 8px;
+  }
+
+  .body_GridContact form label {
+    margin-left: 10px;
+    font-size: 16pt;
+  }
+
+  /* Upload Skills */
+  .body_GridSkills {
+    max-width: 90%;
+  }
+
+  .body_GridSkills form {
+    grid-template-columns: 1fr; /* Eine Spalte */
+  }
+
+  .body_GridSkills form input {
+    font-size: 16pt;
+    padding: 12px;
+  }
+
+  .body_GridSkills form label {
+    font-size: 16pt;
+  }
+
+  /* Upload Your Work */
+  .body_GridyourWork {
+    flex-direction: column;
+  }
+
+  .container_yourWork {
+    padding: 20px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .container_yourWork form input {
+    font-size: 14pt;
+    padding: 12px;
+  }
+
+  #YourWorkTextarea {
+    width: 100%;
+    font-size: 12pt;
+  }
+
+  /* Add Thumbnail */
+  .upload-Gridthumbnail {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .upload-Gridthumbnail form {
+    padding: 15px;
+  }
+
+  .upload-Gridthumbnail form label {
+    font-size: 18pt;
+  }
+
+  .upload-Gridthumbnail form .upload-label {
+    height: 400px;
+    font-size: 16px;
+  }
+
+  .upload-Gridthumbnail form .profil-icon {
+    font-size: 50px;
+  }
+
 }
-
-
 
 
 
 /* Tablets (landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Allgemein */
+  body {
+    font-size: 18px;
+  }
+
   h1 {
-      font-size: 48px; /* Adjust heading size */
+    font-size: 44px;
   }
 
   h2 {
-      font-size: 36px; /* Adjust heading size */
+    font-size: 34px;
   }
 
-  .container_Login {
-      padding: 30px; /* Adjust padding */
-      width: 80%; /* 80% width */
+  h3 {
+    font-size: 30px;
   }
 
-  .btn {
-      font-size: 18px; /* Button font size */
+  h4 {
+    font-size: 26px;
   }
 
+  h5 {
+    font-size: 18px;
+  }
+
+  /* Navigation */
   .nav-links {
-      gap: 15px; /* Adjust spacing */
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
-      flex-direction: column; /* Stack sections */
-      align-items: center; /* Center align */
-      margin-top: 0px;
-      padding: 0px;
+  .nav-links li {
+    margin: 0 15px;
   }
 
-  
-  /* Größe des Account-Icons */
-  .icon-image {
-    width: 10px; 
-    height: 10px; 
-    object-fit: contain; /* Größe proportional halten */
-  }
-
-  .button-portfolioerstellen{
+  .nav-links a {
+    padding: 10px 15px;
     font-size: 20px;
-    color:white;
-    padding:10px 20px;
-    margin-top: 15px;
   }
 
-  /* Other specific adjustments as needed */
+  /* Startseite Heading */
+  .left-heading {
+    font-size: 60px;
+  }
+
+  .p_herotext {
+    font-size: 20px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 18px;
+  }
+
+  /* Filter Startseite */
+  .btn.Filter {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  /* Login */
+  .container_Login {
+    width: 80%;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 18px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Error Site */
+  .error_font {
+    font-size: 20px;
+  }
 }
 
-/* Laptops and small desktops */
+/* Small Screens (Small Laptops, Large Tablets) */
+@media (max-width: 1200px) {
+
+  /* Allgemein */
+  body {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  /* Navigation */
+  .nav-links {
+    flex-direction: row;
+    padding: 5px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 12px 20px;
+    font-size: 20px;
+  }
+
+  /* Startseite */
+  .left-heading {
+    font-size: 70px;
+  }
+
+  .p_herotext {
+    font-size: 18px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 20px;
+  }
+
+  .btn.Filter {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 18px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: column;
+    padding: 30px;
+  }
+}
+
+
+/* Kleine Laptops und größere Tablets (1025px bis 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
+
+  /* Allgemein */
+  body {
+    font-size: 20px;
+  }
+
   h1 {
-      font-size: 72px; /* Adjust heading size */
+    font-size: 60px;
   }
 
   h2 {
-      font-size: 48px; /* Adjust heading size */
+    font-size: 48px;
   }
 
-  .container_Login {
-      padding: 40px; /* Adjust padding */
-      width: 70%; /* 70% width */
+  h3 {
+    font-size: 38px;
   }
 
-  .btn {
-      font-size: 20px; /* Button font size */
+  h4 {
+    font-size: 30px;
   }
 
+  h5 {
+    font-size: 22px;
+  }
+
+  /* Navigation */
   .nav-links {
-      gap: 20px; /* Adjust spacing */
+    flex-direction: row;
+    padding: 10px 20px;
   }
 
-  .Portfolio, .PortfolioDetailSite, .skills-and-contact {
-      flex-direction: row; /* Align items side by side */
-      justify-content: space-between; /* Space between */
+  .nav-links li {
+    margin: 12px 20px;
   }
 
-  /* Other specific adjustments as needed */
+  .nav-links a {
+    padding: 14px 24px;
+    font-size: 22px;
+  }
+
+  /* Startseite */
+  .left-heading {
+    font-size: 80px;
+  }
+
+  .p_herotext {
+    font-size: 22px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 22px;
+  }
+
+  .btn.Filter {
+    font-size: 20px;
+    padding: 14px 22px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 20px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: row;
+    padding: 40px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 20px;
+    padding: 30px;
+  }
 }
 
-/* Desktops */
+
+/* Large Screens (Desktops) */
+@media (min-width: 1201px) {
+
+  /* Allgemein */
+  body {
+    font-size: 22px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  h3 {
+    font-size: 38px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  h5 {
+    font-size: 22px;
+  }
+
+  /* Navigation */
+  .nav-links {
+    flex-direction: row;
+    padding: 10px 15px;
+  }
+
+  .nav-links li {
+    margin: 10px 15px;
+  }
+
+  .nav-links a {
+    padding: 12px 20px;
+    font-size: 22px;
+  }
+
+  /* Startseite */
+  .left-heading {
+    font-size: 80px;
+  }
+
+  .p_herotext {
+    font-size: 22px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 22px;
+  }
+
+  .btn.Filter {
+    font-size: 20px;
+    padding: 12px 20px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 20px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: row;
+    padding: 40px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+/* Sehr große Bildschirme (ab 1441px) */
 @media (min-width: 1441px) {
+
+  /* Allgemein */
+  body {
+    font-size: 24px;
+  }
+
   h1 {
-      font-size: 100px; /* Adjust heading size */
+    font-size: 80px;
   }
 
   h2 {
-      font-size: 60px; /* Adjust heading size */
+    font-size: 60px;
   }
 
-  .container_Login {
-      padding: 50px; /* Adjust padding */
-      width: 50%; /* 50% width */
+  h3 {
+    font-size: 45px;
   }
 
-  .btn {
-      font-size: 22px; /* Button font size */
+  h4 {
+    font-size: 38px;
   }
 
+  h5 {
+    font-size: 26px;
+  }
+
+  /* Navigation */
   .nav-links {
-      gap: 30px; /* Adjust spacing */
+    flex-direction: row;
+    padding: 15px 25px;
   }
 
-  /* Other specific adjustments as needed */
+  .nav-links li {
+    margin: 15px 25px;
+  }
+
+  .nav-links a {
+    padding: 18px 30px;
+    font-size: 26px;
+  }
+
+  /* Startseite */
+  .left-heading {
+    font-size: 100px;
+  }
+
+  .p_herotext {
+    font-size: 28px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 26px;
+  }
+
+  .btn.Filter {
+    font-size: 24px;
+    padding: 18px 28px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 24px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: row;
+    padding: 60px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 24px;
+    padding: 40px;
+  }
 }
+
+
+/* Extra Large Screens (Wide Displays / Full HD and above) */
+@media (min-width: 1600px) {
+
+  /* Allgemein */
+  body {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 42px;
+  }
+
+  h4 {
+    font-size: 34px;
+  }
+
+  h5 {
+    font-size: 24px;
+  }
+
+  /* Navigation */
+  .nav-links {
+    flex-direction: row;
+    padding: 10px 20px;
+  }
+
+  .nav-links li {
+    margin: 15px 20px;
+  }
+
+  .nav-links a {
+    padding: 15px 25px;
+    font-size: 24px;
+  }
+
+  /* Startseite */
+  .left-heading {
+    font-size: 90px;
+  }
+
+  .p_herotext {
+    font-size: 24px;
+  }
+
+  /* Portfolio Übersicht */
+  .text-section {
+    font-size: 24px;
+  }
+
+  .btn.Filter {
+    font-size: 22px;
+    padding: 14px 24px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 22px;
+  }
+
+  /* Portfolio Site */
+  .Portfolio {
+    flex-direction: row;
+    padding: 50px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 22px;
+    padding: 30px;
+  }
+}
+
 
