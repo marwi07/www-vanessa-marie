@@ -39,8 +39,8 @@ export const getIdByName = async (db, username) => {
   return query;
 };
 
-export const getImagesByName = async (db, id) => {
-  const sql = `SELECT * FROM portfolioThumbnail WHERE textId == $id`;
+export const getImagesById = async (db, id) => {
+  const sql = `SELECT * FROM portfolioWorkImage WHERE textId == $id`;
   const query = await db.query(sql, {
     $id: id,
   });

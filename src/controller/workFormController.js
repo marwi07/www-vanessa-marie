@@ -8,23 +8,23 @@ export const error404 = (ctx) => {
 };
 
 let step = "";
+let workTextId = 0;
 
 export const renderWorkForm = async (ctx) => {
   //step 1 - Titel
-  step = `<h4>Kontaktdaten</h4>
-  <div class="body_GridContact">
-    <div class="container_contact">
+  step = `<div class="upload-aboutYou" >
 
-      <div id="message-container"></div> 
+    <div class="header-container">
+
+        <h4>Titel</h4>
+    </div>
+
+    <div id="Beschreibung Portfolio"> </div>
 
       <form id="titelForm" action="/addWork?step=one" method="post">
-      <fieldset>
-        <label for="title">Titel:</label>
-        <input type="text" id="title" name="title">
-        </fieldset>
-        <button type="submit" class="button-save">Speichern</button>
+        <textarea maxlength="1000" id="title" name="title" placeholder="Füge deiner Arbeit einen Titel hinzu."></textarea>
+        <button type="submit" class="button-save-aboutyou">Speichern</button>
         </form>
-  
     </div>`;
 
   const cookie = ctx.cookies.getCookie(ctx);
@@ -33,46 +33,94 @@ export const renderWorkForm = async (ctx) => {
   //steps html
   if (currentFormStep == "one") {
     //BEschreibung
-    step = `<h4>Beschreibung</h4>
+    step = `<div class="upload-aboutYou" >
 
-    <div class="upload-aboutYou">
+    <div class="header-container">
 
-    <div class="top-text"> Füge deinem Portfolio eine kurze Beschreibung hinzu.</div>
+        <h4>Beschreibung</h4>
+    </div>
 
-    <form id="descriptionForm" action="/addWork?step=two" method="POST">
-    <fieldset>
-        <textarea id="aboutYouTextarea" name="description" placeholder="Füge deinem Portfolio eine kurze Beschreibung über dich hinzu." style="display: block;"></textarea>
-        <button type="submit" class="button-save">Speichern</button>
-        </fieldset>
-    </form>
+    <div id="Beschreibung Portfolio"> </div>
 
-    
+      <form id="descriptionForm" action="/addWork?step=two" method="POST">
+        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deiner Arbeit eine Beschreibung hinzu."></textarea>
+        <button type="submit" class="button-save-aboutyou">Speichern</button>
+        </form>
     </div>`;
   }
 
   if (currentFormStep == "two") {
     //Bilder
-    step = `<h4>About you</h4>
+    step = `
+    <div class="upload-yourWorkimg">
 
-<div class="upload-aboutYou">
-    <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
-
+      <h4>Bilder</h4>
+ 
     <form action="/addWork?step=three" method="POST" enctype="multipart/form-data">
 
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail1" name="thumbnail1">
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail2" name="thumbnail2">
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail3" name="thumbnail3">
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail4" name="thumbnail4">
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail5" name="thumbnail5">
-        
-        <button type="submit" class="button-save">Speichern</button>
-    </form>
-</div>`;
+      <div class="row" id="gallery">
+
+      <div class="column">
+          <label for="image1" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image1" name="image1" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image2" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image2" name="image2" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image3" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image3" name="image3" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image4" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image4" name="image4" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image5" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image5" name="image5" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image6" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image6" name="image6" accept="image/">
+            </label>
+          </div>
+
+                <div class="column">
+          <label for="image7" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+            <input type="file" id="image7" name="image7" accept="image/">
+            </label>
+          </div>
+
+      <div class="column">
+      <label for="image8" class="upload-label">Klicke hier um ein Bild hochzuladen.
+        <i class="material-icons profil-icon">add_a_photo</i>
+        <input type="file" id="image8" name="image8" accept="image/">
+        </label>
+         </div>
+          </div>
+            <div class="button-save-container">
+            <button type="submit" class="button-save-yourwork">Speichern</button>
+          </div>
+          </form>
+        </div>`;
   }
 
   //render page with html of step
@@ -84,7 +132,7 @@ export const renderWorkForm = async (ctx) => {
   return ctx;
 };
 
-const tempStorage = new FormData();
+let tempStorage = new FormData();
 let formData;
 
 export const add = async (ctx) => {
@@ -92,17 +140,21 @@ export const add = async (ctx) => {
 
   //Image upload
   if (step === "three") {
+    tempStorage = new FormData();
     //save each image,  as well as validate etc. with user Info
     const formData = await ctx.request.formData();
-    for (const file of formData.entries()) {
-      const error = validateImage.validateImage(file);
+    for (const file of formData) {
+      if (!file[1] || file[1] === "") {
+        continue;
+      }
+      const error = validateImage.validateImage(file[1]);
       if (!error) {
         ctx.response.body = "<h1>error with image</h1>";
         ctx.response.status = 404;
         return ctx;
       } else {
         //saving file
-        const filename = validateImage.generateFilename(file);
+        const filename = validateImage.generateFilename(file[1]);
         const destFile = await Deno.open(
           path.join(Deno.cwd(), "public", filename),
           {
@@ -111,22 +163,29 @@ export const add = async (ctx) => {
             truncate: true,
           }
         );
-        await file.stream().pipeTo(destFile.writable);
+        await file[1].stream().pipeTo(destFile.writable);
         const cookie = ctx.cookies.getCookie(ctx);
         const username = cookie["username"];
         if (username) {
-          model.addWorkImage(ctx.db, filename, file, username);
+          model.addWorkImage(
+            ctx.db,
+            filename,
+            file[1],
+            username,
+            workTextId[0][0]
+          );
         } else {
           ctx.response.body = "<h1>no user found logged in</h1>";
           ctx.response.status = 404;
         }
       }
     }
-    ctx = ctx.cookies.setFormStepCookie(ctx, step);
     step = "";
+    ctx = ctx.cookies.setWorkFormStepCookie(ctx, step);
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
     ctx.response.body = "";
+    return ctx;
 
     //Text Upload
   } else {
@@ -140,7 +199,12 @@ export const add = async (ctx) => {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
       if (username) {
-        model.addWorkInfo(ctx.db, tempStorage, username);
+        const _workInfo = await model.addWorkInfo(
+          ctx.db,
+          tempStorage,
+          username
+        );
+        workTextId = await model.getIdByName(ctx.db, username);
       } else {
         ctx.response.body = "<h1>no user found logged in</h1>";
         ctx.response.status = 404;
@@ -149,7 +213,7 @@ export const add = async (ctx) => {
     ctx = ctx.cookies.setWorkFormStepCookie(ctx, step);
 
     ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/arbeiten/erstellen");
+    ctx.response.headers.set("Location", "/portfolio/arbeiten/erstellen");
     ctx.response.body = "";
     return ctx;
   }

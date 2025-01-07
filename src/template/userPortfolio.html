@@ -82,63 +82,12 @@
               </div>
             </div>
           </div>
-
-          <div class="button-group-yourWork">
-            <a class="button-yourWork" href="/portfolio/work/erstellen"
-              >Arbeiten hinzufügen</a
-            >
-          </div>
-
           <!-- Your Work-->
+          {{ editWork | safe}}
+
           <h3><i>Your Work</i></h3>
-
+          {{ work | safe}}
           <!-- Portfolio - Bildergalerie -->
-
-          <div class="button-group-yourWork">
-            <a class="button-yourWork" href="addThumbnail.html">Bearbeiten</a>
-
-            <button class="button-yourWork">Löschen</button>
-          </div>
-
-          <h3>Your Work Titel</h3>
-
-          <div class="YourWork-text-section">
-            <div class="row" id="gallery">
-              <!-- Bilder werden hier dynamisch hinzugefügt -->
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1" />
-              </div>
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2" />
-              </div>
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3" />
-              </div>
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 1" />
-              </div>
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 2" />
-              </div>
-              <div class="column">
-                <img src="/public/Bilder/LandingPagePic.jpg" alt="Bild 3" />
-              </div>
-            </div>
-          </div>
-
-          <p id="Beschreibung-YourWork">
-            Die angemeldeten Nutzer haben die Möglichkeit, ein Portfolio zu
-            erstellen. Dieses Portfolio folgt einer festen Struktur, die Text,
-            Tags und Bilder umfasst. Sie haben ein Titelbild, eine
-            Beschreibung,eine Liste mit den Fähigkeiten des Erstellers,
-            Kontaktdaten und Beispiele der Arbeit, z.B. Bild oder Videodateien.
-            Nutzer können ihre Portfolios sowie ihre Kontaktdaten selbst
-            bearbeiten und aktualisieren und ihre Portfolios, sowie ihren
-            Account löschen. Auf der Startseite können die Portfolios anderer
-            Nutzer angesehen werden, unabhängig davon, ob man angemeldet ist
-            oder nicht. Zusätzlich gibt es eine Filterfunktion, die es
-            ermöglicht, die Portfolios nach verschiedenen Tags zu durchsuchen.
-          </p>
         </div>
       </main>
 

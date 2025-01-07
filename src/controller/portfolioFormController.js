@@ -303,8 +303,6 @@ export const add = async (ctx) => {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = await cookie["username"];
 
-      console.log(tempStorage, skillsString, tagsString, username);
-
       if (username) {
         model.addPortfolioInfo(
           ctx.db,

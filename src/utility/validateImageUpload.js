@@ -4,8 +4,11 @@ import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 const POST_FILE_LIMIT = 1024 * 1024 * 5;
 
 export const validateImage = (file) => {
-  if (!file) return false;
+  if (!file) {
+    return false;
+  }
 
+  console.log(file.size);
   if (file.size == 0) return false;
 
   if (file.size > POST_FILE_LIMIT) {

@@ -1,5 +1,6 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
+import * as workModel from "../model/workPortfolioModel.js";
 
 export const renderPortfolio = async (ctx) => {
   let variables = {};
@@ -56,6 +57,43 @@ export const renderPortfolio = async (ctx) => {
     skills += ` <li>${element}</li>`;
   }
 
+  //Work fill for each entry
+  const workData = await workModel.getWorkTextByName(ctx.db, username);
+  let workFull = `<div class="button-group-yourWork">
+      <a class="button-yourWork" href="addThumbnail.html">
+        Bearbeiten
+      </a>
+
+      <button class="button-yourWork">Löschen</button>
+    </div>`;
+  for (const element of workData) {
+    workFull += ` <h3>${element[0]}</h3>
+
+          <div class="YourWork-text-section">
+            <div class="row" id="gallery">`;
+
+    const workImages = await workModel.getImagesById(ctx.db, element[3]);
+
+    for (const image of workImages) {
+      workFull += ` <div class="column">
+                <img src="${image[1]}" alt="Bild 1" />
+              </div>`;
+    }
+
+    workFull += ` </div>
+          </div>
+
+          <p id="Beschreibung-YourWork">${element[1]}</p>
+        </div>`;
+  }
+  const workEdit = `
+      <div class="upload-box-YourWork">
+
+      <a href="/portfolio/arbeiten/erstellen" class="upload-box-YourWork">Füge deinem Portfolio deine Arbeiten hinzu.
+      <i  class="material-icons">add_circle</i>
+      </a>
+    </div> `;
+
   if (!userInfo.length === 0) {
     variables = {
       //edit
@@ -79,6 +117,8 @@ export const renderPortfolio = async (ctx) => {
       address: userInfo[0][4],
       extra: userInfo[0][2],
       //work
+      work: workFull,
+      editWork: workEdit,
     };
   } else {
     variables = {
@@ -98,6 +138,9 @@ export const renderPortfolio = async (ctx) => {
       skills: skills,
       //Contact
       name: username,
+      //work
+      work: workFull,
+      editWork: workEdit,
     };
   }
   ctx.response.body = await ctx.nunjucks.render(
