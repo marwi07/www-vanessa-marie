@@ -15,6 +15,7 @@ export const renderPortfolio = async (ctx, username) => {
     username
   );
 
+  //BREAKS HERE
   const userInfo = await userModel.getInfoByUser(ctx.db, username);
 
   try {
