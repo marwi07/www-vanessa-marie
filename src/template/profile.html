@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>addContact</title>
-    <link href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -32,28 +32,36 @@
         </ul>
 
         <div class="body_GridContact">
-          <!-- Upload box -->
+          <h3>Profil</h3>
 
-          <div class="container_contact">
-            <h4>Kontaktdaten</h4>
+          <div class="profile-header">
+            <div class="profile-image-container">
+              <label for="profileImage">
+                <img
+                  src="/public/Bilder/LandingPagePic.jpg"
+                  alt="Profilbild"
+                  class="profile-image"
+                />
+              </label>
+              <input
+                type="file"
+                id="profileImage"
+                name="profileImage"
+                accept="image/*"
+              />
+            </div>
+            <span class="edit-text"
+              ><i class="material-icons" style="font-size: 14px">edit</i>
+              Profilbild ändern
+            </span>
 
-            <div id="message-container"></div>
+            <!-- Upload box -->
 
-            <form id="contactForm" action="/addContact" method="POST">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" />
-              <label for="email">E-Mail:</label>
-              <input maxlength="100" type="text" id="email" name="email" />
-              <label for="telefon">Telefon:</label>
-              <input type="number" id="telefon" name="telefon" maxlength="20" />
-              <label for="address">Adresse:</label>
-              <input type="text" id="address" name="address" />
-              <label for="extra">Sonstiges:</label>
-              <input type="text" id="extra" name="extra" />
-              <button type="submit" class="button-save-contact">
-                Speichern
-              </button>
-            </form>
+            <div class="contact_heading">
+              <h3>Kontaktdaten</h3>
+
+              {{ contact | safe}}
+            </div>
           </div>
         </div>
       </main>

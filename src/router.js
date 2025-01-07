@@ -1,4 +1,7 @@
-import * as portfolio from "./controller/formController.js";
+import * as portfolioForm from "./controller/portfolioFormController.js";
+import * as portfolio from "./controller/portfolioController.js";
+import * as userContact from "./controller/contactFormController.js";
+import * as profil from "./controller/profileController.js ";
 import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as register from "./controller/registerController.js";
@@ -8,10 +11,43 @@ import * as datenschutz from "./controller/datenschutzController.js";
 import * as dokumentation from "./controller/dokumentationConreoller.js";
 import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
+import * as workForm from "./controller/workFormController.js";
 
 export const routes = async (ctx) => {
+  const portfolioUser = /^\/portfolio\/user\/([^\/]+)$/.exec(ctx.url.pathname);
+
+  if (portfolioUser) {
+    const username = portfolioUser[1];
+    ctx = await portfolio.renderPortfolio(ctx, username);
+    return ctx;
+  }
+
+  if (ctx.url.pathname === "/profil") {
+    ctx = await profil.renderProfile(ctx);
+  }
+
+  if (ctx.url.pathname === "/profil/erstellen") {
+    ctx = await userContact.renderContactForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/arbeiten/erstellen") {
+    ctx = await workForm.renderWorkForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/portfolio") {
+    ctx = await portfolio.renderPortfolio(ctx);
+  }
+
   if (ctx.url.pathname === "/") {
     ctx = await index.renderIndex(ctx);
+  }
+
+  if (ctx.url.pathname === "/index") {
+    ctx = await index.renderIndex(ctx);
+  }
+
+  if (ctx.url.pathname === "/test") {
+    ctx = await portfolio.renderPortfolio(ctx);
   }
 
   if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
@@ -47,28 +83,28 @@ export const routes = async (ctx) => {
     ctx = await about.renderAbout(ctx);
   }
 
-  if (ctx.url.pathname === "/Portfolio") {
-    ctx = await portfolio.renderForm(ctx);
-  }
-
   if (ctx.url.pathname === "/portfolio/erstellen") {
-    ctx = await portfolio.renderForm(ctx);
+    ctx = await portfolioForm.renderForm(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/bearbeiten") {
-    ctx = await portfolio.index(ctx);
+    //TODO
+    ctx = await portfolioForm.index(ctx);
   }
 
   if (ctx.url.pathname === "/portfolio/loeschen") {
-    ctx = await portfolio.index(ctx);
+    //TODO
+    ctx = await portfolioForm.index(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio/user") {
-    ctx = await portfolio.index(ctx);
+  if (ctx.url.pathname === "/portfolio/") {
+    //TODO
+    ctx = await portfolioForm.index(ctx);
   }
 
-  if (ctx.url.pathname === "/test.html") {
-    ctx = await portfolio.renderForm(ctx);
+  if (ctx.url.pathname === "/user") {
+    //TODO
+    ctx = await portfolio.index(ctx);
   }
 
   if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
@@ -76,7 +112,15 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
-    ctx = await portfolio.add(ctx);
+    ctx = await portfolioForm.add(ctx);
+  }
+
+  if (ctx.url.pathname === "/addWork" && ctx.request.method === "POST") {
+    ctx = await workForm.add(ctx);
+  }
+
+  if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
+    ctx = await userContact.addContactData(ctx);
   }
 
   return ctx;

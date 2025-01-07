@@ -18,16 +18,14 @@ export const registerAttempt = async (ctx) => {
   let _status;
 
   if (!username || !password) {
-    ctx.response.status = 400;
-    ctx.response.body = "Username and password are required.";
+    ctx = errorMessage(ctx);
     return ctx;
   } else {
     const userExists = await model.getUserByName(ctx.db, username);
     const hashedPassword = await hash(password);
 
     if (userExists.length > 0) {
-      ctx.response.status = 409;
-      ctx.response.body = "User already exists.";
+      ctx = errorMessage(ctx);
       return ctx;
     } else {
       await model.addUser(ctx.db, username, hashedPassword, "user");
@@ -39,4 +37,21 @@ export const registerAttempt = async (ctx) => {
       return ctx;
     }
   }
+};
+
+export const errorMessage = async (ctx) => {
+  let msg = ` <div class="container-false-login" id="errorPopup">
+                <p class="error-message">
+                  Deine Eingaben sind ungültig.
+                </p>
+                 <a href="#" onclick="document.getElementById('errorPopup').style.display='none'; return false;" class="close-button">Schließen</a>
+              </div>
+`;
+  ctx.response.body = await ctx.nunjucks.render("Login.html", {
+    error: msg,
+  });
+  msg = "";
+  ctx.response.headers.set("content-type", "text/html");
+  ctx.response.status = 400;
+  return ctx;
 };

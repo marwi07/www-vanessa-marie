@@ -5,83 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="/public/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
   </head>
 
   <body>
-
     <div class="wrapper">
       <main>
-
-    <!-- Menü/Nav  --> 
-    <ul class="nav-links" id="responsive">
-      <a href="/login" class="active">
-          <i class="material-icons profil-icon">account_circle</i>
-      </a>
-
-      <div class="nav-items">
-          <a href="/index" >Home</a>
-         <a href="/portfolio">Mein Portfolio</a>
-          <a href="portfolio/erstellen">Portfolio erstellen</a>
-           <a href="javascript:void(0);" class="icon" id="burgermenutest">
-              <i class="material-icons" style="font-size:40px">reorder</i>
+        <!-- Menü/Nav  -->
+        <ul class="nav-links" id="responsive">
+          <a href="/login" class="active">
+            <i class="material-icons profil-icon">account_circle</i>
           </a>
-      </div>   
-</ul>
 
-<!-- Login Container  --> 
-
-    <div class="body_GridLogin">
-
-      <div class="container_login">
-       
-        <h2>Login</h2>
-    
-       
-        <div id="message-container"></div>
-     
-        <form id="loginForm" action="/login" method="POST">
-
-          <div class="container-false-login" id="errorPopup">
-         
-            <p class="error-message">Fehler: Benutzername existiert bereits!</p>
-            <button class="close-button">Schließen</button>
+          <div class="nav-items">
+            <a href="/index">Home</a>
+            <a href="/portfolio">Mein Portfolio</a>
+            <a href="portfolio/erstellen">Portfolio erstellen</a>
+            <a href="javascript:void(0);" class="icon" id="burgermenutest">
+              <i class="material-icons" style="font-size: 40px">reorder</i>
+            </a>
           </div>
+        </ul>
 
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" />
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" />
-       
-          <div class="button-group-login-register">
-            <button type="submit" class="button-group_login">Login</button>
-            <a href="/register" type="button" class="button-group_login"
-              >Registrieren</a
-            >
-          
+        <!-- Login Container  -->
+
+        <div class="body_GridLogin">
+          <div class="container_login">
+            <h2>Login</h2>
+
+            <div id="message-container"></div>
+
+            <form id="loginForm" action="/login" method="POST">
+              {{ error | safe}}
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" />
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" />
+
+              <div class="button-group-login-register">
+                <button type="submit" class="button-group_login">Login</button>
+                <a href="/register" type="button" class="button-group_login"
+                  >Registrieren</a
+                >
+              </div>
+            </form>
           </div>
-      
-        </form>
-     
-      
+        </div>
+      </main>
+
+      <footer>
+        <ul class="nav-linksFooter">
+          <h5>More On This Site</h5>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+        </ul>
+      </footer>
     </div>
-  </div>
-
-  </main>
-
-    <footer>
-      <ul class="nav-linksFooter">
-        <h5>More On This Site</h5>
-        <li><a href="/ueber-uns">Über uns</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutz</a></li>
-        <li><a href="/dokumentation">Dokumentation</a></li>
-        <li><a href="/kollophon">Kollophon</a></li>
-      </ul>
-    </footer>
-
-  </div>
   </body>
 </html>
