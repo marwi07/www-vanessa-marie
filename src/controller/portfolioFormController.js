@@ -148,22 +148,37 @@ export const renderForm = async (ctx) => {
 
        <form action="/add?step=five" method="POST" enctype="multipart/form-data">
         <div>
-        <label>
-          <input type="checkbox" name="tags" value="3D-Animation"> 3D-Animation
+        <label class="custom-checkbox">
+          <input type="checkbox" name="tags" value="3D-Animation"> 
+          <span class="checkmark"></span>3D-Animation
         </label>
-        <label>
-          <input type="checkbox" name="tags" value="Motion Graphics"> Motion Graphics
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="Softwareentwicklung"> Softwareentwicklung
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="2D-Art"> 2D-Art
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="Animation"> Animation
-        </label>
+
+        <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Motion Graphics
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Softwareentwicklung
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>2D-Art
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Animation
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <span class="checkmark"></span>Webdesign
+          </label>
       </div>
+      
           <button type="submit" class="button-save-aboutyou">Speichern</button>
       </form>
 

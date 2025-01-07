@@ -657,6 +657,8 @@ margin-right: 5px;
   height: 100%;
   width: 100%;
   align-items: center;
+  overflow: hidden;
+  object-fit: cover;
 
 }
 
@@ -907,13 +909,19 @@ margin-right: 5px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  gap:15px;
+  justify-content: space-between;
 }
 
 .column {
-  flex:35%;
-  max-width: 35%;
-  padding: 0 4px;
+  flex: 1 1 calc(25% - 20px); 
+  max-width: calc(25% - 20px);
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .column img {
   width: 100%;
@@ -921,6 +929,49 @@ margin-right: 5px;
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* _______________________________________________________________*/
+
+/* Your Work Upload Bilder*/
+
+.upload-yourWorkimg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; 
+  max-width: 100%; 
+  margin: 0 auto;
+  padding: 10px; 
+  background-color:#EAD2AC; 
+  border-radius: 50px; 
+}
+
+
+.upload-label {
+  background-color: #E6B89C;
+  width: 400px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.upload-label i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.upload-label:hover {
+  background-color:#e7b769;
+}
+
 
 /* _______________________________________________________________*/
 
@@ -1150,6 +1201,62 @@ margin-right: 5px;
 }
 
 
+/* _______________________________________________________________*/
+
+/* Tags Upload */
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Beim Hover */
+.custom-checkbox .checkmark:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+/* Wenn das Checkbox-Input ausgewählt ist */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #0078d4;
+  border-color: #005a9e;
+}
+
+/* Optional: Checkmark-Symbol bei Auswahl */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top:10px;
+  left:15px;
+  transform: rotate(45deg);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  display: none;
+}
 /* _______________________________________________________________*/
 
 /* Upload Kontaktinfo */
@@ -1386,11 +1493,11 @@ margin-right: 5px;
   margin-top: 20px;
   text-align: center;
   font-size: 24px;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 .upload-Gridthumbnail form input[type="file"] {
-display: none;
+  font-size: 16px;
 }
 
 .upload-Gridthumbnail form .upload-label {
