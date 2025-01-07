@@ -173,19 +173,28 @@ export const renderForm = async (ctx) => {
 
   if (currentFormStep == "five") {
     //thumbnail
-    step = `<h4>About you</h4>
+    step = `
+    <div class="upload-Gridthumbnail">
 
-    <div class="upload-aboutYou">
-    <div class="top-text">Füge deinem Portfolio ein Thumbnail hinzu.</div>
+      <div class="header-container">
 
-    <form action="/add?step=six" method="POST" enctype="multipart/form-data">
-    
-        <label for="thumbnail">Thumbnail</label>
-        <input type="file" id="thumbnail" name="thumbnail">
+        <h4>Titelbild</h4>
         
+      </div>
+
+      <form action="/add?step=six" method="POST" enctype="multipart/form-data">
+
+          <label for="thumbnail" class="upload-label">Klicke hier um ein Bild hochzuladen.
+            <i class="material-icons profil-icon">add_a_photo</i>
+          </label>
+          
+      
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+
         <button type="submit" class="button-save">Speichern</button>
-    </form>
-    </div>`;
+      </form>
+ 
+  </div>`;
   }
 
   //render page with html of step
