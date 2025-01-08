@@ -15,10 +15,8 @@ export const renderPortfolio = async (ctx) => {
     username
   );
 
-  //BREAKS HERE
   const userInfo = await userModel.getInfoByUser(ctx.db, username);
 
-  //try {
   const thumbnailPath = thumbnailInfo[0][1];
   const thumbnail = `<img
             id="Thumbnail"
@@ -46,7 +44,7 @@ export const renderPortfolio = async (ctx) => {
               >Bearbeiten</a
             >
 
-            <a class="button-group_portfolio_button" href="/portfolio/löschen"
+            <a class="button-group_portfolio_button" href="/portfolio/entfernen"
               >Löschen</a
             >`;
 
@@ -59,15 +57,18 @@ export const renderPortfolio = async (ctx) => {
 
   //Work fill for each entry
   const workData = await workModel.getWorkTextByName(ctx.db, username);
-  let workFull = `<div class="button-group-yourWork">
-      <a class="button-yourWork" href="addThumbnail.html">
+  let workFull = ``;
+  for (const element of workData) {
+    workFull += `<div class="button-group-yourWork">
+      <a class="button-yourWork" href="/portfolio/arbeiten/bearbeiten/${element[3]}">
         Bearbeiten
       </a>
 
-      <button class="button-yourWork">Löschen</button>
-    </div>`;
-  for (const element of workData) {
-    workFull += ` <h3>${element[0]}</h3>
+      <a class="button-yourWork" href="/portfolio/arbeiten/entfernen/${element[3]}">
+        Löschen
+      </a>
+    </div>
+    <h3>${element[0]}</h3>
 
           <div class="YourWork-text-section">
             <div class="row" id="gallery">`;
@@ -150,9 +151,4 @@ export const renderPortfolio = async (ctx) => {
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
   return ctx;
-  /*} catch {
-    ctx.response.status = 400;
-    ctx.response.body = "No USer";
-    return ctx;
-  }*/
 };

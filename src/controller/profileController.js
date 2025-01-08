@@ -1,4 +1,5 @@
 import * as model from "../model/userModel.js";
+import * as cookie from "../cookies.js";
 
 export const renderProfile = async (ctx) => {
   let msg = `    <a
@@ -37,5 +38,10 @@ export const renderProfile = async (ctx) => {
   return ctx;
 };
 
-//TODO Logout
-//ADD USERNAME
+export const logout = async (ctx) => {
+  ctx = await cookie.deleteUserCookie(ctx);
+  ctx.response.status = 302;
+  ctx.response.headers.set("Location", "/");
+  ctx.response.body = "";
+  return ctx;
+};

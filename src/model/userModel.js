@@ -54,3 +54,43 @@ export const getInfoByUser = async (db, name) => {
   const query = await db.query(sql, { $name: name });
   return query;
 };
+
+//delete
+export const deleteUserInfoByUsername = async (db, username) => {
+  const sql = `DELETE FROM userInfo WHERE user = $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
+};
+
+//edit
+export const updateUserInfoByUsername = async (db, username, formData) => {
+  const data = {
+    email: formData.get("email"),
+    telefon: formData.get("telefon"),
+    address: formData.get("address"),
+    extra: formData.get("extra"),
+    name: formData.get("name"),
+  };
+
+  const sql = `
+    UPDATE userInfo 
+    SET 
+      email = $email,
+      telephone = $telephone,
+      text = $text,
+      name = $name,
+      address = $address
+    WHERE user = $username
+  `;
+  const query = await db.query(sql, {
+    $email: data.email,
+    $telephone: data.telefon,
+    $text: data.extra,
+    $name: data.name,
+    $address: data.address,
+    $username: username,
+  });
+  return query;
+};

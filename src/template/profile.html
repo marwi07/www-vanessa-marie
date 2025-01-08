@@ -28,30 +28,33 @@
           </div>
         </ul>
 
-
         <h3 class="h3_erstellePortfolio">Profil</h3>
 
-          <!--Profil box -->
+        <!--Profil box -->
         <div class="body_GridProfil">
           <h3>Willkommen.</h3>
 
-          <div  class="button-logout"><i class="material-icons" style="font-size: 14px">input</i>Logout</div>
+          <a href="/profil/logout">
+            <div class="button-logout">
+              <i class="material-icons" style="font-size: 14px">input</i>Logout
+            </div></a
+          >
 
           <div class="profile-header">
             <div class="profile-image-container">
-
-             
               <label for="profileImage">
                 <img
                   src="/public/Bilder/LandingPagePic.jpg"
                   alt="Profilbild"
-                  class="profile-image"/>
+                  class="profile-image"
+                />
               </label>
               <input
                 type="file"
                 id="profileImage"
                 name="profileImage"
-                accept="image/*"/>
+                accept="image/*"
+              />
             </div>
 
             <span class="edit-text"
@@ -60,7 +63,7 @@
             </span>
 
             <h4 class="profil-h4" id="username-profil">Username</h4>
-            
+
             <!-- Upload box -->
 
             <div class="contact_heading">
@@ -72,7 +75,7 @@
         </div>
       </main>
 
-       <!-- Footer -->
+      <!-- Footer -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
@@ -84,7 +87,6 @@
           <li><a href="kollophon">Kollophon</a></li>
         </ul>
       </footer>
-
     </div>
   </body>
 </html>

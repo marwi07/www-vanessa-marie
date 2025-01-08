@@ -1,6 +1,7 @@
 import {
   getCookies,
   setCookie,
+  deleteCookie,
 } from "https://deno.land/std@0.224.0/http/cookie.ts";
 
 export function getCookie(ctx) {
@@ -27,12 +28,23 @@ export function setWorkFormStepCookie(ctx, step) {
   return ctx;
 }
 
+export function setEditFormStepCookie(ctx, step) {
+  setCookie(ctx.response.headers, {
+    name: "currentEditWorkFormStep",
+    value: step,
+    maxAge: 60 * 60 * 24,
+    httpOnly: true,
+  });
+  return ctx;
+}
+
 export function setUserCookie(ctx, username, role) {
   setCookie(ctx.response.headers, {
     name: "username",
     value: username,
     httpOnly: true,
     secure: true,
+    path: "/",
     sameSite: "Lax",
     maxAge: 60 * 60 * 24,
   });
@@ -43,7 +55,22 @@ export function setUserCookie(ctx, username, role) {
     httpOnly: true,
     secure: true,
     sameSite: "Lax",
+    path: "/",
     maxAge: 60 * 60 * 24,
+  });
+  return ctx;
+}
+
+export function deleteUserCookie(ctx) {
+  deleteCookie(ctx.response.headers, "username", {
+    path: "/",
+    secure: true,
+    sameSite: "Lax",
+  });
+  deleteCookie(ctx.response.headers, "role", {
+    path: "/",
+    secure: true,
+    sameSite: "Lax",
   });
   return ctx;
 }

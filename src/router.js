@@ -15,29 +15,88 @@ import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
 
 export const routes = async (ctx) => {
-  const portfolioUser = /^\/portfolio\/user\/([^\/]+)$/.exec(ctx.url.pathname);
-
-  if (portfolioUser) {
-    const username = portfolioUser[1];
-    ctx = await portfolio.renderPortfolio(ctx, username);
-    return ctx;
-  }
-
+  //profil
   if (ctx.url.pathname === "/profil") {
     ctx = await profil.renderProfile(ctx);
+  }
+
+  if (ctx.url.pathname === "/profil/logout") {
+    ctx = await profil.logout(ctx);
   }
 
   if (ctx.url.pathname === "/profil/erstellen") {
     ctx = await userContact.renderContactForm(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio/arbeiten/erstellen") {
-    ctx = await workForm.renderWorkForm(ctx);
+  if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
+    ctx = await userContact.addContactData(ctx);
+  }
+
+  //portfolio Darstellung
+  const portfolioUser = /^\/portfolio\/user\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (portfolioUser) {
+    const username = portfolioUser[1];
+    ctx = await portfolio.renderPortfolio(ctx, username);
+    return ctx;
   }
 
   if (ctx.url.pathname === "/portfolio/user") {
     ctx = await userPortfolio.renderPortfolio(ctx);
   }
+
+  //Portfolio Form
+  if (ctx.url.pathname === "/portfolio/erstellen") {
+    ctx = await portfolioForm.renderForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/portfolio/entfernen") {
+    ctx = await portfolioForm.deletePortfolio(ctx);
+  }
+
+  if (ctx.url.pathname === "/portfolio/bearbeiten") {
+    ctx = await portfolioForm.renderEditPortfolio(ctx);
+  }
+
+  if (ctx.url.pathname === "/editPortfolio" && ctx.request.method === "POST") {
+    ctx = await portfolioForm.edit(ctx);
+  }
+
+  if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
+    ctx = await portfolioForm.add(ctx);
+  }
+
+  //Portfolio Arbeiten
+  if (ctx.url.pathname === "/portfolio/arbeiten/erstellen") {
+    ctx = await workForm.renderWorkForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/addWork" && ctx.request.method === "POST") {
+    ctx = await workForm.add(ctx);
+  }
+
+  if (ctx.url.pathname === "/editWork" && ctx.request.method === "POST") {
+    ctx = await workForm.edit(ctx);
+  }
+
+  const portfoliEditoWork =
+    /^\/portfolio\/arbeiten\/bearbeiten\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (portfoliEditoWork) {
+    const customID = portfoliEditoWork[1];
+    ctx = await workForm.renderWorkEditForm(ctx, customID);
+  }
+
+  if (ctx.url.pathname === "/portfolio/arbeiten/entfernen/") {
+    ctx = await workForm.deleteWork(ctx);
+  }
+
+  const portfolioDeleteWork =
+    /^\/portfolio\/arbeiten\/entfernen\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (portfolioDeleteWork) {
+    const customID = portfolioDeleteWork[1];
+    ctx = await workForm.deleteWork(ctx, customID);
+  }
+
+  //Homepage
 
   if (ctx.url.pathname === "/") {
     ctx = await index.renderIndex(ctx);
@@ -47,8 +106,25 @@ export const routes = async (ctx) => {
     ctx = await index.renderIndex(ctx);
   }
 
+  const filterOption = /^\/index\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (filterOption) {
+    const customID = filterOption[1];
+    ctx = await index.deleteWork(ctx, customID);
+  }
+
+  //test
+
   if (ctx.url.pathname === "/test") {
     ctx = await portfolio.renderPortfolio(ctx);
+  }
+
+  //login
+  if (ctx.url.pathname === "/register") {
+    ctx = await register.renderRegister(ctx);
+  }
+
+  if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
+    ctx = await register.registerAttempt(ctx);
   }
 
   if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
@@ -56,10 +132,8 @@ export const routes = async (ctx) => {
   } else if (ctx.url.pathname === "/login" && ctx.request.method === "POST") {
     await login.loginAttempt(ctx);
   }
-  if (ctx.url.pathname === "/register") {
-    ctx = await register.renderRegister(ctx);
-  }
 
+  //andere pages
   if (ctx.url.pathname === "/kollophon") {
     ctx = await kollophon.renderKollophon(ctx);
   }
@@ -82,41 +156,6 @@ export const routes = async (ctx) => {
 
   if (ctx.url.pathname === "/ueber-uns") {
     ctx = await about.renderAbout(ctx);
-  }
-
-  if (ctx.url.pathname === "/portfolio/erstellen") {
-    ctx = await portfolioForm.renderForm(ctx);
-  }
-
-  if (ctx.url.pathname === "/portfolio/bearbeiten") {
-    //TODO
-    ctx = await portfolioForm.index(ctx);
-  }
-
-  if (ctx.url.pathname === "/portfolio/loeschen") {
-    //TODO
-    ctx = await portfolioForm.index(ctx);
-  }
-
-  if (ctx.url.pathname === "/user") {
-    //TODO
-    ctx = await portfolio.index(ctx);
-  }
-
-  if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
-    ctx = await register.registerAttempt(ctx);
-  }
-
-  if (ctx.url.pathname === "/add" && ctx.request.method === "POST") {
-    ctx = await portfolioForm.add(ctx);
-  }
-
-  if (ctx.url.pathname === "/addWork" && ctx.request.method === "POST") {
-    ctx = await workForm.add(ctx);
-  }
-
-  if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
-    ctx = await userContact.addContactData(ctx);
   }
 
   return ctx;
