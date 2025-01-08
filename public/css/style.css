@@ -582,7 +582,7 @@ margin-right: 5px;
 
 .button-group_login {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 48%; /* Gleiche Breite für beide Buttons */
+  width: 48%; 
   padding: 12px;
   font-size: 15pt;
   border: none;
@@ -919,7 +919,7 @@ margin-right: 5px;
 /* Container für die Inhalte */
 .contact_heading, .skills_heading {
   flex: 1; 
-  max-width: 30%; 
+  max-width: 100%; 
   text-align: center; 
 }
 
@@ -1700,6 +1700,20 @@ input[type="checkbox"] {
   margin-left:30px;
   }
 
+  .contact_heading, .skills_heading {
+    flex: 1; 
+    max-width: 100%; 
+    text-align: center; 
+    font-size: 14px;
+  }
+
+  .skills_heading h3, .contact_heading h3 {
+    flex: none; 
+    font-size: 14px;
+    margin-bottom: 5px; 
+    margin-top: 20px;
+    text-align: center;
+  }
 
 /* Startseite Heading */
   .left-heading{
@@ -2797,6 +2811,13 @@ input[type="checkbox"] {
     padding: 40px;
   }
 
+  .button-group_login {
+    width: 100%; 
+    padding: 12px;
+    font-size: 15pt;
+    align-items: center;
+  }
+
 }
 
 
@@ -2886,8 +2907,9 @@ input[type="checkbox"] {
   }
 
   .contact_heading, .skills_heading {
-    max-width: 40%; /* Überschriften breiter machen */
-    font-size: 1.2rem; /* Schriftgröße etwas anpassen */
+    max-width: 80%;
+    font-size: 49px;
+    text-align: center;
   }
 
       /* Formular Styling Kontaktinfo */
@@ -2941,6 +2963,20 @@ input[type="checkbox"] {
         font-size: 16pt;
       }
 
+      .contact_heading, .skills_heading {
+        max-width: 100%;
+        font-size: 36px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .button-group_login {
+        width: 100%; 
+        padding: 12px;
+        font-size: 21pt;
+        align-items: center;
+      }
 }
 
 
