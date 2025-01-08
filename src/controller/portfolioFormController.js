@@ -12,6 +12,8 @@ let step = "";
 export const renderForm = async (ctx) => {
   const cookieUser = ctx.cookies.getCookie(ctx);
   const username = cookieUser["username"];
+  const cookie = ctx.cookies.getCookie(ctx);
+  const currentFormStep = cookie["currentFormStep"];
 
   if (!username) {
     ctx.response.status = 302;
@@ -36,9 +38,6 @@ export const renderForm = async (ctx) => {
         </form>
     </div>`;
 
-  const cookie = ctx.cookies.getCookie(ctx);
-  const currentFormStep = cookie["currentFormStep"];
-
   //steps html
   if (currentFormStep == "one") {
     //BEschreibung
@@ -52,7 +51,7 @@ export const renderForm = async (ctx) => {
     <div id="Beschreibung Portfolio"> </div>
 
       <form id="descriptionForm" action="/add?step=two" method="POST">
-        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deinem Portfolio einen Titel hinzu."></textarea>
+        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deinem Portfolio eine Beschreibung hinzu."></textarea>
         <button type="submit" class="button-save-aboutyou">Speichern</button>
         </form>
     </div>`;
@@ -252,8 +251,10 @@ export const add = async (ctx) => {
       );
 
       await file.stream().pipeTo(destFile.writable);
+
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
+
       if (username) {
         model.addPortfolioUser(ctx.db, username);
 

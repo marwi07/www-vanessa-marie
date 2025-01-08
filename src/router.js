@@ -106,6 +106,12 @@ export const routes = async (ctx) => {
     ctx = await index.renderIndex(ctx);
   }
 
+  const filterOption = /^\/index\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (filterOption) {
+    const customID = filterOption[1];
+    ctx = await index.deleteWork(ctx, customID);
+  }
+
   //test
 
   if (ctx.url.pathname === "/test") {
