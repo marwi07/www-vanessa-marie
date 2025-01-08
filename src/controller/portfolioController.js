@@ -1,5 +1,6 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
+import * as workModel from "../model/workPortfolioModel.js";
 
 //TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
 export const renderPortfolio = async (ctx, username) => {
