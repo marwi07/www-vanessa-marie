@@ -611,29 +611,50 @@ margin-right: 5px;
   background-color: #1e3f55;
   display: flex; 
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   max-width: 70%; 
   height: auto;
   margin: auto; 
   border-radius: 8px; 
   padding: 120px 20px; 
-}
+  position: relative;
+ }
 
 .PortfolioDetailSite h2{
   font-size:90px;
   position:absolute;
   padding: 10px 20px;
-  margin-top:80px;
-  margin-left: 15px;;
+  top: 200px;
+  left: 40px;
+  margin: 0;
+  padding:0;
+  text-align: left;
 }
 
 .PortfolioDetailSite h3{
+  display: block;
+  width: 100%;
   font-size:70px;
   position:relative;
   padding: 0px 20px;
   margin-top:10px;
-  margin-left: 10px;
+  margin-right: 0;
+  margin-left: 40px;
   margin-bottom: 5px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.PortfolioDetailSite h4{
+  font-size:90px;
+  position:absolute;
+  padding: 10px 20px;
+  top: 200px;
+  left: 40px;
+  margin: 0;
+  padding:0;
+  text-align: left;
 }
 
 .PortfolioDetailSite p{
@@ -672,8 +693,8 @@ margin-right: 5px;
 /* Your Work Upload Box/Bilder */
 .upload-box-YourWork {
   position:relative;
-  width: 100%;
-  height: 800px;
+  width: 50%;
+  height: 40vh;
   background-color: #EAD2AC;
   display: flex;
   border-radius: 8px;
@@ -685,7 +706,7 @@ margin-right: 5px;
 }
 
 .upload-box-YourWork a {
-  font-size: 48px;
+  font-size: 28px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -890,14 +911,15 @@ margin-right: 5px;
 .skills_heading h3, .contact_heading h3 {
   flex: none; 
   font-size: 60px;
-  margin-bottom: 0px; 
+  margin-bottom: 5px; 
   margin-top: 20px;
+  text-align: center;
 }
 
 /* Container für die Inhalte */
 .contact_heading, .skills_heading {
   flex: 1; 
-  max-width: 500px; 
+  max-width: 30%; 
   text-align: center; 
 }
 
