@@ -69,7 +69,7 @@ export const TextDisplayCheck = async (ctx) => {
               Logge dich ein um ganz einfach dein eigenes Portfolio zu erstellen.
             </p>
             <a href="/login" class="button-portfolioerstellen">
-              Portfolio erstellen! </a>`;
+             Zum Login. </a>`;
   }
 
   return html;
