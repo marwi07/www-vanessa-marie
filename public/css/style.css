@@ -619,6 +619,7 @@ margin-right: 5px;
   border-radius: 8px; 
   padding: 120px 20px; 
   position: relative;
+  
  }
 
 .PortfolioDetailSite h2{
@@ -634,7 +635,7 @@ margin-right: 5px;
 
 .PortfolioDetailSite h3{
   display: block;
-  width: 100%;
+  width: 90%;
   font-size:70px;
   position:relative;
   padding: 0px 20px;
@@ -658,12 +659,14 @@ margin-right: 5px;
 }
 
 .PortfolioDetailSite p{
-  display: flex;
+  display: block;
   position: relative;
   margin-left: 20px;
   margin-top: 2px;
   padding: 0;
   font-size: 21px;
+  width: 90%;
+  text-align: left;
 }
 
 .YourWork-text-section {
@@ -703,6 +706,7 @@ margin-right: 5px;
   justify-content: center; 
   align-items: center;
   margin: 0;
+  margin-top: 20px;
 }
 
 .upload-box-YourWork a {
@@ -817,7 +821,7 @@ margin-right: 5px;
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 100%;
+  width: 90%;
   height:auto;
   background-color:#9CAFB7;
   border-radius: 20px;
@@ -849,12 +853,13 @@ margin-right: 5px;
 .skills-and-contact {
   display: flex; 
   justify-content: center;
-  align-items:flex-start;
-  width: 100%;
+  align-items:center;
+  width: 90%;
   margin-bottom: 30px;
   margin-top: 20px;
   gap:50px;
   flex-wrap: wrap;
+  object-fit: cover;
 }
 
 
@@ -1220,7 +1225,7 @@ margin-right: 5px;
   display: none;
 }
 
-/* Logout Button upload */
+/* Logout Button */
 .button-logout {
   position: absolute;
   display:flex;
@@ -1265,19 +1270,19 @@ margin-right: 5px;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Beim Hover */
+
 .custom-checkbox .checkmark:hover {
   background-color: #e0e0e0;
   border-color: #999;
 }
 
-/* Wenn das Checkbox-Input ausgewählt ist */
+
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
   background-color: #0078d4;
   border-color: #005a9e;
 }
 
-/* Optional: Checkmark-Symbol bei Auswahl */
+
 .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   content: '';
   display: block;
@@ -1561,12 +1566,12 @@ input[type="checkbox"] {
   transition: 0.3s ease-in-out;
 }
 
-/* Hover-Effekt für das Label */
+
 .upload-Gridthumbnail form .upload-label:hover {
   background-color:#e7b769;
 }
 
-/* Icon innerhalb des Labels */
+
 .upload-Gridthumbnail form .upload-label .profil-icon {
   font-size: 40px;
   margin-bottom: 10px;
@@ -1825,6 +1830,21 @@ input[type="checkbox"] {
   background-color: #1d5a72; 
   cursor: pointer;
   border-radius: 8px;
+}
+
+.button-group_portfolio_button {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  width: 8%;
+  padding: 10px 0px;
+  font-size: 14pt;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:#9CAFB7;  
+  color: white;
+  text-decoration: none;
+  text-align: center;
 }
 
 
@@ -2432,6 +2452,21 @@ input[type="checkbox"] {
     margin-left: 10px;
     font-size: 16pt;
   }
+
+  .button-group_portfolio_button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    width: 20%;
+    padding: 10px 0px;
+    font-size: 14pt;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color:#9CAFB7;  
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
 }
 
 /* Small Screens (Small Laptops, Large Tablets) */
@@ -2535,6 +2570,21 @@ input[type="checkbox"] {
   .body_GridContact form label {
     margin-left: 10px;
     font-size: 16pt;
+  }
+
+  .button-group_portfolio_button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    width: 20%;
+    padding: 10px 0px;
+    font-size: 14pt;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color:#9CAFB7;  
+    color: white;
+    text-decoration: none;
+    text-align: center;
   }
 }
 
@@ -2644,6 +2694,21 @@ input[type="checkbox"] {
       margin-left: 10px;
       font-size: 16pt;
     }
+
+    .button-group_portfolio_button {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: bold;
+      width: 50%;
+      padding: 10px 0px;
+      font-size: 14pt;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color:#9CAFB7;  
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
 }
 
 
@@ -2728,7 +2793,7 @@ input[type="checkbox"] {
 }
 
 /* Sehr große Bildschirme (ab 1441px) */
-@media (min-width: 1441px) {
+@media (max-width: 1441px) {
 
   /* Allgemein */
   body {
@@ -2818,11 +2883,35 @@ input[type="checkbox"] {
     align-items: center;
   }
 
+  .container_skills {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+    height:auto;
+    padding: 20px;
+  }
+
+  .button-group_portfolio_button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    width: 50%;
+    padding: 10px 0px;
+    font-size: 14pt;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color:#9CAFB7;  
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
 }
 
 
 /* Extra Large Screens (Wide Displays / Full HD and above) */
-@media (max-width: 1600px) {
+@media (min-width: 1400px) and (max-width: 1600px) {
 
   /* Allgemein */
   body {
@@ -2910,11 +2999,12 @@ input[type="checkbox"] {
     max-width: 80%;
     font-size: 49px;
     text-align: center;
+    align-items: center;
   }
 
       /* Formular Styling Kontaktinfo */
       .body_GridContact {
-        max-width: 80%;
+        max-width: 60%;
         padding: 10px;
       }
     
@@ -2926,11 +3016,40 @@ input[type="checkbox"] {
       .body_GridContact form input {
         font-size: 16pt;
         padding: 8px;
+        width: 90%;
       }
     
       .body_GridContact form label {
-        margin-left: 100px;
+        margin-left: 0px;
         font-size: 16pt;
+        width: 100%;
+        margin-right: 110px;
+        
+      }
+
+      .container_skills {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+        height:auto;
+        padding: 20px;
+      }
+
+      .button-group_portfolio_button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        width: 40%;
+        padding: 10px 0px;
+        font-size: 14pt;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color:#9CAFB7;  
+        color: white;
+        text-decoration: none;
+        text-align: center;
       }
 }
 
@@ -2977,6 +3096,40 @@ input[type="checkbox"] {
         font-size: 21pt;
         align-items: center;
       }
+
+      .container_skills {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+        height:auto;
+        padding: 20px;
+      }
+
+      .contact_heading, .skills_heading {
+        max-width: 100%;
+        font-size: 48px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .button-group_portfolio_button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        width: 8%;
+        padding: 10px 0px;
+        font-size: 14pt;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color:#9CAFB7;  
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+     
 }
 
 
