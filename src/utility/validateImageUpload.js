@@ -7,8 +7,6 @@ export const validateImage = (file) => {
   if (!file) {
     return false;
   }
-
-  console.log(file.size);
   if (file.size == 0) return false;
 
   if (file.size > POST_FILE_LIMIT) {

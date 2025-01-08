@@ -29,14 +29,14 @@ export const generatePortfolios = async (ctx) => {
 
     if (!thumbnailArray || thumbnailArray.length === 0) {
       console.error(`Thumbnail not found for user: ${element[0]}`);
-      continue; // Skip this iteration if no thumbnail is found
+      continue;
     }
 
     let thumbnail = thumbnailArray[0];
 
     if (!thumbnail || thumbnail.length < 2) {
       console.error(`Invalid thumbnail structure for user: ${element[0]}`);
-      continue; // Skip this iteration if thumbnail structure is unexpected
+      continue;
     }
 
     thumbnail = thumbnail[1];

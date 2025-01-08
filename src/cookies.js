@@ -27,6 +27,16 @@ export function setWorkFormStepCookie(ctx, step) {
   return ctx;
 }
 
+export function setEditFormStepCookie(ctx, step) {
+  setCookie(ctx.response.headers, {
+    name: "currentEditWorkFormStep",
+    value: step,
+    maxAge: 60 * 60 * 24,
+    httpOnly: true,
+  });
+  return ctx;
+}
+
 export function setUserCookie(ctx, username, role) {
   setCookie(ctx.response.headers, {
     name: "username",

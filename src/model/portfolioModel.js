@@ -10,6 +10,7 @@ export const indexImage = async (db) => {
   return query;
 };
 
+//add data
 export const addPortfolioInfo = async (
   db,
   formData,
@@ -82,6 +83,84 @@ export const getPortfolioByName = async (db, username) => {
   const sql = `SELECT * FROM portfolioText WHERE username == $username`;
   const query = await db.query(sql, {
     $username: username,
+  });
+  return query;
+};
+
+//delete
+export const deletePortfolioTextByName = async (db, username) => {
+  const sql = `DELETE FROM portfolioText WHERE username = $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
+};
+
+export const deletePortfolioThumbnailByName = async (db, username) => {
+  const sql = `DELETE FROM portfolioThumbnail WHERE username = $username`;
+  const query = await db.query(sql, {
+    $username: username,
+  });
+  return query;
+};
+
+//Edit
+export const updatePortfolioText = async (
+  db,
+  username,
+  formData,
+  skills,
+  tags
+) => {
+  const data = {
+    title: formData.get("title"),
+    about: formData.get("about"),
+    description: formData.get("description"),
+  };
+
+  const sql = `
+    UPDATE portfolioText 
+    SET 
+      title = $title,
+      text = $about,
+      skills = $skills,
+      description = $description,
+      tags = $tags
+    WHERE username = $username
+  `;
+  const query = await db.query(sql, {
+    $username: username,
+    $title: data.title,
+    $about: data.about,
+    $skills: skills,
+    $description: data.description,
+    $tags: tags,
+  });
+  return query;
+};
+
+export const updatePortfolioThumbnail = async (db, username, path, file) => {
+  const data = {
+    size: file.size,
+    type: file.type,
+    name: file.name,
+  };
+
+  const sql = `
+    UPDATE portfolioThumbnail 
+    SET 
+      path = $path,
+      size = $size,
+      type = $type,
+      name = $name
+    WHERE username = $username
+  `;
+  const query = await db.query(sql, {
+    $username: username,
+    $path: path,
+    $size: data.size,
+    $type: data.type,
+    $name: data.name,
   });
   return query;
 };
