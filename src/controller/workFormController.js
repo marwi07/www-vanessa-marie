@@ -219,9 +219,24 @@ export const add = async (ctx) => {
   }
 };
 
-export const deleteWork = async (ctx) => {};
+export const deleteWork = async (ctx, id) => {
+  const _images = await model.deleteImagesByTextId(ctx.db, id);
+  const _text = await model.deleteWorkTextById(ctx.db, id);
 
-export const renderWorkEditForm = async (ctx) => {
+  ctx.response.status = 302;
+  ctx.response.headers.set("Location", `/`);
+  ctx.response.body = "";
+  return ctx;
+};
+
+let userId = 0;
+export const renderWorkEditForm = async (ctx, id) => {
+  userId = id;
+  const cookie = ctx.cookies.getCookie(ctx);
+  const currentFormStep = cookie["currentWorkFormStep"];
+  const username = cookie["username"];
+  const dataText = await model.getWorkTextByName(ctx.db, username);
+
   //step 1 - Titel
   step = `<div class="upload-aboutYou" >
 
@@ -232,14 +247,11 @@ export const renderWorkEditForm = async (ctx) => {
 
     <div id="Beschreibung Portfolio"> </div>
 
-      <form id="titelForm" action="/addWork?step=one" method="post">
-        <textarea maxlength="1000" id="title" name="title" placeholder="Füge deiner Arbeit einen Titel hinzu."></textarea>
+      <form id="titelForm" action="/editWork?step=one" method="post">
+        <textarea maxlength="1000" id="title" name="title" placeholder="Füge deiner Arbeit einen Titel hinzu.">${dataText[0][0]}</textarea>
         <button type="submit" class="button-save-aboutyou">Speichern</button>
         </form>
     </div>`;
-
-  const cookie = ctx.cookies.getCookie(ctx);
-  const currentFormStep = cookie["currentWorkFormStep"];
 
   //steps html
   if (currentFormStep == "one") {
@@ -253,8 +265,8 @@ export const renderWorkEditForm = async (ctx) => {
 
     <div id="Beschreibung Portfolio"> </div>
 
-      <form id="descriptionForm" action="/addWork?step=two" method="POST">
-        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deiner Arbeit eine Beschreibung hinzu."></textarea>
+      <form id="descriptionForm" action="/editWork?step=two" method="POST">
+        <textarea maxlength="1000" id="description" name="description" placeholder="Füge deiner Arbeit eine Beschreibung hinzu.">${dataText[0][1]}</textarea>
         <button type="submit" class="button-save-aboutyou">Speichern</button>
         </form>
     </div>`;
@@ -267,7 +279,7 @@ export const renderWorkEditForm = async (ctx) => {
 
       <h4>Bilder</h4>
  
-    <form action="/addWork?step=three" method="POST" enctype="multipart/form-data">
+    <form action="/editWork?step=three" method="POST" enctype="multipart/form-data">
 
       <div class="row" id="gallery">
 
@@ -349,6 +361,9 @@ export const edit = async (ctx) => {
   //Image upload
   if (step === "three") {
     tempStorage = new FormData();
+    //delete old images
+    const _deletedImages = await model.deleteImagesByTextId(ctx.db, userId);
+
     //save each image,  as well as validate etc. with user Info
     const formData = await ctx.request.formData();
     for (const file of formData) {
@@ -375,13 +390,7 @@ export const edit = async (ctx) => {
         const cookie = ctx.cookies.getCookie(ctx);
         const username = cookie["username"];
         if (username) {
-          model.addWorkImage(
-            ctx.db,
-            filename,
-            file[1],
-            username,
-            workTextId[0][0]
-          );
+          await model.addWorkImage(ctx.db, filename, file[1], username, userId);
         } else {
           ctx.response.body = "<h1>no user found logged in</h1>";
           ctx.response.status = 404;
@@ -407,12 +416,12 @@ export const edit = async (ctx) => {
       const cookie = ctx.cookies.getCookie(ctx);
       const username = cookie["username"];
       if (username) {
-        const _workInfo = await model.addWorkInfo(
+        const _workInfo = await model.updateWorkTextById(
           ctx.db,
-          tempStorage,
-          username
+          userId,
+          tempStorage
         );
-        workTextId = await model.getIdByName(ctx.db, username);
+        console.log(_workInfo);
       } else {
         ctx.response.body = "<h1>no user found logged in</h1>";
         ctx.response.status = 404;
@@ -421,7 +430,10 @@ export const edit = async (ctx) => {
     ctx = ctx.cookies.setWorkFormStepCookie(ctx, step);
 
     ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/portfolio/arbeiten/erstellen");
+    ctx.response.headers.set(
+      "Location",
+      `/portfolio/arbeiten/bearbeiten/${userId}`
+    );
     ctx.response.body = "";
     return ctx;
   }

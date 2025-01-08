@@ -20,6 +20,10 @@ export const routes = async (ctx) => {
     ctx = await profil.renderProfile(ctx);
   }
 
+  if (ctx.url.pathname === "/profil/logout") {
+    ctx = await profil.logout(ctx);
+  }
+
   if (ctx.url.pathname === "/profil/erstellen") {
     ctx = await userContact.renderContactForm(ctx);
   }
@@ -70,8 +74,26 @@ export const routes = async (ctx) => {
     ctx = await workForm.add(ctx);
   }
 
-  if (ctx.url.pathname === "/portfolio/arbeiten/bearbeiten/") {
-    ctx = await workForm.renderWorkEditForm(ctx);
+  if (ctx.url.pathname === "/editWork" && ctx.request.method === "POST") {
+    ctx = await workForm.edit(ctx);
+  }
+
+  const portfoliEditoWork =
+    /^\/portfolio\/arbeiten\/bearbeiten\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (portfoliEditoWork) {
+    const customID = portfoliEditoWork[1];
+    ctx = await workForm.renderWorkEditForm(ctx, customID);
+  }
+
+  if (ctx.url.pathname === "/portfolio/arbeiten/entfernen/") {
+    ctx = await workForm.deleteWork(ctx);
+  }
+
+  const portfolioDeleteWork =
+    /^\/portfolio\/arbeiten\/entfernen\/([^\/]+)$/.exec(ctx.url.pathname);
+  if (portfolioDeleteWork) {
+    const customID = portfolioDeleteWork[1];
+    ctx = await workForm.deleteWork(ctx, customID);
   }
 
   //Homepage

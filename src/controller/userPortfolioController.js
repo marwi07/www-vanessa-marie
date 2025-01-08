@@ -44,7 +44,7 @@ export const renderPortfolio = async (ctx) => {
               >Bearbeiten</a
             >
 
-            <a class="button-group_portfolio_button" href="/portfolio/löschen"
+            <a class="button-group_portfolio_button" href="/portfolio/entfernen"
               >Löschen</a
             >`;
 
@@ -64,7 +64,7 @@ export const renderPortfolio = async (ctx) => {
         Bearbeiten
       </a>
 
-      <a class="button-yourWork" href="/portfolio/arbeiten/löschen/${element[3]}">
+      <a class="button-yourWork" href="/portfolio/arbeiten/entfernen/${element[3]}">
         Löschen
       </a>
     </div>
