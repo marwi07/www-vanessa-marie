@@ -1,9 +1,12 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
 import * as workModel from "../model/workPortfolioModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 //TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
 export const renderPortfolio = async (ctx, username) => {
+  const varHtmlMenu = await checkUser.checkPortfolioAndProfile(ctx);
+
   let variables = {};
 
   //TODO USER INFO EMPTY -> ADD USER INFO
@@ -70,6 +73,9 @@ export const renderPortfolio = async (ctx, username) => {
 
   if (!userInfo.length === 0) {
     variables = {
+      //menu
+      account: varHtmlMenu.account,
+      portfolioMenu: varHtmlMenu.portfolio,
       //title
       title: portfolioInfo[0][1],
       //Thumbnail
@@ -93,6 +99,9 @@ export const renderPortfolio = async (ctx, username) => {
     };
   } else {
     variables = {
+      //menu
+      account: varHtmlMenu.account,
+      portfolioMenu: varHtmlMenu.portfolio,
       //title
       title: portfolioInfo[0][1],
       //Thumbnail

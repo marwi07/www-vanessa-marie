@@ -15,17 +15,13 @@
   <body>
     <div class="wrapper">
       <main>
-
         <!-- Menü/Nav  -->
         <ul class="nav-links" id="responsive">
-          <a href="/login" class="active">
-            <i class="material-icons profil-icon">account_circle</i>
-          </a>
+          {{ account | safe}}
 
           <div class="nav-items">
-            <a href="/index">Home</a>
-            <a href="/portfolio">Mein Portfolio</a>
-            <a href="portfolio/erstellen">Portfolio erstellen</a>
+            <a href="/index" class="active">Home</a>
+            {{ portfolioMenu | safe}}
             <a href="javascript:void(0);" class="icon" id="burgermenutest">
               <i class="material-icons" style="font-size: 40px">reorder</i>
             </a>
@@ -55,10 +51,9 @@
             </form>
           </div>
         </div>
-
       </main>
 
-       <!-- Footer  -->
+      <!-- Footer  -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
@@ -70,7 +65,6 @@
           <li><a href="/kollophon">Kollophon</a></li>
         </ul>
       </footer>
-      
     </div>
   </body>
 </html>

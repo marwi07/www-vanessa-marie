@@ -33,7 +33,9 @@ export const routes = async (ctx) => {
   }
 
   //portfolio Darstellung
-  const portfolioUser = /^\/portfolio\/user\/([^\/]+)$/.exec(ctx.url.pathname);
+  const portfolioUser = /^\/portfolio\/username\/([^\/]+)$/.exec(
+    ctx.url.pathname
+  );
   if (portfolioUser) {
     const username = portfolioUser[1];
     ctx = await portfolio.renderPortfolio(ctx, username);

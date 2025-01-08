@@ -1,6 +1,7 @@
 import * as validateImage from "../utility/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/portfolioModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const error404 = (ctx) => {
   ctx.response.body = "<h1>404 - Page Not Found</h1>";
@@ -10,6 +11,7 @@ export const error404 = (ctx) => {
 let step = "";
 
 export const renderForm = async (ctx) => {
+  const variables = await checkUser.checkPortfolioAndProfile(ctx);
   const cookieUser = ctx.cookies.getCookie(ctx);
   const username = cookieUser["username"];
   const cookie = ctx.cookies.getCookie(ctx);
@@ -214,6 +216,8 @@ export const renderForm = async (ctx) => {
   //render page with html of step
   ctx.response.body = await ctx.nunjucks.render("PortfolioErstellen.html", {
     form: step,
+    account: variables.account,
+    portfolioMenu: variables.portfolio,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
@@ -492,17 +496,17 @@ export const renderEditPortfolio = async (ctx) => {
         </label>
 
         <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Motion Graphics"> 
             <span class="checkmark"></span>Motion Graphics
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Softwareentwicklung"> 
             <span class="checkmark"></span>Softwareentwicklung
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="2D-Art"> 
             <span class="checkmark"></span>2D-Art
           </label>
 
@@ -512,7 +516,7 @@ export const renderEditPortfolio = async (ctx) => {
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Webdesign"> 
             <span class="checkmark"></span>Webdesign
           </label>
       </div>

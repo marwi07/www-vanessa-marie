@@ -1,7 +1,8 @@
 import * as model from "../model/userModel.js";
 import * as cookie from "../cookies.js";
-
+import * as checkUser from "../middleware/userLoginStatus.js";
 export const renderProfile = async (ctx) => {
+  const variables = await checkUser.checkPortfolioAndProfile(ctx);
   let msg = `    <a
               href="/profil/erstellen"
               type="button"
@@ -12,8 +13,9 @@ export const renderProfile = async (ctx) => {
   const cookie = ctx.cookies.getCookie(ctx);
   const username = cookie["username"];
 
-  const data = await model.getInfoByUser(ctx.db, username);
-  if (!data.length === 0) {
+  let data = await model.getInfoByUser(ctx.db, username);
+  data = data[0];
+  if (data.length > 0) {
     msg = ` <div id="Container Kontaktinfos" class="container_contact">
                 <dl id="Kontaktinfos" class="contact">
                   <dt>Name:</dt>
@@ -29,9 +31,10 @@ export const renderProfile = async (ctx) => {
                 </dl>
             </div>`;
   }
-
   ctx.response.body = await ctx.nunjucks.render("profile.html", {
     contact: msg,
+    account: variables.account,
+    portfolioMenu: variables.portfolio,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;

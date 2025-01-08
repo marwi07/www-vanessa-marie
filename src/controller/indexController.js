@@ -57,7 +57,7 @@ export const generatePortfolios = async (ctx) => {
               ${object.description}
             </p>
 
-            <a class="btn readmore" href="portfolio/user/${object.username}"
+            <a class="btn readmore" href="portfolio/username/${object.username}"
               >Read more <i class="material-icons pfeil">trending_flat</i></a
             >
           </div>

@@ -1,9 +1,11 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
 import * as workModel from "../model/workPortfolioModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const renderPortfolio = async (ctx) => {
   let variables = {};
+  const varMenu = await checkUser.checkPortfolioAndProfile(ctx);
 
   const cookie = ctx.cookies.getCookie(ctx);
   const username = cookie["username"];
@@ -97,6 +99,8 @@ export const renderPortfolio = async (ctx) => {
 
   if (!userInfo.length === 0) {
     variables = {
+      account: varMenu.account,
+      portfolioMenu: varMenu.portfolio,
       //edit
       editPortfolio: editMsgPortfolio,
       //title
@@ -123,6 +127,8 @@ export const renderPortfolio = async (ctx) => {
     };
   } else {
     variables = {
+      account: varMenu.account,
+      portfolioMenu: varMenu.portfolio,
       //edit
       editPortfolio: editMsgPortfolio,
       //title
