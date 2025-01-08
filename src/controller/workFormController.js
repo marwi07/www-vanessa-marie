@@ -1,6 +1,7 @@
 import * as validateImage from "../utility/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/workPortfolioModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const error404 = (ctx) => {
   ctx.response.body = "<h1>404 - Page Not Found</h1>";
@@ -11,6 +12,7 @@ let step = "";
 let workTextId = 0;
 
 export const renderWorkForm = async (ctx) => {
+  const variables = await checkUser.checkPortfolioAndProfile(ctx);
   //step 1 - Titel
   step = `<div class="upload-aboutYou" >
 
@@ -126,6 +128,8 @@ export const renderWorkForm = async (ctx) => {
   //render page with html of step
   ctx.response.body = await ctx.nunjucks.render("PortfolioErstellen.html", {
     form: step,
+    account: variables.account,
+    portfolioMenu: variables.portfolio,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;

@@ -17,14 +17,14 @@
       <main>
         <!-- Menü/Nav  -->
         <ul class="nav-links" id="responsive">
-          <a href="/login">
-            <i class="material-icons profil-icon">account_circle</i>
-          </a>
+          {{ account | safe}}
 
           <div class="nav-items">
-            <a href="/index">Home</a>
-            <a href="/portfolio">Mein Portfolio</a>
-            <a href="portfolio/erstellen" class="active">Portfolio erstellen</a>
+            <a href="/index" class="active">Home</a>
+            {{ portfolioMenu | safe}}
+            <a href="javascript:void(0);" class="icon" id="burgermenutest">
+              <i class="material-icons" style="font-size: 40px">reorder</i>
+            </a>
           </div>
         </ul>
 

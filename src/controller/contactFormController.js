@@ -1,7 +1,12 @@
 import * as model from "../model/userModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const renderContactForm = async (ctx) => {
-  ctx.response.body = await ctx.nunjucks.render("addContact.html");
+  const variables = await checkUser.checkPortfolioAndProfile(ctx);
+  ctx.response.body = await ctx.nunjucks.render("addContact.html", {
+    account: variables.account,
+    portfolioMenu: variables.portfolio,
+  });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
   return ctx;
@@ -13,7 +18,7 @@ export const addContactData = async (ctx) => {
   const cookie = ctx.cookies.getCookie(ctx);
   const username = cookie["username"];
 
-  model.addUserInfo(ctx.db, formData, username);
+  await model.addUserInfo(ctx.db, formData, username);
 
   ctx.response.status = 302;
   ctx.response.headers.set("Location", "/");

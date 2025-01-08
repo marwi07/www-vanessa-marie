@@ -1,8 +1,13 @@
 import { compare } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 import * as model from "../model/userModel.js";
+import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const renderLogin = async (ctx) => {
-  ctx.response.body = await ctx.nunjucks.render("Login.html");
+  const variables = await checkUser.checkPortfolioAndProfile(ctx);
+  ctx.response.body = await ctx.nunjucks.render("Login.html", {
+    account: variables.account,
+    portfolioMenu: variables.portfolio,
+  });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
   return ctx;
