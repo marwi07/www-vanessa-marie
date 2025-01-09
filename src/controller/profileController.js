@@ -13,8 +13,7 @@ export const renderProfile = async (ctx) => {
   const cookie = ctx.cookies.getCookie(ctx);
   const username = cookie["username"];
 
-  let data = await model.getInfoByUser(ctx.db, username);
-  data = data[0];
+  const data = await model.getInfoByUser(ctx.db, username);
   if (data.length > 0) {
     msg = ` <div id="Container Kontaktinfos" class="container_contact">
                 <dl id="Kontaktinfos" class="contact">

@@ -155,27 +155,27 @@ export const renderForm = async (ctx) => {
         </label>
 
         <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Motion Graphics"> 
             <span class="checkmark"></span>Motion Graphics
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Softwareentwicklung"> 
             <span class="checkmark"></span>Softwareentwicklung
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="2D-Art"> 
             <span class="checkmark"></span>2D-Art
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Animation"> 
             <span class="checkmark"></span>Animation
           </label>
 
           <label class="custom-checkbox">
-            <input type="checkbox" name="tags" value="3D-Animation"> 
+            <input type="checkbox" name="tags" value="Webdesign"> 
             <span class="checkmark"></span>Webdesign
           </label>
       </div>
