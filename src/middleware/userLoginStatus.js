@@ -74,3 +74,13 @@ export const TextDisplayCheck = async (ctx) => {
 
   return html;
 };
+
+export const isUserLoggedIn = (ctx) => {
+  const cookie = ctx.cookies.getCookie(ctx);
+  const username = cookie["username"];
+  if (!username) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  } else return ctx;
+};

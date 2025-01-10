@@ -72,8 +72,6 @@ export const add = async (ctx) => {
   if (skillsString == "") errors.push("Du musst deine Skills eingeben.");
   if (!thumbnailError == "") errors.push(thumbnailError);
 
-  console.log(errors);
-
   if (errors.length > 0) {
     const queryParams = new URLSearchParams({
       errors: encodeURIComponent(JSON.stringify(errors)),
@@ -84,8 +82,6 @@ export const add = async (ctx) => {
       skills: encodeURIComponent(skillsString),
       thumbnail: encodeURIComponent(thumbnailError),
     }).toString();
-
-    console.log(queryParams);
 
     ctx.response.status = 302;
     ctx.response.headers.set("Location", `/portfolio/erstellen?${queryParams}`);

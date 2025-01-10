@@ -5,17 +5,17 @@ const POST_FILE_LIMIT = 1024 * 1024 * 5;
 
 export const validateImage = (file) => {
   if (!file) {
-    return false;
+    return "Du musst ein Bild hochladen.";
   }
-  if (file.size == 0) return false;
+  if (file.size == 0) return "Du musst ein Bild hochladen.";
 
   if (file.size > POST_FILE_LIMIT) {
     return `Datei ${path.parse(file.name).base} ist zu groß.`;
   }
   if (isMimetypeOk(file.type) && isExtensionOk(file.name)) {
-    return true;
+    return "";
   }
-  return false;
+  return "Es ist ein Fehler aufgetreten";
 };
 
 export function generateFilename(file) {
