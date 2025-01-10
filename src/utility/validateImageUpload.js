@@ -15,7 +15,7 @@ export const validateImage = (file) => {
   if (isMimetypeOk(file.type) && isExtensionOk(file.name)) {
     return "";
   }
-  return "Es ist ein Fehler aufgetreten";
+  return "";
 };
 
 export function generateFilename(file) {

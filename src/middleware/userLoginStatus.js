@@ -84,3 +84,11 @@ export const isUserLoggedIn = (ctx) => {
     return ctx;
   } else return ctx;
 };
+
+export const getLoggedInUser = (ctx) => {
+  const cookie = ctx.cookies.getCookie(ctx);
+  const username = cookie["username"];
+  if (!username) {
+    return;
+  } else return username;
+};

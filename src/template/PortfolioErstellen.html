@@ -34,7 +34,12 @@
         <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
         <div class="header-container"></div>
 
-        <form id="titelForm" action="/add" method="post">
+        <form
+          id="titelForm"
+          action="/add"
+          method="post"
+          enctype="multipart/form-data"
+        >
           {% if errors %}
           <div class="errors">
             <ul>
@@ -52,6 +57,8 @@
               name="title"
               placeholder="Gib einen Titel für dein Portfolio ein."
             >
+{{ data.title | safe }}</textarea
+            >
           </fieldset>
 
           <fieldset>
@@ -61,7 +68,8 @@
               id="description"
               name="description"
               placeholder="Gib eine Beschreibung für dein Portfolio ein."
-            ></textarea
+            >
+{{ data.description | safe }}</textarea
             >
           </fieldset>
 
@@ -73,51 +81,26 @@
               name="about"
               placeholder="Schreibe eine kurze Beschreibung über dich."
               style="display: block"
-            ></textarea>
+            >
+{{ data.about | safe }}</textarea
+            >
           </fieldset>
 
           <fieldset>
             <legend>Skills</legend>
             <div class="skills">
+              {% for i in range(1, 9) %}
               <div class="skills-item">
-                <label for="skill1">Skill 1:</label>
-                <input maxlength="30" type="text" id="skill1" name="skill1" />
+                <label for="skill{{ i }}">Skill {{ i }}:</label>
+                <input
+                  maxlength="30"
+                  type="text"
+                  id="skill{{ i }}"
+                  name="skill{{ i }}"
+                  value="{{ data.skills[i - 1] | safe if i <= data.skills | length else '' }}"
+                />
               </div>
-
-              <div class="skills-item">
-                <label for="skill2">Skill 2:</label>
-                <input maxlength="30" type="text" id="skill2" name="skill2" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill3">Skill 3:</label>
-                <input maxlength="30" type="text" id="skill3" name="skill3" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill4">Skill 4:</label>
-                <input maxlength="30" type="text" id="skill4" name="skill4" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill5">Skill 5:</label>
-                <input maxlength="30" type="text" id="skill5" name="skill5" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill6">Skill 6:</label>
-                <input maxlength="30" type="text" id="skill6" name="skill6" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill7">Skill 7:</label>
-                <input maxlength="30" type="text" id="skill7" name="skill7" />
-              </div>
-
-              <div class="skills-item">
-                <label for="skill8">Skill 8:</label>
-                <input maxlength="30" type="text" id="skill8" name="skill8" />
-              </div>
+              {% endfor %}
             </div>
           </fieldset>
 
@@ -125,36 +108,38 @@
             <legend>Tags</legend>
             <div>
               <label class="custom-checkbox">
-                <input type="checkbox" name="tags" value="3D-Animation" />
+                <input type="checkbox" name="tags" value="3D-Animation" {% if
+                "3D-Animation" in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>3D-Animation
               </label>
 
               <label class="custom-checkbox">
-                <input type="checkbox" name="tags" value="Motion Graphics" />
+                <input type="checkbox" name="tags" value="Motion-Graphics" {% if
+                "Motion-Graphics" in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>Motion Graphics
               </label>
 
               <label class="custom-checkbox">
-                <input
-                  type="checkbox"
-                  name="tags"
-                  value="Softwareentwicklung"
-                />
+                <input type="checkbox" name="tags" value="Softwareentwicklung"
+                {% if "Softwareentwicklung" in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>Softwareentwicklung
               </label>
 
               <label class="custom-checkbox">
-                <input type="checkbox" name="tags" value="2D-Art" />
+                <input type="checkbox" name="tags" value="2D-Art" {% if "2D-Art"
+                in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>2D-Art
               </label>
 
               <label class="custom-checkbox">
-                <input type="checkbox" name="tags" value="Animation" />
+                <input type="checkbox" name="tags" value="Animation" {% if
+                "Animation" in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>Animation
               </label>
 
               <label class="custom-checkbox">
-                <input type="checkbox" name="tags" value="Webdesign" />
+                <input type="checkbox" name="tags" value="Webdesign" {% if
+                "Webdesign" in data.tags %}checked{% endif %} />
                 <span class="checkmark"></span>Webdesign
               </label>
             </div>
@@ -162,16 +147,17 @@
 
           <fieldset>
             <legend>Thumbnail</legend>
-            <label for="thumbnail" class="upload-label">
-              Klicke hier, um ein Bild hochzuladen.
+            <label for="thumbnail" class="upload-label"
+              >Klicke hier um ein Bild hochzuladen.
               <i class="material-icons profil-icon">add_a_photo</i>
+
+              <input
+                type="file"
+                id="thumbnail"
+                name="thumbnail"
+                accept="image/*"
+              />
             </label>
-            <input
-              type="file"
-              id="thumbnail"
-              name="thumbnail"
-              style="display: none"
-            />
           </fieldset>
 
           <button type="submit" class="button-save-aboutyou">Speichern</button>

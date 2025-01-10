@@ -21,8 +21,9 @@ export const renderForm = async (ctx) => {
     title: queryParams.title || "",
     description: queryParams.description || "",
     about: queryParams.about || "",
-    tags: queryParams.tags || "",
-    skills: queryParams.skills || "",
+    tags: queryParams.tags ? queryParams.tags.split("%2C") : [],
+    skills: queryParams.skills ? queryParams.skills.split("%2C") : [],
+    thumbnail: queryParams.title || "",
   };
 
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
@@ -72,8 +73,6 @@ export const add = async (ctx) => {
   if (skillsString == "") errors.push("Du musst deine Skills eingeben.");
   if (!thumbnailError == "") errors.push(thumbnailError);
 
-  console.log(errors);
-
   if (errors.length > 0) {
     const queryParams = new URLSearchParams({
       errors: encodeURIComponent(JSON.stringify(errors)),
@@ -82,44 +81,44 @@ export const add = async (ctx) => {
       about: encodeURIComponent(about || ""),
       tags: encodeURIComponent(tagsString),
       skills: encodeURIComponent(skillsString),
-      thumbnail: encodeURIComponent(thumbnailError),
     }).toString();
-
-    console.log(queryParams);
 
     ctx.response.status = 302;
     ctx.response.headers.set("Location", `/portfolio/erstellen?${queryParams}`);
     ctx.response.body = "";
     return ctx;
   }
-  //saving file
-  const filename = validateImage.generateFilename(file);
+
+  const filename = validateImage.generateFilename(thumbnail);
   const destFile = await Deno.open(path.join(Deno.cwd(), "public", filename), {
     create: true,
     write: true,
     truncate: true,
   });
+  await thumbnail.stream().pipeTo(destFile.writable);
 
-  await file.stream().pipeTo(destFile.writable);
+  const username = checkUser.getLoggedInUser(ctx);
+
+  console.log(username);
 
   //image
   model.addPortfolioUser(ctx.db, username);
 
-  model.addPortfolioThumbnail(ctx.db, filename, file, username);
+  model.addPortfolioThumbnail(ctx.db, filename, thumbnail, username);
 
   //text
   model.addPortfolioInfo(
     ctx.db,
-    tempStorage,
+    title,
+    about,
+    description,
     skillsString,
     tagsString,
     username
   );
 
-  //if succesful
-
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/portfolio/user/${username}`);
+  ctx.response.headers.set("Location", `/portfolio/${username}`);
   ctx.response.body = "";
   return ctx;
 };

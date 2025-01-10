@@ -13,26 +13,21 @@ export const indexImage = async (db) => {
 //add data
 export const addPortfolioInfo = async (
   db,
-  formData,
+  title,
+  about,
+  description,
   skills,
   tags,
   username
 ) => {
-  const data = {
-    title: formData.get("title"),
-    about: formData.get("about"),
-    skills: skills,
-    tags: tags,
-    description: formData.get("description"),
-  };
   const sql = `INSERT INTO portfolioText (username, title, text, skills, description, tags) VALUES ($username, $title, $about, $skills, $description, $tags)`;
   const query = await db.query(sql, {
     $username: username,
-    $title: data.title,
-    $about: data.about,
-    $skills: data.skills,
-    $description: data.description,
-    $tags: data.tags,
+    $title: title,
+    $about: about,
+    $skills: skills,
+    $description: description,
+    $tags: tags,
   });
   return query;
 };
@@ -107,17 +102,13 @@ export const deletePortfolioThumbnailByName = async (db, username) => {
 //Edit
 export const updatePortfolioText = async (
   db,
-  username,
-  formData,
+  title,
+  about,
+  description,
   skills,
-  tags
+  tags,
+  username
 ) => {
-  const data = {
-    title: formData.get("title"),
-    about: formData.get("about"),
-    description: formData.get("description"),
-  };
-
   const sql = `
     UPDATE portfolioText 
     SET 
@@ -130,10 +121,10 @@ export const updatePortfolioText = async (
   `;
   const query = await db.query(sql, {
     $username: username,
-    $title: data.title,
-    $about: data.about,
+    $title: title,
+    $about: about,
     $skills: skills,
-    $description: data.description,
+    $description: description,
     $tags: tags,
   });
   return query;
