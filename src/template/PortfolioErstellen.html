@@ -36,7 +36,11 @@
 
         <form
           id="titelForm"
-          action="/add"
+          {{
+          action
+          |
+          safe
+          }}
           method="post"
           enctype="multipart/form-data"
         >
@@ -147,6 +151,11 @@
 
           <fieldset>
             <legend>Thumbnail</legend>
+            {% if data.thumbnail %}
+            <div class="thumbnail-container">
+              <img src="{{ data.thumbnail }}" alt="Thumbnail" />
+            </div>
+            {% endif %}
             <label for="thumbnail" class="upload-label"
               >Klicke hier um ein Bild hochzuladen.
               <i class="material-icons profil-icon">add_a_photo</i>
