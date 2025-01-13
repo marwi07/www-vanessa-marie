@@ -121,7 +121,7 @@ export const add = async (ctx) => {
   );
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/portfolio/${username}`);
+  ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
   return ctx;
 };
@@ -282,7 +282,7 @@ export const edit = async (ctx) => {
   );
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/portfolio/${username}`);
+  ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
   return ctx;
 };

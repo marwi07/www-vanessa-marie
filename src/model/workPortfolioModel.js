@@ -1,17 +1,27 @@
-export const addWorkInfo = async (db, formData, username) => {
-  const data = {
-    title: formData.get("title"),
-    text: formData.get("description"),
-  };
+export const addWorkInfo = async (db, title, description, username) => {
   const sql = `INSERT INTO portfolioWorkText (title, text, username) VALUES ($title, $text, $username)`;
-  const query = await db.query(sql, {
-    $username: username,
-    $title: data.title,
-    $text: data.text,
-  });
-  return query;
-};
 
+  try {
+    // Insert work info
+    await db.query(sql, {
+      $title: title,
+      $text: description,
+      $username: username,
+    });
+
+    const lastIdRow = [...db.query("SELECT last_insert_rowid()")][0];
+    const lastId = lastIdRow ? lastIdRow[0] : null;
+
+    if (!lastId) {
+      throw new Error("Failed to retrieve last inserted ID");
+    }
+
+    return lastId;
+  } catch (error) {
+    console.error("Error inserting work info:", error);
+    throw error;
+  }
+};
 export const addWorkImage = async (db, path, file, username, id) => {
   const data = {
     size: file.size,

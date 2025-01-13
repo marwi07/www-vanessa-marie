@@ -1,6 +1,5 @@
 import * as portfolioForm from "./controller/portfolioFormController.js";
 import * as portfolio from "./controller/portfolioController.js";
-import * as userPortfolio from "./controller/userPortfolioController.js";
 import * as userContact from "./controller/contactFormController.js";
 import * as profil from "./controller/profileController.js ";
 import * as index from "./controller/indexController.js";
@@ -43,7 +42,7 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/portfolio/user") {
-    ctx = await userPortfolio.renderPortfolio(ctx);
+    ctx = await portfolio.renderPortfolio(ctx);
   }
 
   //Portfolio Form
@@ -69,7 +68,7 @@ export const routes = async (ctx) => {
 
   //Portfolio Arbeiten
   if (ctx.url.pathname === "/portfolio/arbeiten/erstellen") {
-    ctx = await workForm.renderWorkForm(ctx);
+    ctx = await workForm.renderForm(ctx);
   }
 
   if (ctx.url.pathname === "/addWork" && ctx.request.method === "POST") {

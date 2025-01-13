@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio erstellen</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <main>
+        <!-- Menü/Nav  -->
+        <ul class="nav-links" id="responsive">
+          {{ account | safe}}
+
+          <div class="nav-items">
+            <a href="/index" class="active">Home</a>
+            {{ portfolioMenu | safe}}
+            <a href="javascript:void(0);" class="icon" id="burgermenutest">
+              <i class="material-icons" style="font-size: 40px">reorder</i>
+            </a>
+          </div>
+        </ul>
+
+        <!-- Upload box -->
+        <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
+        <div class="header-container"></div>
+
+        <form
+          id="titelForm"
+          {{
+          action
+          |
+          safe
+          }}
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% if errors %}
+          <div class="errors">
+            <ul>
+              {% for error in errors %}
+              <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          <fieldset>
+            <legend>Portfolio Titel</legend>
+            <textarea
+              maxlength="1000"
+              id="title"
+              name="title"
+              placeholder="Gib einen Titel für dein Portfolio ein."
+            >
+{{ data.title | safe }}</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Portfolio Beschreibung</legend>
+            <textarea
+              maxlength="1000"
+              id="description"
+              name="description"
+              placeholder="Gib eine Beschreibung für dein Portfolio ein."
+            >
+{{ data.description | safe }}</textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Thumbnail</legend>
+            {% set workImages = data.workImage if data.workImage is defined else
+            [] %} {% for i in range(1, 4) %}
+            <div class="thumbnail-container">
+              {% if workImages is iterable and workImages[i - 1] %}
+              <img src="{{ workImages[i - 1] }}" alt="Uploaded image {{ i }}" />
+              {% else %} {% endif %}
+            </div>
+            <div class="column">
+              <label for="image{{ i }}" class="upload-label">
+                Klicke hier um ein Bild hochzuladen.
+                <i class="material-icons profil-icon">add_a_photo</i>
+                <input
+                  type="file"
+                  id="image{{ i }}"
+                  name="image{{ i }}"
+                  accept="image/*"
+                />
+              </label>
+            </div>
+            {% endfor %}
+          </fieldset>
+
+          <button type="submit" class="button-save-aboutyou">Speichern</button>
+        </form>
+      </main>
+
+      <footer>
+        <ul class="nav-linksFooter">
+          <h5>More On This Site</h5>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
