@@ -83,7 +83,7 @@ export const routes = async (ctx) => {
     /^\/portfolio\/arbeiten\/bearbeiten\/([^\/]+)$/.exec(ctx.url.pathname);
   if (portfoliEditoWork) {
     const customID = portfoliEditoWork[1];
-    ctx = await workForm.renderWorkEditForm(ctx, customID);
+    ctx = await workForm.renderForm(ctx, customID);
   }
 
   if (ctx.url.pathname === "/portfolio/arbeiten/entfernen/") {

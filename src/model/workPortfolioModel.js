@@ -57,10 +57,26 @@ export const getImagesById = async (db, id) => {
   return query;
 };
 
+export const getImageById = async (db, id) => {
+  const sql = `SELECT * FROM portfolioWorkImage WHERE id == $id`;
+  const query = await db.query(sql, {
+    $id: id,
+  });
+  return query;
+};
+
 export const getWorkTextByName = async (db, username) => {
   const sql = `SELECT * FROM portfolioWorkText WHERE username == $username`;
   const query = await db.query(sql, {
     $username: username,
+  });
+  return query;
+};
+
+export const getWorkTextById = async (db, id) => {
+  const sql = `SELECT * FROM portfolioWorkText WHERE id == $id`;
+  const query = await db.query(sql, {
+    $id: id,
   });
   return query;
 };
@@ -99,12 +115,7 @@ export const deleteWorkTextByUsername = async (db, username) => {
 };
 
 //edit
-export const updateWorkTextById = async (db, id, formData) => {
-  const data = {
-    title: formData.get("title"),
-    text: formData.get("description"),
-  };
-
+export const updateWorkTextById = async (db, id, title, text) => {
   const sql = `
     UPDATE portfolioWorkText 
     SET 
@@ -114,8 +125,8 @@ export const updateWorkTextById = async (db, id, formData) => {
   `;
   const query = await db.query(sql, {
     $id: id,
-    $title: data.title,
-    $text: data.text,
+    $title: title,
+    $text: text,
   });
   return query;
 };
