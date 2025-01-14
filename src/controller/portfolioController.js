@@ -27,6 +27,16 @@ export const renderPortfolio = async (ctx, username) => {
             alt="ThumbnailPortfolio"
           />`;
 
+  const editMsgPortfolio = `  <a
+              class="button-group_portfolio_button"
+              href="/portfolio/bearbeiten"
+              >Bearbeiten</a
+            >
+
+            <a class="button-group_portfolio_button" href="/portfolio/entfernen"
+              >Löschen</a
+            >`;
+
   //PortfolioInfo
   const portfolioInfo = await portfolioModel.getPortfolioByName(
     ctx.db,
@@ -51,74 +61,73 @@ export const renderPortfolio = async (ctx, username) => {
   const workData = await workModel.getWorkTextByName(ctx.db, username);
   let workFull = ``;
   for (const element of workData) {
+    //if it's users profile
+    if (username == element[2]) {
+      workFull += `<div class="button-group-yourWork">
+      <a class="button-yourWork" href="/portfolio/arbeiten/bearbeiten/${element[3]}">
+        Bearbeiten
+      </a>
+
+      <a class="button-yourWork" href="/portfolio/arbeiten/entfernen/${element[3]}">
+        Löschen
+      </a>
+    </div>`;
+    }
+    //Titel
     workFull += ` <h3>${element[0]}</h3>
   
             <div class="YourWork-text-section">
               <div class="row" id="gallery">`;
 
+    //Bilder
     const workImages = await workModel.getImagesById(ctx.db, element[3]);
 
     for (const image of workImages) {
       workFull += ` <div class="column">
-                  <img src="${image[1]}" alt="Bild 1" />
+                  <img src="${image[1]}" alt="Bild" />
                 </div>`;
     }
 
-    workFull += ` </div>
+    //Beschreibung
+    workFull += `</div>
             </div>
-  
             <p id="Beschreibung-YourWork">${element[1]}</p>
-          </div>`;
+          `;
   }
 
-  if (!userInfo.length === 0) {
-    variables = {
-      //menu
-      account: varHtmlMenu.account,
-      portfolioMenu: varHtmlMenu.portfolio,
-      //title
-      title: portfolioInfo[0][1],
-      //Thumbnail
-      thumbnail: thumbnail,
-      //description
-      description: portfolioInfo[0][4],
-      //about
-      about: portfolioInfo[0][2],
-      //tags
-      tags: tags,
-      //skills
-      skills: skills,
-      //Contact
-      name: username,
-      mail: userInfo[0][0],
-      telephone: userInfo[0][1],
-      address: userInfo[0][4],
-      extra: userInfo[0][2],
-      //work
-      work: workFull,
-    };
-  } else {
-    variables = {
-      //menu
-      account: varHtmlMenu.account,
-      portfolioMenu: varHtmlMenu.portfolio,
-      //title
-      title: portfolioInfo[0][1],
-      //Thumbnail
-      thumbnail: thumbnail,
-      //description
-      description: portfolioInfo[0][4],
-      //about
-      about: portfolioInfo[0][2],
-      //tags
-      tags: tags,
-      //skills
-      skills: skills,
-      //Contact
-      name: username,
-      //work
-      work: workFull,
-    };
+  //If User
+  const workEdit = `
+      <div class="upload-box-YourWork">
+
+      <a href="/portfolio/arbeiten/erstellen" class="upload-box-YourWork">Füge deinem Portfolio deine Arbeiten hinzu.
+      <i  class="material-icons">add_circle</i>
+      </a>
+    </div> `;
+
+  variables = {
+    account: varHtmlMenu.account,
+    portfolioMenu: varHtmlMenu.portfolio,
+    title: portfolioInfo[0][1],
+    thumbnail: thumbnail,
+    description: portfolioInfo[0][4],
+    about: portfolioInfo[0][2],
+    tags: tags,
+    skills: skills,
+    name: username,
+    work: workFull,
+  };
+
+  if (userInfo.length !== 0) {
+    variables.name = username;
+    variables.mail = userInfo[0][0];
+    variables.telephone = userInfo[0][1];
+    variables.address = userInfo[0][4];
+    variables.extra = userInfo[0][2];
+  }
+
+  if (portfolioInfo[0][0] == username) {
+    variables.editWork = workEdit;
+    variables.editPortfolio = editMsgPortfolio;
   }
   ctx.response.body = await ctx.nunjucks.render(
     "userPortfolio.html",

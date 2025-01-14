@@ -4,59 +4,70 @@ import * as checkUser from "../middleware/userLoginStatus.js";
 
 export const renderRegister = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
+
+  ctx = checkUser.isUserLoggedIn(ctx);
+  const url = new URL(ctx.request.url);
+  const queryParams = Object.fromEntries(url.searchParams.entries());
+
+  let errors = [];
+
+  if (queryParams.errors) {
+    try {
+      errors = JSON.parse(decodeURIComponent(queryParams.errors));
+    } catch {
+      errors = [];
+    }
+  }
+
+  const data = {
+    username: queryParams.username || "",
+  };
+
   ctx.response.body = await ctx.nunjucks.render("register.html", {
     account: variables.account,
     portfolioMenu: variables.portfolio,
+    errors: errors,
+    data,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;
   return ctx;
 };
 
-export const registerAttempt = async (ctx) => {
+export async function registerAttempt(ctx) {
   const formData = await ctx.request.formData();
 
   const username = formData.get("username");
   const password = formData.get("password");
 
-  let _html;
-  let _status;
-
+  const errors = [];
+  const hashedPasswort = "";
   if (!username || !password) {
-    ctx = errorMessage(ctx);
-    return ctx;
+    errors.push("Du musst ein Passwort und einen Username angeben.");
   } else {
     const userExists = await model.getUserByName(ctx.db, username);
-    const hashedPassword = await hash(password);
+    hashedPasswort = await hash(password);
 
     if (userExists.length > 0) {
-      ctx = errorMessage(ctx);
-      return ctx;
-    } else {
-      await model.addUser(ctx.db, username, hashedPassword, "user");
-      _status = "success";
-
-      ctx.response.headers.set("Location", "/login");
-      ctx.response.status = 302;
-      ctx.response.body = "";
-      return ctx;
+      errors.push("Der User existiert bereits.");
     }
   }
-};
 
-export const errorMessage = async (ctx) => {
-  let msg = ` <div class="container-false-login" id="errorPopup">
-                <p class="error-message">
-                  Deine Eingaben sind ungültig.
-                </p>
-                 <a href="#" onclick="document.getElementById('errorPopup').style.display='none'; return false;" class="close-button">Schließen</a>
-              </div>
-`;
-  ctx.response.body = await ctx.nunjucks.render("Login.html", {
-    error: msg,
-  });
-  msg = "";
-  ctx.response.headers.set("content-type", "text/html");
-  ctx.response.status = 400;
+  if (errors.length > 0) {
+    const queryParams = new URLSearchParams({
+      errors: encodeURIComponent(JSON.stringify(errors)),
+      username: encodeURIComponent(username || ""),
+    }).toString();
+
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", `/register?${queryParams}`);
+    ctx.response.body = "";
+    return ctx;
+  }
+
+  await model.addUser(ctx.db, username, hashedPasswort, "user");
+  ctx.response.headers.set("Location", "/profile");
+  ctx.response.status = 302;
+  ctx.response.body = "";
   return ctx;
-};
+}

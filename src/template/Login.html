@@ -35,10 +35,23 @@
 
             <div id="message-container"></div>
 
-            <form id="loginForm" action="/login" method="POST">
-              {{ error | safe}}
+            <form id="loginForm" action="/loginForm" method="POST">
+              {% if errors %}
+              <div class="errors">
+                <ul>
+                  {% for error in errors %}
+                  <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
               <label for="username">Username:</label>
-              <input type="text" id="username" name="username" />
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value="{{data.username}}"
+              />
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" />
 

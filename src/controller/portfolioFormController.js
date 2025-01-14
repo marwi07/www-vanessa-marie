@@ -1,4 +1,4 @@
-import * as validateImage from "../utility/validateImageUpload.js";
+import * as validateImage from "../middleware/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/portfolioModel.js";
 import * as checkUser from "../middleware/userLoginStatus.js";
@@ -121,7 +121,7 @@ export const add = async (ctx) => {
   );
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/portfolio/${username}`);
+  ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
   return ctx;
 };
@@ -282,7 +282,7 @@ export const edit = async (ctx) => {
   );
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/portfolio/${username}`);
+  ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
   return ctx;
 };

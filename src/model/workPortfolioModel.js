@@ -1,17 +1,27 @@
-export const addWorkInfo = async (db, formData, username) => {
-  const data = {
-    title: formData.get("title"),
-    text: formData.get("description"),
-  };
+export const addWorkInfo = async (db, title, description, username) => {
   const sql = `INSERT INTO portfolioWorkText (title, text, username) VALUES ($title, $text, $username)`;
-  const query = await db.query(sql, {
-    $username: username,
-    $title: data.title,
-    $text: data.text,
-  });
-  return query;
-};
 
+  try {
+    // Insert work info
+    await db.query(sql, {
+      $title: title,
+      $text: description,
+      $username: username,
+    });
+
+    const lastIdRow = [...db.query("SELECT last_insert_rowid()")][0];
+    const lastId = lastIdRow ? lastIdRow[0] : null;
+
+    if (!lastId) {
+      throw new Error("Failed to retrieve last inserted ID");
+    }
+
+    return lastId;
+  } catch (error) {
+    console.error("Error inserting work info:", error);
+    throw error;
+  }
+};
 export const addWorkImage = async (db, path, file, username, id) => {
   const data = {
     size: file.size,
@@ -47,10 +57,26 @@ export const getImagesById = async (db, id) => {
   return query;
 };
 
+export const getImageById = async (db, id) => {
+  const sql = `SELECT * FROM portfolioWorkImage WHERE id == $id`;
+  const query = await db.query(sql, {
+    $id: id,
+  });
+  return query;
+};
+
 export const getWorkTextByName = async (db, username) => {
   const sql = `SELECT * FROM portfolioWorkText WHERE username == $username`;
   const query = await db.query(sql, {
     $username: username,
+  });
+  return query;
+};
+
+export const getWorkTextById = async (db, id) => {
+  const sql = `SELECT * FROM portfolioWorkText WHERE id == $id`;
+  const query = await db.query(sql, {
+    $id: id,
   });
   return query;
 };
@@ -89,12 +115,7 @@ export const deleteWorkTextByUsername = async (db, username) => {
 };
 
 //edit
-export const updateWorkTextById = async (db, id, formData) => {
-  const data = {
-    title: formData.get("title"),
-    text: formData.get("description"),
-  };
-
+export const updateWorkTextById = async (db, id, title, text) => {
   const sql = `
     UPDATE portfolioWorkText 
     SET 
@@ -104,8 +125,8 @@ export const updateWorkTextById = async (db, id, formData) => {
   `;
   const query = await db.query(sql, {
     $id: id,
-    $title: data.title,
-    $text: data.text,
+    $title: title,
+    $text: text,
   });
   return query;
 };
