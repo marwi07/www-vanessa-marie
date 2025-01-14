@@ -41,12 +41,12 @@ export async function registerAttempt(ctx) {
   const password = formData.get("password");
 
   const errors = [];
-
+  const hashedPasswort = "";
   if (!username || !password) {
     errors.push("Du musst ein Passwort und einen Username angeben.");
   } else {
     const userExists = await model.getUserByName(ctx.db, username);
-    const hashedPasswort = await hash(password);
+    hashedPasswort = await hash(password);
 
     if (userExists.length > 0) {
       errors.push("Der User existiert bereits.");
