@@ -38,7 +38,6 @@ export const routes = async (ctx) => {
   if (portfolioUser) {
     const username = portfolioUser[1];
     ctx = await portfolio.renderPortfolio(ctx, username);
-    return ctx;
   }
 
   if (ctx.url.pathname === "/portfolio/user") {
@@ -120,18 +119,20 @@ export const routes = async (ctx) => {
   }
 
   //login
-  if (ctx.url.pathname === "/register") {
-    ctx = await register.renderRegister(ctx);
-  }
-
   if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
     ctx = await register.registerAttempt(ctx);
   }
-
+  
   if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
     await login.renderLogin(ctx);
-  } else if (ctx.url.pathname === "/login" && ctx.request.method === "POST") {
-    await login.loginAttempt(ctx);
+  } else if (
+    ctx.url.pathname === "/loginForm" &&
+    ctx.request.method === "POST"
+  ) {
+    ctx = await login.loginAttempt(ctx);
+  }
+  if (ctx.url.pathname === "/register") {
+    ctx = await register.renderRegister(ctx);
   }
 
   //andere pages
@@ -157,6 +158,13 @@ export const routes = async (ctx) => {
 
   if (ctx.url.pathname === "/ueber-uns") {
     ctx = await about.renderAbout(ctx);
+  }
+
+  if (!ctx || !ctx.url || !ctx.url.pathname) {
+    ctx.response.body = await ctx.nunjucks.render("error404.html", {});
+    ctx.response.headers.set("content-type", "text/html");
+    ctx.response.status = 400;
+    return ctx;
   }
 
   return ctx;
