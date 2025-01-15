@@ -1,23 +1,19 @@
-import * as validateImage from "../middleware/validateImageUpload.js";
-import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/workPortfolioModel.js";
 import * as checkUser from "../middleware/userLoginStatus.js";
+import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
+import * as validateEachImageUpload from "../middleware/validateEachImageUpload.js";
+import * as saveWorkEditFile from "../middleware/saveWorkImageFile.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {
   ctx = checkUser.isUserLoggedIn(ctx);
+
+  //Errors, die in url gespeichert wurden werden aufgerufen
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
+  const errors = getErrorFromURL.getErrorFromURL(queryParams);
 
-  let errors = [];
-  if (queryParams.errors) {
-    try {
-      errors = JSON.parse(decodeURIComponent(queryParams.errors));
-    } catch {
-      errors = [];
-    }
-  }
-
+  //Wenn Aufruf fur Rendern von EditForm
   let data;
   let actionForm = `action="/addWork"`;
   if (id) {
@@ -27,7 +23,6 @@ export const renderForm = async (ctx, id) => {
     const workImage = await model.getImagesById(ctx.db, id);
 
     const workImagePath = [];
-
     for (const elements of workImage) {
       workImagePath.push(elements[1]);
     }
@@ -37,6 +32,7 @@ export const renderForm = async (ctx, id) => {
       description: workInfo[0][1],
       workImage: workImagePath,
     };
+    //Wenn Aufruf fur Rendern von AddForm
   } else {
     data = {
       title: queryParams.title || "",
@@ -61,25 +57,18 @@ export const renderForm = async (ctx, id) => {
 export const add = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
-  let thumbnailError = "";
-  const images = [];
-  for (let i = 1; i <= 8; i++) {
-    const image = formData.get(`image${i}`);
-    if (image && image.size > 0) {
-      thumbnailError = validateImage.validateImage(image);
-      images.push(image);
-    } else {
-      continue;
-    }
-  }
-
+  //genereiren von Error fur Bilder
+  const imageData = validateEachImageUpload.validateEachImageUpload(formData);
   const title = formData.get("title");
   const description = formData.get("description");
+
+  //generieren von Error fur TExt
   const errors = [];
   if (!title) errors.push("Du musst einen Titel eingeben.");
   if (!description) errors.push("Du musst eine Beschreibung eingeben.");
-  if (!thumbnailError == "") errors.push(thumbnailError);
+  if (!imageData.error == "") errors.push(imageData.error);
 
+  //Wenn error. url befullen und redirect zum Form
   if (errors.length > 0) {
     const queryParams = new URLSearchParams({
       errors: encodeURIComponent(JSON.stringify(errors)),
@@ -97,20 +86,13 @@ export const add = async (ctx) => {
   }
   //saving text
   workTextId = await model.addWorkInfo(ctx.db, title, description, username);
-  //saving file
-  for (const file of images) {
-    const filename = validateImage.generateFilename(file);
-    const destFile = await Deno.open(
-      path.join(Deno.cwd(), "public", filename),
-      {
-        create: true,
-        write: true,
-        truncate: true,
-      }
-    );
-    await file.stream().pipeTo(destFile.writable);
+
+  //saving images
+  for (const file of imageData.images) {
+    const filename = await saveWorkEditFile.saveWorkEditFile(file);
     await model.addWorkImage(ctx.db, filename, file, username, workTextId);
   }
+
   ctx.response.status = 302;
   ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
@@ -130,29 +112,12 @@ export const deleteWork = async (ctx, id) => {
 export const edit = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
-  let thumbnailError = "";
-  const images = [];
-  const imageNum = [];
-  for (let i = 1; i <= 3; i++) {
-    const image = formData.get(`image${i}`);
-    if (image && image.size > 0) {
-      thumbnailError = validateImage.validateImage(image);
-      images.push(image);
-      imageNum.push(i - 1);
-    } else {
-      continue;
-    }
-  }
 
-  //deleting the image at the position the image was shown on site to replace with new
-  const imagesInData = await model.getImagesById(ctx.db, workTextId);
-  for (let i = 1; i <= 3; i++) {
-    if (i - 1 === imageNum[0]) {
-      const image = await model.getImageById(ctx.db, imagesInData[i - 1][5]);
-      console.log(image[0][5]);
-      await model.deleteWorkImageById(ctx.db, image[0][5]);
-    }
-  }
+  const imageData = await validateEachImageUpload.validateEachImageEditUpload(
+    ctx,
+    formData,
+    workTextId
+  );
 
   //error check
   const title = formData.get("title");
@@ -160,7 +125,7 @@ export const edit = async (ctx) => {
   const errors = [];
   if (!title) errors.push("Du musst einen Titel eingeben.");
   if (!description) errors.push("Du musst eine Beschreibung eingeben.");
-  if (!thumbnailError == "") errors.push(thumbnailError);
+  if (!imageData.errors == "") errors.push(imageData.errors);
 
   if (errors.length > 0) {
     const queryParams = new URLSearchParams({
@@ -177,6 +142,7 @@ export const edit = async (ctx) => {
     ctx.response.body = "";
     return ctx;
   }
+
   //saving text
   const _result = await model.updateWorkTextById(
     ctx.db,
@@ -185,19 +151,11 @@ export const edit = async (ctx) => {
     description
   );
   //saving file
-  for (const file of images) {
-    const filename = validateImage.generateFilename(file);
-    const destFile = await Deno.open(
-      path.join(Deno.cwd(), "public", filename),
-      {
-        create: true,
-        write: true,
-        truncate: true,
-      }
-    );
-    await file.stream().pipeTo(destFile.writable);
+  for (const file of imageData.images) {
+    const filename = await saveWorkEditFile.saveWorkEditFile(file);
     await model.addWorkImage(ctx.db, filename, file, username, workTextId);
   }
+
   ctx.response.status = 302;
   ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";

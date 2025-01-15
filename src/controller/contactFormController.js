@@ -14,9 +14,7 @@ export const renderContactForm = async (ctx) => {
 
 export const addContactData = async (ctx) => {
   const formData = await ctx.request.formData();
-
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = checkUser.getLoggedInUser(ctx);
 
   await model.addUserInfo(ctx.db, formData, username);
 

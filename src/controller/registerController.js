@@ -41,7 +41,7 @@ export async function registerAttempt(ctx) {
   const password = formData.get("password");
 
   const errors = [];
-  const hashedPasswort = "";
+  let hashedPasswort = "";
   if (!username || !password) {
     errors.push("Du musst ein Passwort und einen Username angeben.");
   } else {
@@ -66,7 +66,7 @@ export async function registerAttempt(ctx) {
   }
 
   await model.addUser(ctx.db, username, hashedPasswort, "user");
-  ctx.response.headers.set("Location", "/profile");
+  ctx.response.headers.set("Location", "/login");
   ctx.response.status = 302;
   ctx.response.body = "";
   return ctx;

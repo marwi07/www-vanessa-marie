@@ -1,24 +1,18 @@
-import { compare } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
-import * as model from "../model/userModel.js";
 import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkLoginErrors from "../middleware/generateLogInError.js";
+import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
 
 export const renderLogin = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
 
   ctx = checkUser.isUserLoggedIn(ctx);
+
+  //Errors, die in url gespeichert wurden werden aufgerufen
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
+  const errors = getErrorFromURL.getErrorFromURL(queryParams);
 
-  let errors = [];
-
-  if (queryParams.errors) {
-    try {
-      errors = JSON.parse(decodeURIComponent(queryParams.errors));
-    } catch {
-      errors = [];
-    }
-  }
-  
+  //data fur template wird befullt
   const data = {
     username: queryParams.username || "",
   };
@@ -39,24 +33,9 @@ export async function loginAttempt(ctx) {
 
   const username = formData.get("username");
   const password = formData.get("password");
-  
-  const errors = [];
 
-  if (!username || !password) {
-    errors.push("Du musst ein Passwort und einen Username angeben.");
-  } else {
-    const hashPasswort = await model.getPasswortByUser(ctx.db, username);
-
-    if (hashPasswort.length === 0) {
-      errors.push("Der User existiert nicht.");
-    } else {
-      const passwordMatches = await compare(password, hashPasswort[0][0]);
-
-      if (!passwordMatches) {
-        errors.push("Dein Passwort stimmt nicht.");
-      }
-    }
-  }
+  //generieren von Fehelern von Login Formdata
+  const errors = checkLoginErrors.generateLoginErrors(ctx, password, username);
 
   if (errors.length > 0) {
     const queryParams = new URLSearchParams({
@@ -70,9 +49,9 @@ export async function loginAttempt(ctx) {
     return ctx;
   }
 
+  // Setzen von User Cookie und redirect zu Profil
   await ctx.cookies.setUserCookie(ctx, username, "role");
-  _status = "success";
-  ctx.response.headers.set("Location", "/profile");
+  ctx.response.headers.set("Location", "/profil");
   ctx.response.status = 302;
   ctx.response.body = "";
   return ctx;
