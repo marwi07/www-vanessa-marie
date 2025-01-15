@@ -27,8 +27,8 @@
             </a>
           </div>
         </ul>
-        <div class="error_font centered">Error 404</div>
-        <p class="error_font centered">Seite konnte nicht gefunden werden.</p>
+        <div class="error_font centered">{{ errorCode | safe}}</div>
+        <p class="error_font centered">{{ errormessage | safe}}.</p>
       </main>
 
       <!-- Footer -->

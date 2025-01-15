@@ -1,5 +1,5 @@
 import * as checkUser from "../middleware/userLoginStatus.js";
-import * as checkLoginErrors from "../middleware/generateLogInError.js";
+import * as checkLoginErrors from "../middleware/generateErrorsForDisplay.js";
 import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
 
 export const renderLogin = async (ctx) => {

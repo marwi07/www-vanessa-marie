@@ -68,10 +68,15 @@ export const renderPortfolio = async (ctx, username) => {
         Bearbeiten
       </a>
 
-      <a class="button-yourWork" href="/portfolio/arbeiten/entfernen/${element[3]}">
+      <a onclick="return confirmDelete()" class="button-yourWork" href="/portfolio/arbeiten/entfernen/${element[3]}">
         Löschen
       </a>
-    </div>`;
+    </div>
+    <script>
+    function confirmDelete() {
+      return confirm("Are you sure you want to delete this item?");
+    }
+  </script>`;
     }
     //Titel
     workFull += ` <h3>${element[0]}</h3>

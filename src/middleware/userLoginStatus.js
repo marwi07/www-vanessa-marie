@@ -12,8 +12,7 @@ export const checkPortfolioAndProfile = async (ctx) => {
   return variables;
 };
 export const profileDisplayCheck = (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = getUsername(ctx);
   let html = ``;
   if (username) {
     html = ` <a href="/profil">
@@ -28,13 +27,12 @@ export const profileDisplayCheck = (ctx) => {
 };
 
 export const portfolioDisplayCheck = async (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = getUsername(ctx);
   const portfolio = await modelPortfolio.getPortfolioByName(ctx.db, username);
   let html = ``;
   if (username) {
     if (portfolio.length == 0) {
-      html = `   <a href="portfolio/erstellen">Portfolio erstellen</a>`;
+      html = `   <a href="/portfolio/erstellen">Portfolio erstellen</a>`;
     } else {
       html = `  <a href="/portfolio/username/${username}">Mein Portfolio</a>`;
     }
@@ -46,8 +44,7 @@ export const portfolioDisplayCheck = async (ctx) => {
 };
 
 export const TextDisplayCheck = async (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = getUsername(ctx);
   const portfolio = await modelPortfolio.getPortfolioByName(ctx.db, username);
   let html = ``;
   if (username) {
@@ -76,8 +73,7 @@ export const TextDisplayCheck = async (ctx) => {
 };
 
 export const isUserLoggedIn = (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = getUsername(ctx);
   if (!username) {
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
@@ -86,9 +82,28 @@ export const isUserLoggedIn = (ctx) => {
 };
 
 export const getLoggedInUser = (ctx) => {
-  const cookie = ctx.cookies.getCookie(ctx);
-  const username = cookie["username"];
+  const username = getUsername(ctx);
   if (!username) {
     return;
   } else return username;
+};
+
+export const getUsername = (ctx) => {
+  const cookie = ctx.cookies.getCookie(ctx);
+  const username = cookie["username"];
+  return username;
+};
+
+export const checkUserPortfolio = async (ctx) => {
+  const username = checkUser.getLoggedInUser(ctx);
+  const existPortfolio = await modelPortfolio.getPortfolioByName(
+    ctx.db,
+    username
+  );
+
+  if (existPortfolio.length > 0) {
+    ctx.response.status = 303;
+    ctx.response.headers.set("Location", `/portfolio/username/${username}`);
+    return ctx;
+  }
 };

@@ -2,22 +2,19 @@ import * as validateImage from "../middleware/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/portfolioModel.js";
 import * as checkUser from "../middleware/userLoginStatus.js";
+import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
 
 export const renderForm = async (ctx) => {
   ctx = checkUser.isUserLoggedIn(ctx);
+  const username = checkUser.getLoggedInUser(ctx);
+
+  //check ob User schon Portfolio hat
+  ctx = checkUser.checkUserPortfolio(ctx);
+
+  //check ob Errors in URL von Form
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
-
-  let errors = [];
-  if (queryParams.errors) {
-    try {
-      errors = JSON.parse(decodeURIComponent(queryParams.errors));
-    } catch {
-      errors = [];
-    }
-  }
-
-  const username = checkUser.getLoggedInUser(ctx);
+  const errors = getErrorFromURL.getErrorFromURL(queryParams);
 
   const portfolioData = await model.getPortfolioByName(ctx.db, username);
   const thumbnailData = await model.getThumbnailByName(ctx.db, username);
@@ -89,9 +86,8 @@ export const add = async (ctx) => {
       skills: encodeURIComponent(skillsString),
     }).toString();
 
-    ctx.response.status = 302;
+    ctx.response.status = 303;
     ctx.response.headers.set("Location", `/portfolio/erstellen?${queryParams}`);
-    ctx.response.body = "";
     return ctx;
   }
 
@@ -119,10 +115,8 @@ export const add = async (ctx) => {
     tagsString,
     username
   );
-
-  ctx.response.status = 302;
+  ctx.response.status = 303;
   ctx.response.headers.set("Location", `/portfolio/username/${username}`);
-  ctx.response.body = "";
   return ctx;
 };
 
@@ -245,7 +239,7 @@ export const edit = async (ctx) => {
       skills: encodeURIComponent(skillsString),
     }).toString();
 
-    ctx.response.status = 302;
+    ctx.response.status = 303;
     ctx.response.headers.set("Location", `/portfolio/erstellen?${queryParams}`);
     ctx.response.body = "";
     return ctx;
@@ -281,8 +275,7 @@ export const edit = async (ctx) => {
     username
   );
 
-  ctx.response.status = 302;
+  ctx.response.status = 303;
   ctx.response.headers.set("Location", `/portfolio/username/${username}`);
-  ctx.response.body = "";
   return ctx;
 };

@@ -3,6 +3,7 @@ import * as checkUser from "../middleware/userLoginStatus.js";
 import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
 import * as validateEachImageUpload from "../middleware/validateEachImageUpload.js";
 import * as saveWorkEditFile from "../middleware/saveWorkImageFile.js";
+import * as generateErrors from "../middleware/generateErrorsForDisplay.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {
@@ -63,27 +64,8 @@ export const add = async (ctx) => {
   const description = formData.get("description");
 
   //generieren von Error fur TExt
-  const errors = [];
-  if (!title) errors.push("Du musst einen Titel eingeben.");
-  if (!description) errors.push("Du musst eine Beschreibung eingeben.");
-  if (!imageData.error == "") errors.push(imageData.error);
+  generateErrors;
 
-  //Wenn error. url befullen und redirect zum Form
-  if (errors.length > 0) {
-    const queryParams = new URLSearchParams({
-      errors: encodeURIComponent(JSON.stringify(errors)),
-      title: encodeURIComponent(title || ""),
-      description: encodeURIComponent(description || ""),
-    }).toString();
-
-    ctx.response.status = 302;
-    ctx.response.headers.set(
-      "Location",
-      `/portfolio/arbeiten/erstellen?${queryParams}`
-    );
-    ctx.response.body = "";
-    return ctx;
-  }
   //saving text
   workTextId = await model.addWorkInfo(ctx.db, title, description, username);
 

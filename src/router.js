@@ -1,4 +1,5 @@
 import * as portfolioForm from "./controller/portfolioFormController.js";
+import * as error from "./controller/errorController.js";
 import * as portfolio from "./controller/portfolioController.js";
 import * as userContact from "./controller/contactFormController.js";
 import * as profil from "./controller/profileController.js ";
@@ -12,6 +13,7 @@ import * as dokumentation from "./controller/dokumentationConreoller.js";
 import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
+import { serveStaticFile } from "./middleware/staticFiles.js";
 
 export const routes = async (ctx) => {
   //profil
@@ -122,7 +124,7 @@ export const routes = async (ctx) => {
   if (ctx.url.pathname === "/addRegister" && ctx.request.method === "POST") {
     ctx = await register.registerAttempt(ctx);
   }
-  
+
   if (ctx.url.pathname === "/login" && ctx.request.method === "GET") {
     await login.renderLogin(ctx);
   } else if (
@@ -160,11 +162,23 @@ export const routes = async (ctx) => {
     ctx = await about.renderAbout(ctx);
   }
 
-  if (!ctx || !ctx.url || !ctx.url.pathname) {
-    ctx.response.body = await ctx.nunjucks.render("error404.html", {});
-    ctx.response.headers.set("content-type", "text/html");
-    ctx.response.status = 400;
-    return ctx;
+  //static files
+  if (!ctx.response.status) {
+    ctx = await serveStaticFile(ctx);
+  }
+
+  //error
+  if (!ctx.response.body) {
+    if (ctx.response.status === 303 || ctx.response.status === 302) {
+      return ctx;
+    }
+    if (ctx.response.status === 403) {
+      ctx = error.render403Error(ctx);
+    }
+    if (ctx.response.status === 500) {
+      ctx = error.render500Error(ctx);
+    }
+    ctx = error.render404Error(ctx);
   }
 
   return ctx;
