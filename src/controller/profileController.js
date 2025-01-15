@@ -28,7 +28,26 @@ export const renderProfile = async (ctx) => {
                   <dt>Sonstiges:</dt>
                   <dd>${data[0][2]}</dd>
                 </dl>
-            </div>`;
+            </div><div class="button-group-yourWork">
+            <a class="button-yourWork" href="/profil/bearbeiten">
+              Bearbeiten
+            </a>
+
+            <a
+              onclick="return confirmDelete()"
+              class="button-yourWork"
+              href="/profil/entfernen"
+            >
+              Löschen
+            </a>
+          </div>
+          <script>
+            function confirmDelete() {
+              return confirm("Are you sure you want to delete this item?");
+            }
+          </script>
+          
+        </div>`;
   }
   ctx.response.body = await ctx.nunjucks.render("profile.html", {
     contact: msg,

@@ -30,8 +30,20 @@ export const routes = async (ctx) => {
     ctx = await userContact.renderContactForm(ctx);
   }
 
+  if (ctx.url.pathname === "/profil/bearbeiten") {
+    ctx = await userContact.renderContactForm(ctx);
+  }
+
+  if (ctx.url.pathname === "/profil/entfernen") {
+    ctx = await userContact.deleteContactData(ctx);
+  }
+
   if (ctx.url.pathname === "/addContact" && ctx.request.method === "POST") {
     ctx = await userContact.addContactData(ctx);
+  }
+
+  if (ctx.url.pathname === "/editContact" && ctx.request.method === "POST") {
+    ctx = await userContact.editContactData(ctx);
   }
 
   //portfolio Darstellung

@@ -13,7 +13,8 @@ export const renderLogging = async (ctx) => {
     logData = [];
   }
 
-  let logs = [];
+  //generate obejcts with data for each log
+  const logs = [];
   for (const entry of logData) {
     const logEntries = {
       timestamp: entry.timestamp,

@@ -34,8 +34,12 @@ export const renderPortfolio = async (ctx, username) => {
             >
 
             <a class="button-group_portfolio_button" href="/portfolio/entfernen"
-              >Löschen</a
-            >`;
+              onclick="return confirmDelete()">Löschen</a
+            ><script>
+            function confirmDelete() {
+              return confirm("Are you sure you want to delete this item?");
+            }
+          </script>`;
 
   //PortfolioInfo
   const portfolioInfo = await portfolioModel.getPortfolioByName(
