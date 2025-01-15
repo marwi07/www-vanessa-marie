@@ -19,7 +19,24 @@ export const renderIndex = async (ctx) => {
 
 export const generatePortfolios = async (ctx) => {
   let html = "";
-  const portfolioArray = await modelPortfolio.indexText(ctx.db);
+  let tagsMatch = ctx.url.searchParams.get("tags");
+  let portfolioArray = [];
+
+  const portfolioData = await modelPortfolio.indexText(ctx.db);
+  if (tagsMatch != null) {
+    for (const entry of portfolioData) {
+      const tags = entry[5].split(",");
+      for (const tag of tags) {
+        if (tag == tagsMatch) {
+          portfolioArray.push(entry);
+        }
+      }
+    }
+    //tags arte inb string  with otehrs - need to seperate then compare
+    //BREAKS HERE
+  } else {
+    portfolioArray = await modelPortfolio.indexText(ctx.db);
+  }
 
   for (const element of portfolioArray) {
     const thumbnailArray = await modelPortfolio.getThumbnailByName(

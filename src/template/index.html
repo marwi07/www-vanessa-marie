@@ -44,12 +44,29 @@
 
         <!-- Filter  -->
         <div id="myBtnContainer">
-          <button class="btn Filter active">Alles</button>
-          <button class="btn Filter">3D-Animation</button>
-          <button class="btn Filter">Motion Graphics</button>
-          <button class="btn Filter">Softwareentwicklung</button>
-          <button class="btn Filter">2D-Art</button>
-          <button class="btn Filter">Animation</button>
+          <a href="/index"
+            ><button class="{{ allActive | safe}}" class="btn Filter active">
+              Alles
+            </button></a
+          >
+          <a href="/index?tags=3D-Animation">
+            <button class="btn Filter">3D-Animation</button></a
+          >
+          <a href="/index?tags=Motion-Graphics"
+            ><button class="btn Filter">Motion Graphics</button></a
+          >
+          <a href="/index?tags=Softwareentwicklung"
+            ><button class="btn Filter">Softwareentwicklung</button></a
+          >
+          <a href="/index?tags=2D-Art"
+            ><button class="btn Filter">2D-Art</button></a
+          >
+          <a href="/index?tags=Animation"
+            ><button class="btn Filter">Animation</button></a
+          >
+          <a href="/index?tags=Webdesign"
+            ><button class="btn Filter">Webdesign</button></a
+          >
         </div>
 
         <!-- Portfolio linksbündig  -->

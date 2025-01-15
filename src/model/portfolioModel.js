@@ -82,6 +82,14 @@ export const getPortfolioByName = async (db, username) => {
   return query;
 };
 
+export const getPortfolioByTag = async (db, tags) => {
+  const sql = `SELECT * FROM portfolioText WHERE tags == $tags`;
+  const query = await db.query(sql, {
+    $tags: tags,
+  });
+  return query;
+};
+
 //delete
 export const deletePortfolioTextByName = async (db, username) => {
   const sql = `DELETE FROM portfolioText WHERE username = $username`;
