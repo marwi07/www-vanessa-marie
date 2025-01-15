@@ -1,6 +1,6 @@
 import { hash } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 import * as model from "../model/userModel.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderRegister = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);

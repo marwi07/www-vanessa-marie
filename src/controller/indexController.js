@@ -1,5 +1,5 @@
-import * as checkUser from "../middleware/userLoginStatus.js";
-import * as generatePortfolio from "../middleware/generatePortfolioDisplay.js";
+import * as checkUser from "../utility/userLoginStatus.js";
+import * as generatePortfolio from "../utility/generatePortfolioDisplay.js";
 
 export const renderIndex = async (ctx) => {
   //Check if logged in and created profile - displays html accordingly

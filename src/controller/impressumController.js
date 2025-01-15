@@ -1,4 +1,4 @@
-import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderImpressum = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);

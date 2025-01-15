@@ -1,7 +1,7 @@
 import * as userModel from "../model/userModel.js";
 import * as portfolioModel from "../model/portfolioModel.js";
 import * as workModel from "../model/workPortfolioModel.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 
 //TODO MAKE PORTFOLIO FORTH BOTH OWN AND OTHER
 export const renderPortfolio = async (ctx, username) => {

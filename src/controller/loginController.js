@@ -1,6 +1,6 @@
-import * as checkUser from "../middleware/userLoginStatus.js";
-import * as checkLoginErrors from "../middleware/generateErrorsForDisplay.js";
-import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
+import * as checkUser from "../utility/userLoginStatus.js";
+import * as checkLoginErrors from "../utility/generateErrorsForDisplay.js";
+import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 
 export const renderLogin = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);

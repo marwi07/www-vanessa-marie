@@ -1,6 +1,6 @@
 import * as model from "../model/userModel.js";
 import * as cookie from "../cookies.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 export const renderProfile = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
   let msg = `    <a

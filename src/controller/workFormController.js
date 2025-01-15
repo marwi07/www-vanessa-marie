@@ -1,9 +1,9 @@
 import * as model from "../model/workPortfolioModel.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
-import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
-import * as validateEachImageUpload from "../middleware/validateEachImageUpload.js";
-import * as saveWorkEditFile from "../middleware/saveWorkImageFile.js";
-import * as generateErrors from "../middleware/generateErrorsForDisplay.js";
+import * as checkUser from "../utility/userLoginStatus.js";
+import * as getErrorFromURL from "../utility/getErrorFromURL.js";
+import * as validateEachImageUpload from "../utility/validateEachImageUpload.js";
+import * as saveWorkEditFile from "../utility/saveWorkImageFile.js";
+import * as generateErrors from "../utility/generateErrorsForDisplay.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {

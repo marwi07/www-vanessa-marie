@@ -1,4 +1,4 @@
-import * as validateImage from "../middleware/validateImageUpload.js";
+import * as validateImage from "../utility/validateImageUpload.js";
 import * as model from "../model/workPortfolioModel.js";
 
 export const validateEachImageUpload = (formData) => {

@@ -1,8 +1,8 @@
-import * as validateImage from "../middleware/validateImageUpload.js";
+import * as validateImage from "../utility/validateImageUpload.js";
 import * as path from "https://deno.land/std@0.163.0/path/mod.ts";
 import * as model from "../model/portfolioModel.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
-import * as getErrorFromURL from "../middleware/getErrorFromURL.js";
+import * as checkUser from "../utility/userLoginStatus.js";
+import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 
 export const renderForm = async (ctx) => {
   ctx = checkUser.isUserLoggedIn(ctx);

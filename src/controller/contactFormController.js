@@ -1,5 +1,5 @@
 import * as model from "../model/userModel.js";
-import * as checkUser from "../middleware/userLoginStatus.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderContactForm = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
