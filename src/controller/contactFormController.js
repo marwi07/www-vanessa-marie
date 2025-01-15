@@ -2,6 +2,12 @@ import * as model from "../model/userModel.js";
 import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderContactForm = async (ctx) => {
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
   const username = checkUser.getUsername(ctx);
 
@@ -58,7 +64,22 @@ export const editContactData = async (ctx) => {
 };
 
 export const deleteContactData = async (ctx) => {
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
+
   const username = checkUser.getLoggedInUser(ctx);
+
+  const contactData = await model.getInfoByUser(ctx.db, username);
+
+  if (!contactData.length > 0) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
 
   await model.deleteUserInfoByUsername(ctx.db, username);
 

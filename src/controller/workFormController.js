@@ -1,4 +1,5 @@
 import * as model from "../model/workPortfolioModel.js";
+import * as modelPortfolio from "../model/portfolioModel.js";
 import * as checkUser from "../utility/userLoginStatus.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 import * as validateEachImageUpload from "../utility/validateEachImageUpload.js";
@@ -7,6 +8,24 @@ import * as generateErrors from "../utility/generateErrorsForDisplay.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {
+  const username = checkUser.getLoggedInUser(ctx);
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
+
+  const portfolioData = await modelPortfolio.getPortfolioByName(
+    ctx.db,
+    username
+  );
+  if (!portfolioData) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
+
   ctx = checkUser.isUserLoggedIn(ctx);
 
   //Errors, die in url gespeichert wurden werden aufgerufen

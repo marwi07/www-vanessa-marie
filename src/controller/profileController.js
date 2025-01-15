@@ -1,7 +1,15 @@
 import * as model from "../model/userModel.js";
 import * as cookie from "../cookies.js";
 import * as checkUser from "../utility/userLoginStatus.js";
+
 export const renderProfile = async (ctx) => {
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
+
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
   let msg = `    <a
               href="/profil/erstellen"

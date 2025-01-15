@@ -75,10 +75,10 @@ export const TextDisplayCheck = async (ctx) => {
 export const isUserLoggedIn = (ctx) => {
   const username = getUsername(ctx);
   if (!username) {
-    ctx.response.status = 302;
-    ctx.response.headers.set("Location", "/");
-    return ctx;
-  } else return ctx;
+    return false;
+  } else {
+    return true;
+  }
 };
 
 export const getLoggedInUser = (ctx) => {

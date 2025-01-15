@@ -5,7 +5,12 @@ import * as checkUser from "../utility/userLoginStatus.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 
 export const renderForm = async (ctx) => {
-  ctx = checkUser.isUserLoggedIn(ctx);
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
   const username = checkUser.getLoggedInUser(ctx);
 
   //check ob User schon Portfolio hat
