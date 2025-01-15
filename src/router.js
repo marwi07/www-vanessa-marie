@@ -13,6 +13,7 @@ import * as dokumentation from "./controller/dokumentationConreoller.js";
 import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
+import * as logging from "./controller/loggingController.js";
 import { serveStaticFile } from "./middleware/staticFiles.js";
 
 export const routes = async (ctx) => {
@@ -161,12 +162,22 @@ export const routes = async (ctx) => {
   if (ctx.url.pathname === "/ueber-uns") {
     ctx = await about.renderAbout(ctx);
   }
+  //admin
+  if (ctx.url.pathname === "/logs") {
+    const cookie = ctx.cookies.getCookie(ctx);
+    const role = cookie["role"];
+    if (role == "admin") {
+      ctx = await logging.renderLogging(ctx);
+    } else {
+      ctx.response.status = 403;
+      ctx.response.headers.set("Location", "/");
+    }
+  }
 
   //static files
   if (!ctx.response.status) {
     ctx = await serveStaticFile(ctx);
   }
-
   //error
   if (!ctx.response.body) {
     if (ctx.response.status === 303 || ctx.response.status === 302) {
@@ -174,11 +185,14 @@ export const routes = async (ctx) => {
     }
     if (ctx.response.status === 403) {
       ctx = error.render403Error(ctx);
+      return ctx;
     }
     if (ctx.response.status === 500) {
       ctx = error.render500Error(ctx);
+      return ctx;
     }
     ctx = error.render404Error(ctx);
+    return ctx;
   }
 
   return ctx;

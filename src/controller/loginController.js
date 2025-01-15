@@ -1,6 +1,7 @@
 import * as checkUser from "../utility/userLoginStatus.js";
 import * as checkLoginErrors from "../utility/generateErrorsForDisplay.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
+import * as model from "../model/userModel.js";
 
 export const renderLogin = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
@@ -50,7 +51,9 @@ export async function loginAttempt(ctx) {
   }
 
   // Setzen von User Cookie und redirect zu Profil
-  await ctx.cookies.setUserCookie(ctx, username, "role");
+  const role = await model.getRoleByUser(ctx.db, username);
+  console.log(role[0][0]);
+  await ctx.cookies.setUserCookie(ctx, username, role[0][0]);
   ctx.response.headers.set("Location", "/profil");
   ctx.response.status = 302;
   ctx.response.body = "";

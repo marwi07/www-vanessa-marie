@@ -25,7 +25,7 @@ export const getPasswortByUser = async (db, name) => {
 };
 
 export const getRoleByUser = async (db, name) => {
-  const sql = `SELECT role FROM user WHERE username = $name`;
+  const sql = `SELECT userRole FROM user WHERE username = $name`;
   const query = await db.query(sql, { $name: name });
   return query;
 };
