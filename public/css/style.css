@@ -18,6 +18,81 @@ body {
 
 /* _______________________________________________________________*/
 
+/* Portfolio erstellen Site*/
+
+legend{
+  font-size: 52px;
+}
+
+fieldset{
+  display: flex;
+  color: #EAD2AC;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 10%;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+
+textarea.titel{
+  resize: none;
+  width:98%;
+  height: 5vh;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+textarea.beschreibung{
+  resize: none;
+  width:98%;
+  height: 15vh;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+input.skills{
+  resize: none;
+  width:90%;
+  height: 1vh;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+label.skill{
+  margin-bottom: 0px;
+  margin: 0;
+  text-align: left;
+}
+
+button.save-portfolio{
+  display:block;
+  padding:10px 20px;
+  width: 100%;
+  max-width: 300px;
+  background-color:#E6B89C;
+  color:white;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin: 20px auto;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+}
+
+button.save-portfolio:hover{
+  background-color:#ffb36c;
+}
+
+
+/* _______________________________________________________________*/
+
 /* Überschriften*/
 
 h1 {
@@ -29,7 +104,12 @@ h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
   font-size: 60px;
+  text-align: left;
+  align-items: left;
+  justify-content: flex-start;
+  margin-left: 20px;
 }
+
 
 h3{
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -611,8 +691,6 @@ margin-right: 5px;
   background-color: #1e3f55;
   display: flex; 
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 70%; 
   height: auto;
   margin: auto; 
@@ -632,8 +710,8 @@ margin-right: 5px;
   margin-bottom: 5px;
   margin-top: 0;
   padding:0;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content:flex-start;
 }
 
 .PortfolioDetailSite h3{
@@ -1509,8 +1587,8 @@ input[type="checkbox"] {
 /* add Thumbnail */
 .upload-Gridthumbnail {
   width: 100%;
-  height: 700px;
-  max-width: 60%;
+  height: 50vh;
+  max-width: 80%;
   background-color:#EAD2AC;
   display: flex;
   flex-direction: column;
@@ -1529,7 +1607,7 @@ input[type="checkbox"] {
 
 /* add Thumbnail Form Styling */
 .upload-Gridthumbnail form{
-  width: 90%;  
+  width: 100%;  
   height: calc(100% - 150px); 
   margin-top: 0px; 
   margin-bottom: 0px;
@@ -1552,7 +1630,7 @@ input[type="checkbox"] {
 }
 
 .upload-Gridthumbnail form input[type="file"] {
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .upload-Gridthumbnail form .upload-label {
@@ -1560,9 +1638,9 @@ input[type="checkbox"] {
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-  width: 80%; 
+  width: 100%; 
   max-width: 100%;
-  height: 700px;
+  height: 50vh;
   background-color: #E6B89C;
   color: white;
   font-size: 20px;
@@ -1573,7 +1651,7 @@ input[type="checkbox"] {
 
 
 .upload-Gridthumbnail form .upload-label:hover {
-  background-color:#e7b769;
+  background-color:#ffb36c;
 }
 
 
