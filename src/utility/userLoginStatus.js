@@ -95,7 +95,7 @@ export const getUsername = (ctx) => {
 };
 
 export const checkUserPortfolio = async (ctx) => {
-  const username = checkUser.getLoggedInUser(ctx);
+  const username = getLoggedInUser(ctx);
   const existPortfolio = await modelPortfolio.getPortfolioByName(
     ctx.db,
     username
