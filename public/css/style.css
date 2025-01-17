@@ -347,7 +347,6 @@ footer {
 .left-heading{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
-  font-size: 180px;
   position: absolute;
   display: flex;
   flex-direction: column; 
@@ -367,7 +366,7 @@ footer {
 .p_herotext{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   padding: 0;
   margin: 0; 
 }
@@ -378,6 +377,7 @@ footer {
   border: 2px solid;
   border-radius: 8px;
   border-color: #EAD2AC;
+  background-color: #E6B89C;
   font-size: 30px;
   color:white;
   padding:10px 20px;
@@ -717,12 +717,12 @@ margin-right: 5px;
 .PortfolioDetailSite h3{
   display: block;
   width: 90%;
-  font-size:70px;
+  font-size:60px;
   position:relative;
   padding: 0px 20px;
   margin-top:10px;
   margin-right: 0;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-bottom: 5px;
   text-align: left;
   align-items: flex-start;
@@ -741,13 +741,16 @@ margin-right: 5px;
 
 .PortfolioDetailSite p{
   display: block;
-  position: relative;
-  margin-left: 20px;
-  margin-top: 2px;
-  padding: 0;
-  font-size: 21px;
   width: 90%;
+  font-size:21px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:10px;
+  margin-right: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
   text-align: left;
+  align-items: flex-start;
 }
 
 .YourWork-text-section {
@@ -903,11 +906,12 @@ margin-right: 5px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  width: 90%;
+  margin: 0;
+  margin-right: 0px;
+  width: 45%;
   height:auto;
   background-color:#9CAFB7;
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 20px;
 }
 
@@ -917,7 +921,9 @@ margin-right: 5px;
   display: flex; 
   gap: 10px; 
   flex-wrap: wrap;
+  text-align: center; 
   justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 20px 0; 
 }
@@ -925,6 +931,8 @@ margin-right: 5px;
 .skills li {
   width: calc(25% - 20px); /* Nimmt 25% der Breite, minus den Abstand */
   text-align: center; 
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   color: white; 
   
@@ -934,15 +942,11 @@ margin-right: 5px;
 
 /* Kontaktdaten Box */
 .skills-and-contact {
-  display: flex; 
-  justify-content: center;
-  align-items:center;
-  width: 90%;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  gap:50px;
-  flex-wrap: wrap;
-  object-fit: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Objekte oben ausrichten */
+  flex-wrap: wrap; /* Sicherstellen, dass bei kleinen Bildschirmen die Boxen umbrechen */
+  gap: 20px;
 }
 
 
@@ -951,13 +955,13 @@ margin-right: 5px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px; 
-  width: 100%; 
+  padding: 20px; 
+  width: 45%; 
   height:auto;
   box-sizing: border-box;
   flex: 1;
   background-color:#9CAFB7;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .contact {
@@ -965,7 +969,7 @@ margin-right: 5px;
   list-style-type: none;
   font-size: 24px;
   padding: 20px 30px;
-  margin-top: 0px;
+  margin-top: 10px;
   display: table-column; 
 }
 
@@ -985,7 +989,6 @@ margin-right: 5px;
 .contact dd {
   text-align: left;
   color: white;
-  margin: 0;
   background-color:#9CAFB7;
   border-radius: 20px;
   border-radius: 8px;
@@ -997,18 +1000,30 @@ margin-right: 5px;
 
 /* Überschriften für Skills und Kontaktdaten */
 .skills_heading h3, .contact_heading h3 {
-  flex: none; 
-  font-size: 60px;
-  margin-bottom: 5px; 
-  margin-top: 20px;
-  text-align: center;
+  font-size: 24px; 
+  margin-bottom: 10px;
+  margin-top: 0; 
+  text-align: left; 
+  padding-left: 20px; 
+  color: white;
 }
 
 /* Container für die Inhalte */
 .contact_heading, .skills_heading {
-  flex: 1; 
-  max-width: 100%; 
-  text-align: center; 
+  font-size: 24px; /* Schriftgröße anpassen */
+  margin: 0; /* Keine zusätzlichen Ränder */
+  padding-left: 10px; /* Leichter Abstand links */
+  color: white; /* Passend zur Farbgebung */
+  text-align: left; 
+}
+
+.contact-wrapper,
+.skills-wrapper {
+  display: flex;
+  flex-direction: column; /* Überschrift und Box vertikal anordnen */
+  align-items: flex-start; /* Links ausrichten */
+  width: 45%; /* Gleiche Breite wie die Boxen */
+  gap: 10px; /* Abstand zwischen Überschrift und Box */
 }
 
 /* _______________*/
@@ -1584,7 +1599,7 @@ input[type="checkbox"] {
 
 /* _______________________________________________________________*/
 
-/* add Thumbnail */
+/* add Thumbnail 
 .upload-Gridthumbnail {
   width: 100%;
   height: 50vh;
@@ -1602,17 +1617,18 @@ input[type="checkbox"] {
 .upload-Gridthumbnail i {
   font-size: 120px;
   text-align: center;
-}
+}*/
 
 
 /* add Thumbnail Form Styling */
-.upload-Gridthumbnail form{
-  width: 100%;  
+.upload-Gridthumbnail{
+  width: 90%;  
+  max-width: 500px;
   height: calc(100% - 150px); 
   margin-top: 0px; 
   margin-bottom: 0px;
   margin: 0;
-  border-radius: 10px; 
+  border-radius: 8px; 
   padding: 20px; 
   display: flex;
   border:none;
@@ -1621,26 +1637,27 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-.upload-Gridthumbnail form label{
-  margin-bottom: 10px;
+.upload-Gridthumbnail label{
+  margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
   font-size: 24px;
   color: white;
 }
 
-.upload-Gridthumbnail form input[type="file"] {
+.upload-Gridthumbnail input[type="file"] {
   font-size: 21px;
+  opacity: 0;
 }
 
-.upload-Gridthumbnail form .upload-label {
+.upload-Gridthumbnail .upload-label {
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: center;
   width: 100%; 
-  max-width: 100%;
-  height: 50vh;
+  max-width: 500px;
+  height: auto;
   background-color: #E6B89C;
   color: white;
   font-size: 20px;
@@ -1650,12 +1667,12 @@ input[type="checkbox"] {
 }
 
 
-.upload-Gridthumbnail form .upload-label:hover {
+.upload-Gridthumbnail .upload-label:hover {
   background-color:#ffb36c;
 }
 
 
-.upload-Gridthumbnail form .upload-label .profil-icon {
+.upload-Gridthumbnail .upload-label .profil-icon {
   font-size: 40px;
   margin-bottom: 10px;
 }

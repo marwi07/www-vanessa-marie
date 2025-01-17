@@ -38,21 +38,24 @@
 
           <div id="tags-container" class="tag-container">{{ tags | safe}}</div>
 
-          <h3><i>Beschreibung</i></h3>
+          <h3>Beschreibung</h3>
 
           <p id="Portfolio-Beschreibung">{{ description | safe}}</p>
 
-          <h3><i>About You</i></h3>
+          <h3>About You</h3>
 
           <p id="AboutMeText">{{ about | safe}}</p>
 
           <!-- Skills und Kontaktdaten -->
           <div class="skills-and-contact">
-            <!-- Kontaktdaten -->
-            <div class="contact_heading">
-              <h3>Kontaktdaten</h3>
+            <!-- Kontaktdaten-->
+            <div class="contact-wrapper">
+            <div id="Container Kontaktinfos" class="container_contact">
 
-              <div id="Container Kontaktinfos" class="container_contact">
+            <div class="contact_heading">
+              <h3 >Kontaktdaten</h3> 
+            </div>
+              
                 <dl id="Kontaktinfos" class="contact">
                   <dt>Name:</dt>
                   {{ name | safe}}
@@ -69,10 +72,13 @@
             </div>
 
             <!-- Skills -->
-            <div class="skills_heading">
-              <h3>Skills</h3>
+            <div class="skills-wrapper">
+            <div id="Skills Container" class="container_skills">
 
-              <div id="Skills Container" class="container_skills">
+            <div class="skills_heading">
+              <h3 >Skills</h3>
+            </div>
+              
                 <ul id="skills" class="skills">
                   {{ skills | safe}}
                 </ul>
@@ -81,7 +87,7 @@
           </div>
           <!-- Your Work-->
 
-          <h3><i>Your Work</i></h3>
+          <h3>Your Work</h3>
           {{ editWork | safe}} {{ work | safe}}
           <!-- Portfolio - Bildergalerie -->
         </div>
