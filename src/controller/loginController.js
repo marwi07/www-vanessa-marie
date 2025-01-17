@@ -6,7 +6,12 @@ import * as model from "../model/userModel.js";
 export const renderLogin = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
 
-  ctx = checkUser.isUserLoggedIn(ctx);
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/profil");
+    return ctx;
+  }
 
   //Errors, die in url gespeichert wurden werden aufgerufen
   const url = new URL(ctx.request.url);
