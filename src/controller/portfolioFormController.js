@@ -13,9 +13,6 @@ export const renderForm = async (ctx) => {
   }
   const username = checkUser.getLoggedInUser(ctx);
 
-  //check ob User schon Portfolio hat
-  ctx = checkUser.checkUserPortfolio(ctx);
-
   //check ob Errors in URL von Form
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
@@ -52,8 +49,6 @@ export const renderForm = async (ctx) => {
 };
 
 export const add = async (ctx) => {
-  ctx = checkUser.isUserLoggedIn(ctx);
-
   const formData = await ctx.request.formData();
 
   const thumbnail = formData.get("thumbnail");
@@ -143,8 +138,14 @@ export const deletePortfolio = async (ctx) => {
 };
 
 export const renderEditPortfolio = async (ctx) => {
-  ctx = checkUser.isUserLoggedIn(ctx);
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (!userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/");
+    return ctx;
+  }
   const username = checkUser.getLoggedInUser(ctx);
+
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
 
@@ -201,8 +202,6 @@ export const renderEditPortfolio = async (ctx) => {
 };
 
 export const edit = async (ctx) => {
-  ctx = checkUser.isUserLoggedIn(ctx);
-
   const formData = await ctx.request.formData();
 
   const thumbnail = formData.get("thumbnail");
