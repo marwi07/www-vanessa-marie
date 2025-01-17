@@ -5,7 +5,13 @@ import * as checkUser from "../utility/userLoginStatus.js";
 export const renderRegister = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
 
-  ctx = checkUser.isUserLoggedIn(ctx);
+  const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  if (userLoggedIn) {
+    ctx.response.status = 302;
+    ctx.response.headers.set("Location", "/profil");
+    return ctx;
+  }
+
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
 
