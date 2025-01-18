@@ -901,18 +901,18 @@ margin-right: 5px;
 
 /* Skills Box Detail Site*/
 .container_skills {
+  width: 70%; 
+  height: auto;
+  padding: 20px;
+  background-color: #9CAFB7;
+  border-radius: 8px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  margin: 0;
-  margin-right: 0px;
-  width: 45%;
-  height:auto;
-  background-color:#9CAFB7;
-  border-radius: 8px;
-  padding: 20px;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 .skills {
@@ -943,25 +943,27 @@ margin-right: 5px;
 /* Kontaktdaten Box */
 .skills-and-contact {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Objekte oben ausrichten */
-  flex-wrap: wrap; /* Sicherstellen, dass bei kleinen Bildschirmen die Boxen umbrechen */
+  justify-content: center;
+  align-items: center; 
   gap: 20px;
+  width: 100%;
+  margin: 0;
 }
 
 
 .container_contact {
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  background-color: #9CAFB7;
+  border-radius: 8px;
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   text-align: center;
-  padding: 20px; 
-  width: 45%; 
-  height:auto;
-  box-sizing: border-box;
-  flex: 1;
-  background-color:#9CAFB7;
-  border-radius: 8px;
 }
 
 .contact {
@@ -1000,30 +1002,32 @@ margin-right: 5px;
 
 /* Überschriften für Skills und Kontaktdaten */
 .skills_heading h3, .contact_heading h3 {
-  font-size: 24px; 
+  font-size: 60px; 
   margin-bottom: 10px;
-  margin-top: 0; 
+  margin-top: 30px; 
   text-align: left; 
   padding-left: 20px; 
   color: white;
+  width: 100%;
 }
 
 /* Container für die Inhalte */
 .contact_heading, .skills_heading {
-  font-size: 24px; /* Schriftgröße anpassen */
-  margin: 0; /* Keine zusätzlichen Ränder */
-  padding-left: 10px; /* Leichter Abstand links */
-  color: white; /* Passend zur Farbgebung */
+  font-size: 60px; 
+  margin: 0; 
+  padding-left: 10px; 
+  color: white; 
   text-align: left; 
+  margin-top: 30px;
 }
 
 .contact-wrapper,
 .skills-wrapper {
   display: flex;
-  flex-direction: column; /* Überschrift und Box vertikal anordnen */
-  align-items: flex-start; /* Links ausrichten */
-  width: 45%; /* Gleiche Breite wie die Boxen */
-  gap: 10px; /* Abstand zwischen Überschrift und Box */
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+  gap: 10px; 
 }
 
 /* _______________*/
