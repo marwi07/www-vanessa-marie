@@ -27,7 +27,8 @@ export const renderPortfolio = async (ctx, username) => {
             alt="ThumbnailPortfolio"
           />`;
 
-  const editMsgPortfolio = `  <a
+  const editMsgPortfolio = `  
+  <a
               class="button-group_portfolio_button"
               href="/portfolio/bearbeiten"
               >Bearbeiten</a
@@ -35,7 +36,9 @@ export const renderPortfolio = async (ctx, username) => {
 
             <a class="button-group_portfolio_button" href="/portfolio/entfernen"
               onclick="return confirmDelete()">Löschen</a
-            ><script>
+            > 
+            
+            <script>
             function confirmDelete() {
               return confirm("Are you sure you want to delete this item?");
             }
@@ -65,7 +68,15 @@ export const renderPortfolio = async (ctx, username) => {
   const workData = await workModel.getWorkTextByName(ctx.db, username);
   let workFull = ``;
   for (const element of workData) {
-    //if it's users profile
+    
+    //Titel
+    workFull += ` <h3>${element[0]}</h3>
+  
+            <div class="YourWork-text-section">
+              <div class="row" id="gallery">`;
+
+    
+    //if it's users profile - Löschen/Bearbeiten Button
     if (username == element[2]) {
       workFull += `<div class="button-group-yourWork">
       <a class="button-yourWork" href="/portfolio/arbeiten/bearbeiten/${element[3]}">
@@ -82,11 +93,6 @@ export const renderPortfolio = async (ctx, username) => {
     }
   </script>`;
     }
-    //Titel
-    workFull += ` <h3>${element[0]}</h3>
-  
-            <div class="YourWork-text-section">
-              <div class="row" id="gallery">`;
 
     //Bilder
     const workImages = await workModel.getImagesById(ctx.db, element[3]);
@@ -106,11 +112,13 @@ export const renderPortfolio = async (ctx, username) => {
 
   //If User
   const workEdit = `
+   <div class="upload-container-yourwork">
       <div class="upload-box-YourWork">
 
       <a href="/portfolio/arbeiten/erstellen" class="upload-box-YourWork">Füge deinem Portfolio deine Arbeiten hinzu.
       <i  class="material-icons">add_circle</i>
       </a>
+    </div>
     </div> `;
 
   variables = {

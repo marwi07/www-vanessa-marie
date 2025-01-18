@@ -758,6 +758,9 @@ margin-right: 5px;
   flex-direction: row;
   top: 60px;
   align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  gap: 10px;
 }
 
 .PortfolioDetailSite_image-section {
@@ -778,30 +781,41 @@ margin-right: 5px;
 /* _______________*/
 
 /* Your Work Upload Box/Bilder */
+
+.upload-container.yourwork {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px;
+  padding: 20px; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+}
+
 .upload-box-YourWork {
-  position:relative;
-  width: 50%;
-  height: 40vh;
-  background-color: #EAD2AC;
-  display: flex;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #E6B89C;
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  margin: 0;
-  margin-top: 20px;
+  margin-left: 30px;
 }
 
 .upload-box-YourWork a {
-  font-size: 28px;
+  font-size: 18px;
   text-align: center;
   color: white;
   text-decoration: none;
 }
 
 .upload-box-YourWork i {
-  font-size: 120px;
+  font-size: 32px;
   text-align: center;
 }
 
@@ -846,9 +860,9 @@ margin-right: 5px;
 .button-group_portfolio_button {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   width: auto;
-  min-width: 120px;
+  min-width: 350px;
   padding: 10px 0px;
-  font-size: 14pt;
+  font-size: 16pt;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -874,16 +888,16 @@ margin-right: 5px;
   width: 100%;
   margin-top: 15px;
   margin-bottom: 20px;
+  margin-left: 30px;
   gap:20px;
 }
 
 .button-yourWork {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   width: auto;
-  font-weight: bold;
-  min-width: 120px;
+  min-width: 150px;
   padding: 10px 0px;
-  font-size: 14pt;
+  font-size: 16pt;
   border: none;
   border-radius: 8px;
   cursor: pointer;
