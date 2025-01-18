@@ -8,13 +8,14 @@ import * as generateErrors from "../utility/generateErrorsForDisplay.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {
-  const username = checkUser.getLoggedInUser(ctx);
   const userLoggedIn = checkUser.isUserLoggedIn(ctx);
   if (!userLoggedIn) {
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
     return ctx;
   }
+
+  const username = checkUser.getLoggedInUser(ctx);
 
   const portfolioData = await modelPortfolio.getPortfolioByName(
     ctx.db,
@@ -25,8 +26,6 @@ export const renderForm = async (ctx, id) => {
     ctx.response.headers.set("Location", "/");
     return ctx;
   }
-
-  ctx = checkUser.isUserLoggedIn(ctx);
 
   //Errors, die in url gespeichert wurden werden aufgerufen
   const url = new URL(ctx.request.url);
@@ -103,9 +102,10 @@ export const add = async (ctx) => {
 export const deleteWork = async (ctx, id) => {
   const _images = await model.deleteImagesByTextId(ctx.db, id);
   const _text = await model.deleteWorkTextById(ctx.db, id);
+  const username = checkUser.getLoggedInUser(ctx);
 
   ctx.response.status = 302;
-  ctx.response.headers.set("Location", `/`);
+  ctx.response.headers.set("Location", `/portfolio/username/${username}`);
   ctx.response.body = "";
   return ctx;
 };
