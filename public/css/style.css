@@ -729,14 +729,17 @@ margin-right: 5px;
 }
 
 .PortfolioDetailSite h4{
-  font-size:90px;
-  position:absolute;
-  padding: 10px 20px;
-  top: 200px;
-  left: 40px;
-  margin: 0;
-  padding:0;
+  display: block;
+  width: 90%;
+  font-size:48px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:10px;
+  margin-right: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
   text-align: left;
+  align-items: flex-start;
 }
 
 .PortfolioDetailSite p{

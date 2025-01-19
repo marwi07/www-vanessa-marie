@@ -171,7 +171,7 @@ export const routes = async (ctx) => {
     ctx = await contact.renderContact(ctx);
   }
 
-  if (ctx.url.pathname === "/ueber-uns") {
+  if (ctx.url.pathname === "/einversteandniserklearungen") {
     ctx = await about.renderAbout(ctx);
   }
   //admin

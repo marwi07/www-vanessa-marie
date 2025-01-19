@@ -2,7 +2,7 @@ import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderAbout = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
-  ctx.response.body = await ctx.nunjucks.render("ueber-uns.html", {
+  ctx.response.body = await ctx.nunjucks.render("einversteandniserklearungen.html", {
     account: variables.account,
     portfolioMenu: variables.portfolio,
   });
