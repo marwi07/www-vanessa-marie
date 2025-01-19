@@ -15,7 +15,6 @@
   <body>
     <div class="wrapper">
       <main>
-
         <!-- Menü/Nav  -->
         <ul class="nav-links" id="responsive">
           {{ account | safe}}
@@ -29,117 +28,97 @@
           </div>
         </ul>
 
-
         <!-- Upload Your Work -->
         <div class="PortfolioDetailSite">
+          <h3 class="h3_erstellePortfolio">
+            Füge deinem Portfolio deine Arbeiten hinzu!
+          </h3>
+          <div class="header-container"></div>
 
-        <h3 class="h3_erstellePortfolio">Füge deinem Portfolio deine Arbeiten hinzu!</h3>
-        <div class="header-container"></div>
-
-        <!-- Upload Titel-->
-        <form
-          id="titelForm"
-          {{
-          action
-          |
-          safe
-          }}
-          method="post"
-          enctype="multipart/form-data"
-        >
-          {% if errors %}
-          <div class="errors">
-            <ul>
-              {% for error in errors %}
-              <li>{{ error }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-          <fieldset>
-            <legend>Your Work : Titel</legend>
-            <textarea
-              class="titel"
-              maxlength="1000"
-              id="title"
-              name="title"
-              placeholder="Gib einen Titel für dein Portfolio ein."
-            >
+          <!-- Upload Titel-->
+          <form
+            id="titelForm"
+            {{
+            action
+            |
+            safe
+            }}
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% if errors %}
+            <div class="errors">
+              <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            <fieldset>
+              <legend>Your Work : Titel</legend>
+              <textarea
+                class="titel"
+                maxlength="1000"
+                id="title"
+                name="title"
+                placeholder="Gib einen Titel für dein Portfolio ein."
+              >
 {{ data.title | safe }}</textarea
-            >
-          </fieldset>
+              >
+            </fieldset>
 
-
-          <!-- Upload Beschreibung-->
-          <fieldset>
-            <legend>Your Work : Beschreibung</legend>
-            <textarea
-            class="beschreibung"
-              maxlength="1000"
-              id="description"
-              name="description"
-              placeholder="Gib eine Beschreibung für dein Portfolio ein."
-            >
+            <!-- Upload Beschreibung-->
+            <fieldset>
+              <legend>Your Work : Beschreibung</legend>
+              <textarea
+                class="beschreibung"
+                maxlength="1000"
+                id="description"
+                name="description"
+                placeholder="Gib eine Beschreibung für dein Portfolio ein."
+              >
 {{ data.description | safe }}</textarea
-            >
-          </fieldset>
-
-
-          <!-- Upload Bilder-->
-          <fieldset>
-
-            <legend>Your Work : Bilder</legend>
-
-            {% set workImages = data.workImage if data.workImage is defined else
-            [] %} {% for i in range(1, 4) %}
-
-            <div 
-            class="thumbnail-container">
-
-              {% if workImages is iterable and workImages[i - 1] %}
-
-              <img 
-              src="{{ workImages[i - 1] }}" 
-              alt="Uploaded image {{ i }}" />
-
-              {% else %} {% endif %}
-            </div>
-
-            <div 
-            class="column">
-
-              <label 
-              for="image{{ i }}" 
-              class="upload-label">
-                Klicke hier um ein Bild hochzuladen.
-
-                <i 
-                class="material-icons profil-icon">
-                add_a_photo</i>
-
-                <input
-                  type="file"
-                  id="image{{ i }}"
-                  name="image{{ i }}"
-                  accept="image/*"
+              >
+            </fieldset>
+            <div class="YourWork-text-section">
+              <!-- Upload Bilder-->
+              {% set workImages = data.workImage if data.workImage is defined
+              else [] %} {% for i in range(1, 4) %}
+              <div class="image-section">
+                {% if workImages is iterable and workImages[i - 1] %}
+                <img
+                  src="{{ workImages[i - 1] }}"
+                  alt="Uploaded image {{ i }}"
                 />
-
-              </label>
+                {% endif %}
+              </div>
+              {% endfor %}
             </div>
+            <fieldset>
+              <legend>Your Work: Bilder</legend>
+              {% for i in range(1, 4) %}
+              <div class="column">
+                <label for="image{{ i }}" class="upload-label">
+                  Klicke hier um ein Bild hochzuladen.
 
-            {% endfor %}
-          </fieldset>
+                  <i class="material-icons profil-icon"> add_a_photo</i>
 
+                  <input
+                    type="file"
+                    id="image{{ i }}"
+                    name="image{{ i }}"
+                    accept="image/*"
+                  />
+                </label>
+              </div>
+              {% endfor %}
+            </fieldset>
 
-          <!-- Save Button -->
-          <button 
-          type="submit" 
-          class="save-portfolio">
-          Speichern</button>
-
+            <!-- Save Button -->
+            <button type="submit" class="save-portfolio">Speichern</button>
           </form>
         </div>
-
       </main>
 
       <!-- Footer -->
@@ -149,7 +128,9 @@
           <li><a href="dokumentation">Dokumentation</a></li>
           <li><a href="projekttagebuch">Projekttagebuch</a></li>
           <li><a href="kollophon">Kollophon</a></li>
-          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
+          <li>
+            <a href="einversteandniserklearungen">Einverständniserklärungen</a>
+          </li>
         </ul>
       </footer>
     </div>

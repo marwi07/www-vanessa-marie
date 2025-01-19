@@ -3,7 +3,7 @@ import * as modelPortfolio from "../model/portfolioModel.js";
 import * as checkUser from "../utility/userLoginStatus.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 import * as validateEachImageUpload from "../utility/validateEachImageUpload.js";
-import * as saveWorkEditFile from "../utility/saveWorkImageFile.js";
+import * as saveImage from "../utility/saveImage.js";
 import * as generateErrors from "../utility/generateErrorsForDisplay.js";
 
 let workTextId;
@@ -89,7 +89,7 @@ export const add = async (ctx) => {
 
   //saving images
   for (const file of imageData.images) {
-    const filename = await saveWorkEditFile.saveWorkEditFile(file);
+    const filename = await saveImage.saveImage(file);
     await model.addWorkImage(ctx.db, filename, file, username, workTextId);
   }
 
@@ -153,7 +153,7 @@ export const edit = async (ctx) => {
   );
   //saving file
   for (const file of imageData.images) {
-    const filename = await saveWorkEditFile.saveWorkEditFile(file);
+    const filename = await saveImage.saveImage(file);
     await model.addWorkImage(ctx.db, filename, file, username, workTextId);
   }
 

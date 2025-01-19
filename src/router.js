@@ -70,7 +70,7 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/portfolio/bearbeiten") {
-    ctx = await portfolioForm.renderEditPortfolio(ctx);
+    ctx = await portfolioForm.renderForm(ctx);
   }
 
   if (ctx.url.pathname === "/edit" && ctx.request.method === "POST") {
