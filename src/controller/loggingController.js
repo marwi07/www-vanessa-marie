@@ -2,6 +2,7 @@ import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderLogging = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
+  const logs = checkUser.footerAdminLink(ctx);
 
   // Read and parse the log data from JSON file
   const logDataText = await Deno.readTextFile("./logs/access_log.json");
@@ -14,7 +15,7 @@ export const renderLogging = async (ctx) => {
   }
 
   //generate obejcts with data for each log
-  const logs = [];
+  const log = [];
   for (const entry of logData) {
     const logEntries = {
       timestamp: entry.timestamp,
@@ -22,13 +23,14 @@ export const renderLogging = async (ctx) => {
       action: entry.method,
       ip: entry.clientIP,
     };
-    logs.push(logEntries);
+    log.push(logEntries);
   }
 
   ctx.response.body = await ctx.nunjucks.render("logs.html", {
     account: variables.account,
     portfolioMenu: variables.portfolio,
-    logs: logs,
+    logsData: log,
+    logs,
   });
 
   ctx.response.headers.set("content-type", "text/html");

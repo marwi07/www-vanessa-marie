@@ -51,12 +51,9 @@
             <!-- Kontaktdaten-->
             <div class="contact-wrapper">
               <div class="contact_heading">
-                <h3 >Kontaktdaten</h3> 
+                <h3>Kontaktdaten</h3>
               </div>
-            <div id="Container Kontaktinfos" class="container_contact">
-
-         
-              
+              <div id="Container Kontaktinfos" class="container_contact">
                 <dl id="Kontaktinfos" class="contact">
                   <dt>Name:</dt>
                   {{ name | safe}}
@@ -75,12 +72,9 @@
             <!-- Skills -->
             <div class="skills-wrapper">
               <div class="skills_heading">
-                <h3 >Skills</h3>
+                <h3>Skills</h3>
               </div>
-            <div id="Skills Container" class="container_skills">
-
-            
-              
+              <div id="Skills Container" class="container_skills">
                 <ul id="skills" class="skills">
                   {{ skills | safe}}
                 </ul>
@@ -88,23 +82,23 @@
             </div>
           </div>
 
-          
           <!-- Your Work-->
-          <h3>Your Work</h3>
+          <h3>Arbeiten</h3>
           {{ editWork | safe}} {{ work | safe}}
-         
         </div>
-        
       </main>
 
       <!-- Footer -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="dokumentation">Dokumentation</a></li>
-          <li><a href="projekttagebuch">Projekttagebuch</a></li>
-          <li><a href="kollophon">Kollophon</a></li>
-          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
+          {{ logs | safe}}
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/projekttagebuch">Projekttagebuch</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+          <li>
+            <a href="/einversteandniserklearungen">Einverständniserklärungen</a>
+          </li>
         </ul>
       </footer>
     </div>
