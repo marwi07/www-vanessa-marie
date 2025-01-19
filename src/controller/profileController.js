@@ -4,6 +4,7 @@ import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderProfile = async (ctx) => {
   const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  const logs = checkUser.footerAdminLink(ctx);
   if (!userLoggedIn) {
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
@@ -59,6 +60,7 @@ export const renderProfile = async (ctx) => {
   }
   ctx.response.body = await ctx.nunjucks.render("profile.html", {
     contact: msg,
+    logs,
     account: variables.account,
     portfolioMenu: variables.portfolio,
   });

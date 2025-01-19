@@ -4,7 +4,7 @@ import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderRegister = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
-
+  const logs = checkUser.footerAdminLink(ctx);
   const userLoggedIn = checkUser.isUserLoggedIn(ctx);
   if (userLoggedIn) {
     ctx.response.status = 302;
@@ -34,6 +34,7 @@ export const renderRegister = async (ctx) => {
     portfolioMenu: variables.portfolio,
     errors: errors,
     data,
+    logs,
   });
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;

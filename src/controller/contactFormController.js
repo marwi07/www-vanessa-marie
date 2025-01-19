@@ -9,6 +9,7 @@ export const renderContactForm = async (ctx) => {
     return ctx;
   }
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
+  const logs = checkUser.footerAdminLink(ctx);
   const username = checkUser.getUsername(ctx);
 
   const userdata = await model.getInfoByUser(ctx.db, username);
@@ -32,6 +33,7 @@ export const renderContactForm = async (ctx) => {
     account: variables.account,
     portfolioMenu: variables.portfolio,
     data,
+    logs,
     actionMsg: actionMsg,
   });
   ctx.response.headers.set("content-type", "text/html");

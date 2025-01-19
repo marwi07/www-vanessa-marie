@@ -9,6 +9,7 @@ import * as generateErrors from "../utility/generateErrorsForDisplay.js";
 let workTextId;
 export const renderForm = async (ctx, id) => {
   const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  const logs = checkUser.footerAdminLink(ctx);
   if (!userLoggedIn) {
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
@@ -63,6 +64,7 @@ export const renderForm = async (ctx, id) => {
 
   ctx.response.body = await ctx.nunjucks.render("WorkErstellen.html", {
     errors,
+    logs,
     data,
     action: actionForm,
     account: variables.account,

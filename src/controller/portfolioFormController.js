@@ -6,6 +6,7 @@ import * as saveImage from "../utility/saveImage.js";
 
 export const renderForm = async (ctx) => {
   const userLoggedIn = checkUser.isUserLoggedIn(ctx);
+  const logs = checkUser.footerAdminLink(ctx);
   if (!userLoggedIn) {
     ctx.response.status = 302;
     ctx.response.headers.set("Location", "/");
@@ -52,6 +53,7 @@ export const renderForm = async (ctx) => {
   ctx.response.body = await ctx.nunjucks.render("PortfolioErstellen.html", {
     errors,
     data,
+    logs,
     action: actionForm,
     account: variables.account,
     portfolioMenu: variables.portfolio,

@@ -1,6 +1,7 @@
 import * as portfolioDisplay from "../utility/generatePortfolioDisplay.js";
 
 export const renderPortfolio = async (ctx, username) => {
+  const logs = checkUser.footerAdminLink(ctx);
   const variables = await portfolioDisplay.generateDetailPortfolios(
     ctx,
     username
@@ -8,7 +9,8 @@ export const renderPortfolio = async (ctx, username) => {
 
   ctx.response.body = await ctx.nunjucks.render(
     "userPortfolio.html",
-    variables
+    variables,
+    logs
   );
   ctx.response.headers.set("content-type", "text/html");
   ctx.response.status = 200;

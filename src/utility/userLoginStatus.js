@@ -107,3 +107,13 @@ export const checkUserPortfolio = async (ctx) => {
     return ctx;
   }
 };
+
+export const footerAdminLink = (ctx) => {
+  const cookie = ctx.cookies.getCookie(ctx);
+  const role = cookie["role"];
+  if (role == "admin") {
+    const footerLogs = `<li><a href="/logs">Logs</a></li>`;
+    return footerLogs;
+  }
+  return;
+};

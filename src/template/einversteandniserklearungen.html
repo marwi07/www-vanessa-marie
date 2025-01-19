@@ -27,29 +27,27 @@
             </a>
           </div>
         </ul>
-    
 
-      <div class="FooterSites">
+        <div class="FooterSites">
+          <h3>Einverständniserklärungen</h3>
 
-        <h3>Einverständniserklärungen</h3>
-        
+          <a href="">Einverständniserklärung - Vanessa Bolls</a>
 
-        <a href="">Einverständniserklärung - Vanessa Bolls</a>
+          <a href="">Einverständniserklärung - Marie Wittke</a>
+        </div>
+      </main>
 
-        <a href="">Einverständniserklärung - Marie Wittke</a>
-
-     
-    </div>
-    </main>
-
-       <!-- Footer -->
-       <footer>
+      <!-- Footer -->
+      <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="dokumentation">Dokumentation</a></li>
-          <li><a href="projekttagebuch">Projekttagebuch</a></li>
-          <li><a href="kollophon">Kollophon</a></li>
-          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
+          {{ logs | safe}}
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/projekttagebuch">Projekttagebuch</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+          <li>
+            <a href="/einversteandniserklearungen">Einverständniserklärungen</a>
+          </li>
         </ul>
       </footer>
     </div>

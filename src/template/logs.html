@@ -10,21 +10,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-    </style>
   </head>
 
   <body>
@@ -42,7 +27,7 @@
             </a>
           </div>
         </ul>
-
+        <h3>Logs</h3>
         <!-- Logs Table -->
         <table>
           <thead>
@@ -54,7 +39,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for log in logs %}
+            {% for log in logsData %}
             <tr>
               <td>{{ log.timestamp }}</td>
               <td>{{ log.user }}</td>
@@ -66,17 +51,19 @@
         </table>
       </main>
 
-      
-    <!-- Footer -->
-    <footer>
-      <ul class="nav-linksFooter">
-        <h5>More On This Site</h5>
-        <li><a href="dokumentation">Dokumentation</a></li>
-        <li><a href="projekttagebuch">Projekttagebuch</a></li>
-        <li><a href="kollophon">Kollophon</a></li>
-        <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
-      </ul>
-    </footer>
+      <!-- Footer -->
+      <footer>
+        <ul class="nav-linksFooter">
+          <h5>More On This Site</h5>
+          {{ logs | safe}}
+          <li><a href="/dokumentation">Dokumentation</a></li>
+          <li><a href="/projekttagebuch">Projekttagebuch</a></li>
+          <li><a href="/kollophon">Kollophon</a></li>
+          <li>
+            <a href="/einversteandniserklearungen">Einverständniserklärungen</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   </body>
 </html>
