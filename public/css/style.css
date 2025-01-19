@@ -756,6 +756,34 @@ margin-right: 5px;
   align-items: flex-start;
 }
 
+.PortfolioDetailSite a{
+  display: block;
+  width: 90%;
+  font-size:21px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:50px;
+  margin-right: 0;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  text-align: left;
+  color: white;
+  align-items: flex-start;
+}
+
+.PortfolioDetailSite li{
+  width: 90%;
+  font-size:21px;
+  position:relative;
+  padding: 0px 20px;
+  margin-top:10px;
+  margin-right: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  align-items: flex-start;
+}
+
 .YourWork-text-section {
   display: flex;
   flex-direction: row;
