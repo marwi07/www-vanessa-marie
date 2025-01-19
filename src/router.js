@@ -7,9 +7,10 @@ import * as index from "./controller/indexController.js";
 import * as login from "./controller/loginController.js";
 import * as register from "./controller/registerController.js";
 import * as contact from "./controller/contactController.js";
-import * as about from "./controller/aboutController.js";
+import * as tagebuch from "./controller/tagebuchController.js";
 import * as datenschutz from "./controller/datenschutzController.js";
 import * as dokumentation from "./controller/dokumentationConreoller.js";
+import * as erklaerung from "./controller/einversteandniserklearungController.js";
 import * as impressum from "./controller/impressumController.js";
 import * as kollophon from "./controller/kollophenController.js";
 import * as workForm from "./controller/workFormController.js";
@@ -172,7 +173,10 @@ export const routes = async (ctx) => {
   }
 
   if (ctx.url.pathname === "/einversteandniserklearungen") {
-    ctx = await about.renderAbout(ctx);
+    ctx = await erklaerung.renderErklaerung(ctx);
+  }
+  if (ctx.url.pathname === "/projekttagebuch") {
+    ctx = await tagebuch.renderTagebuch(ctx);
   }
   //admin
   if (ctx.url.pathname === "/logs") {
