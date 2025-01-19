@@ -14,7 +14,7 @@ export const renderProfile = async (ctx) => {
   let msg = `    <a
               href="/profil/erstellen"
               type="button"
-              class="button-group_login"
+              class="button-addcontact"
               >Kontaktdaten hinzufügen</a
             >`;
 
