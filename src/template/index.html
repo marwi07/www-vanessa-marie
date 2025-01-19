@@ -29,6 +29,9 @@
         </ul>
 
         <!-- Landing Page Pic  -->
+
+        <div class="PortfolioDetailSite"> 
+
         <div class="container_LandingPage">
           <img
             class="container_LandingPage-img"
@@ -38,7 +41,10 @@
 
           <!-- Überschrift  -->
           <div class="left-heading">
-            PortfolioCraft {{ homepageText | safe}}
+            <h1>PortfolioCraft</h1> 
+       
+            {{ homepageText | safe}}
+         
           </div>
         </div>
 
@@ -67,6 +73,8 @@
 
         <!-- Portfolio linksbündig  -->
         {{ portfolios | safe}}
+
+      </div>
       </main>
 
       <!-- Footer -->
@@ -74,12 +82,10 @@
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="ueber-uns">Über uns</a></li>
-          <li><a href="kontakt">Kontakt</a></li>
-          <li><a href="impressum">Impressum</a></li>
-          <li><a href="datenschutz">Datenschutz</a></li>
           <li><a href="dokumentation">Dokumentation</a></li>
+          <li><a href="projekttagebuch">Projekttagebuch</a></li>
           <li><a href="kollophon">Kollophon</a></li>
+          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
         </ul>
       </footer>
     </div>

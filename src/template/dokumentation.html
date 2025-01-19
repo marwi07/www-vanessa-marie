@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ueber Uns</title>
+    <title>Dokumentation</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
@@ -15,37 +15,154 @@
   <body>
     <div class="wrapper">
       <main>
-        <!-- Menü/Nav  -->
-        <ul class="nav-links" id="responsive">
-          {{ account | safe}}
 
-          <div class="nav-items">
-            <a href="/index" class="active">Home</a>
-            {{ portfolioMenu | safe}}
-            <a href="javascript:void(0);" class="icon" id="burgermenutest">
-              <i class="material-icons" style="font-size: 40px">reorder</i>
-            </a>
-          </div>
-        </ul>
-      </main>
-      <p>Marie Wittke (mawi7835, 710428), Vanessa Bolls (vabo,)</p>
-      <h3>Dokumentation: PortfolioCraft</h3>
+           <!-- Menü/Nav  -->
+           <ul class="nav-links" id="responsive">
+            {{ account | safe}}
+  
+            <div class="nav-items">
+              <a href="/index" class="active">Home</a>
+              {{ portfolioMenu | safe}}
+              <a href="javascript:void(0);" class="icon" id="burgermenutest">
+                <i class="material-icons" style="font-size: 40px">reorder</i>
+              </a>
+            </div>
+          </ul>
 
-      <p></p>
+        
+        <!-- Doku Abschnitt  -->
 
+    <div class="PortfolioDetailSite">
+
+      <p>Marie Wittke (mawi7835, 710428), Vanessa Bolls (vabo2339,710632)</p>
+      <h3>Dokumentation : PortfolioCraft</h3>
+
+      <p>
+        PortfolioCraft ist eine Plattform, die es ihren Nutzern ermöglicht, kostenlos Portfolios in festen Templates zu erstellen. 
+        Gerichtet ist die Seite dabei primär an Studenten, Auszubildende und Freischaffende in kreativen Berufen, die Arbeitsproben bei z.B. einer Bewerbung benötigen. 
+        So soll sie das Bewerben bei Unternehmen vereinfachen und das Sammeln von Inspiration sowie den Austausch mit anderen Usern ermöglichen. 
+        Nutzer haben die Möglichkeit, mit ihren eigenen Profilen ein Portfolio zu erstellen und diesem mehrere Arbeitsproben hinzuzufügen. 
+        Auch können sie die Homepage dazu nutzen, die Portfolios anderer User gezielt nach verschiedenen Tags zu filtern und so genau das zu finden, was sie interessiert. 
+        Daneben können sie ihrem Profil auch Informationen hinzufügen, die auf ihrem Portfolio angezeigt werden. 
+        </p>
+
+      <h4>Inhalte</h4>
+      <p>
+        Inhalte sind dabei grundsätzlich in Text- und Bildform.  Texte sind dabei beispielsweise Portfolio Informationen, wie Beschreibung, Tags und Skills oder Profilinformationen, wie Name und Telefonnummer. 
+        Bilder werden für Portfolio Thumbnails und Arbeitsproben Fotos genutzt. Alle diese Daten können von den Usern selbst verfasst, gespeichert und hochgeladen werden. Für die Erstellung dieser Daten werden Formulare genutzt. 
+        Diese Forms werden serverseitig validiert, um fehlerhafte Eingaben zu verhindern oder z.B. das Uploaden zu großen Dateien. 
+        Durch die gewählten Tags, die die Website vorgibt und gegebenenfalls erweitert werden können, findet die Filterfunktion auf der Homepage der Website statt. Ohne Filter werden sie nach Eintrag in die Datenbank sortiert. 
+        Die dargestellten Einträge stellen dabei die Übersichtsseite der Portfolios dar. Sie enthalten eine Beschreibung, den Namen des Users und das Thumbnail.   
+        Nach Auswählen eines Portfolios landet man auf der Detailseite des Portfolios. Wo alle Einträge des Users geordnet angezeigt werden. Auch findet man dort alle erstellten Arbeitsproben mit Titel, Beschreibung und bis zu drei Bildern.  
+        Die Daten für das jeweilige Portfolio werden über eine Datenbank geladen und dann angezeigt mit der Hilfe von Nunjucks. In der Datenbank sind z.B. Portfolio Informationen nach Text und Bild getrennt. 
+        PortfolioText beinhaltet so die Tags, Skills, den About Text des Users, eine Beschreibung des Portfolios und seinen Username als Schlüssel. PortfolioImage beinhaltet Namen, Größe, Speicherpfad, und ebenfalls den Username als Schlüssel.  
+        Anders ist der Aufbau der Arbeitsproben in der Datenbank, da ein Portfolio mehrere Arbeitsproben besitzen kann. Deshalb werden neben den genannten Informationen IDs vergeben.  
+        Auch hier sind Bilder der Arbeit und Texte getrennt, weshalb ein Fremdschlüssel verwendet wird, um ein Portfoliotext mit mehreren Bildern zu verknüpfen. Daneben verfügt jedes Bild auch über eine eigene ID. 
+        Arbeitsproben sind über den Username mit dem jeweiligen Portfolio verbunden.  
+      </p>
+
+      <h4>Aufbau</h4>
+      <p>
+        Allgemeine Inhalte findet man grundsätzlich über ihren Namen. So ist Datenschutz über /datenschutz zu erreichen und das Kollophen über /kollophen. Für die Anzeige von erstellten Portfolios nutzen wir /portfolio/username/{username}. 
+        Wobei “{username}” für den jeweiligen Nutzer steht, der das Portfolio erstellt hat. Bearbeiten der Portfolios findet über /portfolio/bearbeiten statt und das Entfernen über /portfolio/entfernen. 
+        Auch beim Erstellen, entfernen und bearbeiten von den Profildaten wird ein gleiches Schema genutzt. Daneben existiert ebenfalls /profil/logout.  
+        Weiter wird genauso zum Erstellen von Arbeitsproben /portfolio/arbeiten/erstellen genutzt. Das Bearbeiten unterscheidet sich dabei, dass ebenfalls die IDs der jeweiligen Arbeit in der URL angezeigt werden. 
+        Eine klare URL-Struktur war für den User wichtig, da es eine bessere Navigation ermöglicht. 
+        Das Filtern auf der Homepage und die Fehlerübermittlung der Forms findet über Query-Parameter statt.  
+        Jede der Endpunkte verfügt über einen eigenen Controller, der die Seite mit Hilfe von Nunjucks rendert und erzeugt, gegebenenfalls Inhalte dynamisch einfügt und Daten speichert oder Abrufe.  
+        Dieses System erleichtert Wartung und Fehlerbehebungen. 
+        Daneben existieren Helferskripte, die im utility Ordner liegen, welche Doppelungen zwischen den Skripten der Controller vermeiden sollen. 
+        Auch befinden sich dort Skripte staticFiles.js und validateImageUpload.js, die wir aus der Vorlesung entnommen haben.   
+        Weiter gibt es auch eine Adminroute, welche sich mit /logs aufrufen lässt. Innerhalb ihr sind Logging-Einträge innerhalb einer Tabellenform. 
+      </p>
+
+
+      <h4>Sicherheit</h4>
+      <p>
+        Angreifer könnten Zugriff auf Daten durch Cross-Site-Scripting oder SQL-Injektionen erhalten. Gegen SQL-Injektionen schützen wir uns den Einsatz von Platzhaltern. 
+        Auch schützen wir unsere Endpunkte mit z.B. Funktionen, die überprüfen, ob Nutzer bereits einen Eintrag in Datenbank gemacht haben bei Portfolioerstellung. 
+        Daneben werden Adminrouten mit Hilfe von einer Überprüfung der Rolle und mit Fehlercode 403 geschützt.  
+        Alle Benutzerdaten, die in die Webseite eingefügt werden, werden vor der Anzeige mit Hilfe der Nunjucks-Template-Engine kodiert.  
+      </p>
+
+
+      <h4>Nutzung von JS im Frontend </h4>
+      <p>
+        Wir nutzen Java Script im Frontend bloß für die Bestätigung beim Löschen von Inhalten, um sicherzustellen, dass auch Nutzer jede Funktion der Website auch ohne Java Script nutzen können. 
+        Alle essentiellen Funktionen der Website sind auch ohne JavaScript nutzbar, wie etwa das Ausfüllen von Formularen und die Navigation durch die Seiten.  
+      </p>
+
+      <h4>Welche externen Komponenten werden verwendet? Warum werden sie verwendet?</h4>
+      <p>
+        Externe Komponenten welche wir verwendet haben, sind zum einen Google Fonts Icons aus der Google Fonts Icon Bibliothek. 
+        Diese Bibliothek ermöglicht es uns, bestimmte Icons und Schriftarten unserer Wahl direkt aus der Google Fonts API zu integrieren und so unsere Benutzeroberfläche zu verschönern, ohne manuell Icons oder Fonts zu implementieren.
+      </p>
+
+      <p>
+        Am allerwichtigsten ist jedoch das Deno HTTP-Modul, welches uns Funktionen für die Erstellung von HTTP Servern bereitstellt und uns somit die Implementierung von Webservern zur Bearbeitung von HTTP-Anfragen ermöglicht. 
+        Ohne diese externe Komponente würde bei uns gar nichts funktionieren.
+      </p>
+
+     
+      <p>
+        Dann verwenden wir noch die SQLite Bibliothek, welche es uns erlaubt, auf SQLite Datenbanken zuzugreifen und diese zu manipulieren und uns die Nutzung einer dateibasierten und persistenten Datenbank zu ermöglichen. 
+        Wir benötigen diese externe Komponente, da wir alle Dateiuploads auf Datenbanken speichern und von dort auch wieder auf diese zugreifen und sie anzeigen. 
+      </p>
+     
+      <p>
+        Nunjucks verwenden wir, um das serverseitige Rendering von Templates zu ermöglichen und die Trennung von Logik und Darstellung von unseren HTML Seiten zu erleichtern. 
+      </p>
       
+      <p>
+        Das Deno Cookie-Modul welches wir verwenden, ist ein standard Deno-Modul, unterstützt uns aber beim Setzen, Lesen und Verarbeiten unserer Cookies und ermöglich die Verwaltung von Sitzungs- und Benutzerinformationen, 
+        was bei uns essentiell ist, da bestimmte Funktionen auf unserer Website dann nutzbar sind, wenn man eingeloggt ist.
+      </p>
+     
+
+      <p>
+        Wir verwenden außerdem "Ensure Files" aus der Deno Standard Bibliothek, was überprüft, ob eine Datei existiert oder eine Datei bei Bedarf erstellt wird. 
+        Das hilft bei der sicheren Erstellung und Verwaltung von Dateien, z. B. für Log-Dateien oder Uploads. Wenn also ein Nutzer ein Bild hochlädt, wird durch diese Komponente sichergestellt, dass das Verzeichnis, worin die Datei gespeichert werden soll, existiert. 
+        Wenn nicht, wird es automatisch erstellt.
+      </p>
+
+      <p>
+        Das Deno-Path-Modul bietet plattformübergreifende Funktionen zur Handhabung von Dateipfaden und reduziert dadurch Fehler bei der manuellen Verarbeitung von Pfaden und erleichtert die Arbeit mit Dateisystemen.
+      </p>
+
+      <p>
+        Das Content Type Modul ermöglicht das Abrufen des MIME-Typs basierend auf der Dateiendung und dient zur Validierung von Dateitypen für z.B. Uploads. 
+        Ähnlich wie die Media-Types,die Dateitypen durch MIME-Typen erkennen und validieren und dadurch den Upload von nicht unterstützen oder potentiell gefährlichen Dateitypen verhindern. 
+        Grob gesagt nutzen wir diese Komponenten also, um nicht gewollte Dateiuploads zu verhindern.
+      </p>
+
+      <p>
+        Das Bcrypt Modul übernimmt für uns das sichere Hashing und das Überprüfen von Passwörtern, was den Schutz von Benutzer Passwörtern und die Sicherheit bei der Authentifizierung verbessert.
+      </p>
+
+      <p>
+        Die Verwendung externer Komponenten erhöht also die Sicherheit, Zuverlässigkeit und Effizienz der Anwendung. Besonders bei sicherheitskritischen Prozessen (z. B. Passwort-Hashing) und bei der Handhabung von Dateien (z. B. Dateitypen und Pfaden) 
+        sind bewährte Bibliotheken essentiell, damit alles reibungslos abläuft.
+      </p>
+
+      <h4>Probleme</h4>
+      <p>
+        Ursprünglich wurde ein Multi-Step-Formular verwendet, was sich als zu kompliziert und nutzerunfreundlich erweist. Deshalb stiegen wir auf ein simpleres Prinzip um mit einer Form, welches sich auf einer Seite befindet. 
+        Auch hatten wir Schwierigkeiten beim Aufbau der Datenbank und dem Arbeiten mit Fremdschlüsseln beim Füllen der Datenbank. 
+        Bei Inhalten, bei denen unser Wissen an die Grenzen stieß, zogen wir oft Wikis und Forms zur Rate, sowie Folien der Vorlesung.  
+      </p>
+
+
+      </div>
+    </main>
 
       <!-- Footer -->
-
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="ueber-uns">Über uns</a></li>
-          <li><a href="kontakt">Kontakt</a></li>
-          <li><a href="impressum">Impressum</a></li>
-          <li><a href="datenschutz">Datenschutz</a></li>
           <li><a href="dokumentation">Dokumentation</a></li>
+          <li><a href="projekttagebuch">Projekttagebuch</a></li>
           <li><a href="kollophon">Kollophon</a></li>
+          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
         </ul>
       </footer>
     </div>

@@ -15,6 +15,7 @@
   <body>
     <div class="wrapper">
       <main>
+
         <!-- Menü/Nav  -->
         <ul class="nav-links" id="responsive">
           {{ account | safe}}
@@ -28,10 +29,14 @@
           </div>
         </ul>
 
-        <!-- Upload box -->
-        <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
+
+        <!-- Upload Your Work -->
+        <div class="PortfolioDetailSite">
+
+        <h3 class="h3_erstellePortfolio">Füge deinem Portfolio deine Arbeiten hinzu!</h3>
         <div class="header-container"></div>
 
+        <!-- Upload Titel-->
         <form
           id="titelForm"
           {{
@@ -52,8 +57,9 @@
           </div>
           {% endif %}
           <fieldset>
-            <legend>Portfolio Titel</legend>
+            <legend>Your Work : Titel</legend>
             <textarea
+              class="titel"
               maxlength="1000"
               id="title"
               name="title"
@@ -63,9 +69,12 @@
             >
           </fieldset>
 
+
+          <!-- Upload Beschreibung-->
           <fieldset>
-            <legend>Portfolio Beschreibung</legend>
+            <legend>Your Work : Beschreibung</legend>
             <textarea
+            class="beschreibung"
               maxlength="1000"
               id="description"
               name="description"
@@ -75,43 +84,72 @@
             >
           </fieldset>
 
+
+          <!-- Upload Bilder-->
           <fieldset>
-            <legend>Thumbnail</legend>
+
+            <legend>Your Work : Bilder</legend>
+
             {% set workImages = data.workImage if data.workImage is defined else
             [] %} {% for i in range(1, 4) %}
-            <div class="thumbnail-container">
+
+            <div 
+            class="thumbnail-container">
+
               {% if workImages is iterable and workImages[i - 1] %}
-              <img src="{{ workImages[i - 1] }}" alt="Uploaded image {{ i }}" />
+
+              <img 
+              src="{{ workImages[i - 1] }}" 
+              alt="Uploaded image {{ i }}" />
+
               {% else %} {% endif %}
             </div>
-            <div class="column">
-              <label for="image{{ i }}" class="upload-label">
+
+            <div 
+            class="column">
+
+              <label 
+              for="image{{ i }}" 
+              class="upload-label">
                 Klicke hier um ein Bild hochzuladen.
-                <i class="material-icons profil-icon">add_a_photo</i>
+
+                <i 
+                class="material-icons profil-icon">
+                add_a_photo</i>
+
                 <input
                   type="file"
                   id="image{{ i }}"
                   name="image{{ i }}"
                   accept="image/*"
                 />
+
               </label>
             </div>
+
             {% endfor %}
           </fieldset>
 
-          <button type="submit" class="button-save-aboutyou">Speichern</button>
-        </form>
+
+          <!-- Save Button -->
+          <button 
+          type="submit" 
+          class="save-portfolio">
+          Speichern</button>
+
+          </form>
+        </div>
+
       </main>
 
+      <!-- Footer -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="/ueber-uns">Über uns</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
-          <li><a href="/impressum">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutz</a></li>
-          <li><a href="/dokumentation">Dokumentation</a></li>
-          <li><a href="/kollophon">Kollophon</a></li>
+          <li><a href="dokumentation">Dokumentation</a></li>
+          <li><a href="projekttagebuch">Projekttagebuch</a></li>
+          <li><a href="kollophon">Kollophon</a></li>
+          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
         </ul>
       </footer>
     </div>

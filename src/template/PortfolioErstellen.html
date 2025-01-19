@@ -15,24 +15,26 @@
   <body>
     <div class="wrapper">
       <main>
+
         <!-- Menü/Nav  -->
         <ul class="nav-links" id="responsive">
-          {{ account | safe }}
+          {{ account | safe}}
 
-          <li>
+          <div class="nav-items">
             <a href="/index" class="active">Home</a>
-          </li>
-          {{ portfolioMenu | safe }}
-          <li>
+            {{ portfolioMenu | safe}}
             <a href="javascript:void(0);" class="icon" id="burgermenutest">
               <i class="material-icons" style="font-size: 40px">reorder</i>
             </a>
-          </li>
+          </div>
         </ul>
 
-        <!-- Upload box -->
-        <h3 class="h3_erstellePortfolio">Erstelle dein Portfolio!</h3>
-        <div class="header-container"></div>
+
+        <!-- Upload -->
+
+        <div class="PortfolioDetailSite">
+
+        <h2>Erstelle dein Portfolio!</h2>
 
         <form
           id="titelForm"
@@ -55,7 +57,8 @@
           {% endif %}
           <fieldset>
             <legend>Portfolio Titel</legend>
-            <textarea
+            <textarea 
+              class="titel"
               maxlength="1000"
               id="title"
               name="title"
@@ -68,6 +71,7 @@
           <fieldset>
             <legend>Portfolio Beschreibung</legend>
             <textarea
+            class="beschreibung"
               maxlength="1000"
               id="description"
               name="description"
@@ -80,6 +84,7 @@
           <fieldset>
             <legend>Über Dich</legend>
             <textarea
+            class="beschreibung"
               maxlength="1000"
               id="about"
               name="about"
@@ -95,8 +100,9 @@
             <div class="skills">
               {% for i in range(1, 9) %}
               <div class="skills-item">
-                <label for="skill{{ i }}">Skill {{ i }}:</label>
+                <label class="skill" for="skill{{ i }}">Skill {{ i }}:</label>
                 <input
+                class="skills"
                   maxlength="30"
                   type="text"
                   id="skill{{ i }}"
@@ -152,7 +158,7 @@
           <fieldset>
             <legend>Thumbnail</legend>
             {% if data.thumbnail %}
-            <div class="thumbnail-container">
+            <div class="upload-Gridthumbnail">
               <img src="{{ data.thumbnail }}" alt="Thumbnail" />
             </div>
             {% endif %}
@@ -168,20 +174,22 @@
               />
             </label>
           </fieldset>
-
-          <button type="submit" class="button-save-aboutyou">Speichern</button>
+        
+          <button type="submit" class="save-portfolio">Speichern</button>
         </form>
+
+      </div>
       </main>
 
+
+    <!-- Footer -->
       <footer>
         <ul class="nav-linksFooter">
           <h5>More On This Site</h5>
-          <li><a href="/ueber-uns">Über uns</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
-          <li><a href="/impressum">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutz</a></li>
-          <li><a href="/dokumentation">Dokumentation</a></li>
-          <li><a href="/kollophon">Kollophon</a></li>
+          <li><a href="dokumentation">Dokumentation</a></li>
+          <li><a href="projekttagebuch">Projekttagebuch</a></li>
+          <li><a href="kollophon">Kollophon</a></li>
+          <li><a href="einversteandniserklearungen">Einverständniserklärungen</a></li>
         </ul>
       </footer>
     </div>
