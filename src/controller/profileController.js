@@ -23,8 +23,8 @@ export const renderProfile = async (ctx) => {
 
   const data = await model.getInfoByUser(ctx.db, username);
   if (data.length > 0) {
-    msg = ` <div id="Container Kontaktinfos" class="container_contact">
-                <dl id="Kontaktinfos" class="contact">
+    msg = ` <div id="Container Kontaktinfos" class="container_contact_profil">
+                <dl id="Kontaktinfos" class="contact-profil">
                   <dt>Name:</dt>
                   <dd>${data[0][5]}</dd>
                   <dt>Email:</dt>
@@ -36,14 +36,14 @@ export const renderProfile = async (ctx) => {
                   <dt>Sonstiges:</dt>
                   <dd>${data[0][2]}</dd>
                 </dl>
-            </div><div class="button-group-yourWork">
-            <a class="button-yourWork" href="/profil/bearbeiten">
+            </div><div class="button-group-profil">
+            <a class="button-profil" href="/profil/bearbeiten">
               Bearbeiten
             </a>
 
             <a
               onclick="return confirmDelete()"
-              class="button-yourWork"
+              class="button-profil"
               href="/profil/entfernen"
             >
               Löschen
