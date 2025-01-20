@@ -78,13 +78,12 @@ export const renderForm = async (ctx, id) => {
 export const add = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
-  const imageData = await validateEachImageUpload.validateEachImageEditUpload(
-    ctx,
-    formData,
-    workTextId
+
+  const imageData = await validateEachImageUpload.validateEachImageUpload(
+    formData
   );
 
-  //generieren von Error fur TExt
+  // Generate errors for text
   const data = validateWorkForm.getWorkFormData(formData);
   const errors = validateWorkForm.errorGenerationForWork(data);
   const queryParams = validateWorkForm.checkErrorsPortfolio(errors, data);
@@ -99,7 +98,7 @@ export const add = async (ctx) => {
     return ctx;
   }
 
-  //saving text
+  // Saving text (work entry)
   workTextId = await model.addWorkInfo(
     ctx.db,
     data.title,
@@ -107,10 +106,12 @@ export const add = async (ctx) => {
     username
   );
 
-  //saving images
-  for (const file of imageData.images) {
-    const filename = await saveImage.saveImage(file);
-    await model.addWorkImage(ctx.db, filename, file, username, workTextId);
+  // Saving images for the new work entry
+  if (imageData.images && imageData.images.length > 0) {
+    for (const file of imageData.images) {
+      const filename = await saveImage.saveImage(file);
+      await model.addWorkImage(ctx.db, filename, file, username, workTextId);
+    }
   }
 
   ctx.response.status = 302;
@@ -134,12 +135,14 @@ export const edit = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
 
-  //error check
+  // Error check for image uploads
   const imageData = await validateEachImageUpload.validateEachImageEditUpload(
     ctx,
     formData,
     workTextId
   );
+
+  // Getting form data and checking errors
   const data = validateWorkForm.getWorkFormData(formData);
   const errors = validateWorkForm.errorGenerationForWork(data, imageData);
   if (!imageData.error == "") errors.push(imageData.error);
@@ -155,7 +158,7 @@ export const edit = async (ctx) => {
     return ctx;
   }
 
-  //saving text
+  // Saving text (updating the existing work entry)
   const _result = await model.updateWorkTextById(
     ctx.db,
     workTextId,
@@ -163,10 +166,12 @@ export const edit = async (ctx) => {
     data.description
   );
 
-  //saving file
-  for (const file of imageData.images) {
-    const filename = await saveImage.saveImage(file);
-    await model.addWorkImage(ctx.db, filename, file, username, workTextId);
+  // Saving images for the work entry, making sure not to overwrite the existing ones unless explicitly specified
+  if (imageData.images && imageData.images.length > 0) {
+    for (const file of imageData.images) {
+      const filename = await saveImage.saveImage(file);
+      await model.addWorkImage(ctx.db, filename, file, username, workTextId);
+    }
   }
 
   ctx.response.status = 302;
