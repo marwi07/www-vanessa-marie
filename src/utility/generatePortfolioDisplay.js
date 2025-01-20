@@ -185,7 +185,7 @@ export const generateDetailPortfolios = async (ctx, username) => {
   };
 
   if (userInfo.length !== 0) {
-    variables.name = username;
+    variables.name = userInfo[0][5];
     variables.mail = userInfo[0][0];
     variables.telephone = userInfo[0][1];
     variables.address = userInfo[0][4];
