@@ -1,5 +1,5 @@
 import * as checkUser from "../utility/userLoginStatus.js";
-import * as checkLoginErrors from "../utility/generateErrorsForDisplay.js";
+import * as checkLoginErrors from "../utility/generateErrorsLoginRegister.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 import * as model from "../model/userModel.js";
 
