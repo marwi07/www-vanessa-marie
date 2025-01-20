@@ -58,7 +58,6 @@ export async function loginAttempt(ctx) {
 
   // Setzen von User Cookie und redirect zu Profil
   const role = await model.getRoleByUser(ctx.db, username);
-  console.log(role[0][0]);
   await ctx.cookies.setUserCookie(ctx, username, role[0][0]);
   ctx.response.headers.set("Location", "/profil");
   ctx.response.status = 302;
