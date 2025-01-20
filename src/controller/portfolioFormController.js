@@ -1,7 +1,7 @@
 import * as model from "../model/portfolioModel.js";
 import * as checkUser from "../utility/userLoginStatus.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
-import * as validateForm from "../utility/validateForm.js";
+import * as validateForm from "../utility/validatePortfolioForm.js";
 import * as saveImage from "../utility/saveImage.js";
 
 export const renderForm = async (ctx) => {

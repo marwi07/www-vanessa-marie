@@ -1,5 +1,6 @@
 import { compare } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 import * as model from "../model/userModel.js";
+import { hash } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 
 export async function generateLoginErrors(ctx, password, username) {
   const errors = [];
@@ -22,27 +23,22 @@ export async function generateLoginErrors(ctx, password, username) {
   return errors;
 }
 
-export function generateWorkFormErrors(ctx, title, description, imageError) {
+export async function generateRegisterErrors(ctx, password, username) {
   const errors = [];
-  if (!title) errors.push("Du musst einen Titel eingeben.");
-  if (!description) errors.push("Du musst eine Beschreibung eingeben.");
-  if (!imageError == "") errors.push(imageError.error);
-
-  if (errors.length > 0) {
-    const queryParams = new URLSearchParams({
-      errors: encodeURIComponent(JSON.stringify(errors)),
-      title: encodeURIComponent(title || ""),
-      description: encodeURIComponent(description || ""),
-    }).toString();
-
-    ctx.response.status = 302;
-    ctx.response.headers.set(
-      "Location",
-      `/portfolio/arbeiten/erstellen?${queryParams}`
-    );
-    ctx.response.body = "";
-    return ctx;
+  let hashedPasswort = "";
+  if (!username || !password) {
+    errors.push("Du musst ein Passwort und einen Username angeben.");
   } else {
-    return;
+    const userExists = await model.getUserByName(ctx.db, username);
+    hashedPasswort = await hash(password);
+
+    if (userExists.length > 0) {
+      errors.push("Der User existiert bereits.");
+    }
   }
+  const data = {
+    errors: errors,
+    hashedPasswort: hashedPasswort,
+  };
+  return data;
 }

@@ -1,6 +1,7 @@
-import { hash } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 import * as model from "../model/userModel.js";
+import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 import * as checkUser from "../utility/userLoginStatus.js";
+import * as checkRegisterErrors from "../utility/generateErrorsLoginRegister.js";
 
 export const renderRegister = async (ctx) => {
   const variables = await checkUser.checkPortfolioAndProfile(ctx);
@@ -12,18 +13,10 @@ export const renderRegister = async (ctx) => {
     return ctx;
   }
 
+  //Errors, die in url gespeichert wurden werden aufgerufen
   const url = new URL(ctx.request.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
-
-  let errors = [];
-
-  if (queryParams.errors) {
-    try {
-      errors = JSON.parse(decodeURIComponent(queryParams.errors));
-    } catch {
-      errors = [];
-    }
-  }
+  const errors = getErrorFromURL.getErrorFromURL(queryParams);
 
   const data = {
     username: queryParams.username || "",
@@ -47,20 +40,13 @@ export async function registerAttempt(ctx) {
   const username = formData.get("username");
   const password = formData.get("password");
 
-  const errors = [];
-  let hashedPasswort = "";
-  if (!username || !password) {
-    errors.push("Du musst ein Passwort und einen Username angeben.");
-  } else {
-    const userExists = await model.getUserByName(ctx.db, username);
-    hashedPasswort = await hash(password);
+  const data = await checkRegisterErrors.generateRegisterErrors(
+    ctx,
+    password,
+    username
+  );
 
-    if (userExists.length > 0) {
-      errors.push("Der User existiert bereits.");
-    }
-  }
-
-  if (errors.length > 0) {
+  if (data.errors.length > 0) {
     const queryParams = new URLSearchParams({
       errors: encodeURIComponent(JSON.stringify(errors)),
       username: encodeURIComponent(username || ""),
@@ -72,7 +58,7 @@ export async function registerAttempt(ctx) {
     return ctx;
   }
 
-  await model.addUser(ctx.db, username, hashedPasswort, "user");
+  await model.addUser(ctx.db, username, data.hashedPasswort, "user");
   ctx.response.headers.set("Location", "/login");
   ctx.response.status = 302;
   ctx.response.body = "";

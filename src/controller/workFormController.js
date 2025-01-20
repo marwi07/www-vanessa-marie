@@ -2,9 +2,9 @@ import * as model from "../model/workPortfolioModel.js";
 import * as modelPortfolio from "../model/portfolioModel.js";
 import * as checkUser from "../utility/userLoginStatus.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
-import * as validateEachImageUpload from "../utility/validateEachImageUpload.js";
 import * as saveImage from "../utility/saveImage.js";
-import * as generateErrors from "../utility/generateErrorsForDisplay.js";
+import * as validateWorkForm from "../utility/validateWorkForm.js";
+import * as validateEachImageUpload from "../utility/validateEachImageUpload.js";
 
 let workTextId;
 export const renderForm = async (ctx, id) => {
@@ -78,16 +78,34 @@ export const renderForm = async (ctx, id) => {
 export const add = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
-  //genereiren von Error fur Bilder
-  const imageData = validateEachImageUpload.validateEachImageUpload(formData);
-  const title = formData.get("title");
-  const description = formData.get("description");
+  const imageData = await validateEachImageUpload.validateEachImageEditUpload(
+    ctx,
+    formData,
+    workTextId
+  );
 
   //generieren von Error fur TExt
-  generateErrors;
+  const data = validateWorkForm.getWorkFormData(formData);
+  const errors = validateWorkForm.errorGenerationForWork(data);
+  const queryParams = validateWorkForm.checkErrorsPortfolio(errors, data);
+
+  if (queryParams) {
+    ctx.response.status = 302;
+    ctx.response.headers.set(
+      "Location",
+      `/portfolio/arbeiten/erstellen?${queryParams}`
+    );
+    ctx.response.body = "";
+    return ctx;
+  }
 
   //saving text
-  workTextId = await model.addWorkInfo(ctx.db, title, description, username);
+  workTextId = await model.addWorkInfo(
+    ctx.db,
+    data.title,
+    data.description,
+    username
+  );
 
   //saving images
   for (const file of imageData.images) {
@@ -116,27 +134,18 @@ export const edit = async (ctx) => {
   const formData = await ctx.request.formData();
   const username = checkUser.getLoggedInUser(ctx);
 
+  //error check
   const imageData = await validateEachImageUpload.validateEachImageEditUpload(
     ctx,
     formData,
     workTextId
   );
+  const data = validateWorkForm.getWorkFormData(formData);
+  const errors = validateWorkForm.errorGenerationForWork(data, imageData);
+  if (!imageData.error == "") errors.push(imageData.error);
+  const queryParams = validateWorkForm.checkErrorsPortfolio(errors, data);
 
-  //error check
-  const title = formData.get("title");
-  const description = formData.get("description");
-  const errors = [];
-  if (!title) errors.push("Du musst einen Titel eingeben.");
-  if (!description) errors.push("Du musst eine Beschreibung eingeben.");
-  if (!imageData.errors == "") errors.push(imageData.errors);
-
-  if (errors.length > 0) {
-    const queryParams = new URLSearchParams({
-      errors: encodeURIComponent(JSON.stringify(errors)),
-      title: encodeURIComponent(title || ""),
-      description: encodeURIComponent(description || ""),
-    }).toString();
-
+  if (queryParams) {
     ctx.response.status = 302;
     ctx.response.headers.set(
       "Location",
@@ -150,9 +159,10 @@ export const edit = async (ctx) => {
   const _result = await model.updateWorkTextById(
     ctx.db,
     workTextId,
-    title,
-    description
+    data.title,
+    data.description
   );
+
   //saving file
   for (const file of imageData.images) {
     const filename = await saveImage.saveImage(file);

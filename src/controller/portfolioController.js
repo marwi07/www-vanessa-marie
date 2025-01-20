@@ -1,4 +1,5 @@
 import * as portfolioDisplay from "../utility/generatePortfolioDisplay.js";
+import * as checkUser from "../utility/userLoginStatus.js";
 
 export const renderPortfolio = async (ctx, username) => {
   const logs = checkUser.footerAdminLink(ctx);

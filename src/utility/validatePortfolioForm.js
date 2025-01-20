@@ -1,4 +1,4 @@
-import * as validateImage from "../utility/validateImageUpload.js";
+import * as validateImage from "./validateImageUpload.js";
 
 //PORTFOLIO
 
