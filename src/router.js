@@ -194,6 +194,7 @@ export const routes = async (ctx) => {
   if (!ctx.response.status) {
     ctx = await serveStaticFile(ctx);
   }
+
   //error
   if (!ctx.response.body) {
     if (ctx.response.status === 303 || ctx.response.status === 302) {
