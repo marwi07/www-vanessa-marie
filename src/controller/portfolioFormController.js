@@ -24,14 +24,17 @@ export const renderForm = async (ctx) => {
   const thumbnailData = await model.getThumbnailByName(ctx.db, username);
 
   let data = {
-    title: queryParams.title || "",
-    description: queryParams.description || "",
-    about: queryParams.about || "",
-    tags: queryParams.tags ? queryParams.tags.split("%2C") : [],
-    skills: queryParams.skills ? queryParams.skills.split("%2C") : [],
-    thumbnail: queryParams.title || "",
+    title: decodeURIComponent(queryParams.title || ""),
+    description: decodeURIComponent(queryParams.description || ""),
+    about: decodeURIComponent(queryParams.about || ""),
+    tags: queryParams.tags
+      ? decodeURIComponent(queryParams.tags).split(",")
+      : [],
+    skills: queryParams.skills
+      ? decodeURIComponent(queryParams.skills).split(",")
+      : [],
+    thumbnail: decodeURIComponent(queryParams.thumbnail || ""),
   };
-
   if (Array.isArray(portfolioData) && portfolioData.length > 0) {
     data = {
       title: portfolioData[0][1],

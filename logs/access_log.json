@@ -530,5 +530,684 @@
     "method": "GET",
     "url": "/upload/852d1424-b382-4c3f-808d-7ba4b5c8f913.jpeg",
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:40.492Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/login",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:40.506Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:42.069Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/register",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:42.090Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:44.879Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/addRegister",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:44.953Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/login",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:44.966Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:46.402Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/loginForm",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:46.420Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/profil",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:46.432Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/public/Bilder/LandingPagePic.jpg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:50.446Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/profil/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:52:50.457Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:54:00.193Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/addContact",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:54:00.201Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/profil",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:54:00.213Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/public/Bilder/LandingPagePic.jpg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:54:03.734Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:54:03.749Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:23.403Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/add",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:23.413Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:23.428Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:58.874Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/add",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:58.894Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:58.908Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:55:58.909Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:50.035Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:50.061Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/852d1424-b382-4c3f-808d-7ba4b5c8f913.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:50.071Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:52.928Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:52.941Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:56.249Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/bearbeiten",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:58:56.271Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:59:37.033Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/edit",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:59:37.040Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T12:59:37.059Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:01:56.980Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/bearbeiten",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:01:57.022Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:01:57.026Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:18.027Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/edit",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:18.034Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:18.055Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:44.222Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:44.236Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/37b69d0f-c586-465d-a29b-6962149baaee.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:46.093Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/entfernen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:46.116Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:46.130Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/852d1424-b382-4c3f-808d-7ba4b5c8f913.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:50.459Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:02:50.471Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:05.705Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:08.028Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/index",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:08.044Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/Bilder/LandingPagePic.jpg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:08.047Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/852d1424-b382-4c3f-808d-7ba4b5c8f913.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:09.018Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:09.039Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:15.938Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/add",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:15.948Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:03:15.962Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:04:12.762Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/add",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:04:12.783Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:04:12.795Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/65ebfb01-eeb1-45c3-a1f0-a02fc8512f1e.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:04:18.147Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:04:18.163Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:33.694Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/addWork",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:33.738Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:33.751Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/d8bb73bd-e145-4284-8d29-7cbad111b4e1.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:33.751Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:33.752Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/50223f85-2962-40e1-9337-30a66e4d8d66.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:41.087Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/bearbeiten/17",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:41.103Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:05:41.104Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/50223f85-2962-40e1-9337-30a66e4d8d66.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:03.482Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:03.499Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:03.499Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/56dd8cb0-1b56-44d2-93fa-cffbc154b6b0.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:03.511Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/50223f85-2962-40e1-9337-30a66e4d8d66.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:07.055Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/entfernen/17",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:07.068Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:07.086Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/65ebfb01-eeb1-45c3-a1f0-a02fc8512f1e.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:08.955Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:08.972Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:23.244Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/addWork",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:23.263Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:23.275Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/65ebfb01-eeb1-45c3-a1f0-a02fc8512f1e.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:40.513Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/erstellen",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:06:40.531Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:30.367Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/addWork",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:30.421Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:30.440Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/bae62c4c-c799-426e-8983-64fe92c3fce1.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:30.440Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/65ebfb01-eeb1-45c3-a1f0-a02fc8512f1e.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:39.253Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/arbeiten/bearbeiten/18",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:39.274Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/css/style.css",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:43.634Z",
+    "clientIP": "Unknown",
+    "method": "POST",
+    "url": "/editWork",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:43.664Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/portfolio/username/3dAnimation",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:43.677Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/edbb36fd-1270-438a-b890-097f947d656e.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:43.692Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/bae62c4c-c799-426e-8983-64fe92c3fce1.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:43.705Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/65c55151-13b4-4309-961f-7d767cdfa464.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:54.996Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/index",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:55.011Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/Bilder/LandingPagePic.jpg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2025-01-20T13:07:55.014Z",
+    "clientIP": "Unknown",
+    "method": "GET",
+    "url": "/upload/852d1424-b382-4c3f-808d-7ba4b5c8f913.jpeg",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
   }
 ]
