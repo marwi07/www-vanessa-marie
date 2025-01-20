@@ -1,4 +1,3 @@
-import { hash } from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
 import * as model from "../model/userModel.js";
 import * as getErrorFromURL from "../utility/getErrorFromURL.js";
 import * as checkUser from "../utility/userLoginStatus.js";
