@@ -1491,11 +1491,12 @@ input[type="checkbox"] {
 }
 
 .body_GridContact form label {
-  margin-bottom: 5px;
-  font-size: 18pt;
   width: 100%;
-  text-align: left;
-  margin-left: 330px;
+  max-width: 100%;
+  margin-bottom: 0px;
+  font-size: 24pt;
+  padding: 0px;
+  margin-left: 950px;
 }
 
 /* _______________________________________________________________*/
@@ -1852,8 +1853,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite Heading */
-  .left-heading {
-    font-size: 48px;
+  .left-heading h1{
+    font-size: 18px;
   }
 
   .p_herotext {
@@ -2384,13 +2385,13 @@ input[type="checkbox"] {
 
   /* Formular Styling Kontaktinfo */
   .body_GridContact {
-    max-width: 90%;
-    padding: 10px;
+    max-width: 80%;
+    border-radius: 30px;
   }
 
   .body_GridContact form {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    padding: 15px;
   }
 
   .body_GridContact form input {
@@ -2399,8 +2400,8 @@ input[type="checkbox"] {
   }
 
   .body_GridContact form label {
-    margin-left: 10px;
-    font-size: 16pt;
+    font-size: 20pt;
+    margin-right: 50px;
   }
 
   /* Upload Skills */
@@ -2516,8 +2517,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite Heading */
-  .left-heading {
-    font-size: 60px;
+  .left-heading h1{
+    font-size: 18px;
   }
 
   .p_herotext {
@@ -2584,13 +2585,13 @@ input[type="checkbox"] {
 
   /* Formular Styling Kontaktinfo */
   .body_GridContact {
-    max-width: 90%;
-    padding: 10px;
+    max-width: 80%;
+    border-radius: 30px;
   }
 
   .body_GridContact form {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    padding: 15px;
   }
 
   .body_GridContact form input {
@@ -2599,8 +2600,8 @@ input[type="checkbox"] {
   }
 
   .body_GridContact form label {
-    margin-left: 10px;
-    font-size: 16pt;
+    font-size: 20pt;
+    margin-right: 50px;
   }
 
   .button-group_portfolio {
@@ -2656,8 +2657,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite */
-  .left-heading {
-    font-size: 70px;
+  .left-heading h1{
+    font-size: 32px;
   }
 
   .p_herotext {
@@ -2722,12 +2723,12 @@ input[type="checkbox"] {
   /* Formular Styling Kontaktinfo */
   .body_GridContact {
     max-width: 80%;
-    padding: 10px;
+    border-radius: 30px;
   }
 
   .body_GridContact form {
-    width: 80%;
-    padding: 10px;
+    width: 95%;
+    padding: 15px;
   }
 
   .body_GridContact form input {
@@ -2736,8 +2737,8 @@ input[type="checkbox"] {
   }
 
   .body_GridContact form label {
-    margin-left: 10px;
-    font-size: 16pt;
+    font-size: 20pt;
+    margin-right: 50px;
   }
 
   .button-group_portfolio {
@@ -2799,8 +2800,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite */
-  .left-heading {
-    font-size: 80px;
+  .left-heading h1{
+    font-size: 60px;
   }
 
   .p_herotext {
@@ -2863,12 +2864,12 @@ input[type="checkbox"] {
   /* Formular Styling Kontaktinfo */
   .body_GridContact {
     max-width: 80%;
-    padding: 10px;
+    border-radius: 30px;
   }
 
   .body_GridContact form {
-    width: 80%;
-    padding: 10px;
+    width: 95%;
+    padding: 15px;
   }
 
   .body_GridContact form input {
@@ -2877,8 +2878,8 @@ input[type="checkbox"] {
   }
 
   .body_GridContact form label {
-    margin-left: 10px;
-    font-size: 16pt;
+    font-size: 20pt;
+    margin-right: 50px;
   }
 
   .button-group_portfolio {
@@ -2888,6 +2889,11 @@ input[type="checkbox"] {
   .button-group_portfolio_button {
     width: 12%;
     font-size: 13pt;
+  }
+
+  .left-heading h1 {
+    font-size: 32px;
+    margin: 0;
   }
 }
 
@@ -2934,8 +2940,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite */
-  .left-heading {
-    font-size: 80px;
+  .left-heading h1{
+    font-size: 90px;
   }
 
   .p_herotext {
@@ -3002,6 +3008,26 @@ input[type="checkbox"] {
     width: 20%;
     font-size: 13pt;
   }
+
+  .body_GridContact {
+    max-width: 80%;
+    border-radius: 30px;
+  }
+
+  .body_GridContact form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .body_GridContact form input {
+    font-size: 16pt;
+    padding: 8px;
+  }
+
+  .body_GridContact form label {
+    font-size: 20pt;
+    margin-right: 50px;
+  }
 }
 
 /* Sehr große Bildschirme (ab 1441px) */
@@ -3052,8 +3078,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite */
-  .left-heading {
-    font-size: 100px;
+  .left-heading h1{
+    font-size: 110px;
   }
 
   .p_herotext {
@@ -3137,6 +3163,26 @@ input[type="checkbox"] {
     width: 100%;
     font-size: 13pt;
   }
+
+  .body_GridContact {
+    max-width: 80%;
+    border-radius: 30px;
+  }
+
+  .body_GridContact form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .body_GridContact form input {
+    font-size: 16pt;
+    padding: 8px;
+  }
+
+  .body_GridContact form label {
+    font-size: 20pt;
+    margin-right: 50px;
+  }
 }
 
 /* Extra Large Screens (Wide Displays / Full HD and above) */
@@ -3188,8 +3234,8 @@ input[type="checkbox"] {
   }
 
   /* Startseite */
-  .left-heading {
-    font-size: 90px;
+  .left-heading h1{
+    font-size: 140px;
   }
 
   .p_herotext {
@@ -3292,7 +3338,8 @@ input[type="checkbox"] {
     margin-left: 0px;
     font-size: 16pt;
     width: 100%;
-    margin-right: 110px;
+    margin-right: 0px;
+    margin-left: 80px;
   }
 
   .container_skills {
@@ -3315,6 +3362,38 @@ input[type="checkbox"] {
   }
 }
 
+@media (min-width: 1600px) and (max-width: 1920px) {
+ /* Formular Styling Kontaktinfo */
+ .body_GridContact {
+  max-width: 80%;
+  padding: 10px;
+}
+.body_GridContact {
+  max-width: 80%;
+  border-radius: 30px;
+}
+
+.body_GridContact form {
+  width: 95%;
+  padding: 15px;
+}
+
+.body_GridContact form input {
+  font-size: 16pt;
+  padding: 8px;
+}
+
+.body_GridContact form label {
+  font-size: 20pt;
+  margin-right: 65%;
+}
+
+.left-heading h1 {
+  font-size: 130px;
+  margin: 0;
+}
+}
+
 @media (min-width: 1920px) {
   .h3_erstellePortfolio {
     text-align: left;
@@ -3327,10 +3406,14 @@ input[type="checkbox"] {
     max-width: 80%;
     padding: 10px;
   }
+  .body_GridContact {
+    max-width: 80%;
+    border-radius: 30px;
+  }
 
   .body_GridContact form {
-    width: 80%;
-    padding: 10px;
+    width: 95%;
+    padding: 15px;
   }
 
   .body_GridContact form input {
@@ -3339,8 +3422,8 @@ input[type="checkbox"] {
   }
 
   .body_GridContact form label {
-    margin-left: 200px;
-    font-size: 16pt;
+    font-size: 20pt;
+    margin-right: 520px;
   }
 
   .contact_heading,
@@ -3421,5 +3504,10 @@ input[type="checkbox"] {
     height: auto;
     object-fit: cover;
     border-radius: 8px;
+  }
+
+  .left-heading h1 {
+    font-size: 130px;
+    margin: 0;
   }
 }
