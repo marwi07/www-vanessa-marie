@@ -336,7 +336,7 @@ footer {
 .FooterSites h4 {
   display: block;
   width: 90%;
-  font-size: px;
+  font-size: 48px;
   position: relative;
   padding: 0px 20px;
   margin-top: 10px;
@@ -364,6 +364,19 @@ footer {
 
 .FooterSites li {
   width: 90%;
+  font-size: 21px;
+  position: relative;
+  padding: 0px 20px;
+  margin-top: 10px;
+  margin-right: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.FooterSites p {
+  width: 95%;
   font-size: 21px;
   position: relative;
   padding: 0px 20px;
