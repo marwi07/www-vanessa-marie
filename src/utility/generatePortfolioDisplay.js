@@ -123,7 +123,7 @@ export const generateDetailPortfolios = async (ctx, username) => {
     //Titel
     workFull += ` <h3>${element[0]}</h3>
   
-            <div class="YourWork-text-section">
+            <div class="YourWork-image-section">
               <div class="row" id="gallery">`;
 
     //if it's users profile - Löschen/Bearbeiten Button
@@ -148,7 +148,7 @@ export const generateDetailPortfolios = async (ctx, username) => {
     const workImages = await workModel.getImagesById(ctx.db, element[3]);
 
     for (const image of workImages) {
-      workFull += ` <div class="column">
+      workFull += ` <div class="image-yourwork">
                   <img src="${image[1]}" alt="Bild" />
                 </div>`;
     }

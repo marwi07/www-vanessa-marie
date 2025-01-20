@@ -81,11 +81,15 @@
 {{ data.description | safe }}</textarea
               >
             </fieldset>
-            <div class="YourWork-text-section">
+
+
+            <div class="YourWork-image-section">
+
               <!-- Upload Bilder-->
               {% set workImages = data.workImage if data.workImage is defined
               else [] %} {% for i in range(1, 4) %}
-              <div class="image-section">
+              
+              <div class="image-yourwork">
                 {% if workImages is iterable and workImages[i - 1] %}
                 <img
                   src="{{ workImages[i - 1] }}"
@@ -98,6 +102,7 @@
             <fieldset>
               <legend>Your Work: Bilder</legend>
               {% for i in range(1, 4) %}
+              
               <div class="column">
                 <label for="image{{ i }}" class="upload-label">
                   Klicke hier um ein Bild hochzuladen.
