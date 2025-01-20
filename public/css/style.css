@@ -1693,6 +1693,23 @@ input[type="checkbox"] {
   font-size: 40px;
   margin-bottom: 10px;
 }
+
+.image-section-thumbnail {
+  display: flex;
+  position: relative;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-section-thumbnail img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 /* ______________________________________________________________________ */
 
 /* Mediaqueries */
@@ -2530,9 +2547,35 @@ input[type="checkbox"] {
 
   /* Portfolio Site */
   .Portfolio {
-    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
     padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
   }
+
+  .text-section {
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .image-section {
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
 
   /* Error Site */
   .error_font {
@@ -2638,25 +2681,35 @@ input[type="checkbox"] {
 
   /* Portfolio Site */
   .Portfolio {
-    flex-direction: column; /* Ändert das Layout von horizontal auf vertikal */
-    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
   }
 
   .text-section {
-    max-width: 100%; /* Vergrößert die Textbreite */
-    margin-left: 0; /* Zentriert die Textbox */
-    margin-top: 15px;
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
   }
 
   .image-section {
-    margin-right: 0;
-    margin-bottom: 15px;
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
   }
 
   .image-section img {
-    width: 100%; /* Bild passt sich der Bildschirmbreite an */
-    height: auto; /* Verhindert Verzerrung */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
   }
+
 
   .upload-aboutYou {
     height: 600px;
@@ -2771,9 +2824,35 @@ input[type="checkbox"] {
 
   /* Portfolio Site */
   .Portfolio {
-    flex-direction: row;
-    padding: 40px;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
   }
+
+  .text-section {
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .image-section {
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
 
   /* Footer */
   footer {
@@ -2880,8 +2959,33 @@ input[type="checkbox"] {
 
   /* Portfolio Site */
   .Portfolio {
-    flex-direction: row;
-    padding: 40px;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
+  }
+
+  .text-section {
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .image-section {
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   /* Footer */
@@ -2973,8 +3077,33 @@ input[type="checkbox"] {
 
   /* Portfolio Site */
   .Portfolio {
-    flex-direction: row;
-    padding: 60px;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
+  }
+
+  .text-section {
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .image-section {
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   /* Footer */
@@ -3068,8 +3197,34 @@ input[type="checkbox"] {
   }
 
   /* Portfolio Übersicht */
+  .Portfolio {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
+  }
+
   .text-section {
-    font-size: 24px;
+    max-width: 60%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .image-section {
+    max-width: 35%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .btn.Filter {
@@ -3080,14 +3235,6 @@ input[type="checkbox"] {
   /* Buttons */
   .btn {
     font-size: 22px;
-  }
-
-  /* Portfolio Site */
-  .Portfolio {
-    max-width: 80%;
-    margin: auto;
-    padding: 20px;
-    flex-direction: row;
   }
 
   .text-section {
@@ -3250,7 +3397,10 @@ input[type="checkbox"] {
     max-width: 80%;
     margin: auto;
     padding: 20px;
-    flex-direction: row;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px;
   }
 
   .text-section {
